@@ -1,0 +1,2683 @@
+fileFormatVersion: 2
+guid: a3cb0b472aa0ce24ca8728293c3957c6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5914392756310050624
+    second: charmander_front_0
+  - first:
+      213: 9037411595559082622
+    second: charmander_front_1
+  - first:
+      213: 3176241646962195072
+    second: charmander_front_2
+  - first:
+      213: -879327167570524699
+    second: charmander_front_3
+  - first:
+      213: -5038533912557262890
+    second: charmander_front_4
+  - first:
+      213: 8754599365615108015
+    second: charmander_front_5
+  - first:
+      213: -6945841922999346232
+    second: charmander_front_6
+  - first:
+      213: -5141716181050886997
+    second: charmander_front_7
+  - first:
+      213: 7795243424177771937
+    second: charmander_front_8
+  - first:
+      213: -3058924926898014837
+    second: charmander_front_9
+  - first:
+      213: -1060286539381887365
+    second: charmander_front_10
+  - first:
+      213: -8499172186803714630
+    second: charmander_front_11
+  - first:
+      213: 348327363181823264
+    second: charmander_front_12
+  - first:
+      213: 1585952845336026136
+    second: charmander_front_13
+  - first:
+      213: 4782235584238312633
+    second: charmander_front_14
+  - first:
+      213: 2854829453387311900
+    second: charmander_front_15
+  - first:
+      213: 1914944007759063025
+    second: charmander_front_16
+  - first:
+      213: 35919176513570088
+    second: charmander_front_17
+  - first:
+      213: 6853952884568770873
+    second: charmander_front_18
+  - first:
+      213: -9221711410735946917
+    second: charmander_front_19
+  - first:
+      213: 3141822245280145737
+    second: charmander_front_20
+  - first:
+      213: -9200119458468315731
+    second: charmander_front_21
+  - first:
+      213: -7309488390883970399
+    second: charmander_front_22
+  - first:
+      213: -1421383247795364110
+    second: charmander_front_23
+  - first:
+      213: 7160656713515811157
+    second: charmander_front_24
+  - first:
+      213: 9177937139513499597
+    second: charmander_front_25
+  - first:
+      213: 7821487165632090727
+    second: charmander_front_26
+  - first:
+      213: 7464659724737610700
+    second: charmander_front_27
+  - first:
+      213: 4366140305010449945
+    second: charmander_front_28
+  - first:
+      213: -332726259999914879
+    second: charmander_front_29
+  - first:
+      213: -8736677066997203708
+    second: charmander_front_30
+  - first:
+      213: -2473283240356438823
+    second: charmander_front_31
+  - first:
+      213: 5552689321347547517
+    second: charmander_front_32
+  - first:
+      213: -7754079170767137814
+    second: charmander_front_33
+  - first:
+      213: 8239126319545109715
+    second: charmander_front_34
+  - first:
+      213: 4988101066474939411
+    second: charmander_front_35
+  - first:
+      213: -2070745526578545582
+    second: charmander_front_36
+  - first:
+      213: -5190218947015262076
+    second: charmander_front_37
+  - first:
+      213: 6580379091432832537
+    second: charmander_front_38
+  - first:
+      213: -7912104609766914969
+    second: charmander_front_39
+  - first:
+      213: -7603804811947425254
+    second: charmander_front_40
+  - first:
+      213: -6231300214736011402
+    second: charmander_front_41
+  - first:
+      213: -2837341612214761678
+    second: charmander_front_42
+  - first:
+      213: -6325483730600719008
+    second: charmander_front_43
+  - first:
+      213: 3500459502049527080
+    second: charmander_front_44
+  - first:
+      213: 3099489254478967014
+    second: charmander_front_45
+  - first:
+      213: -8355846008861636454
+    second: charmander_front_46
+  - first:
+      213: -4265410505447390217
+    second: charmander_front_47
+  - first:
+      213: 8663899848755363430
+    second: charmander_front_48
+  - first:
+      213: -2641904270752470077
+    second: charmander_front_49
+  - first:
+      213: -5982518982864090018
+    second: charmander_front_50
+  - first:
+      213: 4471824500979484939
+    second: charmander_front_51
+  - first:
+      213: 5334480541029853406
+    second: charmander_front_52
+  - first:
+      213: -4753195122354401279
+    second: charmander_front_53
+  - first:
+      213: 1932891093945372030
+    second: charmander_front_54
+  - first:
+      213: -8114807961479647422
+    second: charmander_front_55
+  - first:
+      213: -6185434980975835593
+    second: charmander_front_56
+  - first:
+      213: 7362529001442325978
+    second: charmander_front_57
+  - first:
+      213: -4646644288556135724
+    second: charmander_front_58
+  - first:
+      213: -769580638630815665
+    second: charmander_front_59
+  - first:
+      213: -8162321595932560649
+    second: charmander_front_60
+  - first:
+      213: -7776288553077591878
+    second: charmander_front_61
+  - first:
+      213: 3905634048459578261
+    second: charmander_front_62
+  - first:
+      213: 2731300676819287941
+    second: charmander_front_63
+  - first:
+      213: 7791419468893104242
+    second: charmander_front_64
+  - first:
+      213: 7522910675989264588
+    second: charmander_front_65
+  - first:
+      213: -248013561143077463
+    second: charmander_front_66
+  - first:
+      213: -2951859665198906470
+    second: charmander_front_67
+  - first:
+      213: 1955571364308989853
+    second: charmander_front_68
+  - first:
+      213: -1425042698097402356
+    second: charmander_front_69
+  - first:
+      213: -4454749648714147514
+    second: charmander_front_70
+  - first:
+      213: 6880626981870661873
+    second: charmander_front_71
+  - first:
+      213: 8112825637501695370
+    second: charmander_front_72
+  - first:
+      213: -9067383065048139383
+    second: charmander_front_73
+  - first:
+      213: 8667337438726735784
+    second: charmander_front_74
+  - first:
+      213: 7039764900503768325
+    second: charmander_front_75
+  - first:
+      213: -1458601579862337712
+    second: charmander_front_76
+  - first:
+      213: -7263658553628501826
+    second: charmander_front_77
+  - first:
+      213: 5012446465283563827
+    second: charmander_front_78
+  - first:
+      213: -3937185000181027401
+    second: charmander_front_79
+  - first:
+      213: -9108057046893144950
+    second: charmander_front_80
+  - first:
+      213: 1469512205079549824
+    second: charmander_front_81
+  - first:
+      213: 8301932287417604553
+    second: charmander_front_82
+  - first:
+      213: -540553615189582248
+    second: charmander_front_83
+  - first:
+      213: 8746499305190968624
+    second: charmander_front_84
+  - first:
+      213: -3327264630253266735
+    second: charmander_front_85
+  - first:
+      213: -8391290996917611475
+    second: charmander_front_86
+  - first:
+      213: -2339493723224759161
+    second: charmander_front_87
+  - first:
+      213: 1158525935376768464
+    second: charmander_front_88
+  - first:
+      213: -7408866974719953378
+    second: charmander_front_89
+  - first:
+      213: -3423123529996803958
+    second: charmander_front_90
+  - first:
+      213: -1123650406859892759
+    second: charmander_front_91
+  - first:
+      213: -814432974978073301
+    second: charmander_front_92
+  - first:
+      213: 7490740184945011284
+    second: charmander_front_93
+  - first:
+      213: -2174916840796450463
+    second: charmander_front_94
+  - first:
+      213: -8819826596306974922
+    second: charmander_front_95
+  - first:
+      213: 1282803080334352369
+    second: charmander_front_96
+  - first:
+      213: -6503618146294177350
+    second: charmander_front_97
+  - first:
+      213: 4642436183705034906
+    second: charmander_front_98
+  - first:
+      213: -13723836945051466
+    second: charmander_front_99
+  - first:
+      213: -8518962225336774690
+    second: charmander_front_100
+  - first:
+      213: 8129329130353761723
+    second: charmander_front_101
+  - first:
+      213: -1314466931248070789
+    second: charmander_front_102
+  - first:
+      213: -2640008124651645620
+    second: charmander_front_103
+  - first:
+      213: -1872592232780784284
+    second: charmander_front_104
+  - first:
+      213: -5471171572614023361
+    second: charmander_front_105
+  - first:
+      213: 729228226727136999
+    second: charmander_front_106
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: charmander_front_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 882
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18a163f36490a3c409a720a1520f0d31
+      internalID: -5914392756310050624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_1
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 882
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4bc33c13977be940826bce1be82414f
+      internalID: 9037411595559082622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_2
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 882
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a74dd40929f018745bf198bf4479d2db
+      internalID: 3176241646962195072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_3
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 882
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25fd7cac475d8344eae700cb9150b8c7
+      internalID: -879327167570524699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_4
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 882
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78232b4dcf3a89446b6daff4002772a5
+      internalID: -5038533912557262890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 840
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 117370f9fb7581d4dad34f7fd4779afc
+      internalID: 8754599365615108015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_6
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 840
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0018f57995487f64fbdf702dfa36db2f
+      internalID: -6945841922999346232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_7
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 840
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 028784ee2fc68324eac1a7a72085ce2d
+      internalID: -5141716181050886997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_8
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 840
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f76b4ba2e4912647919dd2764e681d4
+      internalID: 7795243424177771937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_9
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 840
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec9b133d6b066a644a0cca3c15909f23
+      internalID: -3058924926898014837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 798
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07a5ec9d6f6c65c4c82e291dc13dbd8d
+      internalID: -1060286539381887365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_11
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 798
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8424a9389a6d14544aa5165227ddb5e5
+      internalID: -8499172186803714630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_12
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 798
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a88b00945c64fc45bcf1a0af66df85e
+      internalID: 348327363181823264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_13
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 798
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ceed64ef5ded64b49bc68c7bbc725b29
+      internalID: 1585952845336026136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_14
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 798
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ee7efd76f6ebb147b055f164bedcf6a
+      internalID: 4782235584238312633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 756
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b30bd302693a2014ba118b6bc871a045
+      internalID: 2854829453387311900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_16
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 756
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b28b8e7f7b0046b46a2a2892e688b1f2
+      internalID: 1914944007759063025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_17
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 756
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2192ac1d58fb41b439e1120d14ec5254
+      internalID: 35919176513570088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_18
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 756
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93b5f2eab9e465e4597db76d5a344245
+      internalID: 6853952884568770873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_19
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 756
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caa348d20d6588147923a7d5aca8772e
+      internalID: -9221711410735946917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 714
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae5ffca0744c1e84c9dbe1864e1d657b
+      internalID: 3141822245280145737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_21
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 714
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0472001c7fffaaa4792ffc712ee04708
+      internalID: -9200119458468315731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_22
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 714
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17b6ad9aedde6be469f90e4e8f09a732
+      internalID: -7309488390883970399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_23
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 714
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa92fba421e28634a96211be797bb80a
+      internalID: -1421383247795364110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_24
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 714
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cd99c342fa969f4eb74bc6d95cec6d6
+      internalID: 7160656713515811157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 672
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d84dadb2b3199e4199cee10f7e218e2
+      internalID: 9177937139513499597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_26
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 672
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b1b4f18c75e8e14fb80ec1e76933133
+      internalID: 7821487165632090727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_27
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 672
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dafa8a7474e656443b58c1b4d9bd2591
+      internalID: 7464659724737610700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_28
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 672
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2b30f83c50999b40a0cfebc9b1f8668
+      internalID: 4366140305010449945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_29
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 672
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 967babf92421ae946abf7bbb9bcc5c1d
+      internalID: -332726259999914879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 630
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4228459e05afe942b49072378a2c440
+      internalID: -8736677066997203708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_31
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 630
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6c874625c519f748aa44757d9b6ce8b
+      internalID: -2473283240356438823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_32
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 630
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e37609acbe23c2a4196fe76ac54241fd
+      internalID: 5552689321347547517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_33
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 630
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36ecd82cdde6a0044a7fea8f1b3028de
+      internalID: -7754079170767137814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_34
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 630
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df05239c74df9c445a0df13679deaf13
+      internalID: 8239126319545109715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 588
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59db5ff86121c404293447d98d5c045c
+      internalID: 4988101066474939411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_36
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 588
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac0086b9c468c0948a94a5e017a0d847
+      internalID: -2070745526578545582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_37
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 588
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97c9d9a6dbea4474180b8225e7862303
+      internalID: -5190218947015262076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_38
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 588
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60a10855aa2208f44b07da4d32c68666
+      internalID: 6580379091432832537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_39
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 588
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85967e7a5a670114b808ae0bc3bd828d
+      internalID: -7912104609766914969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 546
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4bb23c02bbc09d43b147d684d7ccc62
+      internalID: -7603804811947425254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_41
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 546
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d86165e919e59444382ffcf902183538
+      internalID: -6231300214736011402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_42
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 546
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49cb2404df1490d44b3701288b653ace
+      internalID: -2837341612214761678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_43
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 546
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bf591a79873f4f41b153bc08480e14d
+      internalID: -6325483730600719008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_44
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 546
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26c982bf40bf4a247b14293d42bab51d
+      internalID: 3500459502049527080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 504
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3316a74fead87194096e026ae2c21a59
+      internalID: 3099489254478967014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_46
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 504
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a0a63b6aee6e5d4eb104bb8f1cb97f9
+      internalID: -8355846008861636454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_47
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 504
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9be317584a2f11a4aad97d7032ebce09
+      internalID: -4265410505447390217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_48
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 504
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 221696854257d6645982ab108744e812
+      internalID: 8663899848755363430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_49
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 504
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dba60f5fd3e14247abf7a2fc008f11d
+      internalID: -2641904270752470077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 462
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00c62d345b9df6740b69ae5e982984d7
+      internalID: -5982518982864090018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_51
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 462
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8686fa3f1d7086e49a0ea4e6d7f677c9
+      internalID: 4471824500979484939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_52
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 462
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82d471586a4530749948b113b96118f1
+      internalID: 5334480541029853406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_53
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 462
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 985a8e0867de0714fae82a88c6b702e7
+      internalID: -4753195122354401279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_54
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 462
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 046372298860dcf458bab3e5749a164c
+      internalID: 1932891093945372030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_55
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 420
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29f5278d8318d9f448aab51d44dc04b4
+      internalID: -8114807961479647422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_56
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 420
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35bd043661d6d61488b76544cdfdc814
+      internalID: -6185434980975835593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_57
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 420
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c32af221ab51259428d04a4c2e484397
+      internalID: 7362529001442325978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_58
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 420
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e026ab3cf7628614fa2c5eb3b1712d97
+      internalID: -4646644288556135724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_59
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 420
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df9627604d97bd540918b1267d1499db
+      internalID: -769580638630815665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 378
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b59d4ce8b6d600a43b67c9587c683c0b
+      internalID: -8162321595932560649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_61
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 378
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee5e2d57ada827341abba0e9c43b0b95
+      internalID: -7776288553077591878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_62
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 378
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1423f66d43e2a2948b5753486bab0420
+      internalID: 3905634048459578261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_63
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 378
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 128df56e1b446ee48ae7a4206ed35a81
+      internalID: 2731300676819287941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_64
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 378
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 333d1695e8d30a84583652080c185277
+      internalID: 7791419468893104242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_65
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 336
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91aefb16b96b52a4781ee153ef957f81
+      internalID: 7522910675989264588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_66
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 336
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36e46d1c33df9b343b1802abc1d87f1c
+      internalID: -248013561143077463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_67
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 336
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36ab8c37ed592714aa763a954d72f60c
+      internalID: -2951859665198906470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_68
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 336
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e00864a86e50bc44af81c4dca259289
+      internalID: 1955571364308989853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_69
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 336
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25c1ffb00217af443be456b71fbee325
+      internalID: -1425042698097402356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_70
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 294
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97c065371584b194c95a1e38a10e9330
+      internalID: -4454749648714147514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_71
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 294
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a840f8b045d90f48980e543c0c809fb
+      internalID: 6880626981870661873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_72
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 294
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59f222c51d918e94088bf4de8ea9279a
+      internalID: 8112825637501695370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_73
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 294
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 136fbd3ec03396544a5a3c54d99f7c31
+      internalID: -9067383065048139383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_74
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 294
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2832e7680a015d84e9fca09ef279d49c
+      internalID: 8667337438726735784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_75
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 252
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53e0c023e6f88e0498c7eb7e60c18323
+      internalID: 7039764900503768325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_76
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 252
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 631030e349aa2074fa9a11972d5144db
+      internalID: -1458601579862337712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_77
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 252
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c275da12eda11254a98572b7142695fa
+      internalID: -7263658553628501826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_78
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 252
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27632d8d7c03a634db54b478dfdd9c90
+      internalID: 5012446465283563827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_79
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 252
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b9c1f914cb76854ca5e4259c56acd6d
+      internalID: -3937185000181027401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_80
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 210
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 567ff4a5c59a6b541b702fa78ca29dca
+      internalID: -9108057046893144950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_81
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 210
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c87937cd067f374e8271c1f7caac890
+      internalID: 1469512205079549824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_82
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 210
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4a718e4e43edc9469e4b1c1e04dff84
+      internalID: 8301932287417604553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_83
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 210
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31768caf2a17d2c4788a6707caf602c0
+      internalID: -540553615189582248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_84
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 210
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d70f9d4b39278e4397a78b3bcb003e3
+      internalID: 8746499305190968624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_85
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 168
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f30435b217a44444082616844f4b8696
+      internalID: -3327264630253266735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_86
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 168
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3404f2d3329367439fb7bd8a0dd5ad6
+      internalID: -8391290996917611475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_87
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 168
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa87b7cf9700ed6459d2171d8e92fb32
+      internalID: -2339493723224759161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_88
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 168
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a055357612492e4a98a1b1a27ec5718
+      internalID: 1158525935376768464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_89
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 168
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dda9c72670cb2440b0373a8cdff74ae
+      internalID: -7408866974719953378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_90
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 126
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9577c0847677af34b9442a68ba223c00
+      internalID: -3423123529996803958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_91
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 126
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c602cc9c672ee14b95558c10c08a473
+      internalID: -1123650406859892759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_92
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 126
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd1bfcfc8f1e8bf4595e098e23f4f14a
+      internalID: -814432974978073301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_93
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 126
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23dd17fe8b908744db4dca929f85adb3
+      internalID: 7490740184945011284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_94
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 126
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca09ad2f39ac83c459d63968fa7ec132
+      internalID: -2174916840796450463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_95
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 84
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95abf2e4d4fc11346a4e20c2957313a1
+      internalID: -8819826596306974922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_96
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 84
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f57b69a99594dcf4d819d80804f20ed5
+      internalID: 1282803080334352369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_97
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 84
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa06b1d7dfc953343a8c149652d4abe0
+      internalID: -6503618146294177350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_98
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 84
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a10353e914cb5d4e9cf38040fe28948
+      internalID: 4642436183705034906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_99
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 84
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf13f175c34d5db43af4d838a1b28e0d
+      internalID: -13723836945051466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_100
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 42
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7216e1058fbba574dacf478fd97b44b9
+      internalID: -8518962225336774690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_101
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 42
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0108772aa5f519449b9a5a167aa6b42a
+      internalID: 8129329130353761723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_102
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 42
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f6f35db35915c14f990bfa4aebff3b1
+      internalID: -1314466931248070789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_103
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 42
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8e0c1c07a14740448a4ba5cfff841b9
+      internalID: -2640008124651645620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_104
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 42
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10168f69600b53f4cb31442cb33afd03
+      internalID: -1872592232780784284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_105
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64abc3fb35ac01f44bee80f80bddf122
+      internalID: -5471171572614023361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charmander_front_106
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 0
+        width: 42
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 128e6caf01df5e24a957c59ffef3beee
+      internalID: 729228226727136999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
