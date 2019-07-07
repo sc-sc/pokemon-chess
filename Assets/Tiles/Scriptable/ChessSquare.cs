@@ -6,7 +6,6 @@ using UnityEditor;
 
 public class ChessSquare : TileBase
 {
-    private Pokemon locatedPokemon;
     public Sprite whiteSprite;
     public Sprite blackSprite;
     
@@ -30,15 +29,5 @@ public class ChessSquare : TileBase
         }
 
         tileData.colliderType = Tile.ColliderType.Grid;
-    }
-
-    public void LocatePokemon(Pokemon pokemon)
-    {
-        locatedPokemon = pokemon;
-    }
-
-    public Pokemon GetLocatedPokemon()
-    {
-        return locatedPokemon;
     }
 }

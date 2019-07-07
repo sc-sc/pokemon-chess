@@ -9,6 +9,7 @@ public class ChessBoard : MonoBehaviour, Touchable
     private Vector3Int selectedPosition;
     private Vector3Int passingPosition;
     private Pokemon selectedPokemon;
+    private Pokemon[, ] placedPokemons;
 
     public void Moved(Vector3 to)
     {
@@ -39,6 +40,9 @@ public class ChessBoard : MonoBehaviour, Touchable
         if (!PlacePokemon(passingPosition, selectedPokemon))
         {
             selectedPokemon.transform.position = tilemap.GetCellCenterWorld(selectedPosition);
+        } else
+        {
+            PlacePokemon(selectedPosition, null);
         }
 
         selectedPokemon = null;
@@ -49,7 +53,8 @@ public class ChessBoard : MonoBehaviour, Touchable
         selectedPosition = tilemap.WorldToCell(at);
         tilemap.SetColor(selectedPosition, Color.cyan);
 
-        selectedPokemon = (tilemap.GetTile(selectedPosition) as ChessSquare)?.GetLocatedPokemon();
+        selectedPokemon = placedPokemons[selectedPosition.x + 4, selectedPosition.y + 4];
+        Debug.Log(selectedPokemon);
     }
 
     public bool PlacePokemon(Vector3Int position, Pokemon pokemon)
@@ -60,8 +65,11 @@ public class ChessBoard : MonoBehaviour, Touchable
             return false;
         }
 
-        chessSquare.LocatePokemon(pokemon);
-        pokemon.transform.position = tilemap.GetCellCenterWorld(position);
+        placedPokemons[position.x + 4, position.y + 4] = pokemon;
+        if (pokemon != null)
+        {
+            pokemon.transform.position = tilemap.GetCellCenterWorld(position);
+        }
 
         return true;
     }
@@ -69,6 +77,8 @@ public class ChessBoard : MonoBehaviour, Touchable
     void Awake()
     {
         tilemap = GetComponent<Tilemap>();
+
+        placedPokemons = new Pokemon[8, 8];
 
         PlacePokemon(new Vector3Int(-1, 0, 0), FindObjectOfType<Pokemon>());
     }
