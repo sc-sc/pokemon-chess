@@ -34,7 +34,6 @@ public class ChessBoard : MonoBehaviour, Touchable
         tilemap.SetColor(selectedPosition, Color.white);
         tilemap.SetColor(passingPosition, Color.white);
 
-        Debug.Log(passingPosition);
         ChessSquare chessSquare = tilemap.GetTile(tilemap.WorldToCell(passingPosition)) as ChessSquare;
 
         if (!PlacePokemon(passingPosition, selectedPokemon))
