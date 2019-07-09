@@ -37,12 +37,12 @@ public class ChessBoard : MonoBehaviour, Touchable
 
         ChessSquare chessSquare = tilemap.GetTile(tilemap.WorldToCell(passingPosition)) as ChessSquare;
 
-        if (!PlacePokemon(passingPosition, selectedPokemon))
+        if (!PlacePokemon(CellToIndex(passingPosition), selectedPokemon))
         {
             selectedPokemon.transform.position = tilemap.GetCellCenterWorld(selectedPosition);
-        } else
+        } else if (selectedPosition != passingPosition)
         {
-            PlacePokemon(selectedPosition, null);
+            PlacePokemon(CellToIndex(selectedPosition), null);
         }
 
         selectedPokemon = null;
@@ -53,25 +53,27 @@ public class ChessBoard : MonoBehaviour, Touchable
         selectedPosition = tilemap.WorldToCell(at);
         tilemap.SetColor(selectedPosition, Color.cyan);
 
-        selectedPokemon = placedPokemons[selectedPosition.x + 4, selectedPosition.y + 4];
+        Vector2Int index = CellToIndex(selectedPosition);
+        selectedPokemon = placedPokemons[index.x, index.y];
         Debug.Log(selectedPokemon);
     }
 
-    public bool PlacePokemon(Vector3Int position, Pokemon pokemon)
+    public bool PlacePokemon(Vector2Int position, Pokemon pokemon)
     {
-        ChessSquare chessSquare = tilemap.GetTile(position) as ChessSquare;
+        Vector3Int cellPosition = IndexToCell(position);
+        ChessSquare chessSquare = tilemap.GetTile(cellPosition) as ChessSquare;
         if (chessSquare == null)
         {
             return false;
         }
 
-        placedPokemons[position.x + 4, position.y + 4] = pokemon;
+        placedPokemons[position.x, position.y] = pokemon;
         if (pokemon != null)
         {
-            pokemon.transform.position = tilemap.GetCellCenterWorld(position);
+            pokemon.transform.position = tilemap.GetCellCenterWorld(cellPosition);
         }
 
-        return true;
+        return true;    
     }
 
     void Awake()
@@ -80,6 +82,18 @@ public class ChessBoard : MonoBehaviour, Touchable
 
         placedPokemons = new Pokemon[8, 8];
 
-        PlacePokemon(new Vector3Int(-1, 0, 0), FindObjectOfType<Pokemon>());
+        Pokemon[] pokemons = FindObjectsOfType<Pokemon>();
+
+        PlacePokemon(new Vector2Int(0, 0), pokemons[0]);
+    }
+
+    private Vector2Int CellToIndex(Vector3Int cellPosition)
+    {
+        return new Vector2Int(-(cellPosition.y - 3), cellPosition.x + 4);
+    }
+
+    private Vector3Int IndexToCell(Vector2Int index)
+    {
+        return new Vector3Int((index.y - 4), -(index.x - 3), 0);
     }
 }
