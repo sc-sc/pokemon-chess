@@ -10,6 +10,7 @@ public class ChessBoard : MonoBehaviour, Touchable
     private Vector3Int passingPosition;
     private Pokemon selectedPokemon;
     private Pokemon[, ] placedPokemons;
+    private Dictionary<Pokemon, Vector2Int> pokemonCache;
 
     public void Moved(Vector3 to)
     {
@@ -40,9 +41,6 @@ public class ChessBoard : MonoBehaviour, Touchable
         if (!PlacePokemon(CellToIndex(passingPosition), selectedPokemon))
         {
             selectedPokemon.transform.position = tilemap.GetCellCenterWorld(selectedPosition);
-        } else if (selectedPosition != passingPosition)
-        {
-            PlacePokemon(CellToIndex(selectedPosition), null);
         }
 
         selectedPokemon = null;
@@ -58,22 +56,41 @@ public class ChessBoard : MonoBehaviour, Touchable
         Debug.Log(selectedPokemon);
     }
 
-    public bool PlacePokemon(Vector2Int position, Pokemon pokemon)
+    public bool PlacePokemon(Vector2Int index, Pokemon pokemon)
     {
-        Vector3Int cellPosition = IndexToCell(position);
+        Vector3Int cellPosition = IndexToCell(index);
         ChessSquare chessSquare = tilemap.GetTile(cellPosition) as ChessSquare;
         if (chessSquare == null)
         {
             return false;
         }
 
-        placedPokemons[position.x, position.y] = pokemon;
-        if (pokemon != null)
+        Pokemon alreadyExistPokemon = placedPokemons[index.x, index.y];
+        if (alreadyExistPokemon != null)
         {
-            pokemon.transform.position = tilemap.GetCellCenterWorld(cellPosition);
+            SetPokemon(pokemonCache[pokemon], alreadyExistPokemon);
+        }
+        else if (pokemon != null)
+        {
+            if (pokemonCache.ContainsKey(pokemon))
+            {
+                Vector2Int previousIndex = pokemonCache[pokemon];
+                placedPokemons[previousIndex.x, previousIndex.y] = null;
+            }
         }
 
+        SetPokemon(index, pokemon);
         return true;    
+    }
+
+    private void SetPokemon(Vector2Int index, Pokemon pokemon)
+    {
+        placedPokemons[index.x, index.y] = pokemon;
+        if (pokemon != null)
+        {
+            pokemonCache[pokemon] = index;
+            pokemon.transform.position = tilemap.GetCellCenterWorld(IndexToCell(index));
+        }
     }
 
     void Awake()
@@ -82,9 +99,14 @@ public class ChessBoard : MonoBehaviour, Touchable
 
         placedPokemons = new Pokemon[8, 8];
 
+        pokemonCache = new Dictionary<Pokemon, Vector2Int>();
+
         Pokemon[] pokemons = FindObjectsOfType<Pokemon>();
 
-        PlacePokemon(new Vector2Int(0, 0), pokemons[0]);
+        for (int i = 0; i < pokemons.Length; i++)
+        {
+            PlacePokemon(new Vector2Int(i, i), pokemons[i]);
+        }
     }
 
     private Vector2Int CellToIndex(Vector3Int cellPosition)
