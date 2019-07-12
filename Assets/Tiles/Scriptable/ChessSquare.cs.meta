@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 797d03d4ca74eb04c8e25029ac7fc2ce
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - locatedPokemon: {instanceID: 0}
+  - whiteSprite: {fileID: -4840490660021228046, guid: 1dbde0fd5fc78b34a94c5c0018de6c1f,
+      type: 3}
+  - blackSprite: {fileID: 3364745534008759639, guid: 1dbde0fd5fc78b34a94c5c0018de6c1f,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
