@@ -31,7 +31,10 @@ public class ChessBoard : PokemonPlaceableBoard
         linkedBoard.owner = owner;
 
         placedPokemons = new Pokemon[8, 8];
+    }
 
+    void Start()
+    {
         Pokemon[] pokemons = FindObjectsOfType<Pokemon>();
 
         for (int i = 0; i < pokemons.Length; i++)
@@ -39,6 +42,7 @@ public class ChessBoard : PokemonPlaceableBoard
             PlacePokemon(new Vector2Int(i, i), pokemons[i]);
         }
     }
+
     protected override Vector3Int IndexToCell(Vector2Int index)
     {
         return new Vector3Int((index.y - 4), -(index.x - 3), 0);

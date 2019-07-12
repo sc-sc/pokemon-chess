@@ -23,60 +23,35 @@ public abstract class PokemonPlaceableBoard : MonoBehaviour, Touchable
 
     public virtual bool PlacePokemon(Vector2Int index, Pokemon pokemon)
     {
+        Vector3Int cellPosition = IndexToCell(index);
+        if (!tilemap.HasTile(cellPosition)) return false;
+
         if (pokemon != null)
         {
-            Vector3Int cellPosition = IndexToCell(index);
-            if (!tilemap.HasTile(cellPosition))
+            if (pokemon.trainer != owner)
+            {
                 return false;
-            else if (pokemon.trainer != owner)
-                return false;
-
-            Pokemon alreadyExistPokemon = placedPokemons[index.x, index.y];
-            if (alreadyExistPokemon != null)
+            } else
             {
-                if (alreadyExistPokemon.trainer != owner)
-                    return false;
+                Pokemon alreadyExistPokemon = placedPokemons[index.x, index.y];
+                RemovePokemon(alreadyExistPokemon);
+                if (pokemonCache.ContainsKey(pokemon))
+                {
+                    SetPokemon(pokemonCache[pokemon], alreadyExistPokemon);
+                } else if (linkedBoard.pokemonCache.ContainsKey(pokemon))
+                {
+                    linkedBoard.SetPokemon(linkedBoard.pokemonCache[pokemon], alreadyExistPokemon);
+                }
+
+                SetPokemon(index, pokemon);
+                linkedBoard.RemovePokemon(pokemon);
             }
-            if (pokemonCache.ContainsKey(pokemon))
-            {
-                SetPokemon(pokemonCache[pokemon], alreadyExistPokemon);
-            } else if (linkedBoard.pokemonCache.ContainsKey(pokemon))
-            {
-                linkedBoard.SetPokemon(linkedBoard.pokemonCache[pokemon], alreadyExistPokemon);
-            }
-
-            linkedBoard.PlaceSuccessAtLinkedBoard(pokemon);
-
-            SetPokemon(index, pokemon);
         }
 
+        linkedBoard.PlaceEnd(pokemon, true);
         return true;
     }
-
-    public void PlaceSuccessAtLinkedBoard(Pokemon pokemon)
-    {
-        selectedPosition = new Vector3Int(0, 0, -100);
-
-        if (pokemonCache.ContainsKey(pokemon))
-        {
-            Vector2Int placedIndex = pokemonCache[pokemon];
-            Vector3Int cellPosition = IndexToCell(placedIndex);
-            tilemap.SetColor(cellPosition, Color.white);
-            pokemonCache.Remove(pokemon);
-        }
-    }
-
-    public void PlaceFailAtLinkedBoard(Pokemon pokemon)
-    {
-        if (pokemonCache.ContainsKey(pokemon))
-        {
-            Vector3Int cellPosition = IndexToCell(pokemonCache[pokemon]);
-            tilemap.SetColor(cellPosition, Color.white);
-            pokemon.transform.position = tilemap.GetCellCenterWorld(cellPosition);
-        }
-    }
-
-    private void SetPokemon(Vector2Int index, Pokemon pokemon)
+    public void SetPokemon(Vector2Int index, Pokemon pokemon)
     {
         placedPokemons[index.x, index.y] = pokemon;
         if (pokemon != null)
@@ -84,6 +59,21 @@ public abstract class PokemonPlaceableBoard : MonoBehaviour, Touchable
             pokemonCache[pokemon] = index;
             owner.placedPokemons[pokemon] = index;
             pokemon.transform.position = tilemap.GetCellCenterWorld(IndexToCell(index));
+        }
+    }
+
+    public void RemovePokemon(Pokemon pokemon)
+    {
+        if (pokemon == null || !pokemonCache.ContainsKey(pokemon)) return;
+        Vector2Int index = pokemonCache[pokemon];
+        if (index != null)
+        {
+            if (placedPokemons[index.x, index.y] == pokemon)
+            {
+                placedPokemons[index.x, index.y] = null;
+            }
+            pokemonCache.Remove(pokemon);
+            owner.placedPokemons.Remove(pokemon);
         }
     }
 
@@ -143,18 +133,31 @@ public abstract class PokemonPlaceableBoard : MonoBehaviour, Touchable
 
         Vector2Int passingIndex = CellToIndex(passingPosition);
 
-        if (!PlacePokemon(passingIndex, selectedPokemon))
+        if (selectedPokemon != null && !PlacePokemon(passingIndex, selectedPokemon))
         {
             if (pokemonCache.ContainsKey(selectedPokemon))
             {
-                selectedPokemon.transform.position = tilemap.GetCellCenterWorld(selectedPosition);
+                PlaceEnd(selectedPokemon, false);
+            } else if (linkedBoard.pokemonCache.ContainsKey(selectedPokemon))
+            {
+                linkedBoard.PlaceEnd(selectedPokemon, false);
             } else
             {
-                linkedBoard.PlaceFailAtLinkedBoard(selectedPokemon);
+                Destroy(selectedPokemon);
             }
         }
-
-        selectedPosition = new Vector3Int(0, 0, -100);
         selectedPokemon = null;
+    }
+
+    public void PlaceEnd(Pokemon pokemon, bool isSuccess)
+    {
+        if (!isSuccess)
+        {
+            pokemon.transform.position = tilemap.GetCellCenterWorld(selectedPosition);
+        }
+
+
+        tilemap.SetColor(selectedPosition, Color.white);
+        selectedPosition = selectedPosition = new Vector3Int(0, 0, -100);
     }
 }
