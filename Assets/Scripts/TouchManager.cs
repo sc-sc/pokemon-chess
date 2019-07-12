@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class TouchManager : MonoBehaviour
 {
+    public const int MaxTouchCount = 5;
+
     public int maxTouchCount;
     private Touchable[] touchedObjects;
     private bool isMouseButtonDowned = false;
     // Start is called before the first frame update
     void Start()
     {
-        touchedObjects = new Touchable[5];
+        touchedObjects = new Touchable[MaxTouchCount];
     }
 
     // Update is called once per frame
@@ -72,5 +74,17 @@ public class TouchManager : MonoBehaviour
     {
         touchedObjects[index]?.Released(at);
         touchedObjects[index] = null;
+    }
+
+    public void Delegate(Touchable from, Touchable to)
+    {
+        for (int i = 0; i < MaxTouchCount; i++)
+        {
+            if (touchedObjects[i] == from)
+            {
+                touchedObjects[i] = to;
+                return;
+            }
+        }
     }
 }

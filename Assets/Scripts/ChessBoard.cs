@@ -3,103 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class ChessBoard : MonoBehaviour, Touchable
+public class ChessBoard : PokemonPlaceableBoard
 {
-    private Tilemap tilemap;
-    private Vector3Int selectedPosition;
-    private Vector3Int passingPosition;
-    private Pokemon selectedPokemon;
-    private Pokemon[, ] placedPokemons;
-    private Dictionary<Pokemon, Vector2Int> pokemonCache;
-
-    public void Moved(Vector3 to)
+    public const int MaxRowCanPlace = 4;    
+    public override void Moved(Vector3 to)
     {
-        if (passingPosition != null && passingPosition != selectedPosition)
-        {
-            tilemap.SetColor(passingPosition, Color.white);
-        }
-
-        passingPosition = tilemap.WorldToCell(to);
-        if (passingPosition != selectedPosition)
-        {
-            tilemap.SetColor(passingPosition, Color.green);
-        }
-            
-        if (selectedPokemon != null)
-        {
-            selectedPokemon.transform.position = to;
-        }
+        base.Moved(to);
     }
 
-    public void Released(Vector3 at)
+    protected override void ChangePassingSquareColor(Vector3Int passingCellPosition)
     {
-        tilemap.SetColor(selectedPosition, Color.white);
-        tilemap.SetColor(passingPosition, Color.white);
-
-        ChessSquare chessSquare = tilemap.GetTile(tilemap.WorldToCell(passingPosition)) as ChessSquare;
-
-        if (!PlacePokemon(CellToIndex(passingPosition), selectedPokemon))
-        {
-            selectedPokemon.transform.position = tilemap.GetCellCenterWorld(selectedPosition);
-        }
-
-        selectedPokemon = null;
+        if (CellToIndex(passingCellPosition).y < MaxRowCanPlace)
+            tilemap.SetColor(passingCellPosition, Color.green);
+        else
+            tilemap.SetColor(passingCellPosition, Color.red);
     }
 
-    public void Touched(Vector3 at)
+    public override void Released(Vector3 at)
     {
-        selectedPosition = tilemap.WorldToCell(at);
-        tilemap.SetColor(selectedPosition, Color.cyan);
-
-        Vector2Int index = CellToIndex(selectedPosition);
-        selectedPokemon = placedPokemons[index.x, index.y];
-        Debug.Log(selectedPokemon);
+        base.Released(at);
     }
-
-    public bool PlacePokemon(Vector2Int index, Pokemon pokemon)
+    protected override void Awake()
     {
-        Vector3Int cellPosition = IndexToCell(index);
-        ChessSquare chessSquare = tilemap.GetTile(cellPosition) as ChessSquare;
-        if (chessSquare == null)
-        {
-            return false;
-        }
+        base.Awake();
 
-        Pokemon alreadyExistPokemon = placedPokemons[index.x, index.y];
-        if (alreadyExistPokemon != null)
-        {
-            SetPokemon(pokemonCache[pokemon], alreadyExistPokemon);
-        }
-        else if (pokemon != null)
-        {
-            if (pokemonCache.ContainsKey(pokemon))
-            {
-                Vector2Int previousIndex = pokemonCache[pokemon];
-                placedPokemons[previousIndex.x, previousIndex.y] = null;
-            }
-        }
-
-        SetPokemon(index, pokemon);
-        return true;    
-    }
-
-    private void SetPokemon(Vector2Int index, Pokemon pokemon)
-    {
-        placedPokemons[index.x, index.y] = pokemon;
-        if (pokemon != null)
-        {
-            pokemonCache[pokemon] = index;
-            pokemon.transform.position = tilemap.GetCellCenterWorld(IndexToCell(index));
-        }
-    }
-
-    void Awake()
-    {
-        tilemap = GetComponent<Tilemap>();
+        linkedBoard = GetComponentInChildren<WaitingBoard>();
+        linkedBoard.owner = owner;
 
         placedPokemons = new Pokemon[8, 8];
-
-        pokemonCache = new Dictionary<Pokemon, Vector2Int>();
 
         Pokemon[] pokemons = FindObjectsOfType<Pokemon>();
 
@@ -108,14 +39,22 @@ public class ChessBoard : MonoBehaviour, Touchable
             PlacePokemon(new Vector2Int(i, i), pokemons[i]);
         }
     }
+    protected override Vector3Int IndexToCell(Vector2Int index)
+    {
+        return new Vector3Int((index.y - 4), -(index.x - 3), 0);
+    }
 
-    private Vector2Int CellToIndex(Vector3Int cellPosition)
+
+    protected override Vector2Int CellToIndex(Vector3Int cellPosition)
     {
         return new Vector2Int(-(cellPosition.y - 3), cellPosition.x + 4);
     }
 
-    private Vector3Int IndexToCell(Vector2Int index)
+    public override bool PlacePokemon(Vector2Int index, Pokemon pokemon)
     {
-        return new Vector3Int((index.y - 4), -(index.x - 3), 0);
+        if (pokemon != null && index.y >= MaxRowCanPlace)
+            return false;
+
+        return base.PlacePokemon(index, pokemon);
     }
 }

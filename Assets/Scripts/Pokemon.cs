@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class Pokemon : MonoBehaviour
 {
-    private Collider2D collider;
+    public Trainer trainer;
+
     private SpriteRenderer spriteRenderer;
-    private Vector2 previousPosition;
     void Awake()
     {
-        collider = GetComponent<Collider2D>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
