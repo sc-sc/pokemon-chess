@@ -43,12 +43,23 @@ public abstract class PokemonPlaceableBoard : MonoBehaviour, Touchable
                     linkedBoard.SetPokemon(linkedBoard.pokemonCache[pokemon], alreadyExistPokemon);
                 }
 
-                SetPokemon(index, pokemon);
-                linkedBoard.RemovePokemon(pokemon);
+                RemovePokemon(pokemon);
+                if (!AddPokemon(index, pokemon))
+                {
+                    return false;
+                }
             }
         }
 
         linkedBoard.PlaceEnd(pokemon, true);
+        return true;
+    }
+
+    protected virtual bool AddPokemon(Vector2Int index, Pokemon pokemon)
+    {
+        SetPokemon(index, pokemon);
+        linkedBoard.RemovePokemon(pokemon);
+
         return true;
     }
     public void SetPokemon(Vector2Int index, Pokemon pokemon)
@@ -57,10 +68,13 @@ public abstract class PokemonPlaceableBoard : MonoBehaviour, Touchable
         if (pokemon != null)
         {
             pokemonCache[pokemon] = index;
-            owner.placedPokemons[pokemon] = index;
             pokemon.transform.position = tilemap.GetCellCenterWorld(IndexToCell(index));
         }
+
+        CompleteSetPokemon(index, pokemon);
     }
+
+    protected abstract void CompleteSetPokemon(Vector2Int at, Pokemon pokemon);
 
     public void RemovePokemon(Pokemon pokemon)
     {
@@ -71,11 +85,13 @@ public abstract class PokemonPlaceableBoard : MonoBehaviour, Touchable
             if (placedPokemons[index.x, index.y] == pokemon)
             {
                 placedPokemons[index.x, index.y] = null;
+                CompleteRemovePokemon(index, pokemon);
             }
             pokemonCache.Remove(pokemon);
-            owner.placedPokemons.Remove(pokemon);
         }
     }
+
+    protected abstract void CompleteRemovePokemon(Vector2Int at, Pokemon pokemon);
 
     protected abstract Vector2Int CellToIndex(Vector3Int cellPosition);
 
@@ -99,7 +115,7 @@ public abstract class PokemonPlaceableBoard : MonoBehaviour, Touchable
 
     public virtual void Moved(Vector3 to)
     {
-        if (selectedPokemon != null && selectedPokemon.trainer == owner)
+        if (selectedPokemon != null && selectedPokemon.trainer is Player)
         {
             selectedPokemon.transform.position = to;
         }
@@ -153,7 +169,7 @@ public abstract class PokemonPlaceableBoard : MonoBehaviour, Touchable
     {
         if (!isSuccess)
         {
-            pokemon.transform.position = tilemap.GetCellCenterWorld(selectedPosition);
+            SetPokemon(CellToIndex(selectedPosition), pokemon);
         }
 
 

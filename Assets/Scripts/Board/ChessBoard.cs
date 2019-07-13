@@ -28,8 +28,7 @@ public class ChessBoard : PokemonPlaceableBoard
         base.Awake();
 
         linkedBoard = GetComponentInChildren<WaitingBoard>();
-        linkedBoard.owner = owner;
-
+        
         placedPokemons = new Pokemon[8, 8];
     }
 
@@ -60,5 +59,24 @@ public class ChessBoard : PokemonPlaceableBoard
             return false;
 
         return base.PlacePokemon(index, pokemon);
+    }
+
+    protected override bool AddPokemon(Vector2Int index, Pokemon pokemon)
+    {
+        if (pokemonCache.Count >= owner.level)
+        {
+            return false;
+        }
+
+        return base.AddPokemon(index, pokemon);
+    }
+    protected override void CompleteSetPokemon(Vector2Int at, Pokemon pokemon)
+    {
+        if (pokemon != null)
+            owner.placedPokemons[pokemon] = at;
+    }
+    protected override void CompleteRemovePokemon(Vector2Int at, Pokemon pokemon)
+    {
+        owner.placedPokemons.Remove(pokemon);
     }
 }

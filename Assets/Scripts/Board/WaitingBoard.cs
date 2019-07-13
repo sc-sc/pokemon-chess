@@ -49,9 +49,12 @@ public class WaitingBoard : PokemonPlaceableBoard
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    protected override void CompleteSetPokemon(Vector2Int at, Pokemon pokemon)
     {
-        
+        owner.waitingPokemons[at.y] = pokemon;
+    }
+    protected override void CompleteRemovePokemon(Vector2Int at, Pokemon pokemon)
+    {
+        owner.waitingPokemons[at.y] = null;
     }
 }

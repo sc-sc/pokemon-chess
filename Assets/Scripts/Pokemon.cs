@@ -5,6 +5,7 @@ using UnityEngine;
 public class Pokemon : MonoBehaviour
 {
     public Trainer trainer;
+    public int cost;
 
     private SpriteRenderer spriteRenderer;
     void Awake()
