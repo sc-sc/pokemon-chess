@@ -13,12 +13,18 @@ public abstract class PokemonPlaceableBoard : MonoBehaviour, Touchable
     protected Pokemon[,] placedPokemons;
     protected Dictionary<Pokemon, Vector2Int> pokemonCache;
 
-    protected PokemonPlaceableBoard linkedBoard;
+    public PokemonPlaceableBoard linkedBoard;
+
+    private TouchManager touchManager;
+    private SalesDesk salesDesk;
 
     protected virtual void Awake()
     {
         tilemap = GetComponent<Tilemap>();
         pokemonCache = new Dictionary<Pokemon, Vector2Int>();
+
+        touchManager = FindObjectOfType<TouchManager>();
+        salesDesk = FindObjectOfType<SalesDesk>();
     }
 
     public virtual bool PlacePokemon(Vector2Int index, Pokemon pokemon)
@@ -136,8 +142,26 @@ public abstract class PokemonPlaceableBoard : MonoBehaviour, Touchable
         {
             linkedBoard.selectedPokemon = selectedPokemon;
             selectedPokemon = null;
-            FindObjectOfType<TouchManager>().Delegate(this, linkedBoard);
+            touchManager.Delegate(this, linkedBoard);
         }
+
+        if (IsInSalesDesk(to))
+        {
+            salesDesk.previousBoard = this;
+            salesDesk.selectedPokemon = selectedPokemon;
+            touchManager.Delegate(this, salesDesk);
+        }
+    }
+
+    private bool IsInSalesDesk(Vector3 at)
+    {
+        RaycastHit2D hit = Physics2D.Raycast(at, Vector2.zero);
+
+        if (hit.collider != null)
+        {
+            return hit.collider.tag == "SalesDesk";
+        }
+        return false;
     }
 
     protected abstract void ChangePassingSquareColor(Vector3Int passingCellPosition);
@@ -171,7 +195,6 @@ public abstract class PokemonPlaceableBoard : MonoBehaviour, Touchable
         {
             SetPokemon(CellToIndex(selectedPosition), pokemon);
         }
-
 
         tilemap.SetColor(selectedPosition, Color.white);
         selectedPosition = selectedPosition = new Vector3Int(0, 0, -100);

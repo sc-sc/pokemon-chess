@@ -30,6 +30,11 @@ public class ChessBoard : PokemonPlaceableBoard
         linkedBoard = GetComponentInChildren<WaitingBoard>();
         
         placedPokemons = new Pokemon[8, 8];
+
+        Pokemon pokemon = FindObjectOfType<Pokemon>();
+        PlacePokemon(new Vector2Int(2, 2), pokemon);
+
+        pokemon.trainer = FindObjectOfType<Player>();
     }
 
     void Start()
