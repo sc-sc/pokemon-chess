@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Pokemon
   - ChessBoard
+  - BuyButtonLayout
   layers:
   - Default
   - TransparentFX
