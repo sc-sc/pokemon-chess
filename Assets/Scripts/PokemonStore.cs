@@ -20,10 +20,13 @@ public class PokemonStore : MonoBehaviour
 
     private GameManager gameManager;
 
+    private Player player;
+
     void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
         salePokemonButtons = new GameObject[SalePokemonsCount];
+        player = FindObjectOfType<Player>();
     }
     public void Refresh()
     {
@@ -51,6 +54,66 @@ public class PokemonStore : MonoBehaviour
             });
         }
     }
+
+    public void Refresh_Button()
+    {
+        if (player.money >= 2)
+        {
+            player.money -= 2;
+            Refresh();
+        }
+    }
+    public void Stage_end()
+    {
+        int plus_money= player.money;
+        int temp = 0;
+        while(plus_money >= 10)
+        {
+            temp += 1;
+            plus_money -= 10;
+        }
+        player.money += temp;
+        player.money += 5;
+        player.exp_present += 2;
+        if (player.exp_present >= player.exp_expect)
+        {
+            Level_Up();
+        }
+    }
+    public void Exp_Button()
+    {
+        if (player.money >= 4)
+        {
+            player.money -= 4;
+            player.exp_present += 4;
+            if(player.exp_present >= player.exp_expect)
+            {
+                Level_Up();
+            }
+        }
+    }
+    public void Level_Up()
+    {
+        player.exp_present -= player.exp_expect;
+        player.level += 1;
+        if (player.level < 4)
+        {
+            player.exp_expect += 4;
+        }
+        else if (player.level >= 4 && player.level < 6)
+        {
+            player.exp_expect += 6;
+        }
+        else if (player.level >= 6 && player.level < 8)
+        {
+            player.exp_expect += 10;
+        }
+        else
+        {
+            player.exp_expect += 16;
+        }
+    }
+
     private bool TryBuy(GameObject pokemonPrefab, Trainer trainer)
     {
         Pokemon pokemon = pokemonPrefab.GetComponent<Pokemon>();
