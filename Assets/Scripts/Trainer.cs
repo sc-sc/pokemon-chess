@@ -12,6 +12,8 @@ public class Trainer : MonoBehaviour
     public int hp;
     public int currentHp;
     public int money;
+    public int exp_expect;
+    public int exp_present;
 
     public Dictionary<Pokemon, Vector2Int> placedPokemons;
     public Pokemon[] waitingPokemons;
