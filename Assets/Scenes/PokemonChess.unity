@@ -1083,7 +1083,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.49411768, g: 0.6431373, b: 0.6901961, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -4012,7 +4012,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 831187761}
         m_MethodName: 
         m_Mode: 1
         m_Arguments:
@@ -4149,6 +4149,7 @@ MonoBehaviour:
   chessField: {fileID: 1689426152727209284, guid: 52517db18b3a2b642b37d62f040dac8c,
     type: 3}
   pokemonSafari: {fileID: 181882527}
+  lapras: {fileID: 656347380836771673, guid: 23392a932aa8c954a965533ff076ff95, type: 3}
 --- !u!82 &1765999728
 AudioSource:
   m_ObjectHideFlags: 0
