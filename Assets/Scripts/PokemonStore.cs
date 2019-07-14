@@ -79,6 +79,8 @@ public class PokemonStore : MonoBehaviour
         {
             Level_Up();
         }
+
+        Refresh();
     }
     public void Exp_Button()
     {
