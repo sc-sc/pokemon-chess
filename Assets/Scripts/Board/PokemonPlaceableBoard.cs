@@ -199,4 +199,14 @@ public abstract class PokemonPlaceableBoard : MonoBehaviour, Touchable
         tilemap.SetColor(selectedPosition, Color.white);
         selectedPosition = selectedPosition = new Vector3Int(0, 0, -100);
     }
+
+    public void SpecialTouched(Vector3 at)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void SpecialReleased(Vector3 at)
+    {
+        throw new System.NotImplementedException();
+    }
 }

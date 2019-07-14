@@ -9,4 +9,8 @@ public interface Touchable
     void Moved(Vector3 to);
 
     void Released(Vector3 at);
+
+    void SpecialTouched(Vector3 at);
+
+    void SpecialReleased(Vector3 at);
 }

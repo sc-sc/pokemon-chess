@@ -30,21 +30,6 @@ public class ChessBoard : PokemonPlaceableBoard
         linkedBoard = GetComponentInChildren<WaitingBoard>();
         
         placedPokemons = new Pokemon[8, 8];
-
-        Pokemon pokemon = FindObjectOfType<Pokemon>();
-        PlacePokemon(new Vector2Int(2, 2), pokemon);
-
-        pokemon.trainer = FindObjectOfType<Player>();
-    }
-
-    void Start()
-    {
-        Pokemon[] pokemons = FindObjectsOfType<Pokemon>();
-
-        for (int i = 0; i < pokemons.Length; i++)
-        {
-            PlacePokemon(new Vector2Int(i, i), pokemons[i]);
-        }
     }
 
     protected override Vector3Int IndexToCell(Vector2Int index)

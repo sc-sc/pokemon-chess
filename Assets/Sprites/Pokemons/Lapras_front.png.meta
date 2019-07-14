@@ -1,0 +1,1687 @@
+fileFormatVersion: 2
+guid: d9aab384029aea144b358e7d4c157c7e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7648683986821654315
+    second: Lapras_front_0
+  - first:
+      213: 8063630717227931848
+    second: Lapras_front_1
+  - first:
+      213: -2265365134657617355
+    second: Lapras_front_2
+  - first:
+      213: -8275713510645072164
+    second: Lapras_front_3
+  - first:
+      213: -6869627223669495350
+    second: Lapras_front_4
+  - first:
+      213: -2356130815941945237
+    second: Lapras_front_5
+  - first:
+      213: -6424364070170372647
+    second: Lapras_front_6
+  - first:
+      213: 3691363527107648237
+    second: Lapras_front_7
+  - first:
+      213: -1348562965801943738
+    second: Lapras_front_8
+  - first:
+      213: -760052491874985086
+    second: Lapras_front_9
+  - first:
+      213: 5278798975698106375
+    second: Lapras_front_10
+  - first:
+      213: 3980559664041349843
+    second: Lapras_front_11
+  - first:
+      213: 4759753614913830571
+    second: Lapras_front_12
+  - first:
+      213: 7874078589808771026
+    second: Lapras_front_13
+  - first:
+      213: 4722130689818597054
+    second: Lapras_front_14
+  - first:
+      213: -7134981994990749595
+    second: Lapras_front_15
+  - first:
+      213: -2286077945084748894
+    second: Lapras_front_16
+  - first:
+      213: -6761491428139558247
+    second: Lapras_front_17
+  - first:
+      213: 2864743759992328268
+    second: Lapras_front_18
+  - first:
+      213: -3088697109757229096
+    second: Lapras_front_19
+  - first:
+      213: 2812174219696427119
+    second: Lapras_front_20
+  - first:
+      213: -7922491013556685667
+    second: Lapras_front_21
+  - first:
+      213: 6286970393722656259
+    second: Lapras_front_22
+  - first:
+      213: 1618750771144874329
+    second: Lapras_front_23
+  - first:
+      213: -750361234033481010
+    second: Lapras_front_24
+  - first:
+      213: 563495602473402193
+    second: Lapras_front_25
+  - first:
+      213: 2894361344084900064
+    second: Lapras_front_26
+  - first:
+      213: -3651532220728317746
+    second: Lapras_front_27
+  - first:
+      213: -8900580674458921705
+    second: Lapras_front_28
+  - first:
+      213: -383670936954478811
+    second: Lapras_front_29
+  - first:
+      213: -4350057368086393179
+    second: Lapras_front_30
+  - first:
+      213: 5052404892011131032
+    second: Lapras_front_31
+  - first:
+      213: 828095320327420709
+    second: Lapras_front_32
+  - first:
+      213: 6302011644376517815
+    second: Lapras_front_33
+  - first:
+      213: -7118831160753912699
+    second: Lapras_front_34
+  - first:
+      213: 5318363255600380418
+    second: Lapras_front_35
+  - first:
+      213: -8000578222474835608
+    second: Lapras_front_36
+  - first:
+      213: 898537984273589794
+    second: Lapras_front_37
+  - first:
+      213: -5333117713240279013
+    second: Lapras_front_38
+  - first:
+      213: -2677497349091262767
+    second: Lapras_front_39
+  - first:
+      213: 7119397374636494007
+    second: Lapras_front_40
+  - first:
+      213: -1545907712335255176
+    second: Lapras_front_41
+  - first:
+      213: 3367579609411202404
+    second: Lapras_front_42
+  - first:
+      213: -1511732197873510334
+    second: Lapras_front_43
+  - first:
+      213: -261296704747163456
+    second: Lapras_front_44
+  - first:
+      213: 3957224132634224303
+    second: Lapras_front_45
+  - first:
+      213: 6926944431193445075
+    second: Lapras_front_46
+  - first:
+      213: 1563955271174541466
+    second: Lapras_front_47
+  - first:
+      213: -2015840561625658019
+    second: Lapras_front_48
+  - first:
+      213: 1168122872675420901
+    second: Lapras_front_49
+  - first:
+      213: -3518320021312015595
+    second: Lapras_front_50
+  - first:
+      213: 7580617313193182332
+    second: Lapras_front_51
+  - first:
+      213: 6543386488846695648
+    second: Lapras_front_52
+  - first:
+      213: -3503396528407449942
+    second: Lapras_front_53
+  - first:
+      213: -999252805002975074
+    second: Lapras_front_54
+  - first:
+      213: 3258946900996100590
+    second: Lapras_front_55
+  - first:
+      213: -6189357118215096349
+    second: Lapras_front_56
+  - first:
+      213: 6986601146537268012
+    second: Lapras_front_57
+  - first:
+      213: -2848977376894280962
+    second: Lapras_front_58
+  - first:
+      213: -8463120926438450392
+    second: Lapras_front_59
+  - first:
+      213: 7609872265727448834
+    second: Lapras_front_60
+  - first:
+      213: 4900596585867621207
+    second: Lapras_front_61
+  - first:
+      213: -3269111715825047722
+    second: Lapras_front_62
+  - first:
+      213: -8257078698060153396
+    second: Lapras_front_63
+  - first:
+      213: 3829889113595927067
+    second: Lapras_front_64
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Lapras_front_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 852
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1934386abc52f2499fb0fd4edb06a34
+      internalID: 7648683986821654315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_1
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 852
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e1469bf21a1b104b9a50e0b99517b85
+      internalID: 8063630717227931848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_2
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 852
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 588325e644bd35e4c9778900a100979e
+      internalID: -2265365134657617355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_3
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 852
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01a0523cfa236b842b72ef3f9408fd51
+      internalID: -8275713510645072164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_4
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 852
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88585b3c1e725254a9bdea356582da4b
+      internalID: -6869627223669495350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 781
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85820951c9bfcdf4cbdbfc0af86759c3
+      internalID: -2356130815941945237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_6
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 781
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00ebd5e74e8546444afe16f0053bbf81
+      internalID: -6424364070170372647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_7
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 781
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55e4701118fe8524abe499d5605d3dda
+      internalID: 3691363527107648237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_8
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 781
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e628b31af6e52d44b3653bf4f755184
+      internalID: -1348562965801943738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_9
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 781
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9f483d6813a17b4483e98518570bef1
+      internalID: -760052491874985086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 710
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6fb6a7b73c2cec4a80e383850f3a546
+      internalID: 5278798975698106375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_11
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 710
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 240d9e11cb497b54c8dc5f13137ab437
+      internalID: 3980559664041349843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_12
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 710
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11e6e315a3c91e04d8809948a31b4a95
+      internalID: 4759753614913830571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_13
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 710
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c813d0f965826f4bb06b50b2a13ce92
+      internalID: 7874078589808771026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_14
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 710
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71d781f017a815e4aa1ea4b20ba9ff7d
+      internalID: 4722130689818597054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 639
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fc182630a962014b96f4f4ca01540fe
+      internalID: -7134981994990749595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_16
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 639
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68c15d3135f78ae4f8dcc00f9754f7b8
+      internalID: -2286077945084748894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_17
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 639
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a58ec5e366690104da30a1a0962f874f
+      internalID: -6761491428139558247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_18
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 639
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b2c5eba5ce5350488945492e61b8042
+      internalID: 2864743759992328268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_19
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 639
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2d97c59282b1cc4e8471202b238c698
+      internalID: -3088697109757229096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 568
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8e57ec80f96f4e4d95480c60304eb42
+      internalID: 2812174219696427119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_21
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 568
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30dc57d3f4c505e45bbe6ea9fccbe5c9
+      internalID: -7922491013556685667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_22
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 568
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c49088af721bbfc4083b160709d4ff7d
+      internalID: 6286970393722656259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_23
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 568
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50c9ce716ed11d447ab3fa7000f428d0
+      internalID: 1618750771144874329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_24
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 568
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a37df3dd50a6904ab7aec44f97d3e0a
+      internalID: -750361234033481010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 497
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49c18ca4603365b46a0135ba7d692dcc
+      internalID: 563495602473402193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_26
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 497
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d204d1044b16df4ea5b561a4e237e99
+      internalID: 2894361344084900064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_27
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 497
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce0ab3998808cfa4db1db7386285cb9d
+      internalID: -3651532220728317746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_28
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 497
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20d97886c9ac8d14c827adb9d3a8a8f0
+      internalID: -8900580674458921705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_29
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 497
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51ebd1f15386c914d89d3d3e5a10bbb5
+      internalID: -383670936954478811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 426
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c455dbf601f38b48acc9a9b6304ee3f
+      internalID: -4350057368086393179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_31
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 426
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6789da3fdbb2ba48a3417f94c81248b
+      internalID: 5052404892011131032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_32
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 426
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0391077ff2ed4c4e88c3271187e94e7
+      internalID: 828095320327420709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_33
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 426
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2e3ddd07bae54440898b0931451bd02
+      internalID: 6302011644376517815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_34
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 426
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72b6082537c49d5458cace6fb5e648ec
+      internalID: -7118831160753912699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 355
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a4e4e18c919e0d4bbce3503547d5149
+      internalID: 5318363255600380418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_36
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 355
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9adc5e9750dc0c04aae503cd5b33f10c
+      internalID: -8000578222474835608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_37
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 355
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 337de7f6c43821147a98b139b5402148
+      internalID: 898537984273589794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_38
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 355
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cd921837bfdb4341ba264f8cbb795c9
+      internalID: -5333117713240279013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_39
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 355
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03939ea658f571c4cb30033fc80cbcd2
+      internalID: -2677497349091262767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 284
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d19b0ba08f4e2704ea86cf459950ba33
+      internalID: 7119397374636494007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_41
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 284
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4031fc61e05ac234b979f769894cf7fa
+      internalID: -1545907712335255176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_42
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 284
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 867cc7a791002e944bfb931fdf11b52c
+      internalID: 3367579609411202404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_43
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 284
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1397d29fea5703c42a7408f02084e3b0
+      internalID: -1511732197873510334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_44
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 284
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a842c11731565c4e90288c54c86a993
+      internalID: -261296704747163456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 213
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3222707a76cb7e448b623b98b64595e
+      internalID: 3957224132634224303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_46
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 213
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5278177e7bfecf4098fc0d14587c6bb
+      internalID: 6926944431193445075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_47
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 213
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 958a21452a7149242b6ad5c9b7943ccf
+      internalID: 1563955271174541466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_48
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 213
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a23a8450ec553da4fa58b6cd90a07174
+      internalID: -2015840561625658019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_49
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 213
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6550c82e13b53aa49b053b52130d2e95
+      internalID: 1168122872675420901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 142
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b4ba320fa1ed7542830ba89a4a8670b
+      internalID: -3518320021312015595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_51
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 142
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62d94029464803946bd1f96107d94bdd
+      internalID: 7580617313193182332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_52
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 142
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b87f747a1546c94bad15396e981b46e
+      internalID: 6543386488846695648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_53
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 142
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8abce0d316afcc44becc1c3364ef3be
+      internalID: -3503396528407449942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_54
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 142
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a3ad8ab2c1a462419f993505e117568
+      internalID: -999252805002975074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_55
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 71
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d46641eaf56d1d147b80f216f0b2c625
+      internalID: 3258946900996100590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_56
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 71
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ae8344f20f603c49b3bd84b0a2d512a
+      internalID: -6189357118215096349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_57
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 71
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f780848760b38544292a55528d9c7529
+      internalID: 6986601146537268012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_58
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 71
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86302c72866e526498934e451f3687ec
+      internalID: -2848977376894280962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_59
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 71
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6531eb9d89b21e4587fa90009e2e66e
+      internalID: -8463120926438450392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4faa95608344e2f42ac1b7b296f8d574
+      internalID: 7609872265727448834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_61
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 0
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8cef378debca414bb7c2f790a6376f3
+      internalID: 4900596585867621207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_62
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 0
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d9d20a9b715a9b4583a06b2d1057247
+      internalID: -3269111715825047722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_63
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 0
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b63055f6d552fc64494b1c4322519ca0
+      internalID: -8257078698060153396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lapras_front_64
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 0
+        width: 68
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9ac6a019e9cc41418f516bbe64632f7
+      internalID: 3829889113595927067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

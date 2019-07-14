@@ -8,7 +8,8 @@ public class TouchManager : MonoBehaviour
 
     public int maxTouchCount;
     private Touchable[] touchedObjects;
-    private bool isMouseButtonDowned = false;
+    private Touchable specialTouchObject;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,22 +21,34 @@ public class TouchManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            isMouseButtonDowned = true;
-            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector3.forward);
             touchDown(hit, 0);
         }
         else if (Input.GetMouseButtonUp(0))
         {
-            isMouseButtonDowned = false;
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
             touchUp(hit.point, 0);
         }
-
-        if (isMouseButtonDowned)
+        else if (Input.GetMouseButton(0))
         {
             touchMove(Camera.main.ScreenToWorldPoint(Input.mousePosition), 0);
         }
 
+        if (Input.GetMouseButtonDown(1))
+        {
+            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+            specialTouchObject = hit.collider?.gameObject.GetComponent<Touchable>();
+
+            specialTouchObject?.SpecialTouched(hit.point);
+        } else if (Input.GetMouseButtonUp(1))
+        {
+
+            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+            specialTouchObject?.SpecialReleased(hit.point);
+            specialTouchObject = null;
+        }
+        
+        
         for(int index = 0; index < Input.touchCount; index++)
         {
             Touch touch = Input.GetTouch(index);

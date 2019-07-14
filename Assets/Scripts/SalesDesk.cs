@@ -15,6 +15,8 @@ public class SalesDesk : MonoBehaviour, Touchable
 
     public void Moved(Vector3 to)
     {
+        if (selectedPokemon == null) return;
+
         selectedPokemon.transform.position = to;
 
         if (previousBoard.HasSquare(to))
@@ -26,6 +28,8 @@ public class SalesDesk : MonoBehaviour, Touchable
 
     public void Released(Vector3 at)
     {
+        if (selectedPokemon == null) return;
+
         int cost = selectedPokemon.cost;
         Debug.Log("앙 판매");
         // 판매
@@ -40,5 +44,15 @@ public class SalesDesk : MonoBehaviour, Touchable
     public void Touched(Vector3 at)
     {
 
+    }
+
+    public void SpecialTouched(Vector3 at)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void SpecialReleased(Vector3 at)
+    {
+        throw new System.NotImplementedException();
     }
 }
