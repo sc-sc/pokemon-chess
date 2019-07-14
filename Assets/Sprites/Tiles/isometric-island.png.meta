@@ -38,6 +38,33 @@ TextureImporter:
   - first:
       213: -6195067132956962758
     second: isometric-island_11
+  - first:
+      213: -4465861414778332512
+    second: isometric-island_12
+  - first:
+      213: 5583231716249010769
+    second: isometric-island_13
+  - first:
+      213: -4889674842301171307
+    second: isometric-island_14
+  - first:
+      213: 2354933607989624855
+    second: isometric-island_15
+  - first:
+      213: 529904610889898195
+    second: isometric-island_16
+  - first:
+      213: 1834094256509993719
+    second: isometric-island_17
+  - first:
+      213: -6187604899475449070
+    second: isometric-island_18
+  - first:
+      213: 6956349653746872577
+    second: isometric-island_19
+  - first:
+      213: -6833650459337140002
+    second: isometric-island_20
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -160,7 +187,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 306c74884a5b1154baef992de880b8b5
+      spriteID: 46ab2853f10c2fb4b8465dc7670e1367
       internalID: 4045239796778001994
       vertices: []
       indices: 
@@ -181,7 +208,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d64743417b694e54eb7c82c94fab15b2
+      spriteID: f2993d38ae750c845ba58a82a4919bbb
       internalID: -5103877675982792119
       vertices: []
       indices: 
@@ -202,7 +229,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b33a6b0f0acf7b4e830b2a3c1ffe437
+      spriteID: 87e126ee596b1a547813511e3d76c21f
       internalID: 2931677226665525836
       vertices: []
       indices: 
@@ -223,7 +250,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b172b0c03c7737488cfde5948e7e8e4
+      spriteID: 54560498ab4cf5d45aa2226107ec1e9c
       internalID: -3528805939692600153
       vertices: []
       indices: 
@@ -244,7 +271,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d74fdd94b25ea940a6a7c4a56fa1eea
+      spriteID: 5ae4d5bdbea65e4438606cd8001c4aaa
       internalID: -4840490660021228046
       vertices: []
       indices: 
@@ -265,7 +292,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb1a96c608f64a648ada202bb5ce8642
+      spriteID: b0f8ca340020e74428dfedf40a3e35ca
       internalID: -2903293773523178186
       vertices: []
       indices: 
@@ -286,7 +313,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ed8cf96417184046b8b5605129048b3
+      spriteID: b8cd940f607020d47b46b64ad13deacc
       internalID: -3680645279592992622
       vertices: []
       indices: 
@@ -307,7 +334,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb9e17c84dfe24648b142ebe016f9d4f
+      spriteID: 11078c2edc710be4f832c971fa3486bf
       internalID: 5504298773989067830
       vertices: []
       indices: 
@@ -328,7 +355,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 538da5ebabe4a4f43b0684a4fa74b15f
+      spriteID: 82bdd549511f463408516195a17c67bb
       internalID: 8184041020518163525
       vertices: []
       indices: 
@@ -349,7 +376,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ec42f3c6fd50ff4c839de58e3a00f4f
+      spriteID: 818873be0fcdb8f4ab85f2fc18e9ceae
       internalID: 3364745534008759639
       vertices: []
       indices: 
@@ -370,7 +397,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d1c0e5e10043334a8f98b930618cb85
+      spriteID: a13bb262e5f3d98419a73110bd5dd058
       internalID: -1173693786299658978
       vertices: []
       indices: 
@@ -391,8 +418,176 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 768f538e8fc6abb4eb60f65e783aa2a0
+      spriteID: fd384ad5439f8d34a9f27b2cd19bd693
       internalID: -6195067132956962758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: isometric-island_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cc767f58a0468e4291503c9b813021c
+      internalID: -4465861414778332512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: isometric-island_13
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a5dc24192d93344dad1e40c0cd1d2db
+      internalID: 5583231716249010769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: isometric-island_14
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e17e0e44d9d84246890c9ed911db82c
+      internalID: -4889674842301171307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: isometric-island_15
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91eaadc55e7e7c743bfbc2d6076d3410
+      internalID: 2354933607989624855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: isometric-island_16
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 32
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d593b8171bde8ed4ba031100ac8eaa52
+      internalID: 529904610889898195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: isometric-island_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8371e59306d41ad4bb17a9d6d436be0b
+      internalID: 1834094256509993719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: isometric-island_18
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c360e9f5043b945479a26d91e881fa63
+      internalID: -6187604899475449070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: isometric-island_19
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46ce53d0a36dcd84ba0e04a793cc3e4f
+      internalID: 6956349653746872577
       vertices: []
       indices: 
       edges: []

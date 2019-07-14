@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BuyButton : MonoBehaviour
+public class PokemonInformation : MonoBehaviour
 {
     public Sprite[] backgroundSprites;
 
@@ -15,12 +15,11 @@ public class BuyButton : MonoBehaviour
 
     [SerializeField]
     private Image image;
-    public void SetPokemonInformation(GameObject pokemonPrefab)
+    public void SetPokemonInformation(Pokemon pokemon)
     {
-        Pokemon pokemon = pokemonPrefab.GetComponent<Pokemon>();
         background.sprite = backgroundSprites[pokemon.cost - 1];
         costText.text = pokemon.cost.ToString();
-        image.sprite = pokemonPrefab.GetComponentInChildren<SpriteRenderer>().sprite;
+        image.sprite = pokemon.GetComponentInChildren<SpriteRenderer>().sprite;
         image.SetNativeSize();
     }
 }

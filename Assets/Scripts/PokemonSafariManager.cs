@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PokemonStore : MonoBehaviour
+public class PokemonSafariManager : MonoBehaviour
 {
+    public Transform[] spawnPoints;
+
     [System.Serializable]
     public struct SalePokemonPrefabs
     {
@@ -12,27 +14,28 @@ public class PokemonStore : MonoBehaviour
     }
 
     public SalePokemonPrefabs[] salePokemonPrefabs;
-    public GameObject buyButtonPrefab;
-    public GameObject buyButtonLayout;
-    private GameObject[] salePokemonButtons;
-
-    public const int SalePokemonsCount = 6;
+    public GameObject pokemonInSafariPrefab;
+    public PokemonInformation pokemonInformation;
+    
+    public const int SalePokemonsCount = 5;
 
     private GameManager gameManager;
 
     private Player player;
 
+    private GameObject[] pokemonsInSafari;
+
     void Awake()
     {
+        pokemonsInSafari = new GameObject[SalePokemonsCount];
         gameManager = FindObjectOfType<GameManager>();
-        salePokemonButtons = new GameObject[SalePokemonsCount];
         player = FindObjectOfType<Player>();
     }
     public void Refresh()
     {
-        foreach (GameObject salePokemonButton in salePokemonButtons)
+        foreach (GameObject pokemonInSafari in pokemonsInSafari)
         {
-            Destroy(salePokemonButton);
+            Destroy(pokemonInSafari);
         }
 
         for (int i = 0; i < SalePokemonsCount; i++)
@@ -40,18 +43,22 @@ public class PokemonStore : MonoBehaviour
             int cost = Random.Range(2, 4);
             int index = 0;
 
-            GameObject salePokemonButton = Instantiate(buyButtonPrefab, buyButtonLayout.transform);
+            GameObject pokemonInSafari = Instantiate(pokemonInSafariPrefab, transform.parent);
             GameObject salePokemonPrefab = salePokemonPrefabs[cost - 1].prefabs[index];
-            salePokemonButton.GetComponent<BuyButton>().SetPokemonInformation(salePokemonPrefab);
-            salePokemonButtons[i] = salePokemonButton;
 
-            salePokemonButton.GetComponent<Button>().onClick.AddListener(() =>
+            Instantiate(salePokemonPrefab, pokemonInSafari.transform);
+            PokemonInSafari pokemonInSafariScirpt = pokemonInSafari.GetComponent<PokemonInSafari>();
+            pokemonInSafariScirpt.Init(pokemonInformation, () =>
             {
-                if (TryBuy(salePokemonPrefab, FindObjectOfType<Player>()))
+                if (TryBuy(salePokemonPrefab, player))
                 {
-                    Destroy(salePokemonButton);
+                    Destroy(pokemonInSafari);
                 }
             });
+
+            pokemonsInSafari[i] = pokemonInSafari;
+            Vector3 spawnPoint = spawnPoints[i].position;
+            pokemonInSafari.transform.position = new Vector3(spawnPoint.x, spawnPoint.y, -20f);
         }
     }
 
@@ -114,7 +121,7 @@ public class PokemonStore : MonoBehaviour
         }
     }
 
-    private bool TryBuy(GameObject pokemonPrefab, Trainer trainer)
+    public bool TryBuy(GameObject pokemonPrefab, Trainer trainer)
     {
         Pokemon pokemon = pokemonPrefab.GetComponent<Pokemon>();
         if (pokemon.cost <= trainer.money)
