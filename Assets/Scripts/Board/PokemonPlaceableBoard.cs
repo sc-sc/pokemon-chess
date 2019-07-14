@@ -13,12 +13,18 @@ public abstract class PokemonPlaceableBoard : MonoBehaviour, Touchable
     protected Pokemon[,] placedPokemons;
     protected Dictionary<Pokemon, Vector2Int> pokemonCache;
 
-    protected PokemonPlaceableBoard linkedBoard;
+    public PokemonPlaceableBoard linkedBoard;
+
+    private TouchManager touchManager;
+    private SalesDesk salesDesk;
 
     protected virtual void Awake()
     {
         tilemap = GetComponent<Tilemap>();
         pokemonCache = new Dictionary<Pokemon, Vector2Int>();
+
+        touchManager = FindObjectOfType<TouchManager>();
+        salesDesk = FindObjectOfType<SalesDesk>();
     }
 
     public virtual bool PlacePokemon(Vector2Int index, Pokemon pokemon)
@@ -43,12 +49,23 @@ public abstract class PokemonPlaceableBoard : MonoBehaviour, Touchable
                     linkedBoard.SetPokemon(linkedBoard.pokemonCache[pokemon], alreadyExistPokemon);
                 }
 
-                SetPokemon(index, pokemon);
-                linkedBoard.RemovePokemon(pokemon);
+                RemovePokemon(pokemon);
+                if (!AddPokemon(index, pokemon))
+                {
+                    return false;
+                }
             }
         }
 
         linkedBoard.PlaceEnd(pokemon, true);
+        return true;
+    }
+
+    protected virtual bool AddPokemon(Vector2Int index, Pokemon pokemon)
+    {
+        SetPokemon(index, pokemon);
+        linkedBoard.RemovePokemon(pokemon);
+
         return true;
     }
     public void SetPokemon(Vector2Int index, Pokemon pokemon)
@@ -57,10 +74,13 @@ public abstract class PokemonPlaceableBoard : MonoBehaviour, Touchable
         if (pokemon != null)
         {
             pokemonCache[pokemon] = index;
-            owner.placedPokemons[pokemon] = index;
             pokemon.transform.position = tilemap.GetCellCenterWorld(IndexToCell(index));
         }
+
+        CompleteSetPokemon(index, pokemon);
     }
+
+    protected abstract void CompleteSetPokemon(Vector2Int at, Pokemon pokemon);
 
     public void RemovePokemon(Pokemon pokemon)
     {
@@ -71,11 +91,13 @@ public abstract class PokemonPlaceableBoard : MonoBehaviour, Touchable
             if (placedPokemons[index.x, index.y] == pokemon)
             {
                 placedPokemons[index.x, index.y] = null;
+                CompleteRemovePokemon(index, pokemon);
             }
             pokemonCache.Remove(pokemon);
-            owner.placedPokemons.Remove(pokemon);
         }
     }
+
+    protected abstract void CompleteRemovePokemon(Vector2Int at, Pokemon pokemon);
 
     protected abstract Vector2Int CellToIndex(Vector3Int cellPosition);
 
@@ -99,7 +121,7 @@ public abstract class PokemonPlaceableBoard : MonoBehaviour, Touchable
 
     public virtual void Moved(Vector3 to)
     {
-        if (selectedPokemon != null && selectedPokemon.trainer == owner)
+        if (selectedPokemon != null && selectedPokemon.trainer is Player)
         {
             selectedPokemon.transform.position = to;
         }
@@ -120,8 +142,26 @@ public abstract class PokemonPlaceableBoard : MonoBehaviour, Touchable
         {
             linkedBoard.selectedPokemon = selectedPokemon;
             selectedPokemon = null;
-            FindObjectOfType<TouchManager>().Delegate(this, linkedBoard);
+            touchManager.Delegate(this, linkedBoard);
         }
+
+        if (IsInSalesDesk(to))
+        {
+            salesDesk.previousBoard = this;
+            salesDesk.selectedPokemon = selectedPokemon;
+            touchManager.Delegate(this, salesDesk);
+        }
+    }
+
+    private bool IsInSalesDesk(Vector3 at)
+    {
+        RaycastHit2D hit = Physics2D.Raycast(at, Vector2.zero);
+
+        if (hit.collider != null)
+        {
+            return hit.collider.tag == "SalesDesk";
+        }
+        return false;
     }
 
     protected abstract void ChangePassingSquareColor(Vector3Int passingCellPosition);
@@ -153,11 +193,20 @@ public abstract class PokemonPlaceableBoard : MonoBehaviour, Touchable
     {
         if (!isSuccess)
         {
-            pokemon.transform.position = tilemap.GetCellCenterWorld(selectedPosition);
+            SetPokemon(CellToIndex(selectedPosition), pokemon);
         }
-
 
         tilemap.SetColor(selectedPosition, Color.white);
         selectedPosition = selectedPosition = new Vector3Int(0, 0, -100);
+    }
+
+    public void SpecialTouched(Vector3 at)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void SpecialReleased(Vector3 at)
+    {
+        throw new System.NotImplementedException();
     }
 }

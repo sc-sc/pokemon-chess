@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Pokemon
   - ChessBoard
+  - BuyButtonLayout
+  - SalesDesk
   layers:
   - Default
   - TransparentFX
@@ -15,8 +17,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - SalesDesk
+  - PokemonInSafari
   - 
   - 
   - 
@@ -49,6 +51,12 @@ TagManager:
   - name: Ground
     uniqueID: 2720222625
     locked: 0
+  - name: BackShadow
+    uniqueID: 3296363925
+    locked: 0
   - name: Pokemon
     uniqueID: 1571698295
+    locked: 0
+  - name: ForeShadow
+    uniqueID: 4020080547
     locked: 0
