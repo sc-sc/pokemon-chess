@@ -6,7 +6,7 @@ public class Pokemon : MonoBehaviour
 {
     public Trainer trainer;
     public int cost;
-
+    public GameObject evolution;
     private SpriteRenderer spriteRenderer;
     void Awake()
     {

@@ -135,13 +135,67 @@ public class PokemonSafariManager : MonoBehaviour
                     trainer.money -= pokemon.cost;
                     pokemon = Instantiate(pokemonPrefab).GetComponent<Pokemon>();
                     pokemon.trainer = trainer;
-
                     gameManager.waitingBoards[trainer].SetPokemon(new Vector2Int(0, i), pokemon);
+                    int count = 0;
+                    foreach(Pokemon placedpokemon in trainer.placedPokemons.Keys)
+                    {
+                        if(placedpokemon.name == pokemon.name)
+                        {
+                            count += 1;
+                        }
+                    }
+                    foreach (Pokemon waitingpokemon in trainer.waitingPokemons)
+                    {
+                        if(waitingpokemon == null)
+                        {
+                            continue;
+                        }
+                        if (waitingpokemon.name == pokemon.name)
+                        {
+                            count += 1;
+                        }
+                    }
+                    //Debug.Log(count);
+                    if (count == 3)
+                    {
+                        List<Pokemon> placedPokemonList = new List<Pokemon>(trainer.placedPokemons.Keys);
+                        foreach (Pokemon placedPokemons2 in placedPokemonList)
+                        {
+                            Debug.Log("테스트1");
+                            if (placedPokemons2.name == pokemon.name)
+                            {
+                                gameManager.chessBoards[trainer].RemovePokemon(placedPokemons2);
+                                Destroy(placedPokemons2.gameObject);
+                            }
+                        }
+                        foreach (Pokemon waitingpokemon2 in trainer.waitingPokemons)
+                        {                        
+                            if (waitingpokemon2 == null)
+                            {                              
+                                continue;
+                            }
+                            if (waitingpokemon2.name == pokemon.name)
+                            {                              
+                                gameManager.waitingBoards[trainer].RemovePokemon(waitingpokemon2);
+                                Destroy(waitingpokemon2.gameObject);
+                            }
+                        }
+                        for (int j = 0; j < Trainer.CanWaitPokemonsNumber; j++)
+                        {
+                            if (trainer.waitingPokemons[j] == null)
+                            {
+                                Pokemon evolution = pokemonPrefab.GetComponent<Pokemon>();
+                                evolution = Instantiate(pokemon.evolution).GetComponent<Pokemon>();
+                                evolution.trainer = trainer;
+                                gameManager.waitingBoards[trainer].SetPokemon(new Vector2Int(0, j), evolution);
+                                return true;
+                            }
+                        }
+                    }
                     return true;
                 }
             }
         }
-
         return false;
     }
 }
