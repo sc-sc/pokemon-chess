@@ -209,4 +209,9 @@ public abstract class PokemonPlaceableBoard : MonoBehaviour, Touchable
     {
         throw new System.NotImplementedException();
     }
+
+    public Vector2Int GetIndex(Pokemon pokemon)
+    {
+        return pokemonCache[pokemon];
+    }
 }

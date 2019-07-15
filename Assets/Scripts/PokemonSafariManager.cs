@@ -132,70 +132,84 @@ public class PokemonSafariManager : MonoBehaviour
             {
                 if (trainer.waitingPokemons[i] == null)
                 {
-                    trainer.money -= pokemon.cost;
-                    pokemon = Instantiate(pokemonPrefab).GetComponent<Pokemon>();
-                    pokemon.trainer = trainer;
-                    gameManager.waitingBoards[trainer].SetPokemon(new Vector2Int(0, i), pokemon);
-                    int count = 0;
-                    foreach(Pokemon placedpokemon in trainer.placedPokemons.Keys)
-                    {
-                        if(placedpokemon.name == pokemon.name)
-                        {
-                            count += 1;
-                        }
-                    }
-                    foreach (Pokemon waitingpokemon in trainer.waitingPokemons)
-                    {
-                        if(waitingpokemon == null)
-                        {
-                            continue;
-                        }
-                        if (waitingpokemon.name == pokemon.name)
-                        {
-                            count += 1;
-                        }
-                    }
-                    //Debug.Log(count);
-                    if (count == 3)
-                    {
-                        List<Pokemon> placedPokemonList = new List<Pokemon>(trainer.placedPokemons.Keys);
-                        foreach (Pokemon placedPokemons2 in placedPokemonList)
-                        {
-                            Debug.Log("테스트1");
-                            if (placedPokemons2.name == pokemon.name)
-                            {
-                                gameManager.chessBoards[trainer].RemovePokemon(placedPokemons2);
-                                Destroy(placedPokemons2.gameObject);
-                            }
-                        }
-                        foreach (Pokemon waitingpokemon2 in trainer.waitingPokemons)
-                        {                        
-                            if (waitingpokemon2 == null)
-                            {                              
-                                continue;
-                            }
-                            if (waitingpokemon2.name == pokemon.name)
-                            {                              
-                                gameManager.waitingBoards[trainer].RemovePokemon(waitingpokemon2);
-                                Destroy(waitingpokemon2.gameObject);
-                            }
-                        }
-                        for (int j = 0; j < Trainer.CanWaitPokemonsNumber; j++)
-                        {
-                            if (trainer.waitingPokemons[j] == null)
-                            {
-                                Pokemon evolution = pokemonPrefab.GetComponent<Pokemon>();
-                                evolution = Instantiate(pokemon.evolution).GetComponent<Pokemon>();
-                                evolution.trainer = trainer;
-                                gameManager.waitingBoards[trainer].SetPokemon(new Vector2Int(0, j), evolution);
-                                return true;
-                            }
-                        }
-                    }
+                    BuyPokemon(pokemon, trainer, i);
                     return true;
                 }
             }
         }
         return false;
+    }
+
+    private void BuyPokemon(Pokemon pokemon, Trainer trainer, int waitingBoardIndex)
+    {
+        trainer.money -= pokemon.cost;
+        pokemon = Instantiate(pokemon.gameObject).GetComponent<Pokemon>();
+        pokemon.trainer = trainer;
+        gameManager.waitingBoards[trainer].SetPokemon(new Vector2Int(0, waitingBoardIndex), pokemon);
+
+        StartEvolutionIfPokemonCan(trainer, pokemon);
+    }
+
+    public void StartEvolutionIfPokemonCan(Trainer trainer, Pokemon pokemon)
+    {
+        int samePokemonCount = 0;
+        List<Pokemon> placedSamePokemonList = new List<Pokemon>();
+        foreach (Pokemon placedPokemon in trainer.placedPokemons.Keys)
+        {
+            if (placedPokemon.name == pokemon.name)
+            {
+                samePokemonCount += 1;
+                placedSamePokemonList.Add(placedPokemon);
+            }
+        }
+
+        List<int> waitingSamePokemonsIndex = new List<int>();
+        for (int i = 0; i < Trainer.CanWaitPokemonsNumber; i++)
+        {
+            Pokemon waitingPokemon = trainer.waitingPokemons[i];
+            if (waitingPokemon != null && waitingPokemon.name == pokemon.name)
+            {
+                samePokemonCount += 1;
+                waitingSamePokemonsIndex.Add(i);
+            }
+        }
+
+        if (samePokemonCount == 3)
+        {
+            Dictionary<PokemonPlaceableBoard, Vector2Int> placeEvolvedPokemonTo = new Dictionary<PokemonPlaceableBoard, Vector2Int>();
+
+            ChessBoard chessBoard = gameManager.chessBoards[trainer];
+            WaitingBoard waitingBoard = gameManager.waitingBoards[trainer];
+
+            foreach (Pokemon placedPokemon in placedSamePokemonList)
+            {
+                if (placeEvolvedPokemonTo.Count == 0)
+                {
+                    placeEvolvedPokemonTo[chessBoard] = chessBoard.GetIndex(placedPokemon);
+                }
+                chessBoard.RemovePokemon(placedPokemon);
+                Destroy(placedPokemon.gameObject);
+            }
+
+            foreach (int waitingPokemonIndex in waitingSamePokemonsIndex)
+            {
+                Pokemon waitingPokemon = trainer.waitingPokemons[waitingPokemonIndex];
+                if (placeEvolvedPokemonTo.Count == 0)
+                {
+                    placeEvolvedPokemonTo[waitingBoard] = waitingBoard.GetIndex(waitingPokemon);
+                }
+
+                waitingBoard.RemovePokemon(waitingPokemon);
+                Destroy(waitingPokemon.gameObject);
+            }
+            Pokemon evolution = Instantiate(pokemon.evolution).GetComponent<Pokemon>();
+            evolution.trainer = trainer;
+            foreach (KeyValuePair<PokemonPlaceableBoard, Vector2Int> placePair in placeEvolvedPokemonTo)
+            {
+                placePair.Key.SetPokemon(placePair.Value, evolution);
+            }
+
+            StartEvolutionIfPokemonCan(trainer, evolution);
+        }
     }
 }
