@@ -73,11 +73,11 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 1828791827347320747, guid: 5b5d51964becf214b82115a2228f9a78,
     type: 3}
-  m_Color: {r: 0, g: 0.15145113, b: 0.9716981, a: 1}
+  m_Color: {r: 0.9622642, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.1875, y: 1.4375}
+  m_Size: {x: 2.3475037, y: 2.3125}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 7236754985802801845}
   - component: {fileID: 7236754985802801846}
   m_Layer: 0
-  m_Name: "\uC7A0\uB9CC\uBCF42"
+  m_Name: "\uC7A0\uB9CC\uBCF43"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -147,9 +147,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trainer: {fileID: 0}
-  cost: 12
+  cost: 36
   HP_full: 0
   HP_current: 0
   Attack: 0
-  evolution: {fileID: 7236754985802801847, guid: 36ccac70176c44747affb57198b86d15,
-    type: 3}
+  evolution: {fileID: 0}

@@ -201,6 +201,9 @@ public class PokemonSafariManager : MonoBehaviour
                 return;
             }
             Pokemon evolution = Instantiate(pokemon.evolution).GetComponent<Pokemon>();
+            evolution.trainer = trainer;
+            evolution.cost = pokemon.cost;
+            evolution.evolutionPhase = pokemon.evolutionPhase + 1;
             foreach (Pokemon placedPokemon in placedSamePokemonList)
             {
                 if (placeEvolvedPokemonTo.Count == 0)
@@ -222,7 +225,6 @@ public class PokemonSafariManager : MonoBehaviour
                 waitingBoard.RemovePokemon(waitingPokemon);
                 Destroy(waitingPokemon.gameObject);
             }
-            evolution.trainer = trainer;
             foreach (KeyValuePair<PokemonPlaceableBoard, Vector2Int> placePair in placeEvolvedPokemonTo)
             {
                 placePair.Key.SetPokemon(placePair.Value, evolution);

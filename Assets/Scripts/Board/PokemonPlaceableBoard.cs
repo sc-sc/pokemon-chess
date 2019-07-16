@@ -18,6 +18,7 @@ public abstract class PokemonPlaceableBoard : MonoBehaviour, Touchable
     private TouchManager touchManager;
     private SalesDesk salesDesk;
 
+    public PokemonInformation pokemonInformation;
     protected virtual void Awake()
     {
         tilemap = GetComponent<Tilemap>();
@@ -25,6 +26,8 @@ public abstract class PokemonPlaceableBoard : MonoBehaviour, Touchable
 
         touchManager = FindObjectOfType<TouchManager>();
         salesDesk = FindObjectOfType<SalesDesk>();
+
+        pokemonInformation = FindObjectOfType<PokemonInformation>();
     }
 
     public virtual bool PlacePokemon(Vector2Int index, Pokemon pokemon)
@@ -202,12 +205,18 @@ public abstract class PokemonPlaceableBoard : MonoBehaviour, Touchable
 
     public void SpecialTouched(Vector3 at)
     {
-        throw new System.NotImplementedException();
+        Vector3Int cellPosition = tilemap.WorldToCell(at);
+        Vector2Int index = CellToIndex(cellPosition);
+        Pokemon pokemon = placedPokemons[index.x, index.y];
+        if (pokemon != null)
+        {
+            pokemonInformation.ShowPokemonInformation(pokemon);
+        }
     }
 
     public void SpecialReleased(Vector3 at)
     {
-        throw new System.NotImplementedException();
+        pokemonInformation.UnshowPokemonInformation();
     }
 
     public Vector2Int GetIndex(Pokemon pokemon)

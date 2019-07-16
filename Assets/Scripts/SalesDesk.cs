@@ -39,7 +39,7 @@ public class SalesDesk : MonoBehaviour, Touchable
         previousBoard.PlaceEnd(selectedPokemon, true);
         previousBoard.linkedBoard.RemovePokemon(selectedPokemon);
         previousBoard.linkedBoard.PlaceEnd(selectedPokemon, true);
-        player.money += cost;
+        player.money += selectedPokemon.GetTotalCost();
 
         StartCoroutine(SoldAction(selectedPokemon));
         selectedPokemon = null;
