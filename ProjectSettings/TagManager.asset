@@ -8,6 +8,7 @@ TagManager:
   - ChessBoard
   - BuyButtonLayout
   - SalesDesk
+  - PokemonInformationUI
   layers:
   - Default
   - TransparentFX

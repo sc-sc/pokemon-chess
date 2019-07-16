@@ -26,14 +26,12 @@ public class PokemonInSafari : MonoBehaviour, Touchable
 
     public void SpecialReleased(Vector3 at)
     {
-        pokemonInformation.gameObject.SetActive(false);
+        pokemonInformation.UnshowPokemonInformation();
     }
 
     public void SpecialTouched(Vector3 at)
     {
-        pokemonInformation.SetPokemonInformation(GetComponentInChildren<Pokemon>());
-        pokemonInformation.transform.position = Camera.main.WorldToScreenPoint(transform.position + new Vector3(0f, 2.5f));
-        pokemonInformation.gameObject.SetActive(true);
+        pokemonInformation.ShowPokemonInformation(GetComponentInChildren<Pokemon>());
     }
 
     public void Touched(Vector3 at)
