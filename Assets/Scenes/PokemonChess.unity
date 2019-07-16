@@ -1793,6 +1793,12 @@ MonoBehaviour:
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!1 &870058738 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 656347380836771673, guid: 23392a932aa8c954a965533ff076ff95,
+    type: 3}
+  m_PrefabInstance: {fileID: 1349859159}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &897984910
 GameObject:
   m_ObjectHideFlags: 0
@@ -2275,7 +2281,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1073438906
 GameObject:
@@ -2654,6 +2660,75 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1335049256}
   m_CullTransparentMesh: 0
+--- !u!1001 &1349859159
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 656347380836771673, guid: 23392a932aa8c954a965533ff076ff95,
+        type: 3}
+      propertyPath: m_Name
+      value: Lapras
+      objectReference: {fileID: 0}
+    - target: {fileID: 656347380836771674, guid: 23392a932aa8c954a965533ff076ff95,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 656347380836771674, guid: 23392a932aa8c954a965533ff076ff95,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 656347380836771674, guid: 23392a932aa8c954a965533ff076ff95,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 656347380836771674, guid: 23392a932aa8c954a965533ff076ff95,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 656347380836771674, guid: 23392a932aa8c954a965533ff076ff95,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 656347380836771674, guid: 23392a932aa8c954a965533ff076ff95,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 656347380836771674, guid: 23392a932aa8c954a965533ff076ff95,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 656347380836771674, guid: 23392a932aa8c954a965533ff076ff95,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 656347380836771674, guid: 23392a932aa8c954a965533ff076ff95,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 656347380836771674, guid: 23392a932aa8c954a965533ff076ff95,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 656347380836771674, guid: 23392a932aa8c954a965533ff076ff95,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 23392a932aa8c954a965533ff076ff95, type: 3}
 --- !u!1 &1376172247
 GameObject:
   m_ObjectHideFlags: 0
@@ -3547,8 +3622,8 @@ Tilemap:
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Origin: {x: -6, y: -14, z: 0}
-  m_Size: {x: 13, y: 14, z: 1}
+  m_Origin: {x: -10, y: -14, z: 0}
+  m_Size: {x: 17, y: 14, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -4207,7 +4282,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trainers:
   - {fileID: 588119698}
-  - {fileID: 588119698}
+  - {fileID: 367638003606663563, guid: 37aa199dff49cc448bf41b642460b1ba, type: 3}
   - {fileID: 588119698}
   - {fileID: 588119698}
   - {fileID: 588119698}
@@ -4215,7 +4290,7 @@ MonoBehaviour:
   chessField: {fileID: 1689426152727209284, guid: 52517db18b3a2b642b37d62f040dac8c,
     type: 3}
   pokemonSafari: {fileID: 181882527}
-  lapras: {fileID: 656347380836771673, guid: 23392a932aa8c954a965533ff076ff95, type: 3}
+  lapras: {fileID: 870058738}
 --- !u!82 &1765999728
 AudioSource:
   m_ObjectHideFlags: 0

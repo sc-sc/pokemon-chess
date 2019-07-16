@@ -17,8 +17,6 @@ public class GameManager : MonoBehaviour
 
         float angle = 360 / trainers.Count;
 
-        GameObject laprasInstance = Instantiate(lapras);
-
         for (int i = 0; i < trainers.Count; i++)
         {
             Trainer trainer = trainers[i];
@@ -36,7 +34,11 @@ public class GameManager : MonoBehaviour
             if (trainer is Player)
             {
                 Camera.main.transform.position = new Vector3(chessFieldInstance.transform.position.x, chessFieldInstance.transform.position.y, -10f);
-                laprasInstance.transform.position = chessFieldInstance.transform.position + new Vector3(-12f, 0.5f);
+                lapras.transform.position = chessFieldInstance.transform.position + new Vector3(-12f, 0.5f);
+            } else
+            {
+                GameObject trainerObject = Instantiate(trainer.gameObject);
+                trainerObject.transform.position = chessFieldInstance.transform.position;
             }
         }
 
