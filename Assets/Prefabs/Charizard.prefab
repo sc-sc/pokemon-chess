@@ -44,6 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a9a793453a620142940e4e02c602596, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trainer: {fileID: 0}
+  cost: 27
+  HP_full: 0
+  HP_current: 0
+  Attack: 0
+  evolution: {fileID: 0}
 --- !u!1 &2254535982534229303
 GameObject:
   m_ObjectHideFlags: 0
@@ -113,7 +119,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1571698295
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -1300179257739665910, guid: 6174af4cd8b04104391adff126f85c6e,
     type: 3}
