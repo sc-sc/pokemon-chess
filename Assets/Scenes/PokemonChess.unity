@@ -373,6 +373,8 @@ MonoBehaviour:
   pokemonInSafariPrefab: {fileID: 588161285509603786, guid: a0606fdeb4ee1904b9ad8ab58b505e69,
     type: 3}
   pokemonInformation: {fileID: 1911512654}
+  evolutionEffect: {fileID: 3222374539463258039, guid: d8207984762778a49af32f0cf566dd86,
+    type: 3}
 --- !u!4 &181882528
 Transform:
   m_ObjectHideFlags: 0
