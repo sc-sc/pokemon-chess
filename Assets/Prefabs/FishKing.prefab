@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5804084639784800864
+--- !u!1 &2254535982436329198
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,50 +8,50 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5804084639784800894}
-  - component: {fileID: 5804084639784800895}
+  - component: {fileID: 2254535982436329201}
+  - component: {fileID: 2254535982436329200}
   m_Layer: 0
-  m_Name: Charmeleon
+  m_Name: FishKing
   m_TagString: Pokemon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5804084639784800894
+--- !u!4 &2254535982436329201
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5804084639784800864}
+  m_GameObject: {fileID: 2254535982436329198}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 5804084640011971964}
+  - {fileID: 2254535982534229304}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5804084639784800895
+--- !u!114 &2254535982436329200
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5804084639784800864}
+  m_GameObject: {fileID: 2254535982436329198}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a9a793453a620142940e4e02c602596, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   trainer: {fileID: 0}
-  cost: 9
+  cost: 1
   HP_full: 0
   HP_current: 0
   Attack: 0
-  evolution: {fileID: 2254535982436329198, guid: 52f2f9d3c1286e04caf06e3bcac80fef,
+  evolution: {fileID: 2254535982436329198, guid: e21a53e21113f3047af9ba872b166f70,
     type: 3}
---- !u!1 &5804084640011971965
+--- !u!1 &2254535982534229303
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -59,9 +59,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5804084640011971964}
-  - component: {fileID: 5804084640011971962}
-  - component: {fileID: 5804084640011971963}
+  - component: {fileID: 2254535982534229304}
+  - component: {fileID: 2254535982534229305}
+  - component: {fileID: 2254535982534229306}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -69,27 +69,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5804084640011971964
+--- !u!4 &2254535982534229304
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5804084640011971965}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_GameObject: {fileID: 2254535982534229303}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 5804084639784800894}
+  m_Father: {fileID: 2254535982436329201}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &5804084640011971962
+--- !u!212 &2254535982534229305
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5804084640011971965}
+  m_GameObject: {fileID: 2254535982534229303}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -122,29 +122,29 @@ SpriteRenderer:
   m_SortingLayerID: 1571698295
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1413053602977967283, guid: 3c91ca5ccb40ec143937fc84e899a5ab,
+  m_Sprite: {fileID: -5047265922326304181, guid: c07ea1cf17d7f7d4c9fc95b46d8e4c0a,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.15625, y: 1.75}
+  m_Size: {x: 2.225, y: 2.275}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &5804084640011971963
+--- !u!95 &2254535982534229306
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5804084640011971965}
+  m_GameObject: {fileID: 2254535982534229303}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: fb33bbf571e67364ea9b425c607473c0, type: 2}
+  m_Controller: {fileID: 9100000, guid: fd2b58bb451d50f4c8810490bacc259e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

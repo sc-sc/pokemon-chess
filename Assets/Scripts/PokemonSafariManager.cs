@@ -40,7 +40,23 @@ public class PokemonSafariManager : MonoBehaviour
 
         for (int i = 0; i < SalePokemonsCount; i++)
         {
-            int cost = Random.Range(2, 4);
+            int cost;
+            if(player.level == 1)
+            {
+                cost = Random.Range(1, 3);
+            }
+            else if (player.level == 2 || player.level == 3)
+            {
+                cost = Random.Range(1, 4);
+            }
+            else if(player.level == 4 || player.level == 6)
+            {
+                cost = Random.Range(1, 5);
+            }
+            else
+            {
+                cost = Random.Range(1, 6);
+            }
             int index = 0;
 
             GameObject pokemonInSafari = Instantiate(pokemonInSafariPrefab, transform.parent);
@@ -180,7 +196,11 @@ public class PokemonSafariManager : MonoBehaviour
 
             ChessBoard chessBoard = gameManager.chessBoards[trainer];
             WaitingBoard waitingBoard = gameManager.waitingBoards[trainer];
-
+            if (pokemon.evolution == null)
+            {
+                return;
+            }
+            Pokemon evolution = Instantiate(pokemon.evolution).GetComponent<Pokemon>();
             foreach (Pokemon placedPokemon in placedSamePokemonList)
             {
                 if (placeEvolvedPokemonTo.Count == 0)
@@ -202,7 +222,6 @@ public class PokemonSafariManager : MonoBehaviour
                 waitingBoard.RemovePokemon(waitingPokemon);
                 Destroy(waitingPokemon.gameObject);
             }
-            Pokemon evolution = Instantiate(pokemon.evolution).GetComponent<Pokemon>();
             evolution.trainer = trainer;
             foreach (KeyValuePair<PokemonPlaceableBoard, Vector2Int> placePair in placeEvolvedPokemonTo)
             {
