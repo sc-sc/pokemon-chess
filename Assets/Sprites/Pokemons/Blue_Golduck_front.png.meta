@@ -1,0 +1,1927 @@
+fileFormatVersion: 2
+guid: 29059860d165d464d85f5b3e1e8d4b35
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3578674114605741554
+    second: Blue_Golduck_front_0
+  - first:
+      213: 5561993069019772903
+    second: Blue_Golduck_front_1
+  - first:
+      213: -6851273866009899154
+    second: Blue_Golduck_front_2
+  - first:
+      213: -6238435812290198591
+    second: Blue_Golduck_front_3
+  - first:
+      213: 6261675267093829300
+    second: Blue_Golduck_front_4
+  - first:
+      213: -636304929702738176
+    second: Blue_Golduck_front_5
+  - first:
+      213: 6506917203227344654
+    second: Blue_Golduck_front_6
+  - first:
+      213: -3097186904340725218
+    second: Blue_Golduck_front_7
+  - first:
+      213: 6649875657034361305
+    second: Blue_Golduck_front_8
+  - first:
+      213: -889218008012811137
+    second: Blue_Golduck_front_9
+  - first:
+      213: 6700497880364882239
+    second: Blue_Golduck_front_10
+  - first:
+      213: 8716930992739358395
+    second: Blue_Golduck_front_11
+  - first:
+      213: 7386889846363086652
+    second: Blue_Golduck_front_12
+  - first:
+      213: -3099429342182367363
+    second: Blue_Golduck_front_13
+  - first:
+      213: 8001589895910896790
+    second: Blue_Golduck_front_14
+  - first:
+      213: 329309340660390219
+    second: Blue_Golduck_front_15
+  - first:
+      213: 1326610055258985289
+    second: Blue_Golduck_front_16
+  - first:
+      213: 3040915120352319609
+    second: Blue_Golduck_front_17
+  - first:
+      213: -8027069079657234070
+    second: Blue_Golduck_front_18
+  - first:
+      213: -8154582352032829413
+    second: Blue_Golduck_front_19
+  - first:
+      213: -8735364155583823009
+    second: Blue_Golduck_front_20
+  - first:
+      213: 5979842653500434544
+    second: Blue_Golduck_front_21
+  - first:
+      213: 7809882387169359124
+    second: Blue_Golduck_front_22
+  - first:
+      213: 8929883962786976879
+    second: Blue_Golduck_front_23
+  - first:
+      213: -5204991429230870584
+    second: Blue_Golduck_front_24
+  - first:
+      213: -5982576679727826143
+    second: Blue_Golduck_front_25
+  - first:
+      213: -3468074852033799459
+    second: Blue_Golduck_front_26
+  - first:
+      213: 8403820956800035577
+    second: Blue_Golduck_front_27
+  - first:
+      213: 5910377297744352061
+    second: Blue_Golduck_front_28
+  - first:
+      213: 5863269032791331078
+    second: Blue_Golduck_front_29
+  - first:
+      213: 7506349570875112920
+    second: Blue_Golduck_front_30
+  - first:
+      213: -141849406790257705
+    second: Blue_Golduck_front_31
+  - first:
+      213: -8064074484027752382
+    second: Blue_Golduck_front_32
+  - first:
+      213: 8266637623893049912
+    second: Blue_Golduck_front_33
+  - first:
+      213: -692824600081007045
+    second: Blue_Golduck_front_34
+  - first:
+      213: -7515084301147815791
+    second: Blue_Golduck_front_35
+  - first:
+      213: -23688956528612766
+    second: Blue_Golduck_front_36
+  - first:
+      213: 753321832264407597
+    second: Blue_Golduck_front_37
+  - first:
+      213: 2357713170121595108
+    second: Blue_Golduck_front_38
+  - first:
+      213: 6633855250707918588
+    second: Blue_Golduck_front_39
+  - first:
+      213: -6634326698215773176
+    second: Blue_Golduck_front_40
+  - first:
+      213: -5444065524205793310
+    second: Blue_Golduck_front_41
+  - first:
+      213: -3859924050159400707
+    second: Blue_Golduck_front_42
+  - first:
+      213: 3216417234477042731
+    second: Blue_Golduck_front_43
+  - first:
+      213: 3570801380208109600
+    second: Blue_Golduck_front_44
+  - first:
+      213: 4785070993905997269
+    second: Blue_Golduck_front_45
+  - first:
+      213: -66996148523619582
+    second: Blue_Golduck_front_46
+  - first:
+      213: -1201135077669054617
+    second: Blue_Golduck_front_47
+  - first:
+      213: -7147888819509260476
+    second: Blue_Golduck_front_48
+  - first:
+      213: 7762362657992706092
+    second: Blue_Golduck_front_49
+  - first:
+      213: -4765438672348214700
+    second: Blue_Golduck_front_50
+  - first:
+      213: -4740443838738441880
+    second: Blue_Golduck_front_51
+  - first:
+      213: -6988863261228675923
+    second: Blue_Golduck_front_52
+  - first:
+      213: -7429080847376207029
+    second: Blue_Golduck_front_53
+  - first:
+      213: -245896481097243134
+    second: Blue_Golduck_front_54
+  - first:
+      213: 2450135026605868353
+    second: Blue_Golduck_front_55
+  - first:
+      213: -7447399244387281337
+    second: Blue_Golduck_front_56
+  - first:
+      213: -2180969025775988188
+    second: Blue_Golduck_front_57
+  - first:
+      213: -3731146047504530554
+    second: Blue_Golduck_front_58
+  - first:
+      213: 3048328240164821093
+    second: Blue_Golduck_front_59
+  - first:
+      213: 104057477943067993
+    second: Blue_Golduck_front_60
+  - first:
+      213: 8633710391360643729
+    second: Blue_Golduck_front_61
+  - first:
+      213: 1552133270310019455
+    second: Blue_Golduck_front_62
+  - first:
+      213: -1892390230802865767
+    second: Blue_Golduck_front_63
+  - first:
+      213: -1346717145668659583
+    second: Blue_Golduck_front_64
+  - first:
+      213: -7853755640149187677
+    second: Blue_Golduck_front_65
+  - first:
+      213: -7289871244760038864
+    second: Blue_Golduck_front_66
+  - first:
+      213: 1745785733450837090
+    second: Blue_Golduck_front_67
+  - first:
+      213: -2229247059985090881
+    second: Blue_Golduck_front_68
+  - first:
+      213: 1977000748299037514
+    second: Blue_Golduck_front_69
+  - first:
+      213: 8924996490477463267
+    second: Blue_Golduck_front_70
+  - first:
+      213: 6280774382872923124
+    second: Blue_Golduck_front_71
+  - first:
+      213: -8390914993075394048
+    second: Blue_Golduck_front_72
+  - first:
+      213: 2886851125605687049
+    second: Blue_Golduck_front_73
+  - first:
+      213: -956255430882085291
+    second: Blue_Golduck_front_74
+  - first:
+      213: 771537988727164146
+    second: Blue_Golduck_front_75
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Blue_Golduck_front_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 885
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18c9db9f671f25a4894a34b281fb3f4e
+      internalID: -3578674114605741554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_1
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 885
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c5d59db7e2efa44abe1fb5ced830b4f
+      internalID: 5561993069019772903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_2
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 885
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 273cc051f9b031e48987848a36ed2b0a
+      internalID: -6851273866009899154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_3
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 885
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f5abbff7fffce642b4871f2a04b466f
+      internalID: -6238435812290198591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_4
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 885
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b473d94866a30143b91b1ccd28a0ea4
+      internalID: 6261675267093829300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 826
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 436bd6024003284468fca7015a7d5b6d
+      internalID: -636304929702738176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_6
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 826
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2325181c6d20f741b2f2fd4339897c9
+      internalID: 6506917203227344654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_7
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 826
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fbde267dcef6514d9e860b80c6be581
+      internalID: -3097186904340725218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_8
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 826
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d738340fe526a1b44b86ff9f6cee60ca
+      internalID: 6649875657034361305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_9
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 826
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7a91eea54892cf4f81a127116bca77b
+      internalID: -889218008012811137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 767
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82ffac6ea36e9674d8e9b23ae72632c4
+      internalID: 6700497880364882239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_11
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 767
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ad17b22d53d2bc4ea041b0f3b6550dd
+      internalID: 8716930992739358395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_12
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 767
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e85f255cc84fac44187b17c620964588
+      internalID: 7386889846363086652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_13
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 767
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0ea4a1ded21c3a4391da68a915e6a93
+      internalID: -3099429342182367363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_14
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 767
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c870ed290fc2b4043810da350fe43767
+      internalID: 8001589895910896790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 708
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63aaaade1413af64ca35d6583eed557e
+      internalID: 329309340660390219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_16
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 708
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 900e931c872fc464d89bf3a0b40afd18
+      internalID: 1326610055258985289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_17
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 708
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03a60a627bc23f04f8c4e015a638da0f
+      internalID: 3040915120352319609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_18
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 708
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75900de3ceaf2654b95f26fa3d91271c
+      internalID: -8027069079657234070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_19
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 708
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4d5a97005ad43e4a82b7d7d2d9f1783
+      internalID: -8154582352032829413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 649
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ca90b2eba1a19744b676a0f958a31a1
+      internalID: -8735364155583823009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_21
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 649
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b1f4c2c676749a4abde69e530aa6858
+      internalID: 5979842653500434544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_22
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 649
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f01c3c7ec20405459405a3574e11457
+      internalID: 7809882387169359124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_23
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 649
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f3df72a3657d494b874090112d86879
+      internalID: 8929883962786976879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_24
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 649
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb16584a21ef8e543a4d3a749e5cb20d
+      internalID: -5204991429230870584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 590
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e5a81e0a0b1bd645b80ec92f8e834a7
+      internalID: -5982576679727826143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_26
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 590
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0d58f9f86e640c44980f71533862936
+      internalID: -3468074852033799459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_27
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 590
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 490366c6f3b9d654c9246258629f2c5c
+      internalID: 8403820956800035577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_28
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 590
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afc08a36d0a4a184e8e9be45f67e056c
+      internalID: 5910377297744352061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_29
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 590
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90a9cd79fe9897449a1237bdaf330f1a
+      internalID: 5863269032791331078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 531
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a865a85775466a8419330cc992ee2eaa
+      internalID: 7506349570875112920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_31
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 531
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51c86a6ac3bd33846abe470ab0aad274
+      internalID: -141849406790257705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_32
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 531
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c6d484a1bf424e4683e52e215d12644
+      internalID: -8064074484027752382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_33
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 531
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 002b515ee52e5254cb4f7159a0cfe0e1
+      internalID: 8266637623893049912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_34
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 531
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d22ca0db60f18f141a9ae098a9acf0fe
+      internalID: -692824600081007045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 472
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ad60ba0cd20ee748906ed81f5d3f314
+      internalID: -7515084301147815791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_36
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 472
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 483417295cb3f8140ba6b1fa40631262
+      internalID: -23688956528612766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_37
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 472
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2547a1675b7351241909fc013044c090
+      internalID: 753321832264407597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_38
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 472
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c1481924093d13449a89e4b1b43a001
+      internalID: 2357713170121595108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_39
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 472
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0bf0d6bf40dc5a42a1eeaea0e4b74d5
+      internalID: 6633855250707918588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 413
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96d103e8cecc41642939baceb6dc17ec
+      internalID: -6634326698215773176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_41
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 413
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2999eb6c10c1e3c44b45433377750386
+      internalID: -5444065524205793310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_42
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 413
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 485ac9ffedaf5784c9bb402d6364e4f1
+      internalID: -3859924050159400707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_43
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 413
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c1360d8173c1d0418d4bd09a8f1e2ae
+      internalID: 3216417234477042731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_44
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 413
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76745f34f01abd64db82319370edb066
+      internalID: 3570801380208109600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 354
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29a9e9bf38243504e8fd72b50046d3a7
+      internalID: 4785070993905997269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_46
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 354
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a8f10eceff4f21468b825f0aac8d449
+      internalID: -66996148523619582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_47
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 354
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a104337e970ab494a8b94e546b6d56d3
+      internalID: -1201135077669054617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_48
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 354
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2582f8236472d846b8edb3def9e175c
+      internalID: -7147888819509260476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_49
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 354
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e4dfb2cdd5043c43a7838915927973d
+      internalID: 7762362657992706092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 295
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68071bd86f64b364fbcf50afc87fdcbe
+      internalID: -4765438672348214700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_51
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 295
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2b61b619cbe1ac4cbbeb7e447018739
+      internalID: -4740443838738441880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_52
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 295
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7882cd8321af614aacca97c8a901795
+      internalID: -6988863261228675923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_53
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 295
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fdd5feacbe170e4981ffe9f59e8ac87
+      internalID: -7429080847376207029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_54
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 295
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da385f2f97f22294398c835f66b6d5e6
+      internalID: -245896481097243134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_55
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 236
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1296929d001a7224ab6ee71e40a94215
+      internalID: 2450135026605868353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_56
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 236
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 616a10aa8ef42a34f9860dc24ae26dc0
+      internalID: -7447399244387281337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_57
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 236
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6631706724886f49acaf45f41f05169
+      internalID: -2180969025775988188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_58
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 236
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42a33161700465e40ad2e0db224ef773
+      internalID: -3731146047504530554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_59
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 236
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c13be5768f15d47429c3510d8bb67137
+      internalID: 3048328240164821093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 177
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 844944cf6fa57164bacffd246545d7f5
+      internalID: 104057477943067993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_61
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 177
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9500bb996a34b5040a6f9ff0697b7339
+      internalID: 8633710391360643729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_62
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 177
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fbce04e96f99844dbbfb7a8fc6fe4bb
+      internalID: 1552133270310019455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_63
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 177
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4679348913da92245809a2628fdfffa6
+      internalID: -1892390230802865767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_64
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 177
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaa83206dafccbe40b9c4d7824a4244c
+      internalID: -1346717145668659583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_65
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 118
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3282d2c7f93d2e84eb93baf2ddae26d3
+      internalID: -7853755640149187677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_66
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 118
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9642fa8add2120640a3913d5db123c66
+      internalID: -7289871244760038864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_67
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 118
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfb0195bf8fbb5545a0b08a90d75c13d
+      internalID: 1745785733450837090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_68
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 118
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03f9e0d4e2a129143b4136e613aff8ae
+      internalID: -2229247059985090881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_69
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 118
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f2902d24b34d51409808ee7eb8a13bb
+      internalID: 1977000748299037514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_70
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 59
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a05bb8a2dffe2414ba2274f708c0a24d
+      internalID: 8924996490477463267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_71
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 59
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0111719bebc7d38428af356ab62ec906
+      internalID: 6280774382872923124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_72
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 59
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5dba82cdcda7424faf034264efd2efa
+      internalID: -8390914993075394048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_73
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 59
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd88eae13457d334f9878516862b26ce
+      internalID: 2886851125605687049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_74
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 59
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6d438b49e132f94e9abf6c4b7efed2a
+      internalID: -956255430882085291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Golduck_front_75
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 60
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20d8993505c6e194ba20f419582b58ae
+      internalID: 771537988727164146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

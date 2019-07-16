@@ -40,7 +40,7 @@ public class PokemonSafariManager : MonoBehaviour
 
         for (int i = 0; i < SalePokemonsCount; i++)
         {
-            int cost = Random.Range(2, 4);
+            int cost = Random.Range(1, 4);
             int index = 0;
 
             GameObject pokemonInSafari = Instantiate(pokemonInSafariPrefab, transform.parent);
