@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2254535982436329201}
   - component: {fileID: 2254535982436329200}
   m_Layer: 0
-  m_Name: "\uAC38\uB77C\uB3C4\uC2A4_front"
+  m_Name: "\uAC38\uB77C\uB3C4\uC2A4"
   m_TagString: Pokemon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trainer: {fileID: 0}
-  cost: 0
+  cost: 9
   HP_full: 0
   HP_current: 0
   Attack: 0
