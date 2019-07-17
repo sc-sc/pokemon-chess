@@ -63,7 +63,7 @@ public abstract class PokemonPlaceableBoard : MonoBehaviour, Touchable
                 {
                     if (isPokemonAlreadyPlaced)
                     {
-                        SetPokemon(pokemonCache[pokemon], alreadyExistPokemon);
+                        SetPokemon(previousPokemonIndex.Value, alreadyExistPokemon);
                     }
                     else if (linkedBoard.pokemonCache.ContainsKey(pokemon))
                     {
