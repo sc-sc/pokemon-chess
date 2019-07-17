@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class PokemonUIManager : MonoBehaviour
 {   
     public GameObject pokemonUIPrefab;
@@ -16,8 +16,8 @@ public class PokemonUIManager : MonoBehaviour
     {
         foreach (KeyValuePair<Pokemon, GameObject> uiKeyValuePair in pokemonUIDictionary)
         {
-            uiKeyValuePair.Value.transform.position = Camera.main.WorldToScreenPoint(uiKeyValuePair.Key.uiTransform.position);
-            uiKeyValuePair.Value.transform.position -= new Vector3(0, 0, uiKeyValuePair.Key.spriteRenderer.sortingOrder);
+            uiKeyValuePair.Value.transform.position = uiKeyValuePair.Key.uiTransform.position;
+            uiKeyValuePair.Value.GetComponent<Canvas>().sortingOrder = uiKeyValuePair.Key.spriteRenderer.sortingOrder;
         }
     }
 
@@ -25,7 +25,9 @@ public class PokemonUIManager : MonoBehaviour
     {
         if (!pokemonUIDictionary.ContainsKey(pokemon))
         {
-            pokemonUIDictionary[pokemon] = Instantiate(pokemonUIPrefab, transform);
+            GameObject pokemonUI = Instantiate(pokemonUIPrefab, transform);
+            pokemonUIDictionary[pokemon] = pokemonUI;
+            pokemonUI.GetComponent<Canvas>().sortingLayerName = pokemon.spriteRenderer.sortingLayerName;
         }
     }
 
