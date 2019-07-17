@@ -11,7 +11,7 @@ public class Pokemon : MonoBehaviour
     public int Attack;
     public GameObject evolution;
     public int evolutionPhase = 1;
-    private SpriteRenderer spriteRenderer;
+    internal SpriteRenderer spriteRenderer;
     public Transform uiTransform;
     void Awake()
     {

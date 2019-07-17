@@ -12,11 +12,12 @@ public class PokemonUIManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         foreach (KeyValuePair<Pokemon, GameObject> uiKeyValuePair in pokemonUIDictionary)
         {
             uiKeyValuePair.Value.transform.position = Camera.main.WorldToScreenPoint(uiKeyValuePair.Key.uiTransform.position);
+            uiKeyValuePair.Value.transform.position -= new Vector3(0, 0, uiKeyValuePair.Key.spriteRenderer.sortingOrder);
         }
     }
 

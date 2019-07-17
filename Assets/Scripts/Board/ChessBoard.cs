@@ -56,14 +56,14 @@ public class ChessBoard : PokemonPlaceableBoard
         return base.PlacePokemon(index, pokemon);
     }
 
-    protected override bool AddPokemon(Vector2Int index, Pokemon pokemon)
+    protected override bool IsCanAddPokemon(Vector2Int index, Pokemon pokemon)
     {
         if (pokemonCache.Count >= owner.level)
         {
             return false;
         }
 
-        return base.AddPokemon(index, pokemon);
+        return base.IsCanAddPokemon(index, pokemon);
     }
     protected override void CompleteSetPokemon(Vector2Int at, Pokemon pokemon)
     {

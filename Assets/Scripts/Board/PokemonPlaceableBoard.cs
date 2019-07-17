@@ -44,20 +44,35 @@ public abstract class PokemonPlaceableBoard : MonoBehaviour, Touchable
             {
                 Pokemon alreadyExistPokemon = placedPokemons[index.x, index.y];
                 RemovePokemon(alreadyExistPokemon);
-                if (pokemonCache.ContainsKey(pokemon))
+
+                bool isPokemonAlreadyPlaced = pokemonCache.ContainsKey(pokemon);
+                Vector2Int? previousPokemonIndex = null;
+                if (isPokemonAlreadyPlaced)
                 {
-                    SetPokemon(pokemonCache[pokemon], alreadyExistPokemon);
-                } else if (linkedBoard.pokemonCache.ContainsKey(pokemon))
-                {
-                    Vector2Int linkedBoardIndex = linkedBoard.pokemonCache[pokemon];
-                    linkedBoard.RemovePokemon(pokemon);
-                    linkedBoard.SetPokemon(linkedBoardIndex, alreadyExistPokemon);
+                    previousPokemonIndex = pokemonCache[pokemon];
+                    RemovePokemon(pokemon);
                 }
 
-                RemovePokemon(pokemon);
-                if (!AddPokemon(index, pokemon))
+                if (!IsCanAddPokemon(index, pokemon))
                 {
+                    SetPokemon(index, alreadyExistPokemon);
+                    if (previousPokemonIndex != null)
+                        SetPokemon(previousPokemonIndex.Value, pokemon);
                     return false;
+                } else
+                {
+                    if (isPokemonAlreadyPlaced)
+                    {
+                        SetPokemon(pokemonCache[pokemon], alreadyExistPokemon);
+                    }
+                    else if (linkedBoard.pokemonCache.ContainsKey(pokemon))
+                    {
+                        Vector2Int linkedBoardIndex = linkedBoard.pokemonCache[pokemon];
+                        linkedBoard.RemovePokemon(pokemon);
+                        linkedBoard.SetPokemon(linkedBoardIndex, alreadyExistPokemon);
+                    }
+
+                    SetPokemon(index, pokemon);
                 }
             }
         }
@@ -66,10 +81,8 @@ public abstract class PokemonPlaceableBoard : MonoBehaviour, Touchable
         return true;
     }
 
-    protected virtual bool AddPokemon(Vector2Int index, Pokemon pokemon)
+    protected virtual bool IsCanAddPokemon(Vector2Int index, Pokemon pokemon)
     {
-        SetPokemon(index, pokemon);
-
         return true;
     }
     public void SetPokemon(Vector2Int index, Pokemon pokemon)
