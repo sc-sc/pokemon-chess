@@ -12,6 +12,7 @@ public class Pokemon : MonoBehaviour
     public GameObject evolution;
     public int evolutionPhase = 1;
     private SpriteRenderer spriteRenderer;
+    public Transform uiTransform;
     void Awake()
     {
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();

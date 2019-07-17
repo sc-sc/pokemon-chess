@@ -5,7 +5,10 @@ using UnityEngine.Tilemaps;
 
 public class ChessBoard : PokemonPlaceableBoard
 {
-    public const int MaxRowCanPlace = 4;    
+    public const int MaxRowCanPlace = 4;
+
+    private PokemonUIManager pokemonUIManager;
+
     public override void Moved(Vector3 to)
     {
         base.Moved(to);
@@ -30,6 +33,8 @@ public class ChessBoard : PokemonPlaceableBoard
         linkedBoard = GetComponentInChildren<WaitingBoard>();
         
         placedPokemons = new Pokemon[8, 8];
+
+        pokemonUIManager = FindObjectOfType<PokemonUIManager>();
     }
 
     protected override Vector3Int IndexToCell(Vector2Int index)
@@ -63,10 +68,14 @@ public class ChessBoard : PokemonPlaceableBoard
     protected override void CompleteSetPokemon(Vector2Int at, Pokemon pokemon)
     {
         if (pokemon != null)
+        {
             owner.placedPokemons[pokemon] = at;
+            pokemonUIManager.AddPokemonUI(pokemon);
+        }
     }
     protected override void CompleteRemovePokemon(Vector2Int at, Pokemon pokemon)
     {
         owner.placedPokemons.Remove(pokemon);
+        pokemonUIManager.RemovePokemonUI(pokemon);
     }
 }

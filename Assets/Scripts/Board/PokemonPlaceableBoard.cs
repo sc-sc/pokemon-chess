@@ -49,7 +49,9 @@ public abstract class PokemonPlaceableBoard : MonoBehaviour, Touchable
                     SetPokemon(pokemonCache[pokemon], alreadyExistPokemon);
                 } else if (linkedBoard.pokemonCache.ContainsKey(pokemon))
                 {
-                    linkedBoard.SetPokemon(linkedBoard.pokemonCache[pokemon], alreadyExistPokemon);
+                    Vector2Int linkedBoardIndex = linkedBoard.pokemonCache[pokemon];
+                    linkedBoard.RemovePokemon(pokemon);
+                    linkedBoard.SetPokemon(linkedBoardIndex, alreadyExistPokemon);
                 }
 
                 RemovePokemon(pokemon);
@@ -67,7 +69,6 @@ public abstract class PokemonPlaceableBoard : MonoBehaviour, Touchable
     protected virtual bool AddPokemon(Vector2Int index, Pokemon pokemon)
     {
         SetPokemon(index, pokemon);
-        linkedBoard.RemovePokemon(pokemon);
 
         return true;
     }

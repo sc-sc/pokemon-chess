@@ -39,7 +39,7 @@ public class PokemonInformation : MonoBehaviour
     {
         if (showingPokemon != null)
         {
-            transform.position = Camera.main.WorldToScreenPoint(showingPokemon.transform.position + new Vector3(0f, 2.5f));
+            transform.position = Camera.main.WorldToScreenPoint(showingPokemon.uiTransform.position);
         }
     }
 }
