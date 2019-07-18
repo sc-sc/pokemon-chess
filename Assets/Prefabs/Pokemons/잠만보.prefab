@@ -179,7 +179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trainer: {fileID: 0}
   cost: 4
-  HP_full: 0
+  HP_full: 5
   HP_current: 0
   Attack: 0
   evolution: {fileID: 7236754985802801847, guid: 64bbbca20cfae7d4c9bed152c3d722e8,

@@ -362,6 +362,7 @@ MonoBehaviour:
   salePokemonPrefabs:
   - prefabs:
     - {fileID: 2254535982436329198, guid: f0f8d9e903318bc4b849aa9107a7af4a, type: 3}
+    - {fileID: 2254535982436329198, guid: 9caec85c238b732449d92843d1a8bb37, type: 3}
   - prefabs:
     - {fileID: 7236754985802801847, guid: 75583b23108b2c449b97c5838d6f7656, type: 3}
   - prefabs:

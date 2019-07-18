@@ -46,8 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trainer: {fileID: 0}
-  cost: 18
-  HP_full: 0
+  cost: 2
+  HP_full: 5
   HP_current: 0
   Attack: 0
   evolution: {fileID: 0}
