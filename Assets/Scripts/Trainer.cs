@@ -14,6 +14,9 @@ public class Trainer : MonoBehaviour
     public int money;
     public int exp_expect;
     public int exp_present;
+    public int Bug;
+    public int Water;
+    public int Fire;
 
     public Dictionary<Pokemon, Vector2Int> placedPokemons;
     public Pokemon[] waitingPokemons;
