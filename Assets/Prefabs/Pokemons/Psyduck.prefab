@@ -182,8 +182,8 @@ MonoBehaviour:
   HP_full: 5
   HP_current: 0
   Attack: 0
-  Type1: "\uBB3C"
   evolution: {fileID: 2254535982436329198, guid: 4a3b49747593b1347bbbf54252958224,
     type: 3}
   evolutionPhase: 1
   uiTransform: {fileID: 1646034887289356612}
+  types: 02000000

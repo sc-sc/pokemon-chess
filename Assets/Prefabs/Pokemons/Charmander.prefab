@@ -80,11 +80,11 @@ MonoBehaviour:
   HP_full: 5
   HP_current: 0
   Attack: 0
-  Type1: "\uBD88"
   evolution: {fileID: 5804084639784800864, guid: da76109466f679a44b18a21f221fdff7,
     type: 3}
   evolutionPhase: 1
   uiTransform: {fileID: 8394427894499438970}
+  types: 01000000
 --- !u!1 &8370315338700470383
 GameObject:
   m_ObjectHideFlags: 0

@@ -71,11 +71,19 @@ public class ChessBoard : PokemonPlaceableBoard
         {
             owner.placedPokemons[pokemon] = at;
             pokemonUIManager.AddPokemonUI(pokemon);
+            Check_type(pokemon);
         }
     }
     protected override void CompleteRemovePokemon(Vector2Int at, Pokemon pokemon)
     {
         owner.placedPokemons.Remove(pokemon);
         pokemonUIManager.RemovePokemonUI(pokemon);
+    }
+    public void Check_type(Pokemon pokemon)
+    {
+        for(int i=0; i<pokemon.types.Length; i++)
+        {
+            Debug.Log(pokemon.types[i]);
+        }
     }
 }

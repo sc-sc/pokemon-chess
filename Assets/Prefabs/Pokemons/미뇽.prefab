@@ -152,11 +152,11 @@ MonoBehaviour:
   HP_full: 5
   HP_current: 0
   Attack: 0
-  Type1: "\uB4DC\uB798\uACE4"
   evolution: {fileID: 7236754985802801847, guid: 991a8390d3c6ead42b803eecddf72259,
     type: 3}
   evolutionPhase: 1
   uiTransform: {fileID: 7802973881525771749}
+  types: 0e000000
 --- !u!1 &7783304320779697300
 GameObject:
   m_ObjectHideFlags: 0
