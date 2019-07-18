@@ -50,6 +50,7 @@ MonoBehaviour:
   HP_full: 5
   HP_current: 0
   Attack: 0
+  Type1: "\uD480"
   evolution: {fileID: 0}
   evolutionPhase: 1
   uiTransform: {fileID: 4982657042636162291}

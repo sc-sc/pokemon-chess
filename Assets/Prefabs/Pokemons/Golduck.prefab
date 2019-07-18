@@ -50,6 +50,7 @@ MonoBehaviour:
   HP_full: 5
   HP_current: 0
   Attack: 0
+  Type1: "\uBB3C"
   evolution: {fileID: 2254535982436329198, guid: c91056331d3339a4b80eb7b9bdac2c01,
     type: 3}
   evolutionPhase: 1

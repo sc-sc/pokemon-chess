@@ -182,6 +182,7 @@ MonoBehaviour:
   HP_full: 5
   HP_current: 0
   Attack: 0
+  Type1: "\uB4DC\uB798\uACE4"
   evolution: {fileID: 7236754985802801847, guid: 9734b37c1ee4bdc4bba269e9fe0383bc,
     type: 3}
   evolutionPhase: 1

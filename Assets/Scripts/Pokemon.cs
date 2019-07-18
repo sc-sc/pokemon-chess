@@ -2,17 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum PokemonType
+{
+    Normal, Fire, Water, Grass, Electric, Ice, Fight, Poison, Ground, Fly, Psychic, Bug, Rock, Ghost, Dragon, Dark, Steel, Fairy
+}
+
 public class Pokemon : MonoBehaviour
 {
     public Trainer trainer;
     public int cost;
     public int HP_full;
     public int HP_current;
-    public int Attack;
+    public int Attack; 
     public GameObject evolution;
     public int evolutionPhase = 1;
     internal SpriteRenderer spriteRenderer;
     public Transform uiTransform;
+    public PokemonType[] types = new PokemonType[2];
+
     void Awake()
     {
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();

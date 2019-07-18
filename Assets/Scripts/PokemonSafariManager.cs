@@ -51,7 +51,7 @@ public class PokemonSafariManager : MonoBehaviour
             {
                 cost = Random.Range(1, 4);
             }
-            else if(player.level == 4 || player.level == 6)
+            else if(player.level == 4 || player.level == 5)
             {
                 cost = Random.Range(1, 5);
             }
