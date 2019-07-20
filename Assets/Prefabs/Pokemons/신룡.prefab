@@ -177,13 +177,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a9a793453a620142940e4e02c602596, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentState: 0
   trainer: {fileID: 0}
   cost: 5
-  HP_full: 5
-  HP_current: 0
-  Attack: 0
+  hpFull: 61
+  hpCurrent: 0
+  attack: 84
+  defense: 65
+  speed: 70
+  ppFull: 30
+  initialPp: 0
   evolution: {fileID: 7236754985802801847, guid: 9734b37c1ee4bdc4bba269e9fe0383bc,
     type: 3}
   evolutionPhase: 1
   uiTransform: {fileID: 8580060261755870235}
   types: 0e000000
+  range: 1
+  attackTarget: {fileID: 0}
+  isAlive: 1
+  battleCallbackHandler: {fileID: 0}

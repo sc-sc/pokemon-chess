@@ -140,7 +140,7 @@ public class Pokemon : MonoBehaviour
 
     public int CalculateDamage()
     {
-        return (int) ((((((22) * 30 * attack / 50) / attackTarget.defense) * Mod1()) + 2)
+        return (int) (((((((25 * evolutionPhase * 2 / 5) + 2) * 20 * attack / 50) / attackTarget.defense) * Mod1()) + 2)
             * Critical() * Mod2() * TypeBonus() * Mod3());
     }
 

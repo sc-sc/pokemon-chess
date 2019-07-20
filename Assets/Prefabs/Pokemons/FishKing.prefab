@@ -48,11 +48,12 @@ MonoBehaviour:
   currentState: 0
   trainer: {fileID: 0}
   cost: 1
-  hpFull: 100
+  hpFull: 20
   hpCurrent: 0
-  attack: 100
-  speed: 100
-  ppFull: 30
+  attack: 10
+  defense: 55
+  speed: 80
+  ppFull: 10
   initialPp: 0
   evolution: {fileID: 2254535982436329198, guid: e21a53e21113f3047af9ba872b166f70,
     type: 3}
