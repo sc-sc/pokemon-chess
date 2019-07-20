@@ -69,55 +69,15 @@ public class ChessBoard : PokemonPlaceableBoard
     {
         if (pokemon != null)
         {
-            owner.placedPokemons[pokemon] = at;
+            owner.SetPlacedPokemon(at, pokemon);
             pokemonUIManager.AddPokemonUI(pokemon);
             pokemon.HP_current = pokemon.HP_full;
-            Plus_type(pokemon);
             
         }
     }
     protected override void CompleteRemovePokemon(Vector2Int at, Pokemon pokemon)
     {
-        owner.placedPokemons.Remove(pokemon);
+        owner.RemovePlacedPokemon(pokemon);
         pokemonUIManager.RemovePokemonUI(pokemon);
-        Minus_type(pokemon);
-    }
-    public void Plus_type(Pokemon pokemon)
-    {
-        for(int i=0; i<pokemon.types.Length; i++)
-        {
-            //Debug.Log(pokemon.types[i]);
-            if(pokemon.types[i] == PokemonType.Bug)
-            {
-                owner.Bug += 1;
-            }
-            else if (pokemon.types[i] == PokemonType.Water)
-            {
-                owner.Water += 1;
-            }
-            else if (pokemon.types[i] == PokemonType.Fire)
-            {
-                owner.Fire += 1;
-            }
-        }
-    }
-    public void Minus_type(Pokemon pokemon)
-    {
-        for (int i = 0; i < pokemon.types.Length; i++)
-        {
-            //Debug.Log(pokemon.types[i]);
-            if (pokemon.types[i] == PokemonType.Bug)
-            {
-                owner.Bug -= 1;
-            }
-            else if (pokemon.types[i] == PokemonType.Water)
-            {
-                owner.Water -= 1;
-            }
-            else if (pokemon.types[i] == PokemonType.Fire)
-            {
-                owner.Fire -= 1;
-            }
-        }
     }
 }

@@ -42,4 +42,9 @@ public class TrainerInfo : MonoBehaviour
     {
         hpGauge.color = color;
     }
+
+    public void UpdateInfo()
+    {
+        SetTrainer(trainer);
+    }
 }

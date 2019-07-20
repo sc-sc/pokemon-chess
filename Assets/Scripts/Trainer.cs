@@ -14,9 +14,7 @@ public class Trainer : MonoBehaviour
     public int money;
     public int exp_expect;
     public int exp_present;
-    public int Bug;
-    public int Water;
-    public int Fire;
+    public Dictionary<PokemonType, List<Pokemon>> placedPokemonTypeDictionary = new Dictionary<PokemonType, List<Pokemon>>();
 
     public Dictionary<Pokemon, Vector2Int> placedPokemons;
     public Pokemon[] waitingPokemons;
@@ -25,5 +23,39 @@ public class Trainer : MonoBehaviour
     {
         placedPokemons = new Dictionary<Pokemon, Vector2Int>();
         waitingPokemons = new Pokemon[CanWaitPokemonsNumber];
+    }
+
+    public void SetPlacedPokemon(Vector2Int at, Pokemon pokemon)
+    {
+        placedPokemons[pokemon] = at;
+        foreach (PokemonType type in pokemon.types)
+        {
+            if (!placedPokemonTypeDictionary.ContainsKey(type))
+            {
+                placedPokemonTypeDictionary[type] = new List<Pokemon>();
+            }
+
+            List<Pokemon> pokemonList = placedPokemonTypeDictionary[type];
+
+            foreach (Pokemon sameTypePokemon in pokemonList)
+            {
+                if (sameTypePokemon.name == pokemon.name)
+                    return;
+            }
+
+            pokemonList.Add(pokemon);
+            Debug.Log((type, pokemonList.Count));
+        }
+    }
+
+    public void RemovePlacedPokemon(Pokemon pokemon)
+    {
+        placedPokemons.Remove(pokemon);
+        foreach (PokemonType type in pokemon.types)
+        {
+            List<Pokemon> pokemonList = placedPokemonTypeDictionary[type];
+            pokemonList.Remove(pokemon);
+            Debug.Log((type, pokemonList.Count));
+        }
     }
 }
