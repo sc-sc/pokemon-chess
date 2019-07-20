@@ -71,7 +71,9 @@ public class ChessBoard : PokemonPlaceableBoard
         {
             owner.placedPokemons[pokemon] = at;
             pokemonUIManager.AddPokemonUI(pokemon);
+            pokemon.HP_current = pokemon.HP_full;
             Plus_type(pokemon);
+            
         }
     }
     protected override void CompleteRemovePokemon(Vector2Int at, Pokemon pokemon)

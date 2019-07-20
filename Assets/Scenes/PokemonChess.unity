@@ -120,6 +120,61 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &33542262
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 33542263}
+  - component: {fileID: 33542264}
+  m_Layer: 0
+  m_Name: Trainer5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &33542263
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33542262}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 92406410}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &33542264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33542262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76181b6fe4bc0e945b9789535a9f93ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: Test4
+  nickname: test4
+  level: 1
+  hp: 100
+  currentHp: 100
+  money: 2
+  exp_expect: 2
+  exp_present: 0
+  Bug: 0
+  Water: 0
+  Fire: 0
+  waitingPokemons: []
 --- !u!1 &43250561
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,6 +365,42 @@ Transform:
   m_Children: []
   m_Father: {fileID: 526993663}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &92406409
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 92406410}
+  m_Layer: 0
+  m_Name: Trainers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &92406410
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92406409}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.5, y: -0.25, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 588119697}
+  - {fileID: 962872347}
+  - {fileID: 3670578478122945609}
+  - {fileID: 1622603087}
+  - {fileID: 1359554033}
+  - {fileID: 33542263}
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &124814348
 GameObject:
@@ -604,7 +695,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &264190932
 GameObject:
@@ -1368,12 +1459,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 588119696}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.5, y: 0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_Father: {fileID: 92406410}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &588119698
 MonoBehaviour:
@@ -2150,6 +2241,103 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &962872345
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 92406410}
+    m_Modifications:
+    - target: {fileID: 367638003606663563, guid: 37aa199dff49cc448bf41b642460b1ba,
+        type: 3}
+      propertyPath: money
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 367638003606663563, guid: 37aa199dff49cc448bf41b642460b1ba,
+        type: 3}
+      propertyPath: exp_expect
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1077766100700705356, guid: 37aa199dff49cc448bf41b642460b1ba,
+        type: 3}
+      propertyPath: m_Name
+      value: "\uC6C5"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1077766100700705345, guid: 37aa199dff49cc448bf41b642460b1ba,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -21.213203
+      objectReference: {fileID: 0}
+    - target: {fileID: 1077766100700705345, guid: 37aa199dff49cc448bf41b642460b1ba,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 36.742344
+      objectReference: {fileID: 0}
+    - target: {fileID: 1077766100700705345, guid: 37aa199dff49cc448bf41b642460b1ba,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1077766100700705345, guid: 37aa199dff49cc448bf41b642460b1ba,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1077766100700705345, guid: 37aa199dff49cc448bf41b642460b1ba,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1077766100700705345, guid: 37aa199dff49cc448bf41b642460b1ba,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1077766100700705345, guid: 37aa199dff49cc448bf41b642460b1ba,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1077766100700705345, guid: 37aa199dff49cc448bf41b642460b1ba,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1077766100700705345, guid: 37aa199dff49cc448bf41b642460b1ba,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1077766100700705345, guid: 37aa199dff49cc448bf41b642460b1ba,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1077766100700705345, guid: 37aa199dff49cc448bf41b642460b1ba,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 37aa199dff49cc448bf41b642460b1ba, type: 3}
+--- !u!114 &962872346 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 367638003606663563, guid: 37aa199dff49cc448bf41b642460b1ba,
+    type: 3}
+  m_PrefabInstance: {fileID: 962872345}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76181b6fe4bc0e945b9789535a9f93ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &962872347 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1077766100700705345, guid: 37aa199dff49cc448bf41b642460b1ba,
+    type: 3}
+  m_PrefabInstance: {fileID: 962872345}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1005399940
 GameObject:
   m_ObjectHideFlags: 0
@@ -3032,6 +3220,61 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23392a932aa8c954a965533ff076ff95, type: 3}
+--- !u!1 &1359554032
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1359554033}
+  - component: {fileID: 1359554034}
+  m_Layer: 0
+  m_Name: Trainer4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1359554033
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359554032}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 92406410}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1359554034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359554032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76181b6fe4bc0e945b9789535a9f93ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: Test3
+  nickname: test3
+  level: 1
+  hp: 100
+  currentHp: 100
+  money: 2
+  exp_expect: 2
+  exp_present: 0
+  Bug: 0
+  Water: 0
+  Fire: 0
+  waitingPokemons: []
 --- !u!1 &1376172247
 GameObject:
   m_ObjectHideFlags: 0
@@ -4454,6 +4697,61 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1622603086
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1622603087}
+  - component: {fileID: 1622603088}
+  m_Layer: 0
+  m_Name: Trainer3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1622603087
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622603086}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 92406410}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1622603088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622603086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76181b6fe4bc0e945b9789535a9f93ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: Test2
+  nickname: test2
+  level: 1
+  hp: 100
+  currentHp: 100
+  money: 2
+  exp_expect: 2
+  exp_present: 0
+  Bug: 0
+  Water: 0
+  Fire: 0
+  waitingPokemons: []
 --- !u!1 &1764955373
 GameObject:
   m_ObjectHideFlags: 0
@@ -4530,11 +4828,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trainers:
   - {fileID: 588119698}
-  - {fileID: 367638003606663563, guid: 37aa199dff49cc448bf41b642460b1ba, type: 3}
-  - {fileID: 588119698}
-  - {fileID: 588119698}
-  - {fileID: 588119698}
-  - {fileID: 588119698}
+  - {fileID: 962872346}
+  - {fileID: 4115834802704732035}
+  - {fileID: 1622603088}
+  - {fileID: 1359554034}
+  - {fileID: 33542264}
   chessField: {fileID: 1689426152727209284, guid: 52517db18b3a2b642b37d62f040dac8c,
     type: 3}
   pokemonSafari: {fileID: 181882527}
@@ -5298,3 +5596,58 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &3670578478122945604
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3670578478122945609}
+  - component: {fileID: 4115834802704732035}
+  m_Layer: 0
+  m_Name: Trainer2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3670578478122945609
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3670578478122945604}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 92406410}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4115834802704732035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3670578478122945604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76181b6fe4bc0e945b9789535a9f93ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: Test
+  nickname: test1
+  level: 1
+  hp: 100
+  currentHp: 100
+  money: 2
+  exp_expect: 2
+  exp_present: 0
+  Bug: 0
+  Water: 0
+  Fire: 0
+  waitingPokemons: []

@@ -17,9 +17,7 @@ public class TrainerList : MonoBehaviour
         foreach (Trainer trainer in gm.trainers)
         {
             TrainerInfo trainerInfo = Instantiate(Resources.Load("Prefabs/TrainerInfo") as GameObject, layout.transform).GetComponent<TrainerInfo>();
-            trainerInfo.nickname.text = trainer.nickname;
-            trainerInfo.SetLevel(trainer.level);
-            trainerInfo.SetHp(trainer.hp, trainer.currentHp);
+            trainerInfo.SetTrainer(trainer);
             trainerInfo.SetHpColor(trainerColor[index]);
             index++;
         }
