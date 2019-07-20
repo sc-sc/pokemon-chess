@@ -164,6 +164,7 @@ GameObject:
   - component: {fileID: 2222119032177011273}
   - component: {fileID: 7767940283428448906}
   - component: {fileID: 7169045325548786430}
+  - component: {fileID: 2948935528535878365}
   m_Layer: 5
   m_Name: PokemonUI
   m_TagString: Untagged
@@ -246,6 +247,20 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &2948935528535878365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2222119032177011286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d418426c491b07e43be64f86ba97a8b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hpBar: {fileID: 4604544969413882491}
+  ppBar: {fileID: 4435393515756754719}
 --- !u!1 &6066057208517283011
 GameObject:
   m_ObjectHideFlags: 0

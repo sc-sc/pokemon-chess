@@ -48,7 +48,6 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        battleManager = GetComponent<BattleManager>();
         StartNewGame();
     }
 }
