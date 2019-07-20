@@ -22,6 +22,7 @@ public class Pokemon : MonoBehaviour
     public int hpFull = 100;
     public int hpCurrent;
     public int attack = 100;
+    public int defense = 100;
     public int speed = 100;
 
     public int ppFull = 30;
@@ -117,7 +118,7 @@ public class Pokemon : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
-        int damage = 20;
+        int damage = CalculateDamage();
         currentPp += 5;
         attackTarget.Hit(damage, this);
         isOnAttack = false;
@@ -137,6 +138,36 @@ public class Pokemon : MonoBehaviour
         StartCoroutine(HitAction());
     }
 
+    public int CalculateDamage()
+    {
+        return (int) ((((((22) * 30 * attack / 50) / attackTarget.defense) * Mod1()) + 2)
+            * Critical() * Mod2() * TypeBonus() * Mod3());
+    }
+
+    private float Mod1()
+    {
+        return 1;
+    }
+
+    private float Mod2()
+    {
+        return 1;
+    }
+
+    private float Mod3()
+    {
+        return 1;
+    }
+
+    private float TypeBonus()
+    {
+        return 1;
+    }
+
+    private float Critical()
+    {
+        return 1;
+    }
     private IEnumerator HitAction()
     {
         spriteRenderer.color = new Color(spriteRenderer.color.r, 0, 0);
