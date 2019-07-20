@@ -18,12 +18,11 @@ public class Trainer : MonoBehaviour
     public int Water;
     public int Fire;
 
-    public Dictionary<Pokemon, Vector2Int> placedPokemons;
+    public Dictionary<Pokemon, Vector2Int> placedPokemons = new Dictionary<Pokemon, Vector2Int>();
     public Pokemon[] waitingPokemons;
 
     protected virtual void Awake()
     {
-        placedPokemons = new Dictionary<Pokemon, Vector2Int>();
         waitingPokemons = new Pokemon[CanWaitPokemonsNumber];
     }
 }

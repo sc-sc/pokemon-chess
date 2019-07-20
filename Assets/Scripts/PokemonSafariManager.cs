@@ -176,12 +176,15 @@ public class PokemonSafariManager : MonoBehaviour
         int samePokemonCount = 0;
         List<Pokemon> placedSamePokemonList = new List<Pokemon>();
 
-        foreach (Pokemon placedPokemon in trainer.placedPokemons.Keys)
+        if (!gameManager.battleManager.isInBattle)
         {
-            if (placedPokemon.name == pokemon.name)
+            foreach (Pokemon placedPokemon in trainer.placedPokemons.Keys)
             {
-                samePokemonCount += 1;
-                placedSamePokemonList.Add(placedPokemon);
+                if (placedPokemon.name == pokemon.name)
+                {
+                    samePokemonCount += 1;
+                    placedSamePokemonList.Add(placedPokemon);
+                }
             }
         }
 

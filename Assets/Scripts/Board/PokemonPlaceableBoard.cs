@@ -5,6 +5,8 @@ using UnityEngine.Tilemaps;
 
 public abstract class PokemonPlaceableBoard : MonoBehaviour, Touchable
 {
+    protected bool isTouchable = true;
+
     public Trainer owner;
     public Tilemap tilemap;
     protected Vector3Int selectedPosition;
@@ -32,6 +34,9 @@ public abstract class PokemonPlaceableBoard : MonoBehaviour, Touchable
 
     public virtual bool PlacePokemon(Vector2Int index, Pokemon pokemon)
     {
+        if (!isTouchable)
+            return false;
+
         Vector3Int cellPosition = IndexToCell(index);
         if (!tilemap.HasTile(cellPosition)) return false;
 
@@ -91,7 +96,7 @@ public abstract class PokemonPlaceableBoard : MonoBehaviour, Touchable
         if (pokemon != null)
         {
             pokemonCache[pokemon] = index;
-            pokemon.transform.position = tilemap.GetCellCenterWorld(IndexToCell(index));
+            pokemon.transform.position = IndexToWorldPosition(index);
         }
 
         CompleteSetPokemon(index, pokemon);
@@ -120,6 +125,10 @@ public abstract class PokemonPlaceableBoard : MonoBehaviour, Touchable
 
     protected abstract Vector3Int IndexToCell(Vector2Int index);
 
+    public Vector3 IndexToWorldPosition(Vector2Int index)
+    {
+        return tilemap.GetCellCenterWorld(IndexToCell(index));
+    }
     public bool HasSquare(Vector3 worldPosition)
     {
         Vector3Int cellPosition = tilemap.WorldToCell(worldPosition);
@@ -129,6 +138,8 @@ public abstract class PokemonPlaceableBoard : MonoBehaviour, Touchable
 
     public virtual void Touched(Vector3 at)
     {
+        if (!isTouchable) return;
+
         selectedPosition = tilemap.WorldToCell(at);
         tilemap.SetColor(selectedPosition, Color.cyan);
 

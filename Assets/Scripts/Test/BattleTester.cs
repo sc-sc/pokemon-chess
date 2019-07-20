@@ -4,12 +4,33 @@ using UnityEngine;
 
 public class BattleTester : MonoBehaviour
 {
-    public Trainer bottomTrainer;
-    public Trainer topTrainer;
-
+    public Pokemon[] playerPokemons;
+    public Pokemon[] challengerPokemons;
     void Start()
     {
-        
+        GameManager gameManager = FindObjectOfType<GameManager>();
+
+        Trainer player = gameManager.trainers[0];
+        Trainer challenger = gameManager.trainers[1];
+
+        player.level = 3;
+        challenger.level = 3;
+
+        for (int i = 0; i < playerPokemons.Length; i++)
+        {
+            Pokemon playerPokemon = Instantiate(playerPokemons[i]);
+            playerPokemon.trainer = player;
+            gameManager.chessBoards[player].PlacePokemon(new Vector2Int(i, 0), playerPokemon);
+        }
+
+        for (int i = 0; i < challengerPokemons.Length; i++)
+        {
+            Pokemon challengerPokemon = Instantiate(challengerPokemons[i]);
+            challengerPokemon.trainer = challenger;
+            gameManager.chessBoards[challenger].PlacePokemon(new Vector2Int(i, 0), challengerPokemon);
+        }
+
+        FindObjectOfType<BattleManager>().ReadyBattle(player, challenger);
     }
 
     // Update is called once per frame

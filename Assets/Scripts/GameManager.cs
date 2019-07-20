@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public Dictionary<Trainer, ChessBoard> chessBoards;
     public Dictionary<Trainer, WaitingBoard> waitingBoards;
     public GameObject lapras;
+    public BattleManager battleManager;
     public void StartNewGame()
     {
         chessBoards = new Dictionary<Trainer, ChessBoard>();
@@ -45,8 +46,9 @@ public class GameManager : MonoBehaviour
         pokemonSafari.Refresh();
     }
 
-    void Start()
+    void Awake()
     {
+        battleManager = GetComponent<BattleManager>();
         StartNewGame();
     }
 }

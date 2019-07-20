@@ -8,7 +8,7 @@ public class ChessBoard : PokemonPlaceableBoard
     public const int MaxRowCanPlace = 4;
 
     private PokemonUIManager pokemonUIManager;
-
+    private BattleExecutor battleExecutor;
     public override void Moved(Vector3 to)
     {
         base.Moved(to);
@@ -35,6 +35,8 @@ public class ChessBoard : PokemonPlaceableBoard
         placedPokemons = new Pokemon[8, 8];
 
         pokemonUIManager = FindObjectOfType<PokemonUIManager>();
+
+        battleExecutor = GetComponent<BattleExecutor>();
     }
 
     protected override Vector3Int IndexToCell(Vector2Int index)
@@ -117,5 +119,16 @@ public class ChessBoard : PokemonPlaceableBoard
                 owner.Fire -= 1;
             }
         }
+    }
+
+    public void ReadyBattle(Trainer challenger)
+    {
+        isTouchable = false;
+        if (selectedPokemon != null)
+        {
+            Released(new Vector3(0, 0));
+        }
+
+        battleExecutor.ReadyBattle(challenger);
     }
 }

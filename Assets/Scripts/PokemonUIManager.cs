@@ -5,11 +5,7 @@ using UnityEngine.UI;
 public class PokemonUIManager : MonoBehaviour
 {   
     public GameObject pokemonUIPrefab;
-    private Dictionary<Pokemon, GameObject> pokemonUIDictionary;
-    void Start()
-    {
-        pokemonUIDictionary = new Dictionary<Pokemon, GameObject>();
-    }
+    private Dictionary<Pokemon, GameObject> pokemonUIDictionary = new Dictionary<Pokemon, GameObject>();
 
     // Update is called once per frame
     void LateUpdate()
