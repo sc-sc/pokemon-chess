@@ -182,7 +182,7 @@ MonoBehaviour:
   HP_full: 5
   HP_current: 0
   Attack: 0
-  Type1: "\uB178\uB9D0"
   evolution: {fileID: 0}
   evolutionPhase: 1
   uiTransform: {fileID: 3313823546194805757}
+  types: 00000000
