@@ -9,6 +9,7 @@ public class ChessBoard : PokemonPlaceableBoard
 
     private PokemonUIManager pokemonUIManager;
     private BattleExecutor battleExecutor;
+    public Transform challengerPosition;
     public override void Moved(Vector3 to)
     {
         base.Moved(to);
@@ -90,6 +91,8 @@ public class ChessBoard : PokemonPlaceableBoard
         {
             Released(new Vector3(0, 0));
         }
+        challenger.transform.position = challengerPosition.position;
+        challenger.GetComponent<Animator>().SetTrigger("Appear");
 
         battleExecutor.ReadyBattle(challenger);
     }
