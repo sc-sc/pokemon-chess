@@ -101,7 +101,22 @@ public class Pokemon : MonoBehaviour
     private IEnumerator AttackAction()
     {
         isOnAttack = true;
-        yield return new WaitForSeconds(100f / speed);
+        if (attackTarget.transform.position.x > transform.position.x)
+            spriteRenderer.flipX = true;
+        else
+            spriteRenderer.flipX = false;
+
+        float attackTime = 100f / speed;
+        for (float time = 0.0f; time < attackTime; time += Time.deltaTime)
+        {
+            if (!attackTarget.isAlive || DistanceBetweenAttackTarget() > actualRange)
+            {
+                isOnAttack = false;
+                yield break;
+            }
+            yield return new WaitForEndOfFrame();
+        }
+
         int damage = 20;
         currentPp += 5;
         attackTarget.Hit(damage, this);
@@ -113,13 +128,13 @@ public class Pokemon : MonoBehaviour
         hpCurrent -= damage;
         currentPp += 5;
         pokemonUIManager.ChangeHp(this);
-        StartCoroutine(HitAction());
-
         if (hpCurrent <= 0)
         {
+            StopAllCoroutines();
             isAlive = false;
             battleCallbackHandler.PokemonDead(this);
         }
+        StartCoroutine(HitAction());
     }
 
     private IEnumerator HitAction()
