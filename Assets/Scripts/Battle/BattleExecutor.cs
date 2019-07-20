@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BattleExecutor : MonoBehaviour
 {
+    public bool isInBattle = false;
+
     private Pokemon[,] pokemonsInBattle;
     private ChessBoard chessBoard;
     private float moveTimer;
@@ -35,6 +37,7 @@ public class BattleExecutor : MonoBehaviour
 
     private void ReadyPokemons(Trainer trainer)
     {
+        isInBattle = true;
         winner = null;
 
         foreach (KeyValuePair<Pokemon, Vector2Int> pokemonAndIndex in trainer.placedPokemons)
@@ -112,15 +115,23 @@ public class BattleExecutor : MonoBehaviour
     }
     public void PokemonDead(Pokemon pokemon)
     {
+        Vector2Int index;
         if (liveChallengerPokemons.ContainsKey(pokemon))
         {
+            index = liveChallengerPokemons[pokemon];
+            pokemonsInBattle[index.x, index.y] = null;
+
             liveChallengerPokemons.Remove(pokemon);
+
             if (liveChallengerPokemons.Count == 0)
             {
                 Victory(chessBoard.owner);
             }
         } else
         {
+            index = liveOwnerPokemons[pokemon];
+            pokemonsInBattle[index.x, index.y] = null;
+
             liveOwnerPokemons.Remove(pokemon);
             if (liveOwnerPokemons.Count == 0)
             {
@@ -150,5 +161,10 @@ public class BattleExecutor : MonoBehaviour
             KeyValuePair<Pokemon, Vector2Int> attackPokemonAndIndex = new KeyValuePair<Pokemon, Vector2Int>(attackPokemon, liveChallengerPokemons[attackPokemon]);
             SetAttackTargetTo(attackPokemonAndIndex, liveOwnerPokemons);
         }
+    }
+
+    public Pokemon GetPokemonInBattle(Vector2Int index)
+    {
+        return pokemonsInBattle[index.x, index.y];
     }
 }

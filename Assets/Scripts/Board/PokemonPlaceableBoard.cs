@@ -228,7 +228,7 @@ public abstract class PokemonPlaceableBoard : MonoBehaviour, Touchable
         selectedPosition = selectedPosition = new Vector3Int(0, 0, -100);
     }
 
-    public void SpecialTouched(Vector3 at)
+    public virtual void SpecialTouched(Vector3 at)
     {
         Vector3Int cellPosition = tilemap.WorldToCell(at);
         Vector2Int index = CellToIndex(cellPosition);

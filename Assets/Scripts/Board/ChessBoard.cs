@@ -10,10 +10,6 @@ public class ChessBoard : PokemonPlaceableBoard
     private PokemonUIManager pokemonUIManager;
     private BattleExecutor battleExecutor;
     public Transform challengerPosition;
-    public override void Moved(Vector3 to)
-    {
-        base.Moved(to);
-    }
 
     protected override void ChangePassingSquareColor(Vector3Int passingCellPosition)
     {
@@ -23,10 +19,22 @@ public class ChessBoard : PokemonPlaceableBoard
             tilemap.SetColor(passingCellPosition, Color.red);
     }
 
-    public override void Released(Vector3 at)
+    public override void SpecialTouched(Vector3 at)
     {
-        base.Released(at);
+        if (battleExecutor.isInBattle)
+        {
+            Vector3Int cellPosition = tilemap.WorldToCell(at);
+            Vector2Int index = CellToIndex(cellPosition);
+            Pokemon pokemon = battleExecutor.GetPokemonInBattle(index);
+            if (pokemon != null)
+            {
+                pokemonInformation.ShowPokemonInformation(pokemon);
+            }
+
+        } else
+            base.SpecialTouched(at);
     }
+
     protected override void Awake()
     {
         base.Awake();

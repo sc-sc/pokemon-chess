@@ -47,7 +47,10 @@ public class Pokemon : MonoBehaviour
     public PokemonType[] types = new PokemonType[2];
 
     public int range = 1;
-    private float actualRange;
+    private float actualRange
+    {
+        get { return range * 2.5f; }
+    }
     public Pokemon attackTarget;
     private bool isOnAttack = false;
 
@@ -58,7 +61,6 @@ public class Pokemon : MonoBehaviour
     {
         hpCurrent = hpFull;
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        actualRange = range * 2.5f;
         pokemonUIManager = FindObjectOfType<PokemonUIManager>();
     }
 
