@@ -12,6 +12,21 @@ public class TrainerInfo : MonoBehaviour
     [SerializeField]
     private Image hpGauge;
     public Image Icon;
+    public Trainer trainer;
+
+    public void SetTrainer(Trainer trainer)
+    {
+        this.trainer = trainer;
+        nickname.text = trainer.nickname;
+        SetLevel(trainer.level);
+        SetHp(trainer.hp, trainer.currentHp);
+
+        goChessFieldButton.onClick.AddListener(() =>
+        {
+            Vector2 cameraPosition = FindObjectOfType<GameManager>().chessBoards[trainer].transform.position;
+            Camera.main.transform.position = new Vector3(cameraPosition.x, cameraPosition.y, Camera.main.transform.position.z);
+        });
+    }
 
     public void SetHp(int hp, int currentHp)
     {
@@ -26,5 +41,10 @@ public class TrainerInfo : MonoBehaviour
     public void SetHpColor(Color color)
     {
         hpGauge.color = color;
+    }
+
+    public void UpdateInfo()
+    {
+        SetTrainer(trainer);
     }
 }

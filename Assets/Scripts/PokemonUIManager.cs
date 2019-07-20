@@ -35,4 +35,21 @@ public class PokemonUIManager : MonoBehaviour
             pokemonUIDictionary.Remove(pokemon);
         }
     }
+
+    public void ChangeHp(Pokemon pokemon)
+    {
+        StartCoroutine(Change_Hp_Action(pokemon));
+    }
+
+    private IEnumerator Change_Hp_Action(Pokemon pokemon)
+    {
+        float temp = (float)pokemon.HP_current / pokemon.HP_full;
+        Image hpBar = pokemonUIDictionary[pokemon].transform.Find("Bar").Find("HpBar").GetComponent<Image>();
+        for (float time = 0f; time < 0.2f; time += Time.fixedDeltaTime)
+        {
+            hpBar.fillAmount = Mathf.Lerp(hpBar.fillAmount, temp, time * 5) ;
+            yield return new WaitForSeconds(Time.fixedDeltaTime);
+        }
+    }
+
 }
