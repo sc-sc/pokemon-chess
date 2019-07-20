@@ -37,7 +37,7 @@ public class PokemonUIManager : MonoBehaviour
     {
         if (pokemon != null)
         {
-            Destroy(pokemonUIDictionary[pokemon]);
+            Destroy(pokemonUIDictionary[pokemon].gameObject);
             pokemonUIDictionary.Remove(pokemon);
         }
     }
@@ -45,5 +45,10 @@ public class PokemonUIManager : MonoBehaviour
     public void ChangeHp(Pokemon pokemon)
     {
         pokemonUIDictionary[pokemon].ChangeHp(pokemon);
+    }
+
+    public void ChangePp(Pokemon pokemon)
+    {
+        pokemonUIDictionary[pokemon].ChangePp(pokemon);
     }
 }

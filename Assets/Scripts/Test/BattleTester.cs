@@ -31,6 +31,7 @@ public class BattleTester : MonoBehaviour
         }
 
         FindObjectOfType<BattleManager>().ReadyBattle(player, challenger);
+        FindObjectOfType<BattleManager>().StartBattle();
     }
 
     // Update is called once per frame

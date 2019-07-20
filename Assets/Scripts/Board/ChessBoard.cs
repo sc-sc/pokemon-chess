@@ -74,8 +74,8 @@ public class ChessBoard : PokemonPlaceableBoard
         {
             owner.SetPlacedPokemon(at, pokemon);
             pokemonUIManager.AddPokemonUI(pokemon);
-            pokemon.HP_current = pokemon.HP_full;
-            
+            pokemon.hpCurrent = pokemon.hpFull;
+            pokemon.currentPp = pokemon.initialPp;
         }
     }
     protected override void CompleteRemovePokemon(Vector2Int at, Pokemon pokemon)
@@ -95,5 +95,10 @@ public class ChessBoard : PokemonPlaceableBoard
         challenger.GetComponent<Animator>().SetTrigger("Appear");
 
         battleExecutor.ReadyBattle(challenger);
+    }
+
+    public void StartBattle()
+    {
+        battleExecutor.StartBattle();
     }
 }
