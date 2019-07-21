@@ -5,6 +5,7 @@ using UnityEngine;
 public class BattleManager : MonoBehaviour
 {
     public bool isInBattle = false;
+    public AudioClip finalBattleBgm;
     private GameManager gameManager;
     private List<ChessBoard> homeChessBoards;
     void Awake()
@@ -14,6 +15,11 @@ public class BattleManager : MonoBehaviour
     }
     public void ReadyBattle(Trainer home, Trainer away)
     {
+        if (gameManager.trainers.Count == 2)
+        {
+            gameManager.PlayBgm(finalBattleBgm);
+        }
+
         isInBattle = true;
         gameManager.chessBoards[home].ReadyBattle(away);
         homeChessBoards.Add(gameManager.chessBoards[home]);

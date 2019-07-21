@@ -19,4 +19,9 @@ public class BattleCallbackHandler : MonoBehaviour
     {
         battleExecutor.SetAttackTargetTo(pokemon);
     }
+
+    public bool IsAttackTargetInRange(Pokemon pokemon)
+    {
+        return battleExecutor.IsAttackTargetInRange(pokemon);
+    }
 }

@@ -78,7 +78,11 @@ public class BattleExecutor : MonoBehaviour
 
     private IEnumerator BattleCoroutine()
     {
-        yield return new WaitForSeconds(1f);
+        for (float time = 0f; time < 1f; time += Time.deltaTime)
+        {
+            yield return new WaitForEndOfFrame();
+        }
+
         MovePokemons(chessBoard.owner);
         MovePokemons(challenger);
         battleCoroutine = BattleCoroutine();
@@ -184,8 +188,6 @@ public class BattleExecutor : MonoBehaviour
         Vector2Int moveTo = index;
 
         Vector2Int absDistance = new Vector2Int(Mathf.Abs(distance.x), Mathf.Abs(distance.y));
-
-        Debug.Log(absDistance);
 
         if (absDistance.x > absDistance.y && (canGoRight || canGoLeft))
         {
@@ -313,5 +315,19 @@ public class BattleExecutor : MonoBehaviour
     public Pokemon GetPokemonInBattle(Vector2Int index)
     {
         return pokemonsInBattle[index.x, index.y];
+    }
+
+    public bool IsAttackTargetInRange(Pokemon pokemon)
+    {
+        Vector2Int distance;
+        if (pokemon.trainer == chessBoard.owner)
+        {
+             distance = liveOwnerPokemons[pokemon] - liveChallengerPokemons[pokemon.attackTarget];
+        } else
+        {
+            distance = liveChallengerPokemons[pokemon] - liveOwnerPokemons[pokemon.attackTarget];
+        }
+
+        return Mathf.Abs(distance.x) <= pokemon.range && Mathf.Abs(distance.y) <= pokemon.range;
     }
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2254535982436329201}
   - component: {fileID: 2254535982436329200}
   m_Layer: 0
-  m_Name: "\uBC84\uD130\uD480"
+  m_Name: "1#12\uBC84\uD130\uD50C"
   m_TagString: Pokemon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,18 +48,19 @@ MonoBehaviour:
   currentState: 0
   trainer: {fileID: 0}
   cost: 1
-  hpFull: 100
-  hpCurrent: 0
-  attack: 100
-  defense: 100
-  speed: 100
+  baseHp: 60
+  _currentHp: 0
+  baseAttack: 45
+  baseDefense: 50
+  baseSpeed: 70
   ppFull: 30
   initialPp: 0
+  _currentPp: 0
   evolution: {fileID: 0}
   evolutionPhase: 1
   uiTransform: {fileID: 4982657042636162291}
   types: 0b00000009000000
-  range: 2
+  range: 3
   attackTarget: {fileID: 0}
   isAlive: 1
   battleCallbackHandler: {fileID: 0}

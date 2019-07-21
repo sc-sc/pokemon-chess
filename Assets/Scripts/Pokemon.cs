@@ -70,10 +70,6 @@ public class Pokemon : MonoBehaviour
     public PokemonType[] types = new PokemonType[2];
 
     public float range = 1;
-    private float actualRange
-    {
-        get { return range * 2.5f; }
-    }
     public Pokemon attackTarget;
     private bool isOnAttack = false;
 
@@ -204,9 +200,9 @@ public class Pokemon : MonoBehaviour
 
     private bool IsAttackTargetInRange()
     {
-        Vector3 distance = attackTarget.transform.position - transform.position;
+        Vector2 distance = attackTarget.transform.position - transform.position;
 
-        return Mathf.Abs(distance.y) < actualRange && distance.magnitude <= actualRange;
+        return battleCallbackHandler.IsAttackTargetInRange(this);
     }
 
     public void MoveTo(Vector3 position)

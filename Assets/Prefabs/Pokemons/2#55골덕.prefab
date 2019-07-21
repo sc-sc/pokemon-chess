@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2254535982436329201}
   - component: {fileID: 2254535982436329200}
   m_Layer: 0
-  m_Name: Golduck
+  m_Name: "2#55\uACE8\uB355"
   m_TagString: Pokemon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,16 +45,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a9a793453a620142940e4e02c602596, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentState: 0
   trainer: {fileID: 0}
   cost: 2
-  HP_full: 5
-  HP_current: 0
-  Attack: 0
+  baseHp: 80
+  _currentHp: 0
+  baseAttack: 82
+  baseDefense: 78
+  baseSpeed: 85
+  ppFull: 30
+  initialPp: 0
+  _currentPp: 0
   evolution: {fileID: 2254535982436329198, guid: c91056331d3339a4b80eb7b9bdac2c01,
     type: 3}
   evolutionPhase: 1
   uiTransform: {fileID: 1032035533469189013}
   types: 02000000
+  range: 2
+  attackTarget: {fileID: 0}
+  isAlive: 1
+  battleCallbackHandler: {fileID: 0}
 --- !u!1 &2254535982534229303
 GameObject:
   m_ObjectHideFlags: 0

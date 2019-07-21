@@ -143,7 +143,7 @@ GameObject:
   - component: {fileID: 7236754985802801845}
   - component: {fileID: 7236754985802801846}
   m_Layer: 0
-  m_Name: Psyduck
+  m_Name: "2#54\uACE0\uB77C\uD30C\uB355"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -177,13 +177,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a9a793453a620142940e4e02c602596, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentState: 0
   trainer: {fileID: 0}
   cost: 2
-  HP_full: 5
-  HP_current: 0
-  Attack: 0
+  baseHp: 50
+  _currentHp: 0
+  baseAttack: 52
+  baseDefense: 48
+  baseSpeed: 55
+  ppFull: 30
+  initialPp: 0
+  _currentPp: 0
   evolution: {fileID: 2254535982436329198, guid: 4a3b49747593b1347bbbf54252958224,
     type: 3}
   evolutionPhase: 1
   uiTransform: {fileID: 1646034887289356612}
   types: 02000000
+  range: 2
+  attackTarget: {fileID: 0}
+  isAlive: 1
+  battleCallbackHandler: {fileID: 0}

@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public Dictionary<Trainer, WaitingBoard> waitingBoards;
     public GameObject lapras;
     public BattleManager battleManager;
+
+    private AudioSource audioSource;
     public void StartNewGame()
     {
         chessBoards = new Dictionary<Trainer, ChessBoard>();
@@ -24,7 +26,7 @@ public class GameManager : MonoBehaviour
 
             GameObject chessFieldInstance = Instantiate(chessField);
             Vector3 position = Quaternion.Euler(0f, 0f, angle / 4f + angle * i) * new Vector3(30f, 30f);
-            chessFieldInstance.transform.position = new Vector3(Mathf.Round(position.x), Mathf.Round(position.y));
+            chessFieldInstance.transform.position = new Vector3(Mathf.Floor(position.x), Mathf.Floor(position.y));
             ChessBoard chessBoard = chessFieldInstance.GetComponentInChildren<ChessBoard>();
             WaitingBoard waitingBoard = chessFieldInstance.GetComponentInChildren<WaitingBoard>();
             chessBoard.owner = trainer;
@@ -49,6 +51,14 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
         StartNewGame();
+    }
+
+    public void PlayBgm(AudioClip bgm)
+    {
+        audioSource.Stop();
+        audioSource.PlayOneShot(bgm);
+        audioSource.loop = true;
     }
 }
