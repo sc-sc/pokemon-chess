@@ -98,7 +98,7 @@ public class BattleExecutor : MonoBehaviour
     {
         var attackPokemonsAndIndexes = trainer == chessBoard.owner ?
             liveOwnerPokemons.OrderBy(pokemonAndIndex => pokemonAndIndex.Value.magnitude) :
-            liveChallengerPokemons.OrderBy(pokemonAndIndex => (new Vector2Int(7, 7) - pokemonAndIndex.Value).magnitude);
+            liveChallengerPokemons.OrderBy(pokemonAndIndex => -pokemonAndIndex.Value.magnitude);
 
         var targetPokemonsAndIndex = trainer == chessBoard.owner ?
             liveChallengerPokemons :
@@ -189,7 +189,7 @@ public class BattleExecutor : MonoBehaviour
 
         Vector2Int absDistance = new Vector2Int(Mathf.Abs(distance.x), Mathf.Abs(distance.y));
 
-        if (absDistance.x > absDistance.y && (canGoRight || canGoLeft))
+        if (absDistance.x >= absDistance.y && (canGoRight || canGoLeft))
         {
             if (distance.x > 0 && canGoRight)
             {
