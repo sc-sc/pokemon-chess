@@ -43,7 +43,7 @@ public class DamageCalculator : MonoBehaviour
 
     private static int IV(Pokemon pokemon)
     {
-        return (11 + pokemon.cost) * (pokemon.evolutionPhase - 1);
+        return (6 + pokemon.cost * 2) * (pokemon.evolutionPhase - 1);
     }
 
     private static int EV(Pokemon pokemon)
