@@ -174,7 +174,7 @@ public class BattleExecutor : MonoBehaviour
                 liveChallengerPokemons[attackPokemon] = moveTo;
             }
             pokemonsInBattle[moveTo.x, moveTo.y] = attackPokemon;
-            attackPokemon.transform.position = chessBoard.IndexToWorldPosition(moveTo);
+            attackPokemon.MoveTo(chessBoard.IndexToWorldPosition(moveTo));
         }
     }
 

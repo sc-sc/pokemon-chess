@@ -23,7 +23,8 @@ public class GameManager : MonoBehaviour
             Trainer trainer = trainers[i];
 
             GameObject chessFieldInstance = Instantiate(chessField);
-            chessFieldInstance.transform.position = Quaternion.Euler(0f, 0f, angle / 4f + angle * i) * new Vector3(30f, 30f);
+            Vector3 position = Quaternion.Euler(0f, 0f, angle / 4f + angle * i) * new Vector3(30f, 30f);
+            chessFieldInstance.transform.position = new Vector3(Mathf.Round(position.x), Mathf.Round(position.y));
             ChessBoard chessBoard = chessFieldInstance.GetComponentInChildren<ChessBoard>();
             WaitingBoard waitingBoard = chessFieldInstance.GetComponentInChildren<WaitingBoard>();
             chessBoard.owner = trainer;

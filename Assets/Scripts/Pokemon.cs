@@ -96,7 +96,7 @@ public class Pokemon : MonoBehaviour
             case PokemonState.Attack:
                 if (!isOnAttack)
                 {
-                    if ((!attackTarget.isAlive) || DistanceBetweenAttackTarget() > actualRange)
+                    if ((!attackTarget.isAlive) || !IsAttackTargetInRange())
                         currentState = PokemonState.Move;
                     else
                     {
@@ -109,7 +109,7 @@ public class Pokemon : MonoBehaviour
             case PokemonState.Move:
                 if (attackTarget != null && attackTarget.isAlive)
                 {
-                    if (DistanceBetweenAttackTarget() <= actualRange)
+                    if (IsAttackTargetInRange())
                         currentState = PokemonState.Attack;
                 } else
                     battleCallbackHandler.LostAttackTarget(this);
@@ -131,7 +131,7 @@ public class Pokemon : MonoBehaviour
         float attackTime = 100f / baseSpeed;
         for (float time = 0.0f; time < attackTime; time += Time.deltaTime)
         {
-            if (!attackTarget.isAlive || DistanceBetweenAttackTarget() > actualRange)
+            if (!attackTarget.isAlive || !IsAttackTargetInRange())
             {
                 isOnAttack = false;
                 yield break;
@@ -202,8 +202,38 @@ public class Pokemon : MonoBehaviour
         return cost * (int ) Mathf.Pow(3, evolutionPhase - 1);
     }
 
-    private float DistanceBetweenAttackTarget()
+    private bool IsAttackTargetInRange()
     {
-        return Vector2.Distance(transform.position, attackTarget.transform.position);
+        Vector3 distance = attackTarget.transform.position - transform.position;
+
+        return Mathf.Abs(distance.y) < actualRange && distance.magnitude <= actualRange;
+    }
+
+    public void MoveTo(Vector3 position)
+    {
+        StartCoroutine(MoveAction(position));
+    }
+
+    private IEnumerator MoveAction(Vector3 position)
+    {
+        Vector3 startPosition = transform.position;
+
+        for (float time = 0f; time < 0.25f; time += Time.deltaTime)
+        {
+            if (time < 0.125f)
+            {
+                spriteRenderer.transform.position += new Vector3(0, Time.deltaTime * 2);
+            } else
+            {
+                spriteRenderer.transform.position -= new Vector3(0, Time.deltaTime * 2);
+            }
+
+            transform.position = Vector2.Lerp(startPosition, position, time * 4);
+
+            yield return new WaitForEndOfFrame();
+        }
+
+        transform.position = position;
+        spriteRenderer.transform.localPosition = Vector3.zero;
     }
 }
