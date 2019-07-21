@@ -143,40 +143,18 @@ public class Pokemon : MonoBehaviour
 
     public void Hit(int damage, Pokemon by)
     {
-        currnetHp -= damage;
-        currentPp += 5;
-        if (currnetHp <= 0 && isAlive)
+        if (isAlive)
         {
-            StopAllCoroutines();
-            isAlive = false;
-            battleCallbackHandler.PokemonDead(this);
+            currnetHp -= damage;
+            currentPp += 5;
+            if (currnetHp <= 0)
+            {
+                StopAllCoroutines();
+                isAlive = false;
+                battleCallbackHandler.PokemonDead(this);
+            }
+            StartCoroutine(HitAction());
         }
-        StartCoroutine(HitAction());
-    }
-
-    private float Mod1()
-    {
-        return 1;
-    }
-
-    private float Mod2()
-    {
-        return 1;
-    }
-
-    private float Mod3()
-    {
-        return 1;
-    }
-
-    private float TypeBonus()
-    {
-        return 1;
-    }
-
-    private float Critical()
-    {
-        return 1;
     }
     private IEnumerator HitAction()
     {

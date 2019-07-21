@@ -952,16 +952,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPokemons:
-  - {fileID: 2254535982436329200, guid: 52f2f9d3c1286e04caf06e3bcac80fef, type: 3}
   - {fileID: 2254535982436329200, guid: 001a2a0fe5da1a14383878d6282e703d, type: 3}
-  - {fileID: 2763003580702113442, guid: 379c7d2342146a2439c9adfdd361ecd1, type: 3}
+  - {fileID: 2254535982436329200, guid: 001a2a0fe5da1a14383878d6282e703d, type: 3}
   - {fileID: 2254535982436329200, guid: 001a2a0fe5da1a14383878d6282e703d, type: 3}
   - {fileID: 2254535982436329200, guid: 52f2f9d3c1286e04caf06e3bcac80fef, type: 3}
   - {fileID: 2254535982436329200, guid: 52f2f9d3c1286e04caf06e3bcac80fef, type: 3}
+  - {fileID: 7236754985802801846, guid: 36ccac70176c44747affb57198b86d15, type: 3}
   challengerPokemons:
   - {fileID: 2254535982436329200, guid: 001a2a0fe5da1a14383878d6282e703d, type: 3}
-  - {fileID: 7236754985802801846, guid: 991a8390d3c6ead42b803eecddf72259, type: 3}
-  - {fileID: 7236754985802801846, guid: 17b5cdd10c79f1b4aa71e451268c777d, type: 3}
+  - {fileID: 2254535982436329200, guid: 001a2a0fe5da1a14383878d6282e703d, type: 3}
+  - {fileID: 7236754985802801846, guid: 9734b37c1ee4bdc4bba269e9fe0383bc, type: 3}
   - {fileID: 7236754985802801846, guid: 9734b37c1ee4bdc4bba269e9fe0383bc, type: 3}
   - {fileID: 7236754985802801846, guid: 9734b37c1ee4bdc4bba269e9fe0383bc, type: 3}
   - {fileID: 7236754985802801846, guid: 9734b37c1ee4bdc4bba269e9fe0383bc, type: 3}
@@ -1029,7 +1029,7 @@ PrefabInstance:
     - target: {fileID: 1689426152727209282, guid: 52517db18b3a2b642b37d62f040dac8c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1689426152727209282, guid: 52517db18b3a2b642b37d62f040dac8c,
         type: 3}
@@ -2135,7 +2135,7 @@ Transform:
   - {fileID: 588119697}
   - {fileID: 6127168}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1005399940
 GameObject:
@@ -2270,36 +2270,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1005399940}
   m_CullTransparentMesh: 0
---- !u!1 &1012758881
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1012758882}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1012758882
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1012758881}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.61719, y: 41.476406, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1029932238
 GameObject:
   m_ObjectHideFlags: 0
@@ -4555,6 +4525,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isInBattle: 0
+  finalBattleBgm: {fileID: 8300000, guid: ed139e88449b1ff44b9cb658ada69ea3, type: 3}
 --- !u!1001 &1875981653
 PrefabInstance:
   m_ObjectHideFlags: 0
