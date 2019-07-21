@@ -13,8 +13,8 @@ public class BattleTester : MonoBehaviour
         Trainer player = gameManager.trainers[0];
         Trainer challenger = gameManager.trainers[1];
 
-        player.level = 3;
-        challenger.level = 3;
+        player.level = playerPokemons.Length;
+        challenger.level = challengerPokemons.Length;
 
         for (int i = 0; i < playerPokemons.Length; i++)
         {

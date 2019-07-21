@@ -78,13 +78,14 @@ MonoBehaviour:
   currentState: 0
   trainer: {fileID: 0}
   cost: 3
-  hpFull: 78
-  hpCurrent: 0
-  attack: 84
-  defense: 78
-  speed: 100
+  baseHp: 78
+  _currentHp: 0
+  baseAttack: 84
+  baseDefense: 78
+  baseSpeed: 100
   ppFull: 30
   initialPp: 0
+  _currentPp: 0
   evolution: {fileID: 0}
   evolutionPhase: 3
   uiTransform: {fileID: 7255599803875572466}

@@ -19,15 +19,37 @@ public class Pokemon : MonoBehaviour
 
     public Trainer trainer;
     public int cost;
-    public int hpFull = 100;
-    public int hpCurrent;
-    public int attack = 100;
-    public int defense = 100;
-    public int speed = 100;
+    public int baseHp = 100;
+    public int actualHp
+    {
+        get
+        {
+            return DamageCalculator.GetActualHp(this);
+        }
+    }
+
+    [SerializeField]
+    private int _currentHp;
+    public int currnetHp {
+        get
+        {
+            return _currentHp;
+        }
+
+        set
+        {
+            _currentHp = value;
+            pokemonUIManager.ChangeHp(this);
+        }
+    }
+    public int baseAttack = 100;
+    public int baseDefense = 100;
+    public int baseSpeed = 100;
 
     public int ppFull = 30;
     public int initialPp = 0;
 
+    [SerializeField]
     private int _currentPp;
     public int currentPp {
         get
@@ -47,7 +69,7 @@ public class Pokemon : MonoBehaviour
     public Transform uiTransform;
     public PokemonType[] types = new PokemonType[2];
 
-    public int range = 1;
+    public float range = 1;
     private float actualRange
     {
         get { return range * 2.5f; }
@@ -60,7 +82,6 @@ public class Pokemon : MonoBehaviour
     public BattleCallbackHandler battleCallbackHandler;
     void Awake()
     {
-        hpCurrent = hpFull;
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         pokemonUIManager = FindObjectOfType<PokemonUIManager>();
     }
@@ -107,7 +128,7 @@ public class Pokemon : MonoBehaviour
         else
             spriteRenderer.flipX = false;
 
-        float attackTime = 100f / speed;
+        float attackTime = 100f / baseSpeed;
         for (float time = 0.0f; time < attackTime; time += Time.deltaTime)
         {
             if (!attackTarget.isAlive || DistanceBetweenAttackTarget() > actualRange)
@@ -118,7 +139,7 @@ public class Pokemon : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
-        int damage = CalculateDamage();
+        int damage = DamageCalculator.CalculateDamage(this, attackTarget);
         currentPp += 5;
         attackTarget.Hit(damage, this);
         isOnAttack = false;
@@ -126,22 +147,15 @@ public class Pokemon : MonoBehaviour
 
     public void Hit(int damage, Pokemon by)
     {
-        hpCurrent -= damage;
+        currnetHp -= damage;
         currentPp += 5;
-        pokemonUIManager.ChangeHp(this);
-        if (hpCurrent <= 0)
+        if (currnetHp <= 0 && isAlive)
         {
             StopAllCoroutines();
             isAlive = false;
             battleCallbackHandler.PokemonDead(this);
         }
         StartCoroutine(HitAction());
-    }
-
-    public int CalculateDamage()
-    {
-        return (int) (((((((25 * evolutionPhase * 2 / 5) + 2) * 20 * attack / 50) / attackTarget.defense) * Mod1()) + 2)
-            * Critical() * Mod2() * TypeBonus() * Mod3());
     }
 
     private float Mod1()
@@ -176,7 +190,7 @@ public class Pokemon : MonoBehaviour
         {
             spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g + 0.2f, spriteRenderer.color.b + 0.2f);
             yield return new WaitForSeconds(0.1f);
-        } if (hpCurrent <= 0)
+        } if (currnetHp <= 0)
         {
             pokemonUIManager.RemovePokemonUI(this);
             gameObject.SetActive(false);

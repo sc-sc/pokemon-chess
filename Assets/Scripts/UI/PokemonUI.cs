@@ -15,7 +15,7 @@ public class PokemonUI : MonoBehaviour
     }
     private IEnumerator ChangeHpAction(Pokemon pokemon)
     {
-        float temp = (float)pokemon.hpCurrent / pokemon.hpFull;
+        float temp = (float)pokemon.currnetHp / pokemon.actualHp;
         for (float time = 0f; time < 0.2f; time += Time.fixedDeltaTime)
         {
             hpBar.fillAmount = Mathf.Lerp(hpBar.fillAmount, temp, time * 5);

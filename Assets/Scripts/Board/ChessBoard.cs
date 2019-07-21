@@ -82,7 +82,7 @@ public class ChessBoard : PokemonPlaceableBoard
         {
             owner.SetPlacedPokemon(at, pokemon);
             pokemonUIManager.AddPokemonUI(pokemon);
-            pokemon.hpCurrent = pokemon.hpFull;
+            pokemon.currnetHp = pokemon.actualHp;
             pokemon.currentPp = pokemon.initialPp;
         }
     }
