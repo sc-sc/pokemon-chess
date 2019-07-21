@@ -58,7 +58,7 @@ MonoBehaviour:
   _currentPp: 0
   evolution: {fileID: 2254535982436329198, guid: c91056331d3339a4b80eb7b9bdac2c01,
     type: 3}
-  evolutionPhase: 1
+  evolutionPhase: 2
   uiTransform: {fileID: 1032035533469189013}
   types: 02000000
   range: 2

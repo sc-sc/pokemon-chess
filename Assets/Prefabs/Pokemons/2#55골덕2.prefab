@@ -57,7 +57,7 @@ MonoBehaviour:
   initialPp: 0
   _currentPp: 0
   evolution: {fileID: 0}
-  evolutionPhase: 1
+  evolutionPhase: 3
   uiTransform: {fileID: 5896723609196797908}
   types: 02000000
   range: 2

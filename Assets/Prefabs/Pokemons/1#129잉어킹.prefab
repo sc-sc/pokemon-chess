@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2254535982436329201}
   - component: {fileID: 2254535982436329200}
   m_Layer: 0
-  m_Name: FishKing
+  m_Name: "1#129\uC789\uC5B4\uD0B9"
   m_TagString: Pokemon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,13 +48,14 @@ MonoBehaviour:
   currentState: 0
   trainer: {fileID: 0}
   cost: 1
-  hpFull: 20
-  hpCurrent: 0
-  attack: 10
-  defense: 55
-  speed: 80
+  baseHp: 20
+  _currentHp: 0
+  baseAttack: 10
+  baseDefense: 55
+  baseSpeed: 80
   ppFull: 10
   initialPp: 0
+  _currentPp: 0
   evolution: {fileID: 2254535982436329198, guid: e21a53e21113f3047af9ba872b166f70,
     type: 3}
   evolutionPhase: 1

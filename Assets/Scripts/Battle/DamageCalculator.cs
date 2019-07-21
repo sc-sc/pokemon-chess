@@ -48,7 +48,7 @@ public class DamageCalculator : MonoBehaviour
 
     private static int EV(Pokemon pokemon)
     {
-        return 28 * pokemon.evolutionPhase;
+        return (6 * (pokemon.cost) - 2) * pokemon.evolutionPhase;
     }
 
     private static int Level(Pokemon pokemon)
