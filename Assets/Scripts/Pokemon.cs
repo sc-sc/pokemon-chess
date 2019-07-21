@@ -149,6 +149,7 @@ public class Pokemon : MonoBehaviour
             currentPp += 5;
             if (currnetHp <= 0)
             {
+                currentState = PokemonState.Idle;
                 StopAllCoroutines();
                 isAlive = false;
                 battleCallbackHandler.PokemonDead(this);

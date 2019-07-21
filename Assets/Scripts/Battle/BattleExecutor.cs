@@ -97,8 +97,8 @@ public class BattleExecutor : MonoBehaviour
     private void MovePokemons(Trainer trainer)
     {
         var attackPokemonsAndIndexes = trainer == chessBoard.owner ?
-            liveOwnerPokemons.OrderByDescending(pokemonAndIndex => pokemonAndIndex.Value.magnitude) :
-            liveChallengerPokemons.OrderBy(pokemonAndIndex => pokemonAndIndex.Value.magnitude);
+            liveOwnerPokemons.OrderBy(pokemonAndIndex => pokemonAndIndex.Value.magnitude) :
+            liveChallengerPokemons.OrderBy(pokemonAndIndex => (new Vector2Int(7, 7) - pokemonAndIndex.Value).magnitude);
 
         var targetPokemonsAndIndex = trainer == chessBoard.owner ?
             liveChallengerPokemons :
@@ -191,26 +191,26 @@ public class BattleExecutor : MonoBehaviour
 
         if (absDistance.x > absDistance.y && (canGoRight || canGoLeft))
         {
-            if (distance.x > 0)
+            if (distance.x > 0 && canGoRight)
             {
                 moveTo = index + new Vector2Int(1, 0);
                 moveDirection = MoveDirection.Right;
-                if (moveTo.x > 7 || IsAnotherPokemonAlreadyExist(moveTo) || !canGoRight)
+                if (moveTo.x > 7 || IsAnotherPokemonAlreadyExist(moveTo))
                     return CalculateMoveDirection(index, new Vector2Int(0, distance.y), canGoUp, canGoDown, false, canGoLeft);
-            } else
+            } else if (canGoLeft)
             {
                 moveTo = index + new Vector2Int(-1, 0);
                 moveDirection = MoveDirection.Left;
-                if (moveTo.x < 0 || IsAnotherPokemonAlreadyExist(moveTo) || !canGoLeft)
+                if (moveTo.x < 0 || IsAnotherPokemonAlreadyExist(moveTo))
                     return CalculateMoveDirection(index, new Vector2Int(0, distance.y), canGoUp, canGoDown, canGoRight, false);
             }
         } else if (canGoUp || canGoDown)
         {
-            if (distance.y > 0)
+            if (distance.y > 0 && canGoUp)
             {
                 moveTo = index + new Vector2Int(0, 1);
                 moveDirection = MoveDirection.Up;
-                if (moveTo.y > 7 || IsAnotherPokemonAlreadyExist(moveTo) || !canGoUp)
+                if (moveTo.y > 7 || IsAnotherPokemonAlreadyExist(moveTo))
                     return CalculateMoveDirection(index, new Vector2Int(distance.x, 0), false, canGoDown, canGoRight, canGoLeft);
             } else if (canGoDown)
             {
