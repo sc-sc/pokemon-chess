@@ -92,7 +92,7 @@ public class Pokemon : MonoBehaviour
             case PokemonState.Attack:
                 if (!isOnAttack)
                 {
-                    if ((!attackTarget.isAlive) || !IsAttackTargetInRange())
+                    if (!attackTarget.isAlive || !IsAttackTargetInRange())
                         currentState = PokemonState.Move;
                     else
                     {
@@ -132,7 +132,7 @@ public class Pokemon : MonoBehaviour
                 isOnAttack = false;
                 yield break;
             }
-            yield return new WaitForEndOfFrame();
+            yield return null;
         }
 
         int damage = DamageCalculator.CalculateDamage(this, attackTarget);

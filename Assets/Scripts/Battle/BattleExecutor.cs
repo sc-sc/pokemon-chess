@@ -80,7 +80,7 @@ public class BattleExecutor : MonoBehaviour
     {
         for (float time = 0f; time < 1f; time += Time.deltaTime)
         {
-            yield return new WaitForEndOfFrame();
+            yield return null;
         }
 
         MovePokemons(chessBoard.owner);
