@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+
+using Unity.Jobs;
 public class BattleExecutor : MonoBehaviour
 {
     public bool isInBattle = false;
@@ -329,5 +331,10 @@ public class BattleExecutor : MonoBehaviour
         }
 
         return Mathf.Abs(distance.x) <= pokemon.range && Mathf.Abs(distance.y) <= pokemon.range;
+    }
+
+    public void Execute()
+    {
+        throw new System.NotImplementedException();
     }
 }

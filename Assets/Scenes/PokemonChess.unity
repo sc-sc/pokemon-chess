@@ -1962,26 +1962,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 92406410}
     m_Modifications:
-    - target: {fileID: 367638003606663563, guid: 37aa199dff49cc448bf41b642460b1ba,
-        type: 3}
-      propertyPath: money
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 367638003606663563, guid: 37aa199dff49cc448bf41b642460b1ba,
-        type: 3}
-      propertyPath: exp_expect
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 367638003606663563, guid: 37aa199dff49cc448bf41b642460b1ba,
-        type: 3}
-      propertyPath: nickname
-      value: "\uC6C5\uC774"
-      objectReference: {fileID: 0}
-    - target: {fileID: 1077766100700705356, guid: 37aa199dff49cc448bf41b642460b1ba,
-        type: 3}
-      propertyPath: m_Name
-      value: "\uC6C5"
-      objectReference: {fileID: 0}
     - target: {fileID: 1077766100700705345, guid: 37aa199dff49cc448bf41b642460b1ba,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2036,6 +2016,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 367638003606663563, guid: 37aa199dff49cc448bf41b642460b1ba,
+        type: 3}
+      propertyPath: money
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 367638003606663563, guid: 37aa199dff49cc448bf41b642460b1ba,
+        type: 3}
+      propertyPath: exp_expect
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 367638003606663563, guid: 37aa199dff49cc448bf41b642460b1ba,
+        type: 3}
+      propertyPath: nickname
+      value: "\uC6C5\uC774"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1077766100700705356, guid: 37aa199dff49cc448bf41b642460b1ba,
+        type: 3}
+      propertyPath: m_Name
+      value: "\uC6C5"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37aa199dff49cc448bf41b642460b1ba, type: 3}
@@ -4323,11 +4323,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 7664257818998127354, guid: 14d12f1ddba8fec45bd37c30a5df9ec6,
-        type: 3}
-      propertyPath: m_Text
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 7664257820165139319, guid: 14d12f1ddba8fec45bd37c30a5df9ec6,
         type: 3}
       propertyPath: m_IsActive
@@ -4432,6 +4427,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: Exp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7664257818998127354, guid: 14d12f1ddba8fec45bd37c30a5df9ec6,
+        type: 3}
+      propertyPath: m_Text
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -4722,6 +4722,7 @@ GameObject:
   - component: {fileID: 1765999726}
   - component: {fileID: 1765999727}
   - component: {fileID: 1765999728}
+  - component: {fileID: 1765999729}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -4766,6 +4767,7 @@ MonoBehaviour:
     type: 3}
   pokemonSafari: {fileID: 181882527}
   lapras: {fileID: 870058738}
+  battleManager: {fileID: 1765999729}
 --- !u!82 &1765999728
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4862,6 +4864,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1765999729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765999725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2c3459da12342a4591ea55a835a29e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isInBattle: 0
+  finalBattleBgm: {fileID: 0}
 --- !u!1001 &1875981653
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5184,6 +5200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pokemonUIPrefab: {fileID: 2222119032177011286, guid: f489027686246de4699605cba26339b1,
     type: 3}
+  enemyHpBarSprite: {fileID: 0}
 --- !u!223 &1970978236
 Canvas:
   m_ObjectHideFlags: 0

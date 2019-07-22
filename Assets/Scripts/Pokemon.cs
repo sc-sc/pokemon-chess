@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Jobs;
+using Unity.Jobs;
 public enum PokemonType
 {
     Normal, Fire, Water, Grass, Electric, Ice, Fight, Poison, Ground, Fly, Psychic, Bug, Rock, Ghost, Dragon, Dark, Steel, Fairy
@@ -14,6 +15,9 @@ public enum PokemonState
 
 public class Pokemon : MonoBehaviour
 {
+    TransformAccessArray transforms;
+    JobHandle moveJobHandle;
+
     public PokemonState currentState = PokemonState.Idle;
     private PokemonUIManager pokemonUIManager;
 
@@ -80,6 +84,9 @@ public class Pokemon : MonoBehaviour
     {
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         pokemonUIManager = FindObjectOfType<PokemonUIManager>();
+        transforms = new TransformAccessArray(2, -1);
+        transforms.Add(transform);
+        transforms.Add(spriteRenderer.transform);
     }
 
     // Update is called once per frame
@@ -167,6 +174,8 @@ public class Pokemon : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
         } if (currnetHp <= 0)
         {
+            moveJobHandle.Complete();
+            transforms.Dispose();
             pokemonUIManager.RemovePokemonUI(this);
             gameObject.SetActive(false);
         }
@@ -195,20 +204,41 @@ public class Pokemon : MonoBehaviour
 
         for (float time = 0f; time < 0.25f; time += Time.deltaTime)
         {
-            if (time < 0.125f)
-            {
-                spriteRenderer.transform.position += new Vector3(0, Time.deltaTime * 2);
-            } else
-            {
-                spriteRenderer.transform.position -= new Vector3(0, Time.deltaTime * 2);
-            }
+            MoveJob moveJob = new MoveJob();
+            moveJob.startPosition = startPosition;
+            moveJob.position = position;
+            moveJob.time = time;
+            moveJob.deltaTime = Time.deltaTime;
 
-            transform.position = Vector2.Lerp(startPosition, position, time * 4);
-
-            yield return new WaitForEndOfFrame();
+            moveJobHandle = moveJob.Schedule(transforms);
+            yield return null;
         }
 
         transform.position = position;
         spriteRenderer.transform.localPosition = Vector3.zero;
+    }
+
+    private struct MoveJob : IJobParallelForTransform
+    {
+        public float time;
+        public float deltaTime;
+        public Vector3 startPosition;
+        public Vector3 position;
+        public void Execute(int index, TransformAccess transform)
+        {
+            if (time < 0.125f)
+            {
+                if (index == 1)
+                    transform.position += new Vector3(0, deltaTime * 2);
+            }
+            else
+            {
+                if (index == 1)
+                    transform.position -= new Vector3(0, deltaTime * 2);
+            }
+
+            if (index == 0)
+                transform.position = Vector2.Lerp(startPosition, position, time * 4);
+        }
     }
 }

@@ -952,19 +952,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPokemons:
+  - {fileID: 2254535982436329200, guid: 001a2a0fe5da1a14383878d6282e703d, type: 3}
+  - {fileID: 2254535982436329200, guid: 001a2a0fe5da1a14383878d6282e703d, type: 3}
   - {fileID: 2254535982436329200, guid: 52f2f9d3c1286e04caf06e3bcac80fef, type: 3}
-  - {fileID: 2254535982436329200, guid: 52f2f9d3c1286e04caf06e3bcac80fef, type: 3}
-  - {fileID: 2254535982436329200, guid: 52f2f9d3c1286e04caf06e3bcac80fef, type: 3}
-  - {fileID: 2254535982436329200, guid: 52f2f9d3c1286e04caf06e3bcac80fef, type: 3}
-  - {fileID: 2254535982436329200, guid: 52f2f9d3c1286e04caf06e3bcac80fef, type: 3}
-  - {fileID: 2254535982436329200, guid: 52f2f9d3c1286e04caf06e3bcac80fef, type: 3}
+  - {fileID: 7236754985802801846, guid: 9734b37c1ee4bdc4bba269e9fe0383bc, type: 3}
+  - {fileID: 7236754985802801846, guid: 9734b37c1ee4bdc4bba269e9fe0383bc, type: 3}
+  - {fileID: 7236754985802801846, guid: 9734b37c1ee4bdc4bba269e9fe0383bc, type: 3}
   challengerPokemons:
-  - {fileID: 2254535982436329200, guid: 52f2f9d3c1286e04caf06e3bcac80fef, type: 3}
-  - {fileID: 2254535982436329200, guid: 52f2f9d3c1286e04caf06e3bcac80fef, type: 3}
-  - {fileID: 2254535982436329200, guid: 52f2f9d3c1286e04caf06e3bcac80fef, type: 3}
-  - {fileID: 2254535982436329200, guid: 52f2f9d3c1286e04caf06e3bcac80fef, type: 3}
-  - {fileID: 2254535982436329200, guid: 52f2f9d3c1286e04caf06e3bcac80fef, type: 3}
-  - {fileID: 2254535982436329200, guid: 52f2f9d3c1286e04caf06e3bcac80fef, type: 3}
+  - {fileID: 7236754985802801846, guid: 9734b37c1ee4bdc4bba269e9fe0383bc, type: 3}
+  - {fileID: 7236754985802801846, guid: 9734b37c1ee4bdc4bba269e9fe0383bc, type: 3}
+  - {fileID: 7236754985802801846, guid: 9734b37c1ee4bdc4bba269e9fe0383bc, type: 3}
+  - {fileID: 7236754985802801846, guid: 9734b37c1ee4bdc4bba269e9fe0383bc, type: 3}
+  - {fileID: 2254535982436329200, guid: 001a2a0fe5da1a14383878d6282e703d, type: 3}
+  - {fileID: 2254535982436329200, guid: 001a2a0fe5da1a14383878d6282e703d, type: 3}
 --- !u!4 &469968722
 Transform:
   m_ObjectHideFlags: 0
@@ -3885,11 +3885,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 954044346}
     m_Modifications:
-    - target: {fileID: 1077766100700705356, guid: 37aa199dff49cc448bf41b642460b1ba,
-        type: 3}
-      propertyPath: m_Name
-      value: "\uC6C5"
-      objectReference: {fileID: 0}
     - target: {fileID: 1077766100700705345, guid: 37aa199dff49cc448bf41b642460b1ba,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3944,6 +3939,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1077766100700705356, guid: 37aa199dff49cc448bf41b642460b1ba,
+        type: 3}
+      propertyPath: m_Name
+      value: "\uC6C5"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37aa199dff49cc448bf41b642460b1ba, type: 3}
