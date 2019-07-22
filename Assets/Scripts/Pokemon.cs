@@ -180,7 +180,6 @@ public class Pokemon : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
-
     public int GetTotalCost()
     {
         return cost * (int ) Mathf.Pow(3, evolutionPhase - 1);
@@ -223,5 +222,17 @@ public class Pokemon : MonoBehaviour
     public void Ultimate(Pokemon pokemon)
     {
         Debug.Log("필살기" + pokemon.ultimate_skill);
+        StartCoroutine(Ultimate_Action());
     }
+    private IEnumerator Ultimate_Action()
+    {
+        spriteRenderer.color = new Color(0, spriteRenderer.color.g , 0);
+
+        for (float time = 0; time < 0.5f; time += 0.1f)
+        {
+            spriteRenderer.color = new Color(spriteRenderer.color.r + 0.2f, spriteRenderer.color.g, spriteRenderer.color.b + 0.2f);
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
+
 }
