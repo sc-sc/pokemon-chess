@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 2254535982436329201}
   - component: {fileID: 2254535982436329200}
   m_Layer: 0
-  m_Name: Charizard
+  m_Name: "3#6\uB9AC\uC790\uBABD"
   m_TagString: Pokemon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,6 +79,7 @@ MonoBehaviour:
   trainer: {fileID: 0}
   cost: 3
   baseHp: 78
+  ultimate_skill: "\uC9C0\uAD6C\uB358\uC9C0\uAE30!"
   _currentHp: 0
   baseAttack: 84
   baseDefense: 78

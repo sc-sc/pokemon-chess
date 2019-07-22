@@ -5,14 +5,10 @@ using UnityEngine.UI;
 
 public class PlayerInfo : MonoBehaviour
 {
-    //public Text playerNicknme;
     public Text playerLevel;
     public Text playerHp;
     public Text playerMoney;
     public Text playerExp;
-    //public Text player_Bug;
-    //public Text player_Water;
-    //public Text player_Fire;
     public Trainer trainer;
 
     void Start()

@@ -21,6 +21,7 @@ public class BattleExecutor : MonoBehaviour
     private IEnumerator battleCoroutine;
 
     private Trainer winner;
+    public StageManager StageManager;
     
     private enum MoveDirection
     {
@@ -277,6 +278,7 @@ public class BattleExecutor : MonoBehaviour
             if (liveChallengerPokemons.Count == 0)
             {
                 Victory(chessBoard.owner);
+                StageManager.Stage_Update();
             }
         } else
         {
@@ -286,6 +288,7 @@ public class BattleExecutor : MonoBehaviour
             if (liveOwnerPokemons.Count == 0)
             {
                 Victory(challenger);
+                StageManager.Stage_Update();
             }
         }
         pokemonsInBattle[index.x, index.y] = null;

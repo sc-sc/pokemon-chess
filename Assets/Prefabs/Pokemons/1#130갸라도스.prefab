@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2254535982436329201}
   - component: {fileID: 2254535982436329200}
   m_Layer: 0
-  m_Name: "\uAC38\uB77C\uB3C4\uC2A4"
+  m_Name: "1#130\uAC38\uB77C\uB3C4\uC2A4"
   m_TagString: Pokemon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,6 +50,7 @@ MonoBehaviour:
   trainer: {fileID: 0}
   cost: 1
   baseHp: 95
+  ultimate_skill: "\uBB3C\uB300\uD3EC!"
   _currentHp: 0
   baseAttack: 125
   baseDefense: 79

@@ -101,7 +101,6 @@ public class ChessBoard : PokemonPlaceableBoard
         }
         challenger.transform.position = challengerPosition.position;
         challenger.GetComponent<Animator>().SetTrigger("Appear");
-
         battleExecutor.ReadyBattle(challenger);
     }
 
