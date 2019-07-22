@@ -36,6 +36,8 @@ public class BattleExecutor : MonoBehaviour
     }
     public void ReadyBattle(Trainer challenger)
     {
+        isInBattle = true;
+
         pokemonsInBattle = new Pokemon[8, 8];
 
         liveOwnerPokemons = new Dictionary<Pokemon, Vector2Int>(chessBoard.owner.placedPokemons);
@@ -50,7 +52,6 @@ public class BattleExecutor : MonoBehaviour
 
     private void ReadyPokemons(Trainer trainer)
     {
-        isInBattle = true;
         winner = null;
 
         foreach (KeyValuePair<Pokemon, Vector2Int> pokemonAndIndex in trainer.placedPokemons)
@@ -71,16 +72,15 @@ public class BattleExecutor : MonoBehaviour
             pokemonPreviousMove[pokemon] = MoveDirection.None;
         }
     }
+
     public void StartBattle()
     {
         battleCoroutine = BattleCoroutine();
-
         StartCoroutine(battleCoroutine);
     }
-
     private IEnumerator BattleCoroutine()
     {
-        for (float time = 0f; time < 1f; time += Time.deltaTime)
+        for (int frame = 0; frame < 60; frame++)
         {
             yield return null;
         }

@@ -31,7 +31,7 @@ public class DamageCalculator : MonoBehaviour
     {
         return ActualStatCommonFormula(pokemon.baseHp, pokemon) + 10 + Level(pokemon);
     }
-    private static int GetActualStat(int baseStat, Pokemon pokemon)
+    public static int GetActualStat(int baseStat, Pokemon pokemon)
     {
         return ActualStatCommonFormula(baseStat, pokemon) + 5;
     }

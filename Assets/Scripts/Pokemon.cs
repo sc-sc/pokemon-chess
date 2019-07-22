@@ -139,8 +139,8 @@ public class Pokemon : MonoBehaviour
         else
             spriteRenderer.flipX = false;
 
-        float attackTime = 100f / baseSpeed;
-        for (float time = 0.0f; time < attackTime; time += Time.deltaTime)
+        int attackFrame = 10 + (int) ((100f / DamageCalculator.GetActualStat(baseSpeed, this)) * 60f);
+        for (int frame = 0; frame < attackFrame; frame++)
         {
             if (!attackTarget.isAlive || !IsAttackTargetInRange())
             {
