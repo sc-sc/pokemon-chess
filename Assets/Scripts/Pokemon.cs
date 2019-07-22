@@ -80,6 +80,8 @@ public class Pokemon : MonoBehaviour
     public bool isAlive = true;
 
     public BattleCallbackHandler battleCallbackHandler;
+
+
     void Awake()
     {
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
@@ -121,6 +123,12 @@ public class Pokemon : MonoBehaviour
             default:
                 break;
         }
+    }
+    
+    void OnDisable()
+    {
+        moveJobHandle.Complete();
+        transforms.Dispose();
     }
 
     private IEnumerator AttackAction()
@@ -174,8 +182,6 @@ public class Pokemon : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
         } if (currnetHp <= 0)
         {
-            moveJobHandle.Complete();
-            transforms.Dispose();
             pokemonUIManager.RemovePokemonUI(this);
             gameObject.SetActive(false);
         }
