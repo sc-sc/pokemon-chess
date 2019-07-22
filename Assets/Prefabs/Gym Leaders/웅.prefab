@@ -117,10 +117,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: "\uC6C5"
   nickname: "\uC6C5"
-  level: 3
+  level: 1
   hp: 100
   currentHp: 100
   money: 0
-  exp_expect: 0
-  exp_present: 0
+  exp_expect: 2
+  exp_present: 2
   waitingPokemons: []

@@ -143,7 +143,7 @@ GameObject:
   - component: {fileID: 7236754985802801845}
   - component: {fileID: 7236754985802801846}
   m_Layer: 0
-  m_Name: "\uB9DD\uB098\uB1FD"
+  m_Name: "5#149\uB9DD\uB098\uB1FD"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -181,6 +181,7 @@ MonoBehaviour:
   trainer: {fileID: 0}
   cost: 5
   baseHp: 91
+  ultimate_skill: "\uB0E5\uB0E5\uD380\uCE58!"
   _currentHp: 0
   baseAttack: 134
   baseDefense: 95

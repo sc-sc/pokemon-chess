@@ -20,6 +20,7 @@ public class Pokemon : MonoBehaviour
     public Trainer trainer;
     public int cost;
     public int baseHp = 100;
+    public string ultimate_skill;
     public int actualHp
     {
         get
@@ -137,6 +138,13 @@ public class Pokemon : MonoBehaviour
 
         int damage = DamageCalculator.CalculateDamage(this, attackTarget);
         currentPp += 5;
+        if(currentPp >= 20)
+        {
+            currentPp -= 20;
+            Ultimate(this);
+            damage *= 2;
+        }
+        Debug.Log(this.name + damage);
         attackTarget.Hit(damage, this);
         isOnAttack = false;
     }
@@ -146,7 +154,8 @@ public class Pokemon : MonoBehaviour
         if (isAlive)
         {
             currnetHp -= damage;
-            currentPp += 5;
+            currentPp += 3;
+
             if (currnetHp <= 0)
             {
                 currentState = PokemonState.Idle;
@@ -210,5 +219,9 @@ public class Pokemon : MonoBehaviour
 
         transform.position = position;
         spriteRenderer.transform.localPosition = Vector3.zero;
+    }
+    public void Ultimate(Pokemon pokemon)
+    {
+        Debug.Log("필살기" + pokemon.ultimate_skill);
     }
 }
