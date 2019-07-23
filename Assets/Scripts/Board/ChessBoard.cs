@@ -6,8 +6,7 @@ using UnityEngine.Tilemaps;
 public class ChessBoard : PokemonPlaceableBoard
 {
     public const int MaxRowCanPlace = 4;
-
-    private PokemonUIManager pokemonUIManager;
+    
     private BattleExecutor battleExecutor;
     public Transform challengerPosition;
 
@@ -42,8 +41,6 @@ public class ChessBoard : PokemonPlaceableBoard
         linkedBoard = GetComponentInChildren<WaitingBoard>();
         
         placedPokemons = new Pokemon[8, 8];
-
-        pokemonUIManager = FindObjectOfType<PokemonUIManager>();
 
         battleExecutor = GetComponent<BattleExecutor>();
     }
@@ -81,15 +78,11 @@ public class ChessBoard : PokemonPlaceableBoard
         if (pokemon != null)
         {
             owner.SetPlacedPokemon(at, pokemon);
-            pokemonUIManager.AddPokemonUI(pokemon);
-            pokemon.currnetHp = pokemon.actualHp;
-            pokemon.currentPp = pokemon.initialPp;
         }
     }
     protected override void CompleteRemovePokemon(Vector2Int at, Pokemon pokemon)
     {
         owner.RemovePlacedPokemon(pokemon);
-        pokemonUIManager.RemovePokemonUI(pokemon);
     }
 
     public void ReadyBattle(Trainer challenger)
@@ -107,5 +100,11 @@ public class ChessBoard : PokemonPlaceableBoard
     public void StartBattle()
     {
         battleExecutor.StartBattle();
+    }
+
+    public void EndBattle()
+    {
+        isTouchable = true;
+        battleExecutor.EndBattle();
     }
 }

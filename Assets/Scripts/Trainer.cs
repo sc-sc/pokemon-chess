@@ -18,14 +18,20 @@ public class Trainer : MonoBehaviour
 
     public Dictionary<Pokemon, Vector2Int> placedPokemons = new Dictionary<Pokemon, Vector2Int>();
     public Pokemon[] waitingPokemons;
+    private PokemonUIManager pokemonUIManager;
 
     protected virtual void Awake()
     {
         waitingPokemons = new Pokemon[CanWaitPokemonsNumber];
+        pokemonUIManager = FindObjectOfType<PokemonUIManager>();
     }
 
     public void SetPlacedPokemon(Vector2Int at, Pokemon pokemon)
     {
+        pokemonUIManager.AddPokemonUI(pokemon);
+        pokemon.currnetHp = pokemon.actualHp;
+        pokemon.currentPp = pokemon.initialPp;
+
         placedPokemons[pokemon] = at;
         foreach (PokemonType type in pokemon.types)
         {
@@ -49,6 +55,7 @@ public class Trainer : MonoBehaviour
 
     public void RemovePlacedPokemon(Pokemon pokemon)
     {
+        pokemonUIManager.RemovePokemonUI(pokemon);
         placedPokemons.Remove(pokemon);
         foreach (PokemonType type in pokemon.types)
         {
