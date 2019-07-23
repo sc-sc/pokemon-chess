@@ -5248,9 +5248,9 @@ MonoBehaviour:
   exp_present: 0
   waitingPokemons: []
   pokemons:
-  - {fileID: 2254535982436329198, guid: 9caec85c238b732449d92843d1a8bb37, type: 3}
-  - {fileID: 2254535982436329198, guid: 9caec85c238b732449d92843d1a8bb37, type: 3}
-  - {fileID: 2254535982436329198, guid: 9caec85c238b732449d92843d1a8bb37, type: 3}
+  - {fileID: 2254535982436329198, guid: b3116c473b525f2479d800b0cb23a714, type: 3}
+  - {fileID: 2254535982436329198, guid: b3116c473b525f2479d800b0cb23a714, type: 3}
+  - {fileID: 2254535982436329198, guid: b3116c473b525f2479d800b0cb23a714, type: 3}
   positions:
   - {x: 2, y: 2}
   - {x: 3, y: 3}
