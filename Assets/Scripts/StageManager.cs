@@ -47,7 +47,7 @@ public class StageManager : MonoBehaviour
         {
             SafariManager.Refresh();
             Sub_stage += 1;
-            if (Sub_stage == 6)
+            if (Sub_stage > stages[Main_stage - 1].subStages.Length)
             {
                 Main_stage += 1;
                 Sub_stage = 1;
@@ -97,7 +97,7 @@ public class StageManager : MonoBehaviour
             return;
         }
         */
-        FindObjectOfType<BattleManager>().ReadyBattle(gameManager.trainers[0], stages[0].subStages[0]);
+        FindObjectOfType<BattleManager>().ReadyBattle(gameManager.trainers[0], Instantiate(stages[Main_stage - 1].subStages[Sub_stage - 1]));
         FindObjectOfType<BattleManager>().StartBattle();
     }
 }

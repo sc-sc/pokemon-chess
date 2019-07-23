@@ -29,7 +29,7 @@ public class Trainer : MonoBehaviour
     public void SetPlacedPokemon(Vector2Int at, Pokemon pokemon)
     {
         pokemonUIManager.AddPokemonUI(pokemon);
-        pokemon.currnetHp = pokemon.actualHp;
+        pokemon.currentHp = pokemon.actualHp;
         pokemon.currentPp = pokemon.initialPp;
 
         placedPokemons[pokemon] = at;
