@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1077766100700705356}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.213203, y: 36.742344, z: 0}
+  m_LocalPosition: {x: 11.249997, y: 48.676407, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -121,6 +121,6 @@ MonoBehaviour:
   hp: 100
   currentHp: 100
   money: 0
-  exp_expect: 0
-  exp_present: 0
+  exp_expect: 2
+  exp_present: 2
   waitingPokemons: []

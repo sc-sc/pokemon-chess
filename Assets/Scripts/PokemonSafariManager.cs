@@ -27,6 +27,8 @@ public class PokemonSafariManager : MonoBehaviour
 
     public GameObject evolutionEffect;
 
+    public StageManager StageManager;
+
     void Awake()
     {
         pokemonsInSafari = new GameObject[SalePokemonsCount];
@@ -51,7 +53,7 @@ public class PokemonSafariManager : MonoBehaviour
             {
                 cost = Random.Range(1, 4);
             }
-            else if(player.level == 4 || player.level == 6)
+            else if(player.level == 4 || player.level == 5)
             {
                 cost = Random.Range(1, 5);
             }
@@ -60,7 +62,10 @@ public class PokemonSafariManager : MonoBehaviour
                 cost = Random.Range(1, 6);
             }
             int index = 0;
-
+            if(cost == 1)
+            {
+                index = Random.Range(0, 2);
+            }
             GameObject pokemonInSafari = Instantiate(pokemonInSafariPrefab, transform.parent);
             GameObject salePokemonPrefab = salePokemonPrefabs[cost - 1].prefabs[index];
 
@@ -90,21 +95,7 @@ public class PokemonSafariManager : MonoBehaviour
     }
     public void Stage_end()
     {
-        int plus_money= player.money;
-        int temp = 0;
-        while(plus_money >= 10)
-        {
-            temp += 1;
-            plus_money -= 10;
-        }
-        player.money += temp;
-        player.money += 5;
-        player.exp_present += 2;
-        if (player.exp_present >= player.exp_expect)
-        {
-            Level_Up();
-        }
-
+        StageManager.Stage_Update();
         Refresh();
     }
     public void Exp_Button()
@@ -115,29 +106,29 @@ public class PokemonSafariManager : MonoBehaviour
             player.exp_present += 4;
             if(player.exp_present >= player.exp_expect)
             {
-                Level_Up();
+                Level_Up(player);
             }
         }
     }
-    public void Level_Up()
+    public void Level_Up(Trainer trainer)
     {
-        player.exp_present -= player.exp_expect;
-        player.level += 1;
-        if (player.level < 4)
+        trainer.exp_present -= trainer.exp_expect;
+        trainer.level += 1;
+        if (trainer.level < 4)
         {
-            player.exp_expect += 4;
+            trainer.exp_expect += 4;
         }
-        else if (player.level >= 4 && player.level < 6)
+        else if (trainer.level >= 4 && trainer.level < 6)
         {
-            player.exp_expect += 6;
+            trainer.exp_expect += 6;
         }
-        else if (player.level >= 6 && player.level < 8)
+        else if (trainer.level >= 6 && trainer.level < 8)
         {
-            player.exp_expect += 10;
+            trainer.exp_expect += 10;
         }
         else
         {
-            player.exp_expect += 16;
+            trainer.exp_expect += 16;
         }
     }
 
@@ -173,12 +164,15 @@ public class PokemonSafariManager : MonoBehaviour
         int samePokemonCount = 0;
         List<Pokemon> placedSamePokemonList = new List<Pokemon>();
 
-        foreach (Pokemon placedPokemon in trainer.placedPokemons.Keys)
+        if (!gameManager.battleManager.isInBattle)
         {
-            if (placedPokemon.name == pokemon.name)
+            foreach (Pokemon placedPokemon in trainer.placedPokemons.Keys)
             {
-                samePokemonCount += 1;
-                placedSamePokemonList.Add(placedPokemon);
+                if (placedPokemon.name == pokemon.name)
+                {
+                    samePokemonCount += 1;
+                    placedSamePokemonList.Add(placedPokemon);
+                }
             }
         }
 
