@@ -8,6 +8,10 @@ public class BattleManager : MonoBehaviour
     public AudioClip finalBattleBgm;
     private GameManager gameManager;
     private List<ChessBoard> homeChessBoards;
+    public StageManager stageManager;
+
+    private int finishBattleCount;
+
     void Awake()
     {
         gameManager = GetComponent<GameManager>();
@@ -27,9 +31,31 @@ public class BattleManager : MonoBehaviour
 
     public void StartBattle()
     {
+        finishBattleCount = 0;
+
         foreach (ChessBoard chessBoard in homeChessBoards)
         {
             chessBoard.StartBattle();
+        }
+    }
+
+    public void FinishBattleIn(ChessBoard homeChessBoard, Trainer winner, Trainer loser)
+    {
+        finishBattleCount++;
+
+        if (finishBattleCount == homeChessBoards.Count)
+        {
+            EndBattle();
+        }
+    }
+
+    private void EndBattle()
+    {
+        isInBattle = false;
+        stageManager.Stage_Update();
+        foreach (ChessBoard homeChessBoard in homeChessBoards)
+        {
+            homeChessBoard.EndBattle();
         }
     }
 }

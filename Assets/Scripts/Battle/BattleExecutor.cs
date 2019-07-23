@@ -21,7 +21,8 @@ public class BattleExecutor : MonoBehaviour
     private IEnumerator battleCoroutine;
 
     private Trainer winner;
-    public StageManager StageManager;
+
+    private BattleManager battleManager;
     
     private enum MoveDirection
     {
@@ -32,6 +33,7 @@ public class BattleExecutor : MonoBehaviour
 
     void Awake()
     {
+        battleManager = FindObjectOfType<BattleManager>();
         callbackHandler = GetComponent<BattleCallbackHandler>();
         chessBoard = GetComponent<ChessBoard>();
     }
@@ -54,7 +56,11 @@ public class BattleExecutor : MonoBehaviour
     private void ReadyPokemons(Trainer trainer)
     {
         winner = null;
+        Debug.Log(trainer.placedPokemons);
+        if(trainer.placedPokemons == null)
+        {
 
+        }
         foreach (KeyValuePair<Pokemon, Vector2Int> pokemonAndIndex in trainer.placedPokemons)
         {
             Pokemon pokemon = pokemonAndIndex.Key;
@@ -79,6 +85,12 @@ public class BattleExecutor : MonoBehaviour
         battleCoroutine = BattleCoroutine();
         StartCoroutine(battleCoroutine);
     }
+
+    public void EndBattle()
+    {
+        StopCoroutine(battleCoroutine);
+    }
+
     private IEnumerator BattleCoroutine()
     {
         for (int frame = 0; frame < 60; frame++)
@@ -278,7 +290,6 @@ public class BattleExecutor : MonoBehaviour
             if (liveChallengerPokemons.Count == 0)
             {
                 Victory(chessBoard.owner);
-                StageManager.Stage_Update();
             }
         } else
         {
@@ -288,7 +299,6 @@ public class BattleExecutor : MonoBehaviour
             if (liveOwnerPokemons.Count == 0)
             {
                 Victory(challenger);
-                StageManager.Stage_Update();
             }
         }
         pokemonsInBattle[index.x, index.y] = null;
@@ -297,11 +307,14 @@ public class BattleExecutor : MonoBehaviour
     private void Victory(Trainer trainer)
     {
         winner = trainer;
+        Trainer loser = trainer == chessBoard.owner ? challenger : chessBoard.owner;
 
         foreach (Pokemon pokemon in trainer.placedPokemons.Keys)
         {
             pokemon.currentState = PokemonState.Idle;
         }
+
+        battleManager.FinishBattleIn(chessBoard, winner, loser);
     }
 
     public void SetAttackTargetTo(Pokemon attackPokemon)

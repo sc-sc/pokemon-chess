@@ -149,7 +149,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 92406410}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &33542264
 MonoBehaviour:
@@ -312,13 +312,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 588119697}
-  - {fileID: 962872347}
   - {fileID: 3670578478122945609}
   - {fileID: 1622603087}
   - {fileID: 1359554033}
   - {fileID: 33542263}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &114214648
 GameObject:
@@ -356,7 +355,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -50, y: -150}
+  m_AnchoredPosition: {x: -50, y: -50}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &114214650
@@ -403,7 +402,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1585233288}
-        m_MethodName: Start_Button
+        m_MethodName: Stage_Update
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -668,7 +667,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &264190932
 GameObject:
@@ -851,7 +850,7 @@ RectTransform:
   - {fileID: 2070875406}
   - {fileID: 909652288}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1564,7 +1563,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &663629316
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2345,17 +2344,17 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 92406410}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1077766100700705345, guid: 37aa199dff49cc448bf41b642460b1ba,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -21.213203
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1077766100700705345, guid: 37aa199dff49cc448bf41b642460b1ba,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 36.742344
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1077766100700705345, guid: 37aa199dff49cc448bf41b642460b1ba,
         type: 3}
@@ -2404,6 +2403,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 367638003606663563, guid: 37aa199dff49cc448bf41b642460b1ba,
         type: 3}
+      propertyPath: waitingPokemons.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 367638003606663563, guid: 37aa199dff49cc448bf41b642460b1ba,
+        type: 3}
       propertyPath: money
       value: 2
       objectReference: {fileID: 0}
@@ -2432,26 +2436,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\uC6C5"
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 367638003606663563, guid: 37aa199dff49cc448bf41b642460b1ba, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 37aa199dff49cc448bf41b642460b1ba, type: 3}
---- !u!114 &962872346 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 367638003606663563, guid: 37aa199dff49cc448bf41b642460b1ba,
-    type: 3}
-  m_PrefabInstance: {fileID: 962872345}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76181b6fe4bc0e945b9789535a9f93ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &962872347 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1077766100700705345, guid: 37aa199dff49cc448bf41b642460b1ba,
-    type: 3}
-  m_PrefabInstance: {fileID: 962872345}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1005399940
 GameObject:
   m_ObjectHideFlags: 0
@@ -2728,7 +2715,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1073438906
 GameObject:
@@ -3315,7 +3302,7 @@ PrefabInstance:
     - target: {fileID: 656347380836771674, guid: 23392a932aa8c954a965533ff076ff95,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 656347380836771674, guid: 23392a932aa8c954a965533ff076ff95,
         type: 3}
@@ -3363,7 +3350,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 92406410}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1359554034
 MonoBehaviour:
@@ -5134,9 +5121,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Main_stage: 0
   Sub_stage: 0
+  Start_End: 0
   Trainers: []
-  GameManager: {fileID: 1765999727}
+  gameManager: {fileID: 1765999727}
   SafariManager: {fileID: 181882527}
+  pokemonsInStage: []
+  stages:
+  - mainStage: 1
+    subStages:
+    - {fileID: 1782522522}
+    - {fileID: 1782522522}
 --- !u!4 &1585233289
 Transform:
   m_ObjectHideFlags: 0
@@ -5149,7 +5143,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1622603086
 GameObject:
@@ -5180,7 +5174,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 92406410}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1622603088
 MonoBehaviour:
@@ -5264,7 +5258,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1765999727
 MonoBehaviour:
@@ -5280,11 +5274,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trainers:
   - {fileID: 588119698}
-  - {fileID: 962872346}
-  - {fileID: 4115834802704732035}
-  - {fileID: 1622603088}
-  - {fileID: 1359554034}
-  - {fileID: 33542264}
   chessField: {fileID: 1689426152727209284, guid: 52517db18b3a2b642b37d62f040dac8c,
     type: 3}
   pokemonSafari: {fileID: 181882527}
@@ -5400,6 +5389,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isInBattle: 0
   finalBattleBgm: {fileID: 8300000, guid: ed139e88449b1ff44b9cb658ada69ea3, type: 3}
+  stageManager: {fileID: 1585233288}
+--- !u!1 &1782522521 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1077766100700705356, guid: 37aa199dff49cc448bf41b642460b1ba,
+    type: 3}
+  m_PrefabInstance: {fileID: 962872345}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1782522522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1782522521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 575be44316e737347b3c77f9152b3fdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: "\uC6C5"
+  nickname: "\uC6C5\uC774"
+  level: 3
+  hp: 100
+  currentHp: 100
+  money: 0
+  exp_expect: 0
+  exp_present: 0
+  waitingPokemons: []
+  pokemons:
+  - {fileID: 2254535982436329198, guid: b3116c473b525f2479d800b0cb23a714, type: 3}
+  - {fileID: 2254535982436329198, guid: b3116c473b525f2479d800b0cb23a714, type: 3}
+  - {fileID: 2254535982436329198, guid: b3116c473b525f2479d800b0cb23a714, type: 3}
+  positions:
+  - {x: 2, y: 2}
+  - {x: 3, y: 3}
+  - {x: 4, y: 4}
 --- !u!1001 &1875981653
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5701,7 +5726,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5722,7 +5747,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pokemonUIPrefab: {fileID: 2222119032177011286, guid: f489027686246de4699605cba26339b1,
     type: 3}
-  enemyHpBarSprite: {fileID: 0}
+  enemyHpBarSprite: {fileID: 21300000, guid: 3ee823c7528c23a4fa389af60b4e7224, type: 3}
 --- !u!223 &1970978236
 Canvas:
   m_ObjectHideFlags: 0
@@ -6153,7 +6178,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 92406410}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4115834802704732035
 MonoBehaviour:
