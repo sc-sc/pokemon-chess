@@ -64,4 +64,35 @@ public class Trainer : MonoBehaviour
             //Debug.Log((type, pokemonList.Count));
         }
     }
+
+    public void ExpUp(int value)
+    {
+        exp_present += value;
+        if (exp_present >= exp_expect)
+        {
+            LevelUp();
+        }
+    }
+
+    public void LevelUp()
+    {
+        exp_present -= exp_expect;
+        level += 1;
+        if (level < 4)
+        {
+            exp_expect += 4;
+        }
+        else if (level >= 4 && level < 6)
+        {
+            exp_expect += 6;
+        }
+        else if (level >= 6 && level < 8)
+        {
+            exp_expect += 10;
+        }
+        else
+        {
+            exp_expect += 16;
+        }
+    }
 }

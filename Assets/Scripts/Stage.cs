@@ -24,6 +24,7 @@ public class Stage : Trainer
 
         foreach (Pokemon placedPokemon in placedPokemons)
         {
+            placedPokemon.gameObject.SetActive(false);
             RemovePlacedPokemon(placedPokemon);
         }
 

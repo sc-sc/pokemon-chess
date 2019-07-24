@@ -84,31 +84,15 @@ public class BattleExecutor : MonoBehaviour
 
     public void StartBattle()
     {
+
         battleCoroutine = BattleCoroutine();
         StartCoroutine(battleCoroutine);
     }
 
     public void EndBattle()
     {
+        isInBattle = false;
         StopCoroutine(battleCoroutine);
-        foreach (KeyValuePair<Pokemon, Vector2Int> pokemonAndIndex in chessBoard.owner.placedPokemons)
-        {
-            Pokemon pokemon = pokemonAndIndex.Key;
-            pokemon.transform.position = chessBoard.IndexToWorldPosition(pokemonAndIndex.Value);
-            pokemon.currentHp = pokemon.actualHp;
-            pokemon.currentPp = pokemon.initialPp;
-            pokemon.isAlive = true;
-            pokemon.gameObject.SetActive(true);
-        }
-        /*foreach (KeyValuePair<Pokemon, Vector2Int> pokemonAndIndex in challenger.placedPokemons)
-        {
-            Pokemon pokemon = pokemonAndIndex.Key;
-            pokemon.transform.position = chessBoard.IndexToWorldPosition(pokemonAndIndex.Value);
-            pokemon.currentHp = pokemon.actualHp;
-            pokemon.currentPp = pokemon.initialPp;
-            pokemon.isAlive = true;
-            pokemon.gameObject.SetActive(true);
-        }*/
     }
 
     private IEnumerator BattleCoroutine()
@@ -332,7 +316,6 @@ public class BattleExecutor : MonoBehaviour
         {
             pokemon.currentState = PokemonState.Idle;
         }
-        Reset_ChessBoard();
 
         int temp_damage = 2;
         foreach (Pokemon livepokemon in liveOwnerPokemons.Keys)
@@ -399,29 +382,6 @@ public class BattleExecutor : MonoBehaviour
         else
         {
             trainer.currentHp -= damage;
-        }
-    }
-    private void Reset_ChessBoard()
-    {
-        List<Pokemon> challengerPokemons = new List<Pokemon>(liveChallengerPokemons.Keys);
-        if (challenger is Stage)
-        {
-            if(liveChallengerPokemons.Count == 0)
-            {
-                Debug.Log("테스트");
-                //영기야 이거 그냥 여기서는 웅이 에니메이터만 없애주면 될것 같아.
-                //challenger.GetComponent<Animator>().ResetTrigger("DisAppear");
-                //Destroy(challenger.gameObject);
-            }
-            else
-            {
-                /*foreach (Pokemon pokemon in challengerPokemons)
-                {
-                    PokemonUIManager.RemovePokemonUI(pokemon);
-                    liveChallengerPokemons.Remove(pokemon);
-                }
-                Destroy(challenger.gameObject);*/
-            }
         }
     }
 }

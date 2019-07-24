@@ -24,61 +24,12 @@ public class StageManager : MonoBehaviour
     public Stages[] stages;
     
 
-    private void Awake()
-    {
-    }
-
     void Start()
     {
         mainStage = 1;
         subStage = 1;
-        Start_End = true;
     }
-
-    // Update is called once per frame
-    public void Stage_Update()
-    {
-        Start_End = !Start_End;
-        if (Start_End)
-        {
-            SafariManager.Refresh();
-            subStage += 1;
-            if (subStage > stages[mainStage - 1].subStages.Length)
-            {
-                mainStage += 1;
-                subStage = 1;
-            }
-            foreach (Trainer trainer in gameManager.trainers)
-            {
-                int plus_money = trainer.money;
-                int temp = 0;
-                while (plus_money >= 10)
-                {
-                    temp += 1;
-                    plus_money -= 10;
-                }
-                trainer.money += temp;
-                trainer.money += 5;
-                trainer.exp_present += 2;
-                if (trainer.exp_present >= trainer.exp_expect)
-                {
-                    SafariManager.Level_Up(trainer);
-                }
-            }
-            Debug.Log("Battle End!!");
-
-            foreach (Stage currentStage in currentStages)
-            {
-                currentStage.DestroySelf();
-            }
-        }
-        else
-        {
-            Debug.Log("Battle Start!!");
-            Find_Next_Stage_Enemy();
-        }
-    }
-    public void Find_Next_Stage_Enemy()
+    public void ReadyNextStage()
     {
         /*
         int Temp_Number = Trainers.Count;
@@ -98,6 +49,7 @@ public class StageManager : MonoBehaviour
             return;
         }
         */
+
         currentStages = new List<Stage>();
 
         foreach (Trainer trainer in gameManager.trainers)
@@ -105,7 +57,23 @@ public class StageManager : MonoBehaviour
             Stage stage = Instantiate(stages[mainStage - 1].subStages[subStage - 1]).GetComponent<Stage>();
             currentStages.Add(stage);
             FindObjectOfType<BattleManager>().ReadyBattle(trainer, stage);
-            FindObjectOfType<BattleManager>().StartBattle();
+        }
+    }
+
+    public void EndStage()
+    {
+        SafariManager.Refresh();
+
+        subStage += 1;
+        if (subStage > stages[mainStage - 1].subStages.Length)
+        {
+            mainStage += 1;
+            subStage = 1;
+        }
+
+        foreach (Stage currentStage in currentStages)
+        {
+            currentStage.DestroySelf();
         }
     }
 }

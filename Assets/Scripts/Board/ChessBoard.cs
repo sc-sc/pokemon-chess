@@ -104,7 +104,18 @@ public class ChessBoard : PokemonPlaceableBoard
 
     public void EndBattle()
     {
-        isTouchable = true;
         battleExecutor.EndBattle();
+    }
+
+    public void ResetBoard()
+    {
+        isTouchable = true;
+
+        foreach (KeyValuePair<Pokemon, Vector2Int> pokemonAndIndex in owner.placedPokemons)
+        {
+            Pokemon pokemon = pokemonAndIndex.Key;
+            pokemon.transform.position = IndexToWorldPosition(pokemonAndIndex.Value);
+            pokemon.Reset();
+        }
     }
 }

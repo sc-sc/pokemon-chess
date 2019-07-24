@@ -271,4 +271,13 @@ public class Pokemon : MonoBehaviour
         }
     }
 
+    public void Reset()
+    {
+        currentHp = actualHp;
+        currentPp = initialPp;
+        isAlive = true;
+        gameObject.SetActive(true);
+        pokemonUIManager.AddPokemonUI(this);
+        spriteRenderer.flipX = false;
+    }
 }

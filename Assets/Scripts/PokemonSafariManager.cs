@@ -93,45 +93,15 @@ public class PokemonSafariManager : MonoBehaviour
             Refresh();
         }
     }
-    public void Stage_end()
-    {
-        StageManager.Stage_Update();
-        Refresh();
-    }
+
     public void Exp_Button()
     {
         if (player.money >= 4)
         {
             player.money -= 4;
-            player.exp_present += 4;
-            if(player.exp_present >= player.exp_expect)
-            {
-                Level_Up(player);
-            }
+            player.ExpUp(4);
         }
     }
-    public void Level_Up(Trainer trainer)
-    {
-        trainer.exp_present -= trainer.exp_expect;
-        trainer.level += 1;
-        if (trainer.level < 4)
-        {
-            trainer.exp_expect += 4;
-        }
-        else if (trainer.level >= 4 && trainer.level < 6)
-        {
-            trainer.exp_expect += 6;
-        }
-        else if (trainer.level >= 6 && trainer.level < 8)
-        {
-            trainer.exp_expect += 10;
-        }
-        else
-        {
-            trainer.exp_expect += 16;
-        }
-    }
-
     public bool TryBuy(GameObject pokemonPrefab, Trainer trainer)
     {
         Pokemon pokemon = pokemonPrefab.GetComponent<Pokemon>();
