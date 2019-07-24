@@ -317,7 +317,7 @@ Transform:
   - {fileID: 1359554033}
   - {fileID: 33542263}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &114214648
 GameObject:
@@ -667,7 +667,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &264190932
 GameObject:
@@ -850,7 +850,7 @@ RectTransform:
   - {fileID: 2070875406}
   - {fileID: 909652288}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2170,6 +2170,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< HEAD
 --- !u!1 &909652287
 GameObject:
   m_ObjectHideFlags: 0
@@ -2439,6 +2440,8 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 367638003606663563, guid: 37aa199dff49cc448bf41b642460b1ba, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 37aa199dff49cc448bf41b642460b1ba, type: 3}
+=======
+>>>>>>> ab904648085f95d1ca391d8451ea05d177fb621f
 --- !u!1 &1005399940
 GameObject:
   m_ObjectHideFlags: 0
@@ -2715,7 +2718,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1073438906
 GameObject:
@@ -3302,7 +3305,7 @@ PrefabInstance:
     - target: {fileID: 656347380836771674, guid: 23392a932aa8c954a965533ff076ff95,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 656347380836771674, guid: 23392a932aa8c954a965533ff076ff95,
         type: 3}
@@ -5129,8 +5132,18 @@ MonoBehaviour:
   stages:
   - mainStage: 1
     subStages:
-    - {fileID: 1782522522}
-    - {fileID: 1782522522}
+    - {fileID: 1782522522, guid: 37aa199dff49cc448bf41b642460b1ba, type: 3}
+    - {fileID: 1782522522, guid: f63a10be876ff4a43b68a853346f3711, type: 3}
+    - {fileID: 1782522522, guid: 2bb7aebc34d4ec043b4b9e27cdc27852, type: 3}
+    - {fileID: 1782522522, guid: 2bb7aebc34d4ec043b4b9e27cdc27852, type: 3}
+    - {fileID: 1782522522, guid: 2bb7aebc34d4ec043b4b9e27cdc27852, type: 3}
+  - mainStage: 2
+    subStages:
+    - {fileID: 1782522522, guid: 37aa199dff49cc448bf41b642460b1ba, type: 3}
+    - {fileID: 1782522522, guid: f63a10be876ff4a43b68a853346f3711, type: 3}
+    - {fileID: 1782522522, guid: 2bb7aebc34d4ec043b4b9e27cdc27852, type: 3}
+    - {fileID: 1782522522, guid: 2bb7aebc34d4ec043b4b9e27cdc27852, type: 3}
+    - {fileID: 1782522522, guid: 2bb7aebc34d4ec043b4b9e27cdc27852, type: 3}
 --- !u!4 &1585233289
 Transform:
   m_ObjectHideFlags: 0
@@ -5143,7 +5156,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1622603086
 GameObject:
@@ -5258,7 +5271,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1765999727
 MonoBehaviour:
@@ -5390,41 +5403,6 @@ MonoBehaviour:
   isInBattle: 0
   finalBattleBgm: {fileID: 8300000, guid: ed139e88449b1ff44b9cb658ada69ea3, type: 3}
   stageManager: {fileID: 1585233288}
---- !u!1 &1782522521 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1077766100700705356, guid: 37aa199dff49cc448bf41b642460b1ba,
-    type: 3}
-  m_PrefabInstance: {fileID: 962872345}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1782522522
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1782522521}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 575be44316e737347b3c77f9152b3fdf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  id: "\uC6C5"
-  nickname: "\uC6C5\uC774"
-  level: 3
-  hp: 100
-  currentHp: 100
-  money: 0
-  exp_expect: 0
-  exp_present: 0
-  waitingPokemons: []
-  pokemons:
-  - {fileID: 2254535982436329198, guid: b3116c473b525f2479d800b0cb23a714, type: 3}
-  - {fileID: 2254535982436329198, guid: b3116c473b525f2479d800b0cb23a714, type: 3}
-  - {fileID: 2254535982436329198, guid: b3116c473b525f2479d800b0cb23a714, type: 3}
-  positions:
-  - {x: 2, y: 2}
-  - {x: 3, y: 3}
-  - {x: 4, y: 4}
 --- !u!1001 &1875981653
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5726,7 +5704,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

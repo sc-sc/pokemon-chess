@@ -35,7 +35,7 @@ public class Pokemon : MonoBehaviour
 
     [SerializeField]
     private int _currentHp;
-    public int currnetHp {
+    public int currentHp {
         get
         {
             return _currentHp;
@@ -168,10 +168,10 @@ public class Pokemon : MonoBehaviour
     {
         if (isAlive)
         {
-            currnetHp -= damage;
+            currentHp -= damage;
             currentPp += 3;
 
-            if (currnetHp <= 0)
+            if (currentHp <= 0)
             {
                 currentState = PokemonState.Idle;
                 StopAllCoroutines();
@@ -189,7 +189,7 @@ public class Pokemon : MonoBehaviour
         {
             spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g + 0.2f, spriteRenderer.color.b + 0.2f);
             yield return new WaitForSeconds(0.1f);
-        } if (currnetHp <= 0)
+        } if (currentHp <= 0)
         {
             pokemonUIManager.RemovePokemonUI(this);
             gameObject.SetActive(false);

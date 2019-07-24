@@ -41,6 +41,7 @@ public class BattleManager : MonoBehaviour
 
     public void FinishBattleIn(ChessBoard homeChessBoard, Trainer winner, Trainer loser)
     {
+        Debug.Log("게임 끝남");
         finishBattleCount++;
 
         if (finishBattleCount == homeChessBoards.Count)
@@ -50,12 +51,14 @@ public class BattleManager : MonoBehaviour
     }
 
     private void EndBattle()
-    {
+    {   
         isInBattle = false;
         stageManager.Stage_Update();
         foreach (ChessBoard homeChessBoard in homeChessBoards)
         {
             homeChessBoard.EndBattle();
         }
+        
+        homeChessBoards = new List<ChessBoard>();
     }
 }

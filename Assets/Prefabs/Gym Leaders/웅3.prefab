@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1077766100700705359}
   - component: {fileID: 1782522522}
   m_Layer: 0
-  m_Name: "\uC6C5"
+  m_Name: "\uC6C53"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -127,6 +127,10 @@ MonoBehaviour:
   pokemons:
   - {fileID: 2254535982436329198, guid: b3116c473b525f2479d800b0cb23a714, type: 3}
   - {fileID: 2254535982436329198, guid: b3116c473b525f2479d800b0cb23a714, type: 3}
+  - {fileID: 2254535982436329198, guid: b3116c473b525f2479d800b0cb23a714, type: 3}
+  - {fileID: 2254535982436329198, guid: b3116c473b525f2479d800b0cb23a714, type: 3}
   positions:
   - {x: 3, y: 3}
+  - {x: 3, y: 4}
+  - {x: 4, y: 3}
   - {x: 4, y: 4}

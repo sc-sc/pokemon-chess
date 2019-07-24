@@ -73,8 +73,9 @@ public class BattleExecutor : MonoBehaviour
             {
                 index = new Vector2Int(7, 7) - index;
                 liveChallengerPokemons[pokemon] = index;
-                pokemon.transform.position = chessBoard.IndexToWorldPosition(index);
             }
+
+            pokemon.transform.position = chessBoard.IndexToWorldPosition(index);
             pokemonsInBattle[index.x, index.y] = pokemon;
             pokemonPreviousMove[pokemon] = MoveDirection.None;
         }
@@ -89,6 +90,15 @@ public class BattleExecutor : MonoBehaviour
     public void EndBattle()
     {
         StopCoroutine(battleCoroutine);
+        foreach (KeyValuePair<Pokemon, Vector2Int> pokemonAndIndex in chessBoard.owner.placedPokemons)
+        {
+            Pokemon pokemon = pokemonAndIndex.Key;
+            pokemon.transform.position = chessBoard.IndexToWorldPosition(pokemonAndIndex.Value);
+            pokemon.currentHp = pokemon.actualHp;
+            pokemon.currentPp = pokemon.initialPp;
+            pokemon.isAlive = true;
+            pokemon.gameObject.SetActive(true);
+        }
     }
 
     private IEnumerator BattleCoroutine()
