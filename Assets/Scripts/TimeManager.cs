@@ -10,13 +10,15 @@ public class TimeManager : MonoBehaviour
 
     private void Awake()
     {
-        time = 30f;
+        
     }
 
 
     private void Update()
     {
-        if(time > 0)
+        time = 30f;
+
+        if (time > 0)
         {
             time -= Time.deltaTime;
         }
