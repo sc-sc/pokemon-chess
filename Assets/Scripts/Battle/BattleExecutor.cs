@@ -415,6 +415,7 @@ public class BattleExecutor : MonoBehaviour
     }
     /*private void Reset_ChessBoard()
     {
+        List<Pokemon> challengerPokemons = new List<Pokemon>(challenger.placedPokemons.Keys);
         if (challenger is Stage)
         {
             if(liveChallengerPokemons.Count == 0)
@@ -423,9 +424,9 @@ public class BattleExecutor : MonoBehaviour
             }
             else
             {
-                foreach (Pokemon pokemon in liveChallengerPokemons.Keys)
+                foreach (Pokemon pokemon in challengerPokemons)
                 {
-                    liveChallengerPokemons.Remove(pokemon);
+                    PokemonDead(pokemon);
                 }
                 Destroy(challenger.gameObject);
             }

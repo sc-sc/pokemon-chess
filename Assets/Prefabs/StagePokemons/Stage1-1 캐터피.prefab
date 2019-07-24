@@ -51,7 +51,7 @@ MonoBehaviour:
   baseHp: 10
   ultimate_skill: 
   _currentHp: 0
-  baseAttack: 15
+  baseAttack: 150
   baseDefense: 20
   baseSpeed: 20
   ppFull: 30
