@@ -20,6 +20,6 @@ public class StageInfo : MonoBehaviour
 
     void SetStageInfoText()
     {
-        stage.text = StageManger.Main_stage + " - " + StageManger.Sub_stage;
+        stage.text = StageManger.mainStage + " - " + StageManger.subStage;
     }
 }

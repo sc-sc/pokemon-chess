@@ -309,21 +309,7 @@ public class BattleExecutor : MonoBehaviour
 
             if (liveChallengerPokemons.Count == 0)
             {
-                int temp_damage = 2;
-                foreach(Pokemon livepokemon in liveOwnerPokemons.Keys)
-                {
-                    temp_damage += livepokemon.cost;
-                    if (livepokemon.evolutionPhase == 2)
-                    {
-                        temp_damage += 1;
-                    }
-                    else if(livepokemon.evolutionPhase == 3)
-                    {
-                        temp_damage += 3;
-                    }
-                }
                 Victory(chessBoard.owner);
-                Trainer_Hp_down(challenger, temp_damage);
             }
         } else
         {
@@ -332,21 +318,7 @@ public class BattleExecutor : MonoBehaviour
             liveOwnerPokemons.Remove(pokemon);
             if (liveOwnerPokemons.Count == 0)
             {
-                int temp_damage = 2;
-                foreach (Pokemon livepokemon in liveChallengerPokemons.Keys)
-                {
-                    temp_damage += livepokemon.cost;
-                    if (livepokemon.evolutionPhase == 2)
-                    {
-                        temp_damage += 1;
-                    }
-                    else if (livepokemon.evolutionPhase == 3)
-                    {
-                        temp_damage += 3;
-                    }
-                }
                 Victory(challenger);
-                Trainer_Hp_down(chessBoard.owner, temp_damage);
             }
         }
         pokemonsInBattle[index.x, index.y] = null;
@@ -361,6 +333,23 @@ public class BattleExecutor : MonoBehaviour
             pokemon.currentState = PokemonState.Idle;
         }
         Reset_ChessBoard();
+
+        int temp_damage = 2;
+        foreach (Pokemon livepokemon in liveOwnerPokemons.Keys)
+        {
+            temp_damage += livepokemon.cost;
+            if (livepokemon.evolutionPhase == 2)
+            {
+                temp_damage += 1;
+            }
+            else if (livepokemon.evolutionPhase == 3)
+            {
+                temp_damage += 3;
+            }
+        }
+
+        Trainer_Hp_down(loser, temp_damage);
+
         battleManager.FinishBattleIn(chessBoard, winner, loser);
     }
 

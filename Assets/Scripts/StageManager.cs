@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class StageManager : MonoBehaviour
 {
-    public int Main_stage;
-    public int Sub_stage;
+    public int mainStage;
+    public int subStage;
     public bool Start_End;
-    public List<Trainer> Trainers;
     public GameManager gameManager;
     public PokemonSafariManager SafariManager;
 
     public GameObject[] pokemonsInStage;
+
+    private List<Stage> currentStages;
 
     [System.Serializable]
     public struct Stages
@@ -29,14 +30,9 @@ public class StageManager : MonoBehaviour
 
     void Start()
     {
-        Main_stage = 1;
-        Sub_stage = 1;
+        mainStage = 1;
+        subStage = 1;
         Start_End = true;
-        Trainers = gameManager.trainers;
-    }
-    private void FixedUpdate()
-    {
-        Trainers = gameManager.trainers;
     }
 
     // Update is called once per frame
@@ -46,13 +42,13 @@ public class StageManager : MonoBehaviour
         if (Start_End)
         {
             SafariManager.Refresh();
-            Sub_stage += 1;
-            if (Sub_stage > stages[Main_stage - 1].subStages.Length)
+            subStage += 1;
+            if (subStage > stages[mainStage - 1].subStages.Length)
             {
-                Main_stage += 1;
-                Sub_stage = 1;
+                mainStage += 1;
+                subStage = 1;
             }
-            foreach (Trainer trainer in Trainers)
+            foreach (Trainer trainer in gameManager.trainers)
             {
                 int plus_money = trainer.money;
                 int temp = 0;
@@ -70,6 +66,11 @@ public class StageManager : MonoBehaviour
                 }
             }
             Debug.Log("Battle End!!");
+
+            foreach (Stage currentStage in currentStages)
+            {
+                currentStage.DestroySelf();
+            }
         }
         else
         {
@@ -97,7 +98,14 @@ public class StageManager : MonoBehaviour
             return;
         }
         */
-        FindObjectOfType<BattleManager>().ReadyBattle(gameManager.trainers[0], Instantiate(stages[Main_stage - 1].subStages[Sub_stage - 1]));
-        FindObjectOfType<BattleManager>().StartBattle();
+        currentStages = new List<Stage>();
+
+        foreach (Trainer trainer in gameManager.trainers)
+        {
+            Stage stage = Instantiate(stages[mainStage - 1].subStages[subStage - 1]).GetComponent<Stage>();
+            currentStages.Add(stage);
+            FindObjectOfType<BattleManager>().ReadyBattle(trainer, stage);
+            FindObjectOfType<BattleManager>().StartBattle();
+        }
     }
 }

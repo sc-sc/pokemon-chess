@@ -35,7 +35,7 @@ public class PokemonUIManager : MonoBehaviour
 
     public void RemovePokemonUI(Pokemon pokemon)
     {
-        if (pokemon != null)
+        if (pokemon != null && pokemonUIDictionary.ContainsKey(pokemon))
         {
             Destroy(pokemonUIDictionary[pokemon].gameObject);
             pokemonUIDictionary.Remove(pokemon);
