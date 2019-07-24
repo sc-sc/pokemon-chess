@@ -30,6 +30,7 @@ public class BattleExecutor : MonoBehaviour
     }
 
     private Dictionary<Pokemon, MoveDirection> pokemonPreviousMove;
+    public PokemonUIManager PokemonUIManager;
 
     void Awake()
     {
@@ -56,7 +57,7 @@ public class BattleExecutor : MonoBehaviour
     private void ReadyPokemons(Trainer trainer)
     {
         winner = null;
-        Debug.Log(trainer.placedPokemons);
+        //Debug.Log(trainer.placedPokemons);
         if(trainer.placedPokemons == null)
         {
 
@@ -355,7 +356,6 @@ public class BattleExecutor : MonoBehaviour
     {
         winner = trainer;
         Trainer loser = trainer == chessBoard.owner ? challenger : chessBoard.owner;
-
         foreach (Pokemon pokemon in trainer.placedPokemons.Keys)
         {
             pokemon.currentState = PokemonState.Idle;
@@ -410,26 +410,27 @@ public class BattleExecutor : MonoBehaviour
         else
         {
             trainer.currentHp -= damage;
-            Debug.Log(trainer.currentHp);
         }
     }
-    /*private void Reset_ChessBoard()
+    private void Reset_ChessBoard()
     {
-        List<Pokemon> challengerPokemons = new List<Pokemon>(challenger.placedPokemons.Keys);
+        List<Pokemon> challengerPokemons = new List<Pokemon>(liveChallengerPokemons.Keys);
         if (challenger is Stage)
         {
             if(liveChallengerPokemons.Count == 0)
             {
+                Debug.Log("테스트");
                 Destroy(challenger.gameObject);
             }
             else
             {
                 foreach (Pokemon pokemon in challengerPokemons)
                 {
-                    PokemonDead(pokemon);
+                    PokemonUIManager.RemovePokemonUI(pokemon);
+                    liveChallengerPokemons.Remove(pokemon);
                 }
                 Destroy(challenger.gameObject);
             }
         }
-    }*/
+    }
 }

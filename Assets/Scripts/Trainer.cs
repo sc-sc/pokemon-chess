@@ -49,7 +49,7 @@ public class Trainer : MonoBehaviour
             }
 
             pokemonList.Add(pokemon);
-            Debug.Log((type, pokemonList.Count));
+            //Debug.Log((type, pokemonList.Count));
         }
     }
 
@@ -61,7 +61,7 @@ public class Trainer : MonoBehaviour
         {
             List<Pokemon> pokemonList = placedPokemonTypeDictionary[type];
             pokemonList.Remove(pokemon);
-            Debug.Log((type, pokemonList.Count));
+            //Debug.Log((type, pokemonList.Count));
         }
     }
 }

@@ -159,7 +159,7 @@ public class Pokemon : MonoBehaviour
             Ultimate(this);
             damage *= 2;
         }
-        Debug.Log(this.name + damage);
+        //Debug.Log(this.name + damage);
         attackTarget.Hit(damage, this);
         isOnAttack = false;
     }
