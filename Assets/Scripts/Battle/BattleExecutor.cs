@@ -99,6 +99,15 @@ public class BattleExecutor : MonoBehaviour
             pokemon.isAlive = true;
             pokemon.gameObject.SetActive(true);
         }
+        /*foreach (KeyValuePair<Pokemon, Vector2Int> pokemonAndIndex in challenger.placedPokemons)
+        {
+            Pokemon pokemon = pokemonAndIndex.Key;
+            pokemon.transform.position = chessBoard.IndexToWorldPosition(pokemonAndIndex.Value);
+            pokemon.currentHp = pokemon.actualHp;
+            pokemon.currentPp = pokemon.initialPp;
+            pokemon.isAlive = true;
+            pokemon.gameObject.SetActive(true);
+        }*/
     }
 
     private IEnumerator BattleCoroutine()
@@ -299,7 +308,21 @@ public class BattleExecutor : MonoBehaviour
 
             if (liveChallengerPokemons.Count == 0)
             {
+                int temp_damage = 2;
+                foreach(Pokemon livepokemon in liveOwnerPokemons.Keys)
+                {
+                    temp_damage += livepokemon.cost;
+                    if (livepokemon.evolutionPhase == 2)
+                    {
+                        temp_damage += 1;
+                    }
+                    else if(livepokemon.evolutionPhase == 3)
+                    {
+                        temp_damage += 3;
+                    }
+                }
                 Victory(chessBoard.owner);
+                Trainer_Hp_down(challenger, temp_damage);
             }
         } else
         {
@@ -308,7 +331,21 @@ public class BattleExecutor : MonoBehaviour
             liveOwnerPokemons.Remove(pokemon);
             if (liveOwnerPokemons.Count == 0)
             {
+                int temp_damage = 2;
+                foreach (Pokemon livepokemon in liveChallengerPokemons.Keys)
+                {
+                    temp_damage += livepokemon.cost;
+                    if (livepokemon.evolutionPhase == 2)
+                    {
+                        temp_damage += 1;
+                    }
+                    else if (livepokemon.evolutionPhase == 3)
+                    {
+                        temp_damage += 3;
+                    }
+                }
                 Victory(challenger);
+                Trainer_Hp_down(chessBoard.owner, temp_damage);
             }
         }
         pokemonsInBattle[index.x, index.y] = null;
@@ -323,7 +360,7 @@ public class BattleExecutor : MonoBehaviour
         {
             pokemon.currentState = PokemonState.Idle;
         }
-
+        //Reset_ChessBoard();
         battleManager.FinishBattleIn(chessBoard, winner, loser);
     }
 
@@ -363,4 +400,35 @@ public class BattleExecutor : MonoBehaviour
     {
         throw new System.NotImplementedException();
     }
+
+    private void Trainer_Hp_down(Trainer trainer, int damage)
+    {
+        if(trainer is Stage)
+        {
+            Debug.Log("스테이지 트레이너이기에 피가 안깍인다");
+        }
+        else
+        {
+            trainer.currentHp -= damage;
+            Debug.Log(trainer.currentHp);
+        }
+    }
+    /*private void Reset_ChessBoard()
+    {
+        if (challenger is Stage)
+        {
+            if(liveChallengerPokemons.Count == 0)
+            {
+                Destroy(challenger.gameObject);
+            }
+            else
+            {
+                foreach (Pokemon pokemon in liveChallengerPokemons.Keys)
+                {
+                    liveChallengerPokemons.Remove(pokemon);
+                }
+                Destroy(challenger.gameObject);
+            }
+        }
+    }*/
 }

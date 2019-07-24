@@ -12,7 +12,7 @@ public class Stage : Trainer
         base.Awake();
         for (int i = 0; i < pokemons.Length; i++)
         {
-            Pokemon pokemon = Instantiate(pokemons[i]).GetComponent<Pokemon>();
+            Pokemon pokemon = Instantiate(pokemons[i],transform).GetComponent<Pokemon>();
             pokemon.trainer = this;
             SetPlacedPokemon(positions[i], pokemon);
         }
