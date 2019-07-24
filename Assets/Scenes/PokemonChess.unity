@@ -2259,6 +2259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c5df8a6b1115b0409f763c35f344d1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeText: {fileID: 940914185}
 --- !u!1 &940914183
 GameObject:
   m_ObjectHideFlags: 0

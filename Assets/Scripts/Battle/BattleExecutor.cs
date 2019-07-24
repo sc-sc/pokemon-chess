@@ -360,7 +360,7 @@ public class BattleExecutor : MonoBehaviour
         {
             pokemon.currentState = PokemonState.Idle;
         }
-        //Reset_ChessBoard();
+        Reset_ChessBoard();
         battleManager.FinishBattleIn(chessBoard, winner, loser);
     }
 
@@ -420,16 +420,18 @@ public class BattleExecutor : MonoBehaviour
             if(liveChallengerPokemons.Count == 0)
             {
                 Debug.Log("테스트");
-                Destroy(challenger.gameObject);
+                //영기야 이거 그냥 여기서는 웅이 에니메이터만 없애주면 될것 같아.
+                //challenger.GetComponent<Animator>().ResetTrigger("DisAppear");
+                //Destroy(challenger.gameObject);
             }
             else
             {
-                foreach (Pokemon pokemon in challengerPokemons)
+                /*foreach (Pokemon pokemon in challengerPokemons)
                 {
                     PokemonUIManager.RemovePokemonUI(pokemon);
                     liveChallengerPokemons.Remove(pokemon);
                 }
-                Destroy(challenger.gameObject);
+                Destroy(challenger.gameObject);*/
             }
         }
     }
