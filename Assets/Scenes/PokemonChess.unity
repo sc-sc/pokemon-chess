@@ -423,6 +423,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 909652291}
+        m_MethodName: Reset_Time_Battle_Start
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114214651
@@ -2271,6 +2282,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeText: {fileID: 940914185}
+  StageManager: {fileID: 1585233288}
+  BattleManager: {fileID: 1765999729}
 --- !u!1 &940914183
 GameObject:
   m_ObjectHideFlags: 0
@@ -5141,6 +5154,7 @@ MonoBehaviour:
   gameManager: {fileID: 1765999727}
   SafariManager: {fileID: 181882527}
   pokemonsInStage: []
+  TimeManager: {fileID: 909652291}
   stages:
   - mainStage: 1
     subStages:

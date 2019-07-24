@@ -13,6 +13,7 @@ public class StageManager : MonoBehaviour
     public GameObject[] pokemonsInStage;
 
     private List<Stage> currentStages;
+    public TimeManager TimeManager;
 
     [System.Serializable]
     public struct Stages
@@ -75,5 +76,6 @@ public class StageManager : MonoBehaviour
         {
             currentStage.DestroySelf();
         }
+        TimeManager.Reset_Time_Battle_Wait();
     }
 }

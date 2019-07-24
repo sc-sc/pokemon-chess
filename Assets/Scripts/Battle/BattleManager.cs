@@ -58,7 +58,6 @@ public class BattleManager : MonoBehaviour
     public void EndBattle()
     {   
         isInBattle = false;
-
         foreach (Trainer trainer in gameManager.trainers)
         {
             int plus_money = trainer.money;
@@ -71,7 +70,6 @@ public class BattleManager : MonoBehaviour
             trainer.money += temp;
             trainer.money += 5;
             trainer.ExpUp(2);
-
             if (!(trainer is Stage))
             {
                 gameManager.chessBoards[trainer].ResetBoard();
@@ -86,7 +84,6 @@ public class BattleManager : MonoBehaviour
         homeChessBoards = new List<ChessBoard>();
         winners = new List<Trainer>();
         losers = new List<Trainer>();
-
         stageManager.EndStage();
     }
 }
