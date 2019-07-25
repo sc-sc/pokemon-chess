@@ -174,7 +174,7 @@ public class Pokemon : MonoBehaviour
         else
             spriteRenderer.flipX = false;
 
-        int attackFrame = 10 + (int) ((100f / DamageCalculator.GetActualStat(baseSpeed, this)) * 60f);
+        int attackFrame = 10 + (int) ((100f / DamageCalculator.GetActualStat(baseSpeed, PokemonStat.Speed, this)) * 60f);
         for (int frame = 0; frame < attackFrame; frame++)
         {
             if (!attackTarget.isAlive || !IsAttackTargetInRange())
@@ -205,6 +205,10 @@ public class Pokemon : MonoBehaviour
                 StopAllCoroutines();
                 isAlive = false;
                 battleCallbackHandler.PokemonDead(this);
+                if (skill != null)
+                {
+                    skill.StopAllCoroutines();
+                }
             }
 
             StartCoroutine(HitAction());
@@ -289,14 +293,15 @@ public class Pokemon : MonoBehaviour
         isOnAttack = false;
         currentState = PokemonState.Idle;
         StopAllCoroutines();
+        pokemonUIManager.AddPokemonUI(this);
         currentHp = actualHp;
         currentPp = initialPp;
         isAlive = true;
         gameObject.SetActive(true);
-        pokemonUIManager.AddPokemonUI(this);
         spriteRenderer.color = new Color(1, 1, 1);
         spriteRenderer.flipX = false;
         initRank();
+        animator.speed = 1f;
     }
 
     private void initRank()
@@ -314,5 +319,15 @@ public class Pokemon : MonoBehaviour
     public void StartAnimation()
     {
         animator.enabled = true;
+    }
+
+    public void RankUp(PokemonStat statType, int amount)
+    {
+        statRank[statType] += amount;
+
+        if (statType == PokemonStat.Speed)
+        {
+            animator.speed *= DamageCalculator.StatRank(PokemonStat.Speed, this);
+        }
     }
 }

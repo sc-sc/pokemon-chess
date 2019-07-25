@@ -31,17 +31,17 @@ public class DamageCalculator : MonoBehaviour
     {
         return ActualStatCommonFormula(pokemon.baseHp, pokemon) + 10 + Level(pokemon);
     }
-    public static int GetActualStat(int baseStat, Pokemon pokemon)
+    private static int GetActualStat(int baseStat, Pokemon pokemon)
     {
         return ActualStatCommonFormula(baseStat, pokemon) + 5;
     }
 
-    private static int GetActualStat(int baseStat, PokemonStat statType, Pokemon pokemon)
+    public static int GetActualStat(int baseStat, PokemonStat statType, Pokemon pokemon)
     {
         return (int) (StatRank(statType, pokemon) * GetActualStat(baseStat, pokemon));
     }
 
-    private static float StatRank(PokemonStat statType, Pokemon pokemon)
+    public static float StatRank(PokemonStat statType, Pokemon pokemon)
     {
         int statRank = pokemon.statRank[statType];
 
@@ -55,7 +55,7 @@ public class DamageCalculator : MonoBehaviour
         {
             if (statRank <= -6) return 1f / 4f;
             else
-                return 2f / (2f + statRank);
+                return 2f / (2f - statRank);
         }
     }
 

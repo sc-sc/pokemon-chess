@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Harden : Skill
 {
-
+    [SerializeField]
+    private AudioClip hardenSound;
     public override void UseSkill(Pokemon attacker, Pokemon defensor)
     {
         base.UseSkill(attacker, defensor);
@@ -14,17 +15,40 @@ public class Harden : Skill
 
     private IEnumerator HardenAction(Pokemon attacker)
     {
-        Debug.Log("단단해지기");
+        GetComponent<AudioSource>().PlayOneShot(hardenSound);
 
         attacker.StopAnimation();
+        GameObject hardenEffect = new GameObject("HardenEffect");
+        hardenEffect.transform.SetParent(transform, false);
+        hardenEffect.AddComponent<SpriteRenderer>();
+        SpriteRenderer effectSprite = hardenEffect.GetComponent<SpriteRenderer>();
+        effectSprite.sprite = attacker.spriteRenderer.sprite;
+        effectSprite.material = Resources.Load("Materials/PaintWhite") as Material;
+        effectSprite.sortingLayerName = "ForeShadow";
+        effectSprite.flipX = attacker.spriteRenderer.flipX;
+        effectSprite.color -= new Color(0, 0, 0, 1);
 
-        for (int frame = 0; frame < 30; frame++)
+        for (int frame = 0; frame < 120; frame++)
         {
+            if (frame < 30)
+            {
+                effectSprite.color += new Color(0, 0, 0, 0.01f);
+            } else if (frame < 60)
+            {
+                effectSprite.color -= new Color(0, 0, 0, 0.01f);
+            } else if (frame < 90)
+            {
+                effectSprite.color += new Color(0, 0, 0, 0.01f);
+            } else
+            {
+                effectSprite.color -= new Color(0, 0, 0, 0.01f);
+            }
             yield return null;
         }
 
-        attacker.statRank[PokemonStat.Defense] += 1;
-        attacker.StartAnimation();
-        attacker.currentState = PokemonState.Move;
+        attacker.RankUp(PokemonStat.Defense, 1);
+
+        Destroy(hardenEffect);
+        EndSkill(attacker);
     }
 }
