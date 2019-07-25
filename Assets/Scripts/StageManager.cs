@@ -14,6 +14,11 @@ public class StageManager : MonoBehaviour
 
     private List<Stage> currentStages;
 
+    public AudioClip finalBattleBgm;
+    public AudioClip wildBattleBgm;
+    public AudioClip trainerBattleBgm;
+    public AudioClip gymLeaderBattleBgm;
+
     [System.Serializable]
     public struct Stages
     {
@@ -49,14 +54,29 @@ public class StageManager : MonoBehaviour
             return;
         }
         */
-
         currentStages = new List<Stage>();
+
+        Stage stage = stages[mainStage - 1].subStages[subStage - 1];
+        switch (stage.stageType)
+        {
+            case StageType.Wild:
+                gameManager.PlayBgm(wildBattleBgm);
+                break;
+
+            case StageType.GymLeader:
+                gameManager.PlayBgm(gymLeaderBattleBgm);
+                break;
+
+            default:
+                gameManager.PlayBgm(trainerBattleBgm);
+                break;
+        }
 
         foreach (Trainer trainer in gameManager.trainers)
         {
-            Stage stage = Instantiate(stages[mainStage - 1].subStages[subStage - 1]).GetComponent<Stage>();
-            currentStages.Add(stage);
-            FindObjectOfType<BattleManager>().ReadyBattle(trainer, stage);
+            Stage currentStage = Instantiate(stage).GetComponent<Stage>();
+            currentStages.Add(currentStage);
+            FindObjectOfType<BattleManager>().ReadyBattle(trainer, currentStage);
         }
     }
 

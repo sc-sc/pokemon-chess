@@ -22,6 +22,8 @@ public class PokemonUI : MonoBehaviour
             hpBar.fillAmount = Mathf.Lerp(hpBar.fillAmount, temp, time * 5);
             yield return new WaitForSeconds(0.05f);
         }
+
+        hpBar.fillAmount = temp;
     }
 
     public void ChangePp(Pokemon pokemon)
