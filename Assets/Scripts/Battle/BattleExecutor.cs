@@ -41,6 +41,7 @@ public class BattleExecutor : MonoBehaviour
     public void ReadyBattle(Trainer challenger)
     {
         isInBattle = true;
+        winner = null;
 
         pokemonsInBattle = new Pokemon[8, 8];
 
@@ -65,7 +66,6 @@ public class BattleExecutor : MonoBehaviour
         foreach (KeyValuePair<Pokemon, Vector2Int> pokemonAndIndex in trainer.placedPokemons)
         {
             Pokemon pokemon = pokemonAndIndex.Key;
-            pokemon.currentState = PokemonState.Move;
             pokemon.battleCallbackHandler = callbackHandler;
             pokemon.isAlive = true;
 
@@ -84,6 +84,15 @@ public class BattleExecutor : MonoBehaviour
 
     public void StartBattle()
     {
+        foreach (Pokemon pokemon in chessBoard.owner.placedPokemons.Keys)
+        {
+            pokemon.currentState = PokemonState.Move;
+        }
+
+        foreach (Pokemon pokemon in challenger.placedPokemons.Keys)
+        {
+            pokemon.currentState = PokemonState.Move;
+        }
 
         battleCoroutine = BattleCoroutine();
         StartCoroutine(battleCoroutine);
@@ -310,15 +319,49 @@ public class BattleExecutor : MonoBehaviour
 
     private void Victory(Trainer trainer)
     {
+        StopAttack();
+
         winner = trainer;
         Trainer loser = trainer == chessBoard.owner ? challenger : chessBoard.owner;
-        foreach (Pokemon pokemon in trainer.placedPokemons.Keys)
+        int damage = CalculateDamage(loser);
+
+        Trainer_Hp_down(loser, damage);
+
+        battleManager.FinishBattleIn(chessBoard, winner, loser);
+    }
+
+    public void BattleTimeEnd()
+    {
+        if (winner != null) return;
+
+        StopAttack();
+
+        Trainer_Hp_down(chessBoard.owner, CalculateDamage(chessBoard.owner));
+        Trainer_Hp_down(challenger, CalculateDamage(challenger));
+
+        battleManager.DrawBattleIn(chessBoard, chessBoard.owner, challenger);
+    }
+
+    private void StopAttack()
+    {
+        foreach (Pokemon liveOwnerPokemon in liveOwnerPokemons.Keys)
         {
-            pokemon.currentState = PokemonState.Idle;
+            liveOwnerPokemon.currentState = PokemonState.Idle;
         }
 
+        foreach (Pokemon liveChallengerPokemon in liveChallengerPokemons.Keys)
+        {
+            liveChallengerPokemon.currentState = PokemonState.Idle;
+        }
+    }
+
+    private int CalculateDamage(Trainer loser)
+    {
         int temp_damage = 2;
-        foreach (Pokemon livepokemon in liveOwnerPokemons.Keys)
+
+        List<Pokemon> livePokemons = loser == challenger ? new List<Pokemon>(liveOwnerPokemons.Keys) : new List<Pokemon>(liveChallengerPokemons.Keys);
+
+        foreach (Pokemon livepokemon in livePokemons)
         {
             temp_damage += livepokemon.cost;
             if (livepokemon.evolutionPhase == 2)
@@ -331,9 +374,7 @@ public class BattleExecutor : MonoBehaviour
             }
         }
 
-        Trainer_Hp_down(loser, temp_damage);
-
-        battleManager.FinishBattleIn(chessBoard, winner, loser);
+        return temp_damage;
     }
 
     public void SetAttackTargetTo(Pokemon attackPokemon)

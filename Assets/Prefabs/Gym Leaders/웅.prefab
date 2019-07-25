@@ -128,5 +128,5 @@ MonoBehaviour:
   - {fileID: 2254535982436329198, guid: b3116c473b525f2479d800b0cb23a714, type: 3}
   - {fileID: 2254535982436329198, guid: b3116c473b525f2479d800b0cb23a714, type: 3}
   positions:
+  - {x: 2, y: 2}
   - {x: 3, y: 3}
-  - {x: 4, y: 4}

@@ -15,6 +15,7 @@ public class BattleManager : MonoBehaviour
 
     private int finishBattleCount;
 
+    public EventTimeManager timeManager;
     void Awake()
     {
         gameManager = GetComponent<GameManager>();
@@ -55,8 +56,33 @@ public class BattleManager : MonoBehaviour
         }
     }
 
-    public void EndBattle()
+    public void DrawBattleIn(ChessBoard homeChessBoard, Trainer home, Trainer away)
+    {
+        finishBattleCount++;
+        losers.Add(home);
+        losers.Add(away);
+
+        if (finishBattleCount == homeChessBoards.Count)
+        {
+            EndBattle();
+        }
+    }
+    public void BattleTimeEnd()
+    {
+        foreach (ChessBoard homeChessBoard in homeChessBoards)
+        {
+            homeChessBoard.BattleTimeEnd();
+        }
+    }
+    private void EndBattle()
     {   
+        StartCoroutine(BattleEndAction());
+    }
+
+    private IEnumerator BattleEndAction()
+    {
+        yield return new WaitForSeconds(0.2f);
+
         isInBattle = false;
         foreach (Trainer trainer in gameManager.trainers)
         {
@@ -80,10 +106,14 @@ public class BattleManager : MonoBehaviour
         {
             homeChessBoard.EndBattle();
         }
-        
+
+
+        stageManager.EndStage();
+
         homeChessBoards = new List<ChessBoard>();
         winners = new List<Trainer>();
         losers = new List<Trainer>();
-        stageManager.EndStage();
+
+        timeManager.WaitBattle();
     }
 }

@@ -171,6 +171,7 @@ public class Pokemon : MonoBehaviour
             currentHp -= damage;
             currentPp += 3;
 
+
             if (currentHp <= 0)
             {
                 currentState = PokemonState.Idle;
@@ -178,6 +179,7 @@ public class Pokemon : MonoBehaviour
                 isAlive = false;
                 battleCallbackHandler.PokemonDead(this);
             }
+
             StartCoroutine(HitAction());
         }
     }
@@ -273,11 +275,15 @@ public class Pokemon : MonoBehaviour
 
     public void Reset()
     {
+        isOnAttack = false;
+        currentState = PokemonState.Idle;
+        StopAllCoroutines();
         currentHp = actualHp;
         currentPp = initialPp;
         isAlive = true;
         gameObject.SetActive(true);
         pokemonUIManager.AddPokemonUI(this);
+        spriteRenderer.color = new Color(1, 1, 1);
         spriteRenderer.flipX = false;
     }
 }

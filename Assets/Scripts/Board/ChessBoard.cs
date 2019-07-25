@@ -114,8 +114,13 @@ public class ChessBoard : PokemonPlaceableBoard
         foreach (KeyValuePair<Pokemon, Vector2Int> pokemonAndIndex in owner.placedPokemons)
         {
             Pokemon pokemon = pokemonAndIndex.Key;
-            pokemon.transform.position = IndexToWorldPosition(pokemonAndIndex.Value);
             pokemon.Reset();
+            pokemon.transform.position = IndexToWorldPosition(pokemonAndIndex.Value);
         }
+    }
+
+    public void BattleTimeEnd()
+    {
+        battleExecutor.BattleTimeEnd();
     }
 }
