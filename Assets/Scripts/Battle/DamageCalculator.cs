@@ -6,8 +6,8 @@ public class DamageCalculator : MonoBehaviour
 {
     public static int CalculateDamage(Pokemon attacker, Pokemon defensor)
     {
-        return (int) ((((((Level(attacker) * 2 / 5) + 2) * 30 * GetActualStat(attacker.baseAttack, attacker) / 50)
-            / GetActualStat(defensor.baseDefense, defensor)) * Mod1(attacker, defensor) + 2) * Critical(attacker, defensor)
+        return (int) ((((((Level(attacker) * 2 / 5) + 2) * 30 * GetActualStat(attacker.baseAttack, PokemonStat.Attack, attacker) / 50)
+            / GetActualStat(defensor.baseDefense, PokemonStat.Defense, defensor)) * Mod1(attacker, defensor) + 2) * Critical(attacker, defensor)
             * Mod2(attacker, defensor) * Stab(attacker) * TypeEffectiveness(attacker, defensor) * Mod3(attacker, defensor));
     }
 
@@ -34,6 +34,29 @@ public class DamageCalculator : MonoBehaviour
     public static int GetActualStat(int baseStat, Pokemon pokemon)
     {
         return ActualStatCommonFormula(baseStat, pokemon) + 5;
+    }
+
+    private static int GetActualStat(int baseStat, PokemonStat statType, Pokemon pokemon)
+    {
+        return (int) (StatRank(statType, pokemon) * GetActualStat(baseStat, pokemon));
+    }
+
+    private static float StatRank(PokemonStat statType, Pokemon pokemon)
+    {
+        int statRank = pokemon.statRank[statType];
+
+        if (statRank == 0) return 1f;
+        else if (statRank > 0)
+        {
+            if (statRank >= 6f) return 4f;
+            else
+                return (2 + statRank) / 2f;
+        } else
+        {
+            if (statRank <= -6) return 1f / 4f;
+            else
+                return 2f / (2f + statRank);
+        }
     }
 
     private static int ActualStatCommonFormula(int baseStat, Pokemon pokemon)

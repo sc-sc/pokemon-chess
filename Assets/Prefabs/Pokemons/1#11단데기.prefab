@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2254535982436329201}
   - component: {fileID: 2254535982436329200}
+  - component: {fileID: 7265016293130002624}
   m_Layer: 0
   m_Name: "1#11\uB2E8\uB370\uAE30"
   m_TagString: Pokemon
@@ -49,12 +50,15 @@ MonoBehaviour:
   trainer: {fileID: 0}
   cost: 1
   baseHp: 50
+  ultimate_skill: 
   _currentHp: 0
   baseAttack: 20
   baseDefense: 55
+  baseSpecialAttack: 100
+  baseSpecialDefense: 100
   baseSpeed: 30
   ppFull: 30
-  initialPp: 0
+  initialPp: 10
   _currentPp: 0
   evolution: {fileID: 2254535982436329198, guid: 70ec12185a038604784ac0b3a995efbe,
     type: 3}
@@ -65,6 +69,18 @@ MonoBehaviour:
   attackTarget: {fileID: 0}
   isAlive: 1
   battleCallbackHandler: {fileID: 0}
+--- !u!114 &7265016293130002624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2254535982436329198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f7198594d661843aef1426b29f125c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2254535982534229303
 GameObject:
   m_ObjectHideFlags: 0
