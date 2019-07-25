@@ -57,6 +57,21 @@ public class GameManager : MonoBehaviour
 
     public void PlayBgm(AudioClip bgm)
     {
+        StartCoroutine(FadeOutPreviousBgmAndPlay(bgm));
+    }
+
+    private IEnumerator FadeOutPreviousBgmAndPlay(AudioClip bgm)
+    {
+        float fadeTime = 0.5f;
+
+        while (audioSource.volume > 0)
+        {
+            audioSource.volume -= Time.deltaTime / fadeTime;
+
+            yield return null;
+        }
+
+        audioSource.volume = 1f;
         audioSource.Stop();
         audioSource.PlayOneShot(bgm);
         audioSource.loop = true;

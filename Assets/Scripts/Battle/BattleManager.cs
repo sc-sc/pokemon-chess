@@ -5,7 +5,6 @@ using UnityEngine;
 public class BattleManager : MonoBehaviour
 {
     public bool isInBattle = false;
-    public AudioClip finalBattleBgm;
     private GameManager gameManager;
     private List<ChessBoard> homeChessBoards;
     public StageManager stageManager;
@@ -16,6 +15,11 @@ public class BattleManager : MonoBehaviour
     private int finishBattleCount;
 
     public EventTimeManager timeManager;
+
+    public AudioClip wildVictoryBgm;
+    public AudioClip trainerVictoryBgm;
+    public AudioClip gymLeaderVictoryBgm;
+
     void Awake()
     {
         gameManager = GetComponent<GameManager>();
@@ -33,11 +37,6 @@ public class BattleManager : MonoBehaviour
     public void StartBattle()
     {
         finishBattleCount = 0;
-        if (gameManager.trainers.Count == 2)
-        {
-            gameManager.PlayBgm(finalBattleBgm);
-        }
-
         foreach (ChessBoard chessBoard in homeChessBoards)
         {
             chessBoard.StartBattle();
@@ -49,6 +48,26 @@ public class BattleManager : MonoBehaviour
         finishBattleCount++;
         winners.Add(winner);
         losers.Add(loser);
+
+        if (winner is Player && loser is Stage)
+        {
+            Stage stage = loser as Stage;
+
+            switch (stage.stageType)
+            {
+                case StageType.Wild:
+                    gameManager.PlayBgm(wildVictoryBgm);
+                    break;
+
+                case StageType.GymLeader:
+                    gameManager.PlayBgm(gymLeaderVictoryBgm);
+                    break;
+
+                default:
+                    gameManager.PlayBgm(trainerVictoryBgm);
+                    break;
+            }
+        }
 
         if (finishBattleCount == homeChessBoards.Count)
         {

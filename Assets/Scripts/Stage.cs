@@ -2,10 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum StageType
+{
+    Wild, StageTrainer, GymLeader
+}
 public class Stage : Trainer
 {
     public GameObject[] pokemons;
     public Vector2Int[] positions;
+    public StageType stageType;
 
     protected override void Awake()
     {

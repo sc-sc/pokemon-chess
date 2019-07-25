@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 2254535982436329198}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children:
   - {fileID: 2254535982534229304}
   - {fileID: 4982657042636162291}
@@ -48,12 +48,12 @@ MonoBehaviour:
   currentState: 0
   trainer: {fileID: 0}
   cost: 1
-  baseHp: 10
+  baseHp: 30
   ultimate_skill: 
   _currentHp: 0
-  baseAttack: 15
-  baseDefense: 20
-  baseSpeed: 20
+  baseAttack: 20
+  baseDefense: 25
+  baseSpeed: 25
   ppFull: 30
   initialPp: 0
   _currentPp: 0
