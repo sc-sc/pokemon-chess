@@ -125,13 +125,11 @@ MonoBehaviour:
   exp_present: 0
   waitingPokemons: []
   pokemons:
-  - {fileID: 2254535982436329198, guid: b3116c473b525f2479d800b0cb23a714, type: 3}
-  - {fileID: 2254535982436329198, guid: b3116c473b525f2479d800b0cb23a714, type: 3}
-  - {fileID: 2254535982436329198, guid: b3116c473b525f2479d800b0cb23a714, type: 3}
-  - {fileID: 2254535982436329198, guid: b3116c473b525f2479d800b0cb23a714, type: 3}
+  - {fileID: 2254535982436329198, guid: 35bdca324aadfd74e88cf8b42595cc0d, type: 3}
+  - {fileID: 2254535982436329198, guid: 35bdca324aadfd74e88cf8b42595cc0d, type: 3}
+  - {fileID: 2254535982436329198, guid: b62dd282f3184ae49a94f28d141445f1, type: 3}
   positions:
   - {x: 2, y: 2}
-  - {x: 2, y: 3}
-  - {x: 3, y: 2}
-  - {x: 3, y: 3}
+  - {x: 4, y: 2}
+  - {x: 3, y: 1}
   stageType: 2

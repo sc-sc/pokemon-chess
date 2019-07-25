@@ -13,6 +13,11 @@ public enum PokemonState
     Idle, Attack, Move, Skill
 }
 
+public enum PokemonStat
+{
+    Hp, Attack, Defense, SpecialAttack, SpecialDefense, Speed
+}
+
 public class Pokemon : MonoBehaviour
 {
     TransformAccessArray transforms;
@@ -24,7 +29,6 @@ public class Pokemon : MonoBehaviour
     public Trainer trainer;
     public int cost;
     public int baseHp = 100;
-    public string ultimate_skill;
     public int actualHp
     {
         get
@@ -49,7 +53,11 @@ public class Pokemon : MonoBehaviour
     }
     public int baseAttack = 100;
     public int baseDefense = 100;
+    public int baseSpecialAttack = 100;
+    public int baseSpecialDefense = 100;
     public int baseSpeed = 100;
+
+    public Dictionary<PokemonStat, int> statRank = new Dictionary<PokemonStat, int>();
 
     public int ppFull = 30;
     public int initialPp = 0;
@@ -71,6 +79,7 @@ public class Pokemon : MonoBehaviour
     public GameObject evolution;
     public int evolutionPhase = 1;
     internal SpriteRenderer spriteRenderer;
+    private Animator animator;
     public Transform uiTransform;
     public PokemonType[] types = new PokemonType[2];
 
@@ -82,14 +91,21 @@ public class Pokemon : MonoBehaviour
 
     public BattleCallbackHandler battleCallbackHandler;
 
+    private IEnumerator attackCoroutine;
+
+    private Skill skill;
 
     void Awake()
     {
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        animator = GetComponentInChildren<Animator>();
         pokemonUIManager = FindObjectOfType<PokemonUIManager>();
         transforms = new TransformAccessArray(2, -1);
         transforms.Add(transform);
         transforms.Add(spriteRenderer.transform);
+
+        initRank();
+        skill = GetComponent<Skill>();
     }
 
     // Update is called once per frame
@@ -106,7 +122,8 @@ public class Pokemon : MonoBehaviour
                         currentState = PokemonState.Move;
                     else
                     {
-                        StartCoroutine(AttackAction());
+                        attackCoroutine = AttackAction();
+                        StartCoroutine(attackCoroutine);
                     }
                 }
 
@@ -124,9 +141,25 @@ public class Pokemon : MonoBehaviour
             default:
                 break;
         }
+
+        if ((currentState == PokemonState.Attack || currentState == PokemonState.Move) 
+            && currentPp >= ppFull)
+        {
+            currentPp = 0;
+
+            if (skill != null)
+            {
+                isOnAttack = false;
+                StopCoroutine(attackCoroutine);
+                currentState = PokemonState.Skill;
+                Pokemon skillTarget = GetNearstEnemyPokemon();
+
+                skill.UseSkill(this, skillTarget);
+            }
+        }
     }
     
-    void OnDisable()
+    void OnDestroy()
     {
         moveJobHandle.Complete();
         transforms.Dispose();
@@ -140,7 +173,7 @@ public class Pokemon : MonoBehaviour
         else
             spriteRenderer.flipX = false;
 
-        int attackFrame = 10 + (int) ((100f / DamageCalculator.GetActualStat(baseSpeed, this)) * 60f);
+        int attackFrame = 10 + (int) ((100f / DamageCalculator.GetActualStat(baseSpeed, PokemonStat.Speed, this)) * 60f);
         for (int frame = 0; frame < attackFrame; frame++)
         {
             if (!attackTarget.isAlive || !IsAttackTargetInRange())
@@ -153,13 +186,6 @@ public class Pokemon : MonoBehaviour
 
         int damage = DamageCalculator.CalculateDamage(this, attackTarget);
         currentPp += 5;
-        if(currentPp >= 20)
-        {
-            currentPp -= 20;
-            Ultimate(this);
-            damage *= 2;
-        }
-        //Debug.Log(this.name + damage);
         attackTarget.Hit(damage, this);
         isOnAttack = false;
     }
@@ -178,6 +204,10 @@ public class Pokemon : MonoBehaviour
                 StopAllCoroutines();
                 isAlive = false;
                 battleCallbackHandler.PokemonDead(this);
+                if (skill != null)
+                {
+                    skill.StopAllCoroutines();
+                }
             }
 
             StartCoroutine(HitAction());
@@ -257,33 +287,52 @@ public class Pokemon : MonoBehaviour
                 transform.position = Vector2.Lerp(startPosition, position, time * 4);
         }
     }
-    public void Ultimate(Pokemon pokemon)
-    {
-        Debug.Log("필살기" + pokemon.ultimate_skill);
-        StartCoroutine(Ultimate_Action());
-    }
-    private IEnumerator Ultimate_Action()
-    {
-        spriteRenderer.color = new Color(0, spriteRenderer.color.g , 0);
-
-        for (float time = 0; time < 0.5f; time += 0.1f)
-        {
-            spriteRenderer.color = new Color(spriteRenderer.color.r + 0.2f, spriteRenderer.color.g, spriteRenderer.color.b + 0.2f);
-            yield return new WaitForSeconds(0.1f);
-        }
-    }
-
     public void Reset()
     {
+        moveJobHandle.Complete();
         isOnAttack = false;
         currentState = PokemonState.Idle;
         StopAllCoroutines();
+        pokemonUIManager.AddPokemonUI(this);
         currentHp = actualHp;
         currentPp = initialPp;
         isAlive = true;
         gameObject.SetActive(true);
-        pokemonUIManager.AddPokemonUI(this);
         spriteRenderer.color = new Color(1, 1, 1);
         spriteRenderer.flipX = false;
+        initRank();
+        animator.speed = 1f;
+    }
+
+    private void initRank()
+    {
+        foreach (PokemonStat stat in System.Enum.GetValues(typeof(PokemonStat))) {
+            statRank[stat] = 0;
+        }
+    }
+
+    public void StopAnimation()
+    {
+        animator.enabled = false;
+    }
+
+    public void StartAnimation()
+    {
+        animator.enabled = true;
+    }
+
+    public void RankUp(PokemonStat statType, int amount)
+    {
+        statRank[statType] += amount;
+
+        if (statType == PokemonStat.Speed)
+        {
+            animator.speed *= DamageCalculator.StatRank(PokemonStat.Speed, this);
+        }
+    }
+
+    public Pokemon GetNearstEnemyPokemon()
+    {
+        return battleCallbackHandler.GetNearstEnemyPokemon(this);
     }
 }

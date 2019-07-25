@@ -24,4 +24,9 @@ public class BattleCallbackHandler : MonoBehaviour
     {
         return battleExecutor.IsAttackTargetInRange(pokemon);
     }
+
+    public Pokemon GetNearstEnemyPokemon(Pokemon requester)
+    {
+        return battleExecutor.GetNearstEnemyPokemon(requester);
+    }
 }

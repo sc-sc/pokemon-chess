@@ -136,7 +136,7 @@ public class BattleExecutor : MonoBehaviour
         foreach (KeyValuePair<Pokemon, Vector2Int> attackPokemonAndIndex in attackPokemonsAndIndexes)
         {
             Pokemon attackPokemon = attackPokemonAndIndex.Key;
-            if (attackPokemon.currentState == PokemonState.Attack || !attackPokemon.attackTarget.isAlive)
+            if (attackPokemon.currentState != PokemonState.Move || !attackPokemon.attackTarget.isAlive)
             {
                 pokemonPreviousMove[attackPokemon] = MoveDirection.None;
                 continue;
@@ -267,6 +267,8 @@ public class BattleExecutor : MonoBehaviour
 
     public void SetAttackTargetTo(KeyValuePair<Pokemon, Vector2Int> attackPokemonAndIndex, Dictionary<Pokemon, Vector2Int> targetPokemons)
     {
+        if (targetPokemons.Count == 0) return;
+
         Pokemon attackPokemon = attackPokemonAndIndex.Key;
         if (attackPokemon.currentState == PokemonState.Attack) return;
 
@@ -424,5 +426,36 @@ public class BattleExecutor : MonoBehaviour
         {
             trainer.currentHp -= damage;
         }
+    }
+
+    public Pokemon GetNearstEnemyPokemon(Pokemon requester)
+    {
+        Dictionary<Pokemon, Vector2Int> enemyPokemonsAndIndexes;
+        Vector2Int index;
+
+        if (requester.trainer == chessBoard.owner)
+        {
+            enemyPokemonsAndIndexes = liveChallengerPokemons;
+            index = liveOwnerPokemons[requester];
+        } else
+        {
+            enemyPokemonsAndIndexes = liveOwnerPokemons;
+            index = liveChallengerPokemons[requester];
+        }
+
+        float minDistance = 1000;
+        Pokemon nearstEnemy = null;
+
+        foreach (KeyValuePair<Pokemon, Vector2Int> enemyPokemonAndIndex in enemyPokemonsAndIndexes)
+        {
+            float distance = Vector2Int.Distance(index, enemyPokemonAndIndex.Value);
+            if (minDistance > distance)
+            {
+                minDistance = distance;
+                nearstEnemy = enemyPokemonAndIndex.Key;
+            }
+        }
+
+        return nearstEnemy;
     }
 }

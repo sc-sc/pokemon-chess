@@ -64,7 +64,7 @@ public class EventTimeManager : MonoBehaviour
     {
         battleManager.StartBattle();
         currentEventState = EventState.StartBattle;
-        time = 30f;
+        time = 40f;
         eventStateText.text = currentEventState.ToString();
     }
 
@@ -77,7 +77,7 @@ public class EventTimeManager : MonoBehaviour
     {
         timeCanGo = true;
         currentEventState = EventState.WaitBattle;
-        time = 20f;
+        time = 30;
         eventStateText.text = currentEventState.ToString();
     }
     public void Skip()

@@ -57,7 +57,7 @@ public class SalesDesk : MonoBehaviour, Touchable
         {
             soldPokemon.transform.position = Vector2.Lerp(startPosition, soldActionTurningPoint.position, time / 0.5f);
 
-            yield return new WaitForSeconds(Time.deltaTime);
+            yield return null;
         }
 
         yield return new WaitForSeconds(0.2f);
@@ -67,7 +67,7 @@ public class SalesDesk : MonoBehaviour, Touchable
         {
             soldPokemon.transform.position = Vector2.Lerp(startPosition, soldActionDestination.position, time / 1.5f);
 
-            yield return new WaitForSeconds(Time.deltaTime);
+            yield return null;
         }
 
         Destroy(soldPokemon.gameObject);
