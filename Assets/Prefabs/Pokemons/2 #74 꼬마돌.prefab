@@ -52,7 +52,6 @@ MonoBehaviour:
   trainer: {fileID: 0}
   cost: 2
   baseHp: 40
-  ultimate_skill: 
   _currentHp: 0
   baseAttack: 80
   baseDefense: 100
@@ -65,7 +64,7 @@ MonoBehaviour:
   evolution: {fileID: 0}
   evolutionPhase: 1
   uiTransform: {fileID: 4982657042636162291}
-  types: 0b00000009000000
+  types: 0c00000008000000
   range: 1
   attackTarget: {fileID: 0}
   isAlive: 1

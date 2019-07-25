@@ -267,6 +267,8 @@ public class BattleExecutor : MonoBehaviour
 
     public void SetAttackTargetTo(KeyValuePair<Pokemon, Vector2Int> attackPokemonAndIndex, Dictionary<Pokemon, Vector2Int> targetPokemons)
     {
+        if (targetPokemons.Count == 0) return;
+
         Pokemon attackPokemon = attackPokemonAndIndex.Key;
         if (attackPokemon.currentState == PokemonState.Attack) return;
 

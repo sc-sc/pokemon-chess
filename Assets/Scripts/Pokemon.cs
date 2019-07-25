@@ -29,7 +29,6 @@ public class Pokemon : MonoBehaviour
     public Trainer trainer;
     public int cost;
     public int baseHp = 100;
-    public string ultimate_skill;
     public int actualHp
     {
         get
@@ -146,21 +145,21 @@ public class Pokemon : MonoBehaviour
         if ((currentState == PokemonState.Attack || currentState == PokemonState.Move) 
             && currentPp >= ppFull)
         {
-            StopCoroutine(attackCoroutine);
-            isOnAttack = false;
             currentPp = 0;
 
             if (skill != null)
             {
+                isOnAttack = false;
+                StopCoroutine(attackCoroutine);
                 currentState = PokemonState.Skill;
-                Pokemon skillTarget = battleCallbackHandler.GetNearstEnemyPokemon(this);
+                Pokemon skillTarget = GetNearstEnemyPokemon();
 
                 skill.UseSkill(this, skillTarget);
             }
         }
     }
     
-    void OnDisable()
+    void OnDestroy()
     {
         moveJobHandle.Complete();
         transforms.Dispose();
@@ -290,6 +289,7 @@ public class Pokemon : MonoBehaviour
     }
     public void Reset()
     {
+        moveJobHandle.Complete();
         isOnAttack = false;
         currentState = PokemonState.Idle;
         StopAllCoroutines();
@@ -329,5 +329,10 @@ public class Pokemon : MonoBehaviour
         {
             animator.speed *= DamageCalculator.StatRank(PokemonStat.Speed, this);
         }
+    }
+
+    public Pokemon GetNearstEnemyPokemon()
+    {
+        return battleCallbackHandler.GetNearstEnemyPokemon(this);
     }
 }
