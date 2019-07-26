@@ -28,7 +28,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 2044537251360054080}
   m_Father: {fileID: 1689426152727209282}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -359,6 +360,36 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
+--- !u!1 &200315301888415474
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2044537251360054080}
+  m_Layer: 0
+  m_Name: ChallengerPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2044537251360054080
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200315301888415474}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9, y: 5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 541530586}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1689426152727209284
 GameObject:
   m_ObjectHideFlags: 0
@@ -419,18 +450,18 @@ Tilemap:
   - first: {x: -4, y: 3, z: 0}
     second:
       m_TileIndex: 0
-      m_TileSpriteIndex: 1
+      m_TileSpriteIndex: 0
       m_TileMatrixIndex: 0
-      m_TileColorIndex: 1
+      m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 3
       m_ColliderType: 1
   - first: {x: -3, y: 3, z: 0}
     second:
       m_TileIndex: 0
-      m_TileSpriteIndex: 1
+      m_TileSpriteIndex: 0
       m_TileMatrixIndex: 0
-      m_TileColorIndex: 1
+      m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 3
       m_ColliderType: 1
@@ -439,9 +470,9 @@ Tilemap:
   - m_RefCount: 2
     m_Data: {fileID: 0}
   m_TileSpriteArray:
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   - m_RefCount: 2
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
     m_Data: {fileID: 0}
   m_TileMatrixArray:
   - m_RefCount: 2
@@ -463,10 +494,10 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
+  - m_RefCount: 2
+    m_Data: {r: 0.7235128, g: 0.43179214, b: 0.502394, a: 1}
   - m_RefCount: 0
     m_Data: {r: 0, g: 0, b: 0, a: 0}
-  - m_RefCount: 2
-    m_Data: {r: 0.91282177, g: 0.61135966, b: 0.6801086, a: 1}
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -4, y: 0, z: 0}
@@ -503,6 +534,8 @@ GameObject:
   - component: {fileID: 1689426153147974485}
   - component: {fileID: 1689426153147974483}
   - component: {fileID: 1689426153147974480}
+  - component: {fileID: 2723499583063450786}
+  - component: {fileID: 5152007440162707581}
   m_Layer: 0
   m_Name: ChessBoard
   m_TagString: ChessBoard
@@ -1312,6 +1345,33 @@ MonoBehaviour:
   tilemap: {fileID: 0}
   selectedPokemon: {fileID: 0}
   linkedBoard: {fileID: 0}
+  pokemonInformation: {fileID: 0}
+  challengerPosition: {fileID: 2044537251360054080}
+--- !u!114 &2723499583063450786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1689426153147974487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8036e583e0ad7cb4c9b4b478aab4c064, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveTime: 1
+--- !u!114 &5152007440162707581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1689426153147974487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01effba8f99a4e24c83c4db016edca28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1689426153622165246
 GameObject:
   m_ObjectHideFlags: 0
@@ -13894,6 +13954,7 @@ MonoBehaviour:
   tilemap: {fileID: 0}
   selectedPokemon: {fileID: 0}
   linkedBoard: {fileID: 0}
+  pokemonInformation: {fileID: 0}
 --- !u!1 &3324993558498582244
 GameObject:
   m_ObjectHideFlags: 0

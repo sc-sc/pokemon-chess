@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1077766100700705345}
   - component: {fileID: 1077766100700705358}
   - component: {fileID: 1077766100700705359}
-  - component: {fileID: 367638003606663563}
+  - component: {fileID: 1782522522}
   m_Layer: 0
   m_Name: "\uC6C5"
   m_TagString: Untagged
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1077766100700705356}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.213203, y: 36.742344, z: 0}
+  m_LocalPosition: {x: 11.249997, y: 48.676407, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -103,7 +103,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &367638003606663563
+--- !u!114 &1782522522
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,15 +112,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1077766100700705356}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76181b6fe4bc0e945b9789535a9f93ac, type: 3}
+  m_Script: {fileID: 11500000, guid: 575be44316e737347b3c77f9152b3fdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   id: "\uC6C5"
-  nickname: "\uC6C5"
-  level: 1
+  nickname: "\uC6C5\uC774"
+  level: 3
   hp: 100
   currentHp: 100
   money: 0
   exp_expect: 0
   exp_present: 0
   waitingPokemons: []
+  pokemons:
+  - {fileID: 2254535982436329198, guid: 35bdca324aadfd74e88cf8b42595cc0d, type: 3}
+  - {fileID: 2254535982436329198, guid: 35bdca324aadfd74e88cf8b42595cc0d, type: 3}
+  - {fileID: 2254535982436329198, guid: b62dd282f3184ae49a94f28d141445f1, type: 3}
+  positions:
+  - {x: 2, y: 2}
+  - {x: 4, y: 2}
+  - {x: 3, y: 1}
+  stageType: 2

@@ -5,11 +5,10 @@ using UnityEngine.Tilemaps;
 
 public class ChessBoard : PokemonPlaceableBoard
 {
-    public const int MaxRowCanPlace = 4;    
-    public override void Moved(Vector3 to)
-    {
-        base.Moved(to);
-    }
+    public const int MaxRowCanPlace = 4;
+    
+    private BattleExecutor battleExecutor;
+    public Transform challengerPosition;
 
     protected override void ChangePassingSquareColor(Vector3Int passingCellPosition)
     {
@@ -19,10 +18,22 @@ public class ChessBoard : PokemonPlaceableBoard
             tilemap.SetColor(passingCellPosition, Color.red);
     }
 
-    public override void Released(Vector3 at)
+    public override void SpecialTouched(Vector3 at)
     {
-        base.Released(at);
+        if (battleExecutor.isInBattle)
+        {
+            Vector3Int cellPosition = tilemap.WorldToCell(at);
+            Vector2Int index = CellToIndex(cellPosition);
+            Pokemon pokemon = battleExecutor.GetPokemonInBattle(index);
+            if (pokemon != null)
+            {
+                pokemonInformation.ShowPokemonInformation(pokemon);
+            }
+
+        } else
+            base.SpecialTouched(at);
     }
+
     protected override void Awake()
     {
         base.Awake();
@@ -30,6 +41,8 @@ public class ChessBoard : PokemonPlaceableBoard
         linkedBoard = GetComponentInChildren<WaitingBoard>();
         
         placedPokemons = new Pokemon[8, 8];
+
+        battleExecutor = GetComponent<BattleExecutor>();
     }
 
     protected override Vector3Int IndexToCell(Vector2Int index)
@@ -51,22 +64,63 @@ public class ChessBoard : PokemonPlaceableBoard
         return base.PlacePokemon(index, pokemon);
     }
 
-    protected override bool AddPokemon(Vector2Int index, Pokemon pokemon)
+    protected override bool IsCanAddPokemon(Vector2Int index, Pokemon pokemon)
     {
         if (pokemonCache.Count >= owner.level)
         {
             return false;
         }
 
-        return base.AddPokemon(index, pokemon);
+        return base.IsCanAddPokemon(index, pokemon);
     }
     protected override void CompleteSetPokemon(Vector2Int at, Pokemon pokemon)
     {
         if (pokemon != null)
-            owner.placedPokemons[pokemon] = at;
+        {
+            owner.SetPlacedPokemon(at, pokemon);
+        }
     }
     protected override void CompleteRemovePokemon(Vector2Int at, Pokemon pokemon)
     {
-        owner.placedPokemons.Remove(pokemon);
+        owner.RemovePlacedPokemon(pokemon);
+    }
+
+    public void ReadyBattle(Trainer challenger)
+    {
+        isTouchable = false;
+        if (selectedPokemon != null)
+        {
+            Released(new Vector3(0, 0));
+        }
+        challenger.transform.position = challengerPosition.position;
+        challenger.GetComponent<Animator>().SetTrigger("Appear");
+        battleExecutor.ReadyBattle(challenger);
+    }
+
+    public void StartBattle()
+    {
+        battleExecutor.StartBattle();
+    }
+
+    public void EndBattle()
+    {
+        battleExecutor.EndBattle();
+    }
+
+    public void ResetBoard()
+    {
+        isTouchable = true;
+
+        foreach (KeyValuePair<Pokemon, Vector2Int> pokemonAndIndex in owner.placedPokemons)
+        {
+            Pokemon pokemon = pokemonAndIndex.Key;
+            pokemon.Reset();
+            pokemon.transform.position = IndexToWorldPosition(pokemonAndIndex.Value);
+        }
+    }
+
+    public void BattleTimeEnd()
+    {
+        battleExecutor.BattleTimeEnd();
     }
 }

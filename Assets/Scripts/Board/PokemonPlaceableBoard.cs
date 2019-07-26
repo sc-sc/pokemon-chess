@@ -5,6 +5,8 @@ using UnityEngine.Tilemaps;
 
 public abstract class PokemonPlaceableBoard : MonoBehaviour, Touchable
 {
+    protected bool isTouchable = true;
+
     public Trainer owner;
     public Tilemap tilemap;
     protected Vector3Int selectedPosition;
@@ -32,6 +34,9 @@ public abstract class PokemonPlaceableBoard : MonoBehaviour, Touchable
 
     public virtual bool PlacePokemon(Vector2Int index, Pokemon pokemon)
     {
+        if (!isTouchable)
+            return false;
+
         Vector3Int cellPosition = IndexToCell(index);
         if (!tilemap.HasTile(cellPosition)) return false;
 
@@ -44,18 +49,35 @@ public abstract class PokemonPlaceableBoard : MonoBehaviour, Touchable
             {
                 Pokemon alreadyExistPokemon = placedPokemons[index.x, index.y];
                 RemovePokemon(alreadyExistPokemon);
-                if (pokemonCache.ContainsKey(pokemon))
+
+                bool isPokemonAlreadyPlaced = pokemonCache.ContainsKey(pokemon);
+                Vector2Int? previousPokemonIndex = null;
+                if (isPokemonAlreadyPlaced)
                 {
-                    SetPokemon(pokemonCache[pokemon], alreadyExistPokemon);
-                } else if (linkedBoard.pokemonCache.ContainsKey(pokemon))
-                {
-                    linkedBoard.SetPokemon(linkedBoard.pokemonCache[pokemon], alreadyExistPokemon);
+                    previousPokemonIndex = pokemonCache[pokemon];
+                    RemovePokemon(pokemon);
                 }
 
-                RemovePokemon(pokemon);
-                if (!AddPokemon(index, pokemon))
+                if (!IsCanAddPokemon(index, pokemon))
                 {
+                    SetPokemon(index, alreadyExistPokemon);
+                    if (previousPokemonIndex != null)
+                        SetPokemon(previousPokemonIndex.Value, pokemon);
                     return false;
+                } else
+                {
+                    if (isPokemonAlreadyPlaced)
+                    {
+                        SetPokemon(previousPokemonIndex.Value, alreadyExistPokemon);
+                    }
+                    else if (linkedBoard.pokemonCache.ContainsKey(pokemon))
+                    {
+                        Vector2Int linkedBoardIndex = linkedBoard.pokemonCache[pokemon];
+                        linkedBoard.RemovePokemon(pokemon);
+                        linkedBoard.SetPokemon(linkedBoardIndex, alreadyExistPokemon);
+                    }
+
+                    SetPokemon(index, pokemon);
                 }
             }
         }
@@ -64,11 +86,8 @@ public abstract class PokemonPlaceableBoard : MonoBehaviour, Touchable
         return true;
     }
 
-    protected virtual bool AddPokemon(Vector2Int index, Pokemon pokemon)
+    protected virtual bool IsCanAddPokemon(Vector2Int index, Pokemon pokemon)
     {
-        SetPokemon(index, pokemon);
-        linkedBoard.RemovePokemon(pokemon);
-
         return true;
     }
     public void SetPokemon(Vector2Int index, Pokemon pokemon)
@@ -77,7 +96,7 @@ public abstract class PokemonPlaceableBoard : MonoBehaviour, Touchable
         if (pokemon != null)
         {
             pokemonCache[pokemon] = index;
-            pokemon.transform.position = tilemap.GetCellCenterWorld(IndexToCell(index));
+            pokemon.transform.position = IndexToWorldPosition(index);
         }
 
         CompleteSetPokemon(index, pokemon);
@@ -106,6 +125,10 @@ public abstract class PokemonPlaceableBoard : MonoBehaviour, Touchable
 
     protected abstract Vector3Int IndexToCell(Vector2Int index);
 
+    public Vector3 IndexToWorldPosition(Vector2Int index)
+    {
+        return tilemap.GetCellCenterWorld(IndexToCell(index));
+    }
     public bool HasSquare(Vector3 worldPosition)
     {
         Vector3Int cellPosition = tilemap.WorldToCell(worldPosition);
@@ -115,6 +138,8 @@ public abstract class PokemonPlaceableBoard : MonoBehaviour, Touchable
 
     public virtual void Touched(Vector3 at)
     {
+        if (!isTouchable) return;
+
         selectedPosition = tilemap.WorldToCell(at);
         tilemap.SetColor(selectedPosition, Color.cyan);
 
@@ -203,7 +228,7 @@ public abstract class PokemonPlaceableBoard : MonoBehaviour, Touchable
         selectedPosition = selectedPosition = new Vector3Int(0, 0, -100);
     }
 
-    public void SpecialTouched(Vector3 at)
+    public virtual void SpecialTouched(Vector3 at)
     {
         Vector3Int cellPosition = tilemap.WorldToCell(at);
         Vector2Int index = CellToIndex(cellPosition);
