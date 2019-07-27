@@ -458,4 +458,15 @@ public class BattleExecutor : MonoBehaviour
 
         return nearstEnemy;
     }
+
+    public Vector3 GetPosition(Pokemon pokemon)
+    {
+        if (pokemon.trainer == chessBoard.owner)
+        {
+            return chessBoard.IndexToWorldPosition(liveOwnerPokemons[pokemon]);
+        } else
+        {
+            return chessBoard.IndexToWorldPosition(liveChallengerPokemons[pokemon]);
+        }
+    }
 }

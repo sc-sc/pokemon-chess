@@ -95,10 +95,16 @@ public class Pokemon : MonoBehaviour
 
     private Skill skill;
 
+    private Vector3 originalPosition;
+
+    private AudioSource audioSource;
+    private AudioClip hitSound;
     void Awake()
     {
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         animator = GetComponentInChildren<Animator>();
+        audioSource = GetComponent<AudioSource>();
+        hitSound = FindObjectOfType<SoundFactory>().hitSound;
         pokemonUIManager = FindObjectOfType<PokemonUIManager>();
         transforms = new TransformAccessArray(2, -1);
         transforms.Add(transform);
@@ -130,6 +136,7 @@ public class Pokemon : MonoBehaviour
                 break;
 
             case PokemonState.Move:
+                StartAnimation();
                 if (attackTarget != null && attackTarget.isAlive)
                 {
                     if (IsAttackTargetInRange())
@@ -141,7 +148,7 @@ public class Pokemon : MonoBehaviour
             default:
                 break;
         }
-
+        
         if ((currentState == PokemonState.Attack || currentState == PokemonState.Move) 
             && currentPp >= ppFull)
         {
@@ -150,7 +157,7 @@ public class Pokemon : MonoBehaviour
             if (skill != null)
             {
                 isOnAttack = false;
-                StopCoroutine(attackCoroutine);
+                StopAttack();
                 currentState = PokemonState.Skill;
                 Pokemon skillTarget = GetNearstEnemyPokemon();
 
@@ -158,7 +165,25 @@ public class Pokemon : MonoBehaviour
             }
         }
     }
+
+    private void StopAttack()
+    {
+        StopCoroutine(attackCoroutine);
+        StartCoroutine(BackToOriginalPosition(5));
+    }
     
+    private IEnumerator BackToOriginalPosition(int untilFrame)
+    {
+        Vector3 startPosition = transform.position;
+        for (int frame = 0; frame < untilFrame; frame++)
+        {
+            transform.position = Vector3.Lerp(startPosition, originalPosition, (float)frame / untilFrame);
+            yield return null;
+        }
+
+        transform.position = originalPosition;
+    }
+
     void OnDestroy()
     {
         moveJobHandle.Complete();
@@ -168,6 +193,7 @@ public class Pokemon : MonoBehaviour
     private IEnumerator AttackAction()
     {
         isOnAttack = true;
+        originalPosition = battleCallbackHandler.GetPosition(this);
         if (attackTarget.transform.position.x > transform.position.x)
             spriteRenderer.flipX = true;
         else
@@ -181,10 +207,31 @@ public class Pokemon : MonoBehaviour
                 isOnAttack = false;
                 yield break;
             }
+
+            if (range == 1)
+            {
+                if (frame == attackFrame - 30)
+                    StopAnimation();
+
+                if (frame >= attackFrame - 10)
+                {
+                    if (frame < attackFrame - 5)
+                    {
+                        transform.position = Vector3.Lerp(originalPosition, attackTarget.transform.position, (float) (frame) / (attackFrame - 5));
+                    } else if (frame == attackFrame - 5)
+                    {
+                        audioSource.PlayOneShot(hitSound);
+                        StartCoroutine(BackToOriginalPosition(5));
+                    }
+                }
+            }
+
             yield return null;
         }
 
-        int damage = DamageCalculator.CalculateDamage(this, attackTarget);
+        StartAnimation();
+
+        int damage = DamageCalculator.CalculateBasicAttackDamage(this, attackTarget);
         currentPp += 5;
         attackTarget.Hit(damage, this);
         isOnAttack = false;
@@ -200,6 +247,7 @@ public class Pokemon : MonoBehaviour
 
             if (currentHp <= 0)
             {
+                StopAnimation();
                 currentState = PokemonState.Idle;
                 StopAllCoroutines();
                 isAlive = false;

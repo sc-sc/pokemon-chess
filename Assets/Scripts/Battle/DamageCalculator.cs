@@ -27,7 +27,7 @@ public class DamageCalculator : MonoBehaviour
    /*페어리*/{ 1f,0.5f, 1f, 1f, 1f,  1f,  2f,0.5f, 1f, 1f, 1f,  1f,  1f,  1f,    2f,   2f,  0.5f, 1f }
     };
 
-    public static int CalculateDamage(Pokemon attacker, Pokemon defensor)
+    public static int CalculateBasicAttackDamage(Pokemon attacker, Pokemon defensor)
     {
         return (int) ((((((Level(attacker) * 2 / 5) + 2) * 30 * GetActualStat(attacker.baseAttack, PokemonStat.Attack, attacker) / 50)
             / GetActualStat(defensor.baseDefense, PokemonStat.Defense, defensor)) * Mod1(attacker, defensor) + 2) * Critical(attacker, defensor)

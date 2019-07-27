@@ -51,7 +51,6 @@ MonoBehaviour:
   trainer: {fileID: 0}
   cost: 1
   baseHp: 45
-  ultimate_skill: 
   _currentHp: 0
   baseAttack: 30
   baseDefense: 35
