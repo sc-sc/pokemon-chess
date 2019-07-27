@@ -4,34 +4,42 @@ using UnityEngine;
 
 public class BattleTester : MonoBehaviour
 {
-    public Pokemon[] playerPokemons;
-    public Pokemon[] challengerPokemons;
+    public Trainer home;
+    public Trainer away;
+
+    [System.Serializable]
+    public struct TestPokemon
+    {
+        [SerializeField] public Vector2Int position;
+        [SerializeField] public Pokemon pokemon;
+    }
+
+    public ChessBoard homeChessBaord;
+    public TestPokemon[] homePokemons;
+    public TestPokemon[] awayPokemons;
     void Start()
     {
-        GameManager gameManager = FindObjectOfType<GameManager>();
+        home.level = homePokemons.Length;
+        away.level = homePokemons.Length;
 
-        Trainer player = gameManager.trainers[0];
-        Trainer challenger = gameManager.trainers[1];
+        homeChessBaord.owner = home;
 
-        player.level = playerPokemons.Length;
-        challenger.level = challengerPokemons.Length;
-
-        for (int i = 0; i < playerPokemons.Length; i++)
+        foreach (TestPokemon homePokemon in homePokemons)
         {
-            Pokemon playerPokemon = Instantiate(playerPokemons[i]);
-            playerPokemon.trainer = player;
-            gameManager.chessBoards[player].PlacePokemon(new Vector2Int(i, 0), playerPokemon);
+            Pokemon homePokemonInstance = Instantiate(homePokemon.pokemon);
+            homePokemonInstance.trainer = home;
+            homeChessBaord.PlacePokemon(homePokemon.position, homePokemonInstance);
         }
 
-        for (int i = 0; i < challengerPokemons.Length; i++)
+        foreach (TestPokemon awayPokemon in awayPokemons)
         {
-            Pokemon challengerPokemon = Instantiate(challengerPokemons[i]);
-            challengerPokemon.trainer = challenger;
-            gameManager.chessBoards[challenger].PlacePokemon(new Vector2Int(i, 0), challengerPokemon);
+            Pokemon awayPokemonInstance = Instantiate(awayPokemon.pokemon);
+            awayPokemonInstance.trainer = away;
+            away.SetPlacedPokemon(awayPokemon.position, awayPokemonInstance);
         }
 
-        FindObjectOfType<BattleManager>().ReadyBattle(player, challenger);
-        FindObjectOfType<BattleManager>().StartBattle();
+        homeChessBaord.ReadyBattle(away);
+        homeChessBaord.StartBattle();
     }
 
     // Update is called once per frame
