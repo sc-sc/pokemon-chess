@@ -131,8 +131,9 @@ public class BattleExecutor : MonoBehaviour
         public NativeArray<Vector2Int> distancesBetweenTarget;
         [ReadOnly]
         public NativeArray<MoveDirection> previousMoveDirections;
-        [ReadOnly]
+
         public NativeArray<Vector2Int> pokemonsInBattleIndexes;
+
         public void Execute(int index)
         {
             switch (previousMoveDirections[index])
@@ -290,6 +291,11 @@ public class BattleExecutor : MonoBehaviour
                     break;
                 default:
                     break;
+            }
+
+            if (liveChallengerPokemons.Values.Contains(moveTo) || liveOwnerPokemons.Values.Contains(moveTo)) {
+                moveDirection = MoveDirection.None;
+                moveTo = index;
             }
 
             pokemonPreviousMove[toMovePokemon] = moveDirection;
