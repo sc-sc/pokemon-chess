@@ -40,3 +40,8 @@ public enum ItemName
 {
     전기구슬
 }
+
+public enum Ability
+{
+    정전기
+}

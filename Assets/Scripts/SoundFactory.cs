@@ -5,4 +5,5 @@ using UnityEngine;
 public class SoundFactory : MonoBehaviour
 {
     public AudioClip hitSound;
+    public AudioClip paralysisSound;
 }

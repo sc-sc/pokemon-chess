@@ -156,6 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitSound: {fileID: 8300000, guid: 778b8b2b92685d44e8aa46a064e4b21c, type: 3}
+  paralysisSound: {fileID: 8300000, guid: 07b0429097ebaa1469e59a36c7ec07d9, type: 3}
 --- !u!4 &118278689
 Transform:
   m_ObjectHideFlags: 0
@@ -632,11 +633,23 @@ MonoBehaviour:
   homeChessBaord: {fileID: 321882712}
   homePokemons:
   - position: {x: 0, y: 0}
-    pokemon: {fileID: 2763003580702113442, guid: 3e300927ce47b5947972949aa7e3e70e,
+    pokemon: {fileID: 2763003580702113442, guid: 78b6c1baf2055754c95ebc253044eccb,
+      type: 3}
+  - position: {x: 1, y: 0}
+    pokemon: {fileID: 2763003580702113442, guid: 78b6c1baf2055754c95ebc253044eccb,
+      type: 3}
+  - position: {x: 2, y: 0}
+    pokemon: {fileID: 2763003580702113442, guid: 78b6c1baf2055754c95ebc253044eccb,
       type: 3}
   awayPokemons:
+  - position: {x: 1, y: 0}
+    pokemon: {fileID: 2254535982436329200, guid: 52f2f9d3c1286e04caf06e3bcac80fef,
+      type: 3}
+  - position: {x: 2, y: 0}
+    pokemon: {fileID: 2254535982436329200, guid: 52f2f9d3c1286e04caf06e3bcac80fef,
+      type: 3}
   - position: {x: 0, y: 0}
-    pokemon: {fileID: 5804084639784800895, guid: da76109466f679a44b18a21f221fdff7,
+    pokemon: {fileID: 2254535982436329200, guid: 52f2f9d3c1286e04caf06e3bcac80fef,
       type: 3}
 --- !u!4 &469968722
 Transform:
@@ -3171,3 +3184,72 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2141555958}
   m_CullTransparentMesh: 0
+--- !u!1001 &3823972525590361172
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2049515665985606343, guid: 478f05a8daa51ba43b307ce46e0dbec6,
+        type: 3}
+      propertyPath: m_Name
+      value: LightBall
+      objectReference: {fileID: 0}
+    - target: {fileID: 8439031431775562509, guid: 478f05a8daa51ba43b307ce46e0dbec6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8439031431775562509, guid: 478f05a8daa51ba43b307ce46e0dbec6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8439031431775562509, guid: 478f05a8daa51ba43b307ce46e0dbec6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8439031431775562509, guid: 478f05a8daa51ba43b307ce46e0dbec6,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8439031431775562509, guid: 478f05a8daa51ba43b307ce46e0dbec6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8439031431775562509, guid: 478f05a8daa51ba43b307ce46e0dbec6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8439031431775562509, guid: 478f05a8daa51ba43b307ce46e0dbec6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8439031431775562509, guid: 478f05a8daa51ba43b307ce46e0dbec6,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8439031431775562509, guid: 478f05a8daa51ba43b307ce46e0dbec6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8439031431775562509, guid: 478f05a8daa51ba43b307ce46e0dbec6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8439031431775562509, guid: 478f05a8daa51ba43b307ce46e0dbec6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 478f05a8daa51ba43b307ce46e0dbec6, type: 3}

@@ -454,6 +454,7 @@ MonoBehaviour:
     - {fileID: 7236754985802801847, guid: 75583b23108b2c449b97c5838d6f7656, type: 3}
   - prefabs:
     - {fileID: 6081528462114302055, guid: 379c7d2342146a2439c9adfdd361ecd1, type: 3}
+    - {fileID: 6081528462114302055, guid: 47dcf07085adad14bbf4057e3aca3632, type: 3}
   - prefabs:
     - {fileID: 7236754985802801847, guid: 8bcf136ecf441e34bbbc6dc8fce4c40a, type: 3}
   - prefabs:
@@ -6400,6 +6401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitSound: {fileID: 8300000, guid: 778b8b2b92685d44e8aa46a064e4b21c, type: 3}
+  paralysisSound: {fileID: 8300000, guid: 07b0429097ebaa1469e59a36c7ec07d9, type: 3}
 --- !u!4 &2098776184
 Transform:
   m_ObjectHideFlags: 0

@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 7755304136641971708}
   - component: {fileID: 2763003580702113442}
   - component: {fileID: 4658223896664284654}
+  - component: {fileID: 4789762456055652378}
   m_Layer: 0
   m_Name: "3#25\uD53C\uCE74\uCE04"
   m_TagString: Untagged
@@ -96,12 +97,13 @@ MonoBehaviour:
     type: 3}
   evolutionPhase: 2
   uiTransform: {fileID: 8394427894499438970}
-  types: 01000000
+  types: 04000000
   range: 1
   attackTarget: {fileID: 0}
   isAlive: 1
   battleCallbackHandler: {fileID: 0}
   currentStatus: 0
+  abilities: 00000000
 --- !u!82 &4658223896664284654
 AudioSource:
   m_ObjectHideFlags: 0
@@ -198,6 +200,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4789762456055652378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6081528462114302055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad61826a1dd650041856a3ec5d160e13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitSound: {fileID: 8300000, guid: 1dda6c44f9872154591ca35185c818f8, type: 3}
+  chargeSound: {fileID: 8300000, guid: 5741d97462ecc784080f5890be516d22, type: 3}
 --- !u!1 &8370315338700470383
 GameObject:
   m_ObjectHideFlags: 0

@@ -117,6 +117,11 @@ public class Pokemon : MonoBehaviour
 
     private GameObject sleepEffectPrefab;
     private GameObject sleepEffect;
+
+    [SerializeField]
+    private List<Ability> abilities;
+
+    private AudioClip paralysisSound;
     void Awake()
     {
         sleepEffectPrefab = Resources.Load("Prefabs/SleepEffect") as GameObject;
@@ -124,7 +129,11 @@ public class Pokemon : MonoBehaviour
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         animator = GetComponentInChildren<Animator>();
         audioSource = GetComponent<AudioSource>();
-        hitSound = FindObjectOfType<SoundFactory>().hitSound;
+
+        SoundFactory soundFactory = FindObjectOfType<SoundFactory>();
+        hitSound = soundFactory.hitSound;
+        paralysisSound = soundFactory.paralysisSound;
+
         pokemonUIManager = FindObjectOfType<PokemonUIManager>();
         transforms = new TransformAccessArray(2, -1);
         transforms.Add(transform);
@@ -178,10 +187,18 @@ public class Pokemon : MonoBehaviour
             {
                 isOnAttack = false;
                 StopAttack();
-                currentState = PokemonState.Skill;
-                Pokemon skillTarget = GetNearstEnemyPokemon();
+                if (currentStatus == PokemonStatus.Paralysis && Random.Range(0f, 1f) < 0.25f)
+                {
+                    // 마비로 스킬 못 쓴 이펙트
+                    audioSource.PlayOneShot(paralysisSound);
+                }
+                else
+                {
+                    currentState = PokemonState.Skill;
+                    Pokemon skillTarget = GetNearstEnemyPokemon();
 
-                skill.UseSkill(this, skillTarget);
+                    skill.UseSkill(this, skillTarget);
+                }
             }
         }
 
@@ -259,11 +276,16 @@ public class Pokemon : MonoBehaviour
 
         int damage = DamageCalculator.CalculateBasicAttackDamage(this, attackTarget);
         currentPp += 5;
-        attackTarget.Hit(damage, this);
+        attackTarget.Hit(damage, this, AttackType.Physical);
         isOnAttack = false;
     }
 
-    public void Hit(int damage, Pokemon by)
+    private List<Ability> GetAbilities()
+    {
+        return abilities;
+    }
+
+    public void Hit(int damage, Pokemon by, AttackType attackType = AttackType.Speical)
     {
         if (isAlive)
         {
@@ -277,14 +299,26 @@ public class Pokemon : MonoBehaviour
                 currentState = PokemonState.Idle;
                 StopAllCoroutines();
                 isAlive = false;
-                battleCallbackHandler.PokemonDead(this);
                 if (skill != null)
                 {
                     skill.StopAllCoroutines();
                 }
+                battleCallbackHandler.PokemonDead(this);
             }
 
             StartCoroutine(HitAction());
+
+            CheckHitSideEffect(by, attackType);
+        }
+    }
+    private void CheckHitSideEffect(Pokemon attackPokemon, AttackType attackType)
+    {
+        if (attackType == AttackType.Physical && abilities.Contains(Ability.정전기))
+        {
+            if (Random.Range(0f, 1f) < 0.3f)
+            {
+                attackPokemon.SetStatus(PokemonStatus.Paralysis, 360);
+            }
         }
     }
     private IEnumerator HitAction()
@@ -300,6 +334,7 @@ public class Pokemon : MonoBehaviour
             pokemonUIManager.RemovePokemonUI(this);
             gameObject.SetActive(false);
         }
+
     }
     public int GetTotalCost()
     {
@@ -379,6 +414,11 @@ public class Pokemon : MonoBehaviour
     }
     public void SetStatus(PokemonStatus status, int durationFrame)
     {
+        Debug.Log(status + "에 걸림");
+
+        if (status == PokemonStatus.Paralysis && HasType(PokemonType.Electric))
+            return;
+
         UnsetStatus();
         currentStatus = status;
         statusDurationFrame = durationFrame;
@@ -390,7 +430,24 @@ public class Pokemon : MonoBehaviour
                 currentState = PokemonState.Idle;
                 sleepEffect = Instantiate(sleepEffectPrefab, uiTransform);
                 break;
+
+            case PokemonStatus.Paralysis:
+                spriteRenderer.color = new Color(1f, 1f, 0f);
+                animator.speed *= 0.5f;
+                audioSource.PlayOneShot(paralysisSound);
+                break;
         }
+    }
+
+    public bool HasType(PokemonType type)
+    {
+        foreach (PokemonType pokemonType in types)
+        {
+            if (type == pokemonType)
+                return true;
+        }
+
+        return false;
     }
     public void UnsetStatus()
     {
@@ -400,6 +457,11 @@ public class Pokemon : MonoBehaviour
                 StartAnimation();
                 currentState = PokemonState.Move;
                 Destroy(sleepEffect);
+                break;
+
+            case PokemonStatus.Paralysis:
+                spriteRenderer.color = new Color(1f, 1f, 1f);
+                animator.speed *= 2f;
                 break;
         }
 
@@ -414,6 +476,13 @@ public class Pokemon : MonoBehaviour
 
     private void UpdateStatus()
     {
+        switch (currentStatus)
+        {
+            case PokemonStatus.Paralysis:
+                spriteRenderer.color *= new Color(1f, 1f, 0f);
+                break;
+        }
+
         statusFrame++;
         if (statusFrame >= statusDurationFrame)
             UnsetStatus();

@@ -38,10 +38,13 @@ public class DamageCalculator : MonoBehaviour
             * Mod2(attacker, defensor) * 1f * 1f * Mod3(attacker, defensor));
     }
 
-    public static int CalculateSkillDamage(Pokemon attacker, Pokemon defensor, int baseDamage, PokemonType skillType)
+    public static int CalculateSkillDamage(Pokemon attacker, Pokemon defensor, int baseDamage, PokemonType skillType, AttackType attackType = AttackType.Speical)
     {
-        return (int)((((((Level(attacker) * 2 / 5) + 2) * baseDamage * GetActualStat(attacker.baseAttack, PokemonStat.SpecialAttack, attacker) / 50)
-            / GetActualStat(defensor.baseDefense, PokemonStat.SpecialDefense, defensor)) * Mod1(attacker, defensor, AttackType.Speical) + 2) * Critical(attacker, defensor)
+        int attackStat = attackType == AttackType.Physical ? GetActualStat(attacker.baseAttack, PokemonStat.Attack, attacker) : GetActualStat(attacker.baseSpecialAttack, PokemonStat.SpecialAttack, attacker);
+        int defenseStat = attackType == AttackType.Physical ? GetActualStat(defensor.baseDefense, PokemonStat.Defense, defensor) : GetActualStat(defensor.baseSpecialDefense, PokemonStat.SpecialDefense,defensor);
+
+        return (int)((((((Level(attacker) * 2 / 5) + 2) * baseDamage * attackStat / 50)
+            / defenseStat) * Mod1(attacker, defensor, AttackType.Speical) + 2) * Critical(attacker, defensor)
             * Mod2(attacker, defensor) * Stab(attacker, skillType) * TypeEffectiveness(defensor, skillType) * Mod3(attacker, defensor));
     }
 
@@ -97,7 +100,12 @@ public class DamageCalculator : MonoBehaviour
 
     public static int GetActualStat(int baseStat, PokemonStat statType, Pokemon pokemon)
     {
-        return (int) (StatRank(statType, pokemon) * GetActualStat(baseStat, pokemon) * ItemBonus(statType, pokemon));
+        float actualStat = (StatRank(statType, pokemon) * GetActualStat(baseStat, pokemon) * ItemBonus(statType, pokemon));
+
+        if (statType == PokemonStat.Speed && pokemon.GetCurrentStatus() == PokemonStatus.Paralysis)
+            actualStat /= 2;
+
+        return (int) actualStat;
     }
 
     private static float ItemBonus(PokemonStat statType, Pokemon pokemon)
