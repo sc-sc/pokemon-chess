@@ -635,21 +635,9 @@ MonoBehaviour:
   - position: {x: 0, y: 0}
     pokemon: {fileID: 2763003580702113442, guid: 78b6c1baf2055754c95ebc253044eccb,
       type: 3}
-  - position: {x: 1, y: 0}
-    pokemon: {fileID: 2763003580702113442, guid: 78b6c1baf2055754c95ebc253044eccb,
-      type: 3}
-  - position: {x: 2, y: 0}
-    pokemon: {fileID: 2763003580702113442, guid: 78b6c1baf2055754c95ebc253044eccb,
-      type: 3}
   awayPokemons:
-  - position: {x: 1, y: 0}
-    pokemon: {fileID: 2254535982436329200, guid: 52f2f9d3c1286e04caf06e3bcac80fef,
-      type: 3}
-  - position: {x: 2, y: 0}
-    pokemon: {fileID: 2254535982436329200, guid: 52f2f9d3c1286e04caf06e3bcac80fef,
-      type: 3}
   - position: {x: 0, y: 0}
-    pokemon: {fileID: 2254535982436329200, guid: 52f2f9d3c1286e04caf06e3bcac80fef,
+    pokemon: {fileID: 7236754985802801846, guid: 9734b37c1ee4bdc4bba269e9fe0383bc,
       type: 3}
 --- !u!4 &469968722
 Transform:

@@ -261,6 +261,7 @@ public class Pokemon : MonoBehaviour
             if (!attackTarget.isAlive || !IsAttackTargetInRange())
             {
                 isOnAttack = false;
+                StartCoroutine(BackToOriginalPosition(5));
                 yield break;
             }
 
@@ -433,6 +434,8 @@ public class Pokemon : MonoBehaviour
         isOnAttack = false;
         currentState = PokemonState.Idle;
         StopAllCoroutines();
+        if (skill != null)
+            skill.StopAllCoroutines();
         pokemonUIManager.AddPokemonUI(this);
         currentHp = actualHp;
         currentPp = initialPp;
