@@ -218,7 +218,15 @@ public class BattleExecutor : MonoBehaviour
 
         Vector2Int absDistance = new Vector2Int(Mathf.Abs(distance.x), Mathf.Abs(distance.y));
 
-        if (!verticalFirst && (horizontalFirst || absDistance.x >= absDistance.y) && (canGoRight || canGoLeft))
+        bool isVerticalFirst = verticalFirst ? canGoUp || canGoDown : !horizontalFirst && absDistance.y > absDistance.x;
+        
+        if (index == new Vector2Int(7, 1))
+        {
+            Debug.Log((canGoUp, canGoDown, canGoRight, canGoLeft, horizontalFirst, verticalFirst));
+        }
+
+        
+        if (!isVerticalFirst && (canGoRight || canGoLeft))
         {
             if (!canGoLeft || (canGoRight && distance.x >= 0))
             {
@@ -248,6 +256,11 @@ public class BattleExecutor : MonoBehaviour
                 if (moveTo.y < 0 || IsAnotherPokemonAlreadyExist(moveTo))
                     return CalculateMoveDirection(index, distance, canGoUp, false, canGoRight, canGoLeft, true, false);
             }
+        }
+
+        if (moveDirection == MoveDirection.None)
+        {
+            Debug.Log((canGoUp, canGoDown, canGoRight, canGoLeft, isVerticalFirst));
         }
 
         return moveDirection;
