@@ -25,6 +25,8 @@ public enum PokemonStat
 
 public class Pokemon : MonoBehaviour
 {
+    [SerializeField] public PokemonName pokemonName;
+
     TransformAccessArray transforms;
     JobHandle moveJobHandle;
 

@@ -138,7 +138,7 @@ public class PokemonSafariManager : MonoBehaviour
         {
             foreach (Pokemon placedPokemon in trainer.placedPokemons.Keys)
             {
-                if (placedPokemon.name == pokemon.name)
+                if (placedPokemon.pokemonName == pokemon.pokemonName && placedPokemon.evolutionPhase == pokemon.evolutionPhase)
                 {
                     samePokemonCount += 1;
                     placedSamePokemonList.Add(placedPokemon);
@@ -150,7 +150,7 @@ public class PokemonSafariManager : MonoBehaviour
         for (int i = 0; i < Trainer.CanWaitPokemonsNumber; i++)
         {
             Pokemon waitingPokemon = trainer.waitingPokemons[i];
-            if (waitingPokemon != null && waitingPokemon.name == pokemon.name)
+            if (waitingPokemon != null && waitingPokemon.pokemonName == pokemon.pokemonName && waitingPokemon.evolutionPhase == pokemon.evolutionPhase)
             {
                 samePokemonCount += 1;
                 waitingSamePokemonsIndex.Add(i);

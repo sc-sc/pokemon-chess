@@ -434,6 +434,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChessField
       objectReference: {fileID: 0}
+    - target: {fileID: 1689426152727209284, guid: 52517db18b3a2b642b37d62f040dac8c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1689426152727209282, guid: 52517db18b3a2b642b37d62f040dac8c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -627,23 +632,11 @@ MonoBehaviour:
   homeChessBaord: {fileID: 321882712}
   homePokemons:
   - position: {x: 0, y: 0}
-    pokemon: {fileID: 7236754985802801846, guid: 9734b37c1ee4bdc4bba269e9fe0383bc,
-      type: 3}
-  - position: {x: 0, y: 1}
-    pokemon: {fileID: 7236754985802801846, guid: 9734b37c1ee4bdc4bba269e9fe0383bc,
-      type: 3}
-  - position: {x: 0, y: 2}
-    pokemon: {fileID: 7236754985802801846, guid: 9734b37c1ee4bdc4bba269e9fe0383bc,
+    pokemon: {fileID: 2763003580702113442, guid: 3e300927ce47b5947972949aa7e3e70e,
       type: 3}
   awayPokemons:
   - position: {x: 0, y: 0}
-    pokemon: {fileID: 2254535982436329200, guid: 001a2a0fe5da1a14383878d6282e703d,
-      type: 3}
-  - position: {x: 1, y: 0}
-    pokemon: {fileID: 2254535982436329200, guid: 001a2a0fe5da1a14383878d6282e703d,
-      type: 3}
-  - position: {x: 2, y: 0}
-    pokemon: {fileID: 2254535982436329200, guid: 001a2a0fe5da1a14383878d6282e703d,
+    pokemon: {fileID: 5804084639784800895, guid: da76109466f679a44b18a21f221fdff7,
       type: 3}
 --- !u!4 &469968722
 Transform:
