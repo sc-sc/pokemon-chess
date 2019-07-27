@@ -220,6 +220,7 @@ public class Pokemon : MonoBehaviour
             spriteRenderer.flipX = false;
 
         int attackFrame = 10 + (int) ((100f / DamageCalculator.GetActualStat(baseSpeed, PokemonStat.Speed, this)) * 60f);
+        
         for (int frame = 0; frame < attackFrame; frame++)
         {
             if (!attackTarget.isAlive || !IsAttackTargetInRange())
@@ -230,18 +231,18 @@ public class Pokemon : MonoBehaviour
 
             if (range == 1)
             {
-                if (frame == attackFrame - 30)
+                if (frame == attackFrame - 40)
                     StopAnimation();
 
-                if (frame >= attackFrame - 10)
+                if (frame >= attackFrame - 20)
                 {
-                    if (frame < attackFrame - 5)
+                    if (frame < attackFrame - 10)
                     {
-                        transform.position = Vector3.Lerp(originalPosition, attackTarget.transform.position, (float) (frame) / (attackFrame - 5));
-                    } else if (frame == attackFrame - 5)
+                        transform.position = Vector3.Lerp(originalPosition, attackTarget.transform.position, (float) (10 - (attackFrame - 10 - frame)) / 10);
+                    } else if (frame == attackFrame - 10)
                     {
                         audioSource.PlayOneShot(hitSound);
-                        StartCoroutine(BackToOriginalPosition(5));
+                        StartCoroutine(BackToOriginalPosition(10));
                     }
                 }
             }

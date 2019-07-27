@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum AttackType
+{
+    Physical, Speical
+}
 public class DamageCalculator : MonoBehaviour
 {
     public static float[,] TypeChart = new float[18, 18]
@@ -30,18 +34,28 @@ public class DamageCalculator : MonoBehaviour
     public static int CalculateBasicAttackDamage(Pokemon attacker, Pokemon defensor)
     {
         return (int) ((((((Level(attacker) * 2 / 5) + 2) * 30 * GetActualStat(attacker.baseAttack, PokemonStat.Attack, attacker) / 50)
-            / GetActualStat(defensor.baseDefense, PokemonStat.Defense, defensor)) * Mod1(attacker, defensor) + 2) * Critical(attacker, defensor)
+            / GetActualStat(defensor.baseDefense, PokemonStat.Defense, defensor)) * Mod1(attacker, defensor, AttackType.Physical) + 2) * Critical(attacker, defensor)
             * Mod2(attacker, defensor) * 1f * 1f * Mod3(attacker, defensor));
     }
 
     public static int CalculateSkillDamage(Pokemon attacker, Pokemon defensor, int baseDamage, PokemonType skillType)
     {
         return (int)((((((Level(attacker) * 2 / 5) + 2) * baseDamage * GetActualStat(attacker.baseAttack, PokemonStat.SpecialAttack, attacker) / 50)
-            / GetActualStat(defensor.baseDefense, PokemonStat.SpecialDefense, defensor)) * Mod1(attacker, defensor) + 2) * Critical(attacker, defensor)
+            / GetActualStat(defensor.baseDefense, PokemonStat.SpecialDefense, defensor)) * Mod1(attacker, defensor, AttackType.Speical) + 2) * Critical(attacker, defensor)
             * Mod2(attacker, defensor) * Stab(attacker, skillType) * TypeEffectiveness(defensor, skillType) * Mod3(attacker, defensor));
     }
 
-    private static float Mod1(Pokemon attacker, Pokemon defensor) { return 1f; }
+    private static float Mod1(Pokemon attacker, Pokemon defensor, AttackType attackType) {
+        float mod1 = 1f;
+
+        if (attackType == AttackType.Physical)
+        {
+            if (attacker.GetCurrentStatus() == PokemonStatus.Burn)
+                mod1 *= 0.5f;
+        }
+
+        return mod1;
+    }
     private static float Mod2(Pokemon attacker, Pokemon defensor) { return 1f; }
     private static float Mod3(Pokemon attacker, Pokemon defensor) { return 1f; }
 
