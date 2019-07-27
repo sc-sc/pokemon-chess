@@ -8,6 +8,11 @@ public enum PokemonType
     Normal, Fire, Water, Grass, Electric, Ice, Fight, Poison, Ground, Fly, Psychic, Bug, Rock, Ghost, Dragon, Dark, Steel, Fairy
 }
 
+public enum PokemonStatus
+{
+    None, Poison, Freeze, Paralysis, Toxic, Sleep, Burn
+}
+
 public enum PokemonState
 {
     Idle, Attack, Move, Skill
@@ -87,7 +92,7 @@ public class Pokemon : MonoBehaviour
     public Pokemon attackTarget;
     private bool isOnAttack = false;
 
-    public bool isAlive = true;
+    public bool isAlive = false;
 
     public BattleCallbackHandler battleCallbackHandler;
 
@@ -99,8 +104,18 @@ public class Pokemon : MonoBehaviour
 
     private AudioSource audioSource;
     private AudioClip hitSound;
+
+    [SerializeField]
+    private PokemonStatus currentStatus = PokemonStatus.None;
+    private int statusDurationFrame = 0;
+    private int statusFrame = 0;
+
+    private GameObject sleepEffectPrefab;
+    private GameObject sleepEffect;
     void Awake()
     {
+        sleepEffectPrefab = Resources.Load("Prefabs/SleepEffect") as GameObject;
+        isAlive = false;
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         animator = GetComponentInChildren<Animator>();
         audioSource = GetComponent<AudioSource>();
@@ -163,6 +178,11 @@ public class Pokemon : MonoBehaviour
 
                 skill.UseSkill(this, skillTarget);
             }
+        }
+
+        if (isAlive)
+        {
+            UpdateStatus();
         }
     }
 
@@ -282,8 +302,6 @@ public class Pokemon : MonoBehaviour
 
     private bool IsAttackTargetInRange()
     {
-        Vector2 distance = attackTarget.transform.position - transform.position;
-
         return battleCallbackHandler.IsAttackTargetInRange(this);
     }
 
@@ -337,6 +355,8 @@ public class Pokemon : MonoBehaviour
     }
     public void Reset()
     {
+        UnsetStatus();
+        StartAnimation();
         moveJobHandle.Complete();
         isOnAttack = false;
         currentState = PokemonState.Idle;
@@ -344,12 +364,53 @@ public class Pokemon : MonoBehaviour
         pokemonUIManager.AddPokemonUI(this);
         currentHp = actualHp;
         currentPp = initialPp;
-        isAlive = true;
+        isAlive = false;
         gameObject.SetActive(true);
         spriteRenderer.color = new Color(1, 1, 1);
         spriteRenderer.flipX = false;
         initRank();
         animator.speed = 1f;
+    }
+    public void SetStatus(PokemonStatus status, int durationFrame)
+    {
+        UnsetStatus();
+        currentStatus = status;
+        statusDurationFrame = durationFrame;
+
+        switch (status)
+        {
+            case PokemonStatus.Sleep:
+                StopAnimation();
+                currentState = PokemonState.Idle;
+                sleepEffect = Instantiate(sleepEffectPrefab, uiTransform);
+                break;
+        }
+    }
+    public void UnsetStatus()
+    {
+        switch (currentStatus)
+        {
+            case PokemonStatus.Sleep:
+                StartAnimation();
+                currentState = PokemonState.Move;
+                Destroy(sleepEffect);
+                break;
+        }
+
+        currentStatus = PokemonStatus.None;
+        statusFrame = 0;
+    }
+
+    public PokemonStatus GetCurrentStatus()
+    {
+        return currentStatus;
+    }
+
+    private void UpdateStatus()
+    {
+        statusFrame++;
+        if (statusFrame >= statusDurationFrame)
+            UnsetStatus();
     }
 
     private void initRank()

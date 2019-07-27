@@ -113,6 +113,7 @@ GameObject:
   - component: {fileID: 7236754985802801845}
   - component: {fileID: 7236754985802801846}
   - component: {fileID: -3136344807454483658}
+  - component: {fileID: -4294299248495751077}
   m_Layer: 0
   m_Name: "4#143\uC7A0\uB9CC\uBCF42"
   m_TagString: Untagged
@@ -155,11 +156,11 @@ MonoBehaviour:
   _currentHp: 0
   baseAttack: 110
   baseDefense: 65
-  baseSpecialAttack: 100
-  baseSpecialDefense: 100
+  baseSpecialAttack: 65
+  baseSpecialDefense: 110
   baseSpeed: 30
-  ppFull: 30
-  initialPp: 0
+  ppFull: 50
+  initialPp: 30
   _currentPp: 0
   evolution: {fileID: 7236754985802801847, guid: 36ccac70176c44747affb57198b86d15,
     type: 3}
@@ -170,6 +171,7 @@ MonoBehaviour:
   attackTarget: {fileID: 0}
   isAlive: 1
   battleCallbackHandler: {fileID: 0}
+  currentStatus: 0
 --- !u!82 &-3136344807454483658
 AudioSource:
   m_ObjectHideFlags: 0
@@ -266,6 +268,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-4294299248495751077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7236754985802801847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72e1d56fd4ca33844b2b263e5280d094, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  restSound: {fileID: 8300000, guid: 811031fd0042a794993f32c8e79b57ff, type: 3}
 --- !u!1 &8890852651009100261
 GameObject:
   m_ObjectHideFlags: 0
