@@ -4,5 +4,9 @@ using UnityEngine;
 
 public abstract class Item: MonoBehaviour
 {
-    public abstract float GetStatBonus(PokemonStat stat);
+    [SerializeField]
+    public ItemName itemName;
+
+    public Sprite sprite;
+    public abstract float GetStatBonus(PokemonStat stat, Pokemon pokemon);
 }

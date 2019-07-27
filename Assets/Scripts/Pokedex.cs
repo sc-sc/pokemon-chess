@@ -35,3 +35,8 @@ public enum PokemonName
     신뇽,
     망나뇽
 }
+
+public enum ItemName
+{
+    전기구슬
+}

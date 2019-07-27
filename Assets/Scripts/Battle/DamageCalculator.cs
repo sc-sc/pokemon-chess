@@ -97,7 +97,19 @@ public class DamageCalculator : MonoBehaviour
 
     public static int GetActualStat(int baseStat, PokemonStat statType, Pokemon pokemon)
     {
-        return (int) (StatRank(statType, pokemon) * GetActualStat(baseStat, pokemon));
+        return (int) (StatRank(statType, pokemon) * GetActualStat(baseStat, pokemon) * ItemBonus(statType, pokemon));
+    }
+
+    private static float ItemBonus(PokemonStat statType, Pokemon pokemon)
+    {
+        float bonus = 1f;
+
+        foreach (Item item in pokemon.GetItems())
+        {
+            bonus *= item.GetStatBonus(statType, pokemon);
+        }
+
+        return bonus;
     }
 
     public static float StatRank(PokemonStat statType, Pokemon pokemon)

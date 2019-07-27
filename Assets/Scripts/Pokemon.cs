@@ -36,6 +36,9 @@ public class Pokemon : MonoBehaviour
     public Trainer trainer;
     public int cost;
     public int baseHp = 100;
+
+    [SerializeField]
+    private List<Item> items = new List<Item>();
     public int actualHp
     {
         get
@@ -446,5 +449,10 @@ public class Pokemon : MonoBehaviour
     public Pokemon GetNearstEnemyPokemon()
     {
         return battleCallbackHandler.GetNearstEnemyPokemon(this);
+    }
+
+    public List<Item> GetItems()
+    {
+        return items;
     }
 }

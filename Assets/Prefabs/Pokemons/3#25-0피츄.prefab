@@ -81,6 +81,8 @@ MonoBehaviour:
   trainer: {fileID: 0}
   cost: 3
   baseHp: 20
+  items:
+  - {fileID: 399741247333186903, guid: 478f05a8daa51ba43b307ce46e0dbec6, type: 3}
   _currentHp: 0
   baseAttack: 40
   baseDefense: 15

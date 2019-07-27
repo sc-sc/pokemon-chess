@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LightBall : MonoBehaviour
+public class LightBall : Item
 {
-    // Start is called before the first frame update
-    void Start()
+    public override float GetStatBonus(PokemonStat stat, Pokemon pokemon)
     {
-        
-    }
+        if (stat == PokemonStat.Attack || stat == PokemonStat.SpecialAttack)
+        {
+            if (pokemon.pokemonName == PokemonName.피츄 || pokemon.pokemonName == PokemonName.피카츄)
+            {
+                return 2f;
+            }
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        return 1f;
     }
 }
