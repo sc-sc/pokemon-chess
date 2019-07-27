@@ -49,6 +49,7 @@ public class VoltTackle : Skill
             yield return null;
         }
 
+        audioSource.PlayOneShot(hitSound);
         int damage = DamageCalculator.CalculateSkillDamage(attacker, defensor, 120, PokemonType.Electric, AttackType.Physical);
         defensor.Hit(damage, attacker, AttackType.Physical);
 
@@ -63,9 +64,14 @@ public class VoltTackle : Skill
             yield return null;
         }
 
-        audioSource.PlayOneShot(hitSound);
         attacker.spriteRenderer.color = new Color(1f, 1f, 1f);
         attacker.spriteRenderer.material = previousMetrial;
+
+        if (defensor.isAlive)
+        {
+            attacker.currentHp -= damage / 3;
+            if (attacker.currentHp <= 0) attacker.currentHp = 1;
+        }
         EndSkill(attacker);
     }
 }

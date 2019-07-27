@@ -225,7 +225,7 @@ public class BattleExecutor : MonoBehaviour
         foreach (KeyValuePair<Pokemon, Vector2Int> pokemonAndIndex in toMovePokemonsAndIndexes)
         {
             Pokemon pokemon = pokemonAndIndex.Key;
-            if (pokemon.currentState != PokemonState.Move || !pokemon.attackTarget.isAlive)
+            if (pokemon.currentState != PokemonState.Move || !pokemon.attackTarget.isAlive || pokemon.CheckParalysis())
             {
                 pokemonPreviousMove[pokemon] = MoveDirection.None;
                 continue;

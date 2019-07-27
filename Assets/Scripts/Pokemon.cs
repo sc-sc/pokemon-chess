@@ -112,6 +112,7 @@ public class Pokemon : MonoBehaviour
 
     [SerializeField]
     private PokemonStatus currentStatus = PokemonStatus.None;
+    [SerializeField]
     private int statusDurationFrame = 0;
     private int statusFrame = 0;
 
@@ -122,6 +123,9 @@ public class Pokemon : MonoBehaviour
     private List<Ability> abilities;
 
     private AudioClip paralysisSound;
+
+    private Material paintWhite, defulatMaterial;
+
     void Awake()
     {
         sleepEffectPrefab = Resources.Load("Prefabs/SleepEffect") as GameObject;
@@ -141,6 +145,8 @@ public class Pokemon : MonoBehaviour
 
         initRank();
         skill = GetComponent<Skill>();
+        paintWhite = Resources.Load("Materials/PaintWhite") as Material;
+        defulatMaterial = spriteRenderer.material;
     }
 
     // Update is called once per frame
@@ -187,12 +193,7 @@ public class Pokemon : MonoBehaviour
             {
                 isOnAttack = false;
                 StopAttack();
-                if (currentStatus == PokemonStatus.Paralysis && Random.Range(0f, 1f) < 0.25f)
-                {
-                    // 마비로 스킬 못 쓴 이펙트
-                    audioSource.PlayOneShot(paralysisSound);
-                }
-                else
+                if (!CheckParalysis())
                 {
                     currentState = PokemonState.Skill;
                     Pokemon skillTarget = GetNearstEnemyPokemon();
@@ -206,6 +207,17 @@ public class Pokemon : MonoBehaviour
         {
             UpdateStatus();
         }
+    }
+
+    public bool CheckParalysis()
+    {
+        if (currentStatus == PokemonStatus.Paralysis && Random.Range(0f, 1f) < 0.25f)
+        {
+            StartCoroutine(ParalysisEffect());
+            return true;
+        }
+
+        return false;
     }
 
     private void StopAttack()
@@ -242,13 +254,23 @@ public class Pokemon : MonoBehaviour
             spriteRenderer.flipX = false;
 
         int attackFrame = 10 + (int) ((100f / DamageCalculator.GetActualStat(baseSpeed, PokemonStat.Speed, this)) * 60f);
-        
+
+        bool canAttack = true;
         for (int frame = 0; frame < attackFrame; frame++)
         {
             if (!attackTarget.isAlive || !IsAttackTargetInRange())
             {
                 isOnAttack = false;
                 yield break;
+            }
+
+            if (frame == attackFrame - 20)
+            {
+                if (CheckParalysis())
+                {
+                    canAttack = false;
+                    break;
+                }
             }
 
             if (range == 1)
@@ -272,12 +294,21 @@ public class Pokemon : MonoBehaviour
             yield return null;
         }
 
-        StartAnimation();
+        if (canAttack)
+        {
+            int damage = DamageCalculator.CalculateBasicAttackDamage(this, attackTarget);
+            currentPp += 5;
+            attackTarget.Hit(damage, this, AttackType.Physical);
+            isOnAttack = false;
+        } else
+        {
+            for (int frame = 0; frame < 20; frame++)
+            {
+                yield return null;
+            }
+        }
 
-        int damage = DamageCalculator.CalculateBasicAttackDamage(this, attackTarget);
-        currentPp += 5;
-        attackTarget.Hit(damage, this, AttackType.Physical);
-        isOnAttack = false;
+        StartAnimation();
     }
 
     private List<Ability> GetAbilities()
@@ -411,6 +442,7 @@ public class Pokemon : MonoBehaviour
         spriteRenderer.flipX = false;
         initRank();
         animator.speed = 1f;
+        spriteRenderer.material = defulatMaterial;
     }
     public void SetStatus(PokemonStatus status, int durationFrame)
     {
@@ -434,7 +466,7 @@ public class Pokemon : MonoBehaviour
             case PokemonStatus.Paralysis:
                 spriteRenderer.color = new Color(1f, 1f, 0f);
                 animator.speed *= 0.5f;
-                audioSource.PlayOneShot(paralysisSound);
+                StartCoroutine(ParalysisEffect());
                 break;
         }
     }
@@ -523,5 +555,20 @@ public class Pokemon : MonoBehaviour
     public List<Item> GetItems()
     {
         return items;
+    }
+
+    private IEnumerator ParalysisEffect()
+    {
+        audioSource.PlayOneShot(paralysisSound);
+
+        for (int count = 0; count < 4; count++)
+        {
+            if (count % 2 == 0)
+                spriteRenderer.material = paintWhite;
+            else
+                spriteRenderer.material = defulatMaterial;
+
+            yield return new WaitForSeconds(0.1f);
+        }
     }
 }
