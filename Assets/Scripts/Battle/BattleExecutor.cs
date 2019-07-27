@@ -154,7 +154,7 @@ public class BattleExecutor : MonoBehaviour
                     break;
             }
         }
-        private MoveDirection CalculateMoveDirection(Vector2Int index, Vector2Int distance, bool canGoUp = true, bool canGoDown = true, bool canGoRight = true, bool canGoLeft = true, bool horizontalFirst = false, bool verticalFirst = false)
+        private MoveDirection CalculateMoveDirection(Vector2Int index, Vector2Int distance, bool canGoUp = true, bool canGoDown = true, bool canGoRight = true, bool canGoLeft = true, bool horizontalFirst = false, bool verticalFirst = false, int step = 0)
         {
             MoveDirection moveDirection = MoveDirection.None;
             Vector2Int moveTo = index;
@@ -165,37 +165,37 @@ public class BattleExecutor : MonoBehaviour
 
             if (!isVerticalFirst && (canGoRight || canGoLeft))
             {
-                if (!canGoLeft || (canGoRight && distance.x >= 0))
+                if (!canGoLeft || ((step == 0 || canGoRight) && distance.x >= 0))
                 {
                     moveTo = index + new Vector2Int(1, 0);
                     moveDirection = MoveDirection.Right;
-                    if (moveTo.x > 7 || IsAnotherPokemonAlreadyExist(moveTo))
-                        return CalculateMoveDirection(index, distance, canGoUp, canGoDown, false, canGoLeft, false, true);
+                    if (!canGoRight || moveTo.x > 7 || IsAnotherPokemonAlreadyExist(moveTo))
+                        return CalculateMoveDirection(index, distance, canGoUp, canGoDown, false, canGoLeft, false, true, ++step);
                 }
-                else if (canGoLeft)
+                else if (step == 0 || canGoLeft)
                 {
                     moveTo = index + new Vector2Int(-1, 0);
                     moveDirection = MoveDirection.Left;
-                    if (moveTo.x < 0 || IsAnotherPokemonAlreadyExist(moveTo))
-                        return CalculateMoveDirection(index, distance, canGoUp, canGoDown, canGoRight, false, false, true);
+                    if (!canGoLeft || moveTo.x < 0 || IsAnotherPokemonAlreadyExist(moveTo))
+                        return CalculateMoveDirection(index, distance, canGoUp, canGoDown, canGoRight, false, false, true, ++step);
                 }
             }
             else if (canGoUp || canGoDown)
             {
-                if (!canGoDown || (canGoUp && distance.y >= 0))
+                if (!canGoDown || ((step == 0 || canGoUp) && distance.y >= 0))
                 {
                     moveTo = index + new Vector2Int(0, 1);
                     moveDirection = MoveDirection.Up;
-                    if (moveTo.y > 7 || IsAnotherPokemonAlreadyExist(moveTo))
-                        return CalculateMoveDirection(index, distance, false, canGoDown, canGoRight, canGoLeft, true, false);
+                    if (!canGoUp || moveTo.y > 7 || IsAnotherPokemonAlreadyExist(moveTo))
+                        return CalculateMoveDirection(index, distance, false, canGoDown, canGoRight, canGoLeft, true, false, ++step);
 
                 }
-                else if (canGoDown)
+                else if (step == 0 || canGoDown)
                 {
                     moveDirection = MoveDirection.Down;
                     moveTo = index + new Vector2Int(0, -1);
-                    if (moveTo.y < 0 || IsAnotherPokemonAlreadyExist(moveTo))
-                        return CalculateMoveDirection(index, distance, canGoUp, false, canGoRight, canGoLeft, true, false);
+                    if (!canGoDown || moveTo.y < 0 || IsAnotherPokemonAlreadyExist(moveTo))
+                        return CalculateMoveDirection(index, distance, canGoUp, false, canGoRight, canGoLeft, true, false, ++step);
                 }
             }
 
@@ -225,12 +225,17 @@ public class BattleExecutor : MonoBehaviour
         foreach (KeyValuePair<Pokemon, Vector2Int> pokemonAndIndex in toMovePokemonsAndIndexes)
         {
             Pokemon pokemon = pokemonAndIndex.Key;
-            if (pokemon.currentState != PokemonState.Move || !pokemon.attackTarget.isAlive) continue;
+            if (pokemon.currentState != PokemonState.Move || !pokemon.attackTarget.isAlive)
+            {
+                pokemonPreviousMove[pokemon] = MoveDirection.None;
+                continue;
+            }
 
             Vector2Int index = pokemonAndIndex.Value;
+            Vector2Int distance = targetPokemonsAndIndexes[pokemon.attackTarget] - index;
 
             pokemonIndexes.Add(pokemonAndIndex.Value);
-            distnacesBetweenTargetPokemon.Add(targetPokemonsAndIndexes[pokemon.attackTarget] - index);
+            distnacesBetweenTargetPokemon.Add(distance);
             previousMoveDirections.Add(pokemonPreviousMove[pokemon]);
 
             toMovePokemons.Add(pokemon);
@@ -257,6 +262,14 @@ public class BattleExecutor : MonoBehaviour
             Vector2Int index = pokemonIndexes[i];
             MoveDirection moveDirection = resultMoveDirections[i];
             Pokemon toMovePokemon = toMovePokemons[i];
+
+            if(toMovePokemon.transform.position.x > toMovePokemon.attackTarget.transform.position.x)
+            {
+                toMovePokemon.spriteRenderer.flipX = false;
+            } else
+            {
+                toMovePokemon.spriteRenderer.flipX = true;
+            }
 
             pokemonsInBattle[index.x, index.y] = null;
 
