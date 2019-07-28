@@ -8,8 +8,6 @@ public class StringShot : Skill
     private AudioClip stringShopSound;
     public override void UseSkill(Pokemon attacker, Pokemon defensor)
     {
-        base.UseSkill(attacker, defensor);
-
         StartCoroutine(StringShotAction(attacker, defensor));
     }
 

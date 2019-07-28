@@ -29,4 +29,9 @@ public class BattleCallbackHandler : MonoBehaviour
     {
         return battleExecutor.GetNearstEnemyPokemon(requester);
     }
+
+    public Vector3 GetPosition(Pokemon pokemon)
+    {
+        return battleExecutor.GetPosition(pokemon);
+    }
 }
