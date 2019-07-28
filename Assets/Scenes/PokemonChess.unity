@@ -5213,6 +5213,20 @@ MonoBehaviour:
     - {fileID: 1782522522, guid: 2bb7aebc34d4ec043b4b9e27cdc27852, type: 3}
     - {fileID: 1782522522, guid: 2bb7aebc34d4ec043b4b9e27cdc27852, type: 3}
     - {fileID: 1782522522, guid: 2bb7aebc34d4ec043b4b9e27cdc27852, type: 3}
+  - mainStage: 3
+    subStages:
+    - {fileID: 1782522522, guid: 2680ceabaf77962469ac42cf1fa061de, type: 3}
+    - {fileID: 1782522522, guid: 2680ceabaf77962469ac42cf1fa061de, type: 3}
+    - {fileID: 1782522522, guid: 2bb7aebc34d4ec043b4b9e27cdc27852, type: 3}
+    - {fileID: 1782522522, guid: 2bb7aebc34d4ec043b4b9e27cdc27852, type: 3}
+    - {fileID: 1782522522, guid: 2bb7aebc34d4ec043b4b9e27cdc27852, type: 3}
+  - mainStage: 4
+    subStages:
+    - {fileID: 1782522522, guid: 2680ceabaf77962469ac42cf1fa061de, type: 3}
+    - {fileID: 1782522522, guid: 2680ceabaf77962469ac42cf1fa061de, type: 3}
+    - {fileID: 1782522522, guid: 2bb7aebc34d4ec043b4b9e27cdc27852, type: 3}
+    - {fileID: 1782522522, guid: 2bb7aebc34d4ec043b4b9e27cdc27852, type: 3}
+    - {fileID: 1782522522, guid: 2bb7aebc34d4ec043b4b9e27cdc27852, type: 3}
 --- !u!4 &1585233289
 Transform:
   m_ObjectHideFlags: 0
