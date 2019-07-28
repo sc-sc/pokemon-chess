@@ -8,8 +8,6 @@ public class Harden : Skill
     private AudioClip hardenSound;
     public override void UseSkill(Pokemon attacker, Pokemon defensor)
     {
-        base.UseSkill(attacker, defensor);
-
         StartCoroutine(HardenAction(attacker));
     }
 

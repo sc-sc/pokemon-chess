@@ -14,7 +14,6 @@ public class WaterPulse : Skill
     public int baseDamage = 60;
     public override void UseSkill(Pokemon attacker, Pokemon defensor)
     {
-        base.UseSkill(attacker, defensor);
         StartCoroutine(WaterPulseAction(attacker, defensor));
     }
 

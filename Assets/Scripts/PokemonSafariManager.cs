@@ -61,11 +61,7 @@ public class PokemonSafariManager : MonoBehaviour
             {
                 cost = Random.Range(1, 6);
             }
-            int index = 0;
-            if(cost == 1)
-            {
-                index = Random.Range(0, 2);
-            }
+            int index = Random.Range(0, salePokemonPrefabs[cost - 1].prefabs.Length);
             GameObject pokemonInSafari = Instantiate(pokemonInSafariPrefab, transform.parent);
             GameObject salePokemonPrefab = salePokemonPrefabs[cost - 1].prefabs[index];
 
@@ -138,7 +134,7 @@ public class PokemonSafariManager : MonoBehaviour
         {
             foreach (Pokemon placedPokemon in trainer.placedPokemons.Keys)
             {
-                if (placedPokemon.name == pokemon.name)
+                if (placedPokemon.pokemonName == pokemon.pokemonName && placedPokemon.evolutionPhase == pokemon.evolutionPhase)
                 {
                     samePokemonCount += 1;
                     placedSamePokemonList.Add(placedPokemon);
@@ -150,7 +146,7 @@ public class PokemonSafariManager : MonoBehaviour
         for (int i = 0; i < Trainer.CanWaitPokemonsNumber; i++)
         {
             Pokemon waitingPokemon = trainer.waitingPokemons[i];
-            if (waitingPokemon != null && waitingPokemon.name == pokemon.name)
+            if (waitingPokemon != null && waitingPokemon.pokemonName == pokemon.pokemonName && waitingPokemon.evolutionPhase == pokemon.evolutionPhase)
             {
                 samePokemonCount += 1;
                 waitingSamePokemonsIndex.Add(i);
