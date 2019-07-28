@@ -12,6 +12,9 @@ public class Trainer : MonoBehaviour
     public int hp;
     public int currentHp;
     public int money;
+    public int status;
+    public int count_win;
+    public int count_lose;
     public int exp_expect;
     public int exp_present;
     public Dictionary<PokemonType, List<Pokemon>> placedPokemonTypeDictionary = new Dictionary<PokemonType, List<Pokemon>>();

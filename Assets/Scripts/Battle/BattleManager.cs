@@ -48,6 +48,8 @@ public class BattleManager : MonoBehaviour
         finishBattleCount++;
         winners.Add(winner);
         losers.Add(loser);
+        winner.status = 1;
+        loser.status = 0;
 
         if (winner is Player && loser is Stage)
         {
@@ -80,6 +82,8 @@ public class BattleManager : MonoBehaviour
         finishBattleCount++;
         losers.Add(home);
         losers.Add(away);
+        home.status = 0;
+        away.status = 0;
 
         if (finishBattleCount == homeChessBoards.Count)
         {
@@ -115,6 +119,44 @@ public class BattleManager : MonoBehaviour
             trainer.money += temp;
             trainer.money += 5;
             trainer.ExpUp(2);
+            if(trainer.status == 1)
+            {
+                trainer.money += 1;
+                trainer.count_win += 1;
+                trainer.count_lose = 0;
+            }
+            else
+            {
+                trainer.count_lose += 1;
+                trainer.count_win = 0;
+            }
+
+            if(trainer.count_win > 1 && trainer.count_win <= 4)
+            {
+                trainer.money += 1;
+            }
+            else if(trainer.count_win > 4 && trainer.count_win <= 7)
+            {
+                trainer.money += 2;
+            }
+            else if (trainer.count_win > 7)
+            {
+                trainer.money += 3;
+            }
+
+            if (trainer.count_lose > 1 && trainer.count_lose <= 4)
+            {
+                trainer.money += 1;
+            }
+            else if (trainer.count_lose > 4 && trainer.count_lose <= 7)
+            {
+                trainer.money += 2;
+            }
+            else if (trainer.count_lose > 7)
+            {
+                trainer.money += 3;
+            }
+
             if (!(trainer is Stage))
             {
                 gameManager.chessBoards[trainer].ResetBoard();
