@@ -293,7 +293,9 @@ public class BattleExecutor : MonoBehaviour
                     break;
             }
 
-            if (liveChallengerPokemons.Values.Contains(moveTo) || liveOwnerPokemons.Values.Contains(moveTo)) {
+            if (toMovePokemon.trainer == chessBoard.owner ? 
+                liveOwnerPokemons.Values.Contains(moveTo) : 
+                liveChallengerPokemons.Values.Contains(moveTo)) {
                 moveDirection = MoveDirection.None;
                 moveTo = index;
             }
