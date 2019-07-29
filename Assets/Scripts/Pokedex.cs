@@ -14,8 +14,8 @@ public enum PokemonName
     버터플,
 
     꼬렛,
-    렛트라,
-
+    레트라,
+    
     피츄,
     피카츄,
     라이츄,
