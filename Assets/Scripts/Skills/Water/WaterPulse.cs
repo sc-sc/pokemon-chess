@@ -27,21 +27,20 @@ public class WaterPulse : Skill
         AudioSource audioSource = GetComponent<AudioSource>();
         audioSource.PlayOneShot(waterPulseSound);
 
-        Vector3 firePosition = transform.position + new Vector3(0f, 0.6f);
-
         attacker.StopAnimation();
-        for (int frame = 0; frame < 120; frame++)
+
+        for (float timer = 0f; timer < 1.5f; timer += Time.deltaTime)
         {
-            effectTransform.localScale += new Vector3(0.01f, 0.01f);
+            effectTransform.localScale += new Vector3(Time.deltaTime / 2f, Time.deltaTime / 2f);
+            effectTransform.position = Vector2.Lerp(attacker.transform.position, attacker.uiTransform.position, timer / 1f);
 
-            if (frame < 30)
-            {
-                effectTransform.position += new Vector3(0, 0.02f);
-            } else
-            {
-                effectTransform.position = Vector2.Lerp(firePosition, defensor.transform.position + new Vector3(0, 0.6f), (float)(frame - 30) / 90f);
-            }
+            yield return null;
+        }
 
+        for (float timer = 0f; timer < 0.5f; timer += Time.deltaTime) {
+            Vector2 destionation = (defensor.transform.position + defensor.uiTransform.position) / 2f;
+            effectTransform.position = Vector2.Lerp(attacker.uiTransform.position, destionation, timer / 0.5f);
+        
             yield return null;
         }
 

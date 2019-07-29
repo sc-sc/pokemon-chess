@@ -16,10 +16,7 @@ public class StringShot : Skill
         Debug.Log("실 뿜기!");
         GetComponent<AudioSource>().PlayOneShot(stringShopSound);
 
-        for (int frame = 0; frame < 180; frame++)
-        {
-            yield return null;
-        }
+        yield return new WaitForSeconds(2f);
 
         defensor.RankUp(PokemonStat.Speed, -1);
         EndSkill(attacker);

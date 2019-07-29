@@ -106,10 +106,7 @@ public class BattleExecutor : MonoBehaviour
 
     private IEnumerator BattleCoroutine()
     {
-        for (int frame = 0; frame < 60; frame++)
-        {
-            yield return null;
-        }
+        yield return new WaitForSeconds(1f);
 
         MovePokemons(chessBoard.owner);
         MovePokemons(challenger);

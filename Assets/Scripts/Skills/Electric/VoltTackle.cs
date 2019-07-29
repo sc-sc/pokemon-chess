@@ -26,25 +26,28 @@ public class VoltTackle : Skill
         AudioSource audioSource = GetComponent<AudioSource>();
 
         audioSource.PlayOneShot(chargeSound);
-        for (int frame = 1; frame <= 110; frame++)
-        {
-            attacker.spriteRenderer.color *= new Color(1f, 1f, 0f);
 
-            if (frame == 30 || frame == 50 || frame == 90 || frame == 100)
-            {
-                attacker.spriteRenderer.material = paintWhite;
-            } else if (frame == 35 || frame == 55 || frame == 95)
-            {
-                attacker.spriteRenderer.material = previousMetrial;
-            }
+        attacker.spriteRenderer.color *= new Color(1f, 1f, 0f);
 
-            yield return null;
-        }
+        yield return new WaitForSeconds(0.5f);
+        attacker.spriteRenderer.material = paintWhite;
+        yield return new WaitForSeconds(0.1f);
+        attacker.spriteRenderer.material = previousMetrial;
+        yield return new WaitForSeconds(0.5f);
+        attacker.spriteRenderer.material = paintWhite;
+        yield return new WaitForSeconds(0.1f);
+        attacker.spriteRenderer.material = previousMetrial;
+        yield return new WaitForSeconds(0.3f);
+        attacker.spriteRenderer.material = paintWhite;
+        yield return new WaitForSeconds(0.1f);
+        attacker.spriteRenderer.material = previousMetrial;
+        yield return new WaitForSeconds(0.2f);
+        attacker.spriteRenderer.material = paintWhite;
 
         Vector3 startPosition = attacker.transform.position;
-        for (int frame = 1; frame <= 5; frame ++)
+        for (float timer = 0; timer < 0.1f; timer += Time.deltaTime)
         {
-            attacker.transform.position = Vector3.Lerp(startPosition, defensor.transform.position, (float)frame / 5);
+            attacker.transform.position = Vector3.Lerp(startPosition, defensor.transform.position, timer / 0.1f);
 
             yield return null;
         }
@@ -55,11 +58,11 @@ public class VoltTackle : Skill
 
         if (Random.Range(0, 1f) < 0.1f)
         {
-            defensor.SetStatus(PokemonStatus.Paralysis, 360);
+            defensor.SetStatus(PokemonStatus.Paralysis, 6f);
         }
-        for (int frame = 1; frame <= 5; frame++)
+        for (float timer = 0f; timer < 0.1f; timer += Time.deltaTime)
         {
-            attacker.transform.position = Vector3.Lerp(defensor.transform.position, startPosition, (float)frame / 5);
+            attacker.transform.position = Vector3.Lerp(defensor.transform.position, startPosition, timer / 0.1f);
 
             yield return null;
         }

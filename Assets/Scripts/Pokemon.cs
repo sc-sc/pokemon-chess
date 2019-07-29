@@ -113,8 +113,8 @@ public class Pokemon : MonoBehaviour
     [SerializeField]
     private PokemonStatus currentStatus = PokemonStatus.None;
     [SerializeField]
-    private int statusDurationFrame = 0;
-    private int statusFrame = 0;
+    private float statusDuraitionTime = 0;
+    private float statusTime = 0;
 
     private GameObject sleepEffectPrefab;
     private GameObject sleepEffect;
@@ -223,15 +223,15 @@ public class Pokemon : MonoBehaviour
     private void StopAttack()
     {
         StopCoroutine(attackCoroutine);
-        StartCoroutine(BackToOriginalPosition(5));
+        StartCoroutine(BackToOriginalPosition(0.1f));
     }
     
-    private IEnumerator BackToOriginalPosition(int untilFrame)
+    private IEnumerator BackToOriginalPosition(float time)
     {
         Vector3 startPosition = transform.position;
-        for (int frame = 0; frame < untilFrame; frame++)
+        for (float timer = 0; timer < time; timer += Time.deltaTime)
         {
-            transform.position = Vector3.Lerp(startPosition, originalPosition, (float)frame / untilFrame);
+            transform.position = Vector3.Lerp(startPosition, originalPosition, timer / time);
             yield return null;
         }
 
@@ -253,61 +253,49 @@ public class Pokemon : MonoBehaviour
         else
             spriteRenderer.flipX = false;
 
-        int attackFrame = 10 + (int) ((100f / DamageCalculator.GetActualStat(baseSpeed, PokemonStat.Speed, this)) * 60f);
+        float attackTime = 0.2f + 100f / DamageCalculator.GetActualStat(baseSpeed, PokemonStat.Speed, this);
 
-        bool canAttack = true;
-        for (int frame = 0; frame < attackFrame; frame++)
+        for (float timer = 0; timer < attackTime - 0.4f; timer += Time.deltaTime)
         {
             if (!attackTarget.isAlive || !IsAttackTargetInRange())
             {
                 isOnAttack = false;
-                StartCoroutine(BackToOriginalPosition(5));
+                StartCoroutine(BackToOriginalPosition(0.1f));
                 yield break;
-            }
-
-            if (frame == attackFrame - 20)
-            {
-                if (CheckParalysis())
-                {
-                    canAttack = false;
-                    break;
-                }
-            }
-
-            if (range == 1)
-            {
-                if (frame == attackFrame - 40)
-                    StopAnimation();
-
-                if (frame >= attackFrame - 20)
-                {
-                    if (frame < attackFrame - 10)
-                    {
-                        transform.position = Vector3.Lerp(originalPosition, attackTarget.transform.position, (float) (10 - (attackFrame - 10 - frame)) / 10);
-                    } else if (frame == attackFrame - 10)
-                    {
-                        audioSource.PlayOneShot(hitSound);
-                        StartCoroutine(BackToOriginalPosition(10));
-                    }
-                }
             }
 
             yield return null;
         }
 
-        if (canAttack)
+        if (CheckParalysis())
         {
-            int damage = DamageCalculator.CalculateBasicAttackDamage(this, attackTarget);
-            currentPp += 5;
-            attackTarget.Hit(damage, this, AttackType.Physical);
+            yield return new WaitForSeconds(0.4f);
             isOnAttack = false;
-        } else
+            yield break;
+        }
+
+        StopAnimation();
+
+        if (range == 1)
         {
-            for (int frame = 0; frame < 20; frame++)
+            for (float timer = 0f; timer < 0.2f; timer += Time.deltaTime)
             {
+                transform.position = Vector3.Lerp(originalPosition, attackTarget.transform.position, timer / 0.2f);
                 yield return null;
             }
+
+            audioSource.PlayOneShot(hitSound);
+            StartCoroutine(BackToOriginalPosition(0.2f));
         }
+        else
+        {
+            yield return new WaitForSeconds(0.4f);
+        }
+
+        int damage = DamageCalculator.CalculateBasicAttackDamage(this, attackTarget);
+        currentPp += 5;
+        attackTarget.Hit(damage, this, AttackType.Physical);
+        isOnAttack = false;
 
         StartAnimation();
     }
@@ -349,7 +337,7 @@ public class Pokemon : MonoBehaviour
         {
             if (Random.Range(0f, 1f) < 0.3f)
             {
-                attackPokemon.SetStatus(PokemonStatus.Paralysis, 360);
+                attackPokemon.SetStatus(PokemonStatus.Paralysis, 6f);
             }
         }
     }
@@ -447,7 +435,7 @@ public class Pokemon : MonoBehaviour
         animator.speed = 1f;
         spriteRenderer.material = defulatMaterial;
     }
-    public void SetStatus(PokemonStatus status, int durationFrame)
+    public void SetStatus(PokemonStatus status, float durationTime)
     {
         Debug.Log(status + "에 걸림");
 
@@ -456,7 +444,7 @@ public class Pokemon : MonoBehaviour
 
         UnsetStatus();
         currentStatus = status;
-        statusDurationFrame = durationFrame;
+        statusDuraitionTime = durationTime;
 
         switch (status)
         {
@@ -501,7 +489,7 @@ public class Pokemon : MonoBehaviour
         }
 
         currentStatus = PokemonStatus.None;
-        statusFrame = 0;
+        statusTime = 0f;
     }
 
     public PokemonStatus GetCurrentStatus()
@@ -518,8 +506,8 @@ public class Pokemon : MonoBehaviour
                 break;
         }
 
-        statusFrame++;
-        if (statusFrame >= statusDurationFrame)
+        statusTime += Time.deltaTime;
+        if (statusTime >= statusDuraitionTime)
             UnsetStatus();
     }
 
@@ -542,11 +530,15 @@ public class Pokemon : MonoBehaviour
 
     public void RankUp(PokemonStat statType, int amount)
     {
-        statRank[statType] += amount;
-
         if (statType == PokemonStat.Speed)
         {
+            animator.speed /= DamageCalculator.StatRank(PokemonStat.Speed, this);
+            statRank[statType] += amount;
             animator.speed *= DamageCalculator.StatRank(PokemonStat.Speed, this);
+        }
+        else
+        {
+            statRank[statType] += amount;
         }
     }
 

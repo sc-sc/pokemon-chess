@@ -26,21 +26,23 @@ public class Harden : Skill
         effectSprite.flipX = attacker.spriteRenderer.flipX;
         effectSprite.color -= new Color(0, 0, 0, 1);
 
-        for (int frame = 0; frame < 120; frame++)
+
+        for (float timer = 0f; timer < 2f; timer += Time.deltaTime)
         {
-            if (frame < 30)
+            if (timer < 0.5f)
             {
-                effectSprite.color += new Color(0, 0, 0, 0.01f);
-            } else if (frame < 60)
+                effectSprite.color += new Color(0, 0, 0, Time.deltaTime);
+            } else if (timer < 1f)
             {
-                effectSprite.color -= new Color(0, 0, 0, 0.01f);
-            } else if (frame < 90)
+                effectSprite.color -= new Color(0, 0, 0, Time.deltaTime);
+            } else if (timer < 1.5f)
             {
-                effectSprite.color += new Color(0, 0, 0, 0.01f);
+                effectSprite.color += new Color(0, 0, 0, Time.deltaTime);
             } else
             {
-                effectSprite.color -= new Color(0, 0, 0, 0.01f);
+                effectSprite.color -= new Color(0, 0, 0, Time.deltaTime);
             }
+
             yield return null;
         }
 

@@ -17,13 +17,10 @@ public class Rest : Skill
         animator.speed *= 0.5f;
         GetComponent<AudioSource>().PlayOneShot(restSound);
 
-        for (int frame = 0; frame < 120; frame++)
-        {
-            yield return null;
-        }
+        yield return new WaitForSeconds(2f);
 
         animator.speed *= 2f;
-        attacker.SetStatus(PokemonStatus.Sleep, 360);
+        attacker.SetStatus(PokemonStatus.Sleep, 6f);
         attacker.currentHp = attacker.actualHp;
     }
 }
