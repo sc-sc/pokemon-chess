@@ -26,7 +26,7 @@ public class Harden : Skill
         effectSprite.flipX = attacker.spriteRenderer.flipX;
         effectSprite.color -= new Color(0, 0, 0, 1);
 
-
+        Destroy(hardenEffect, 3f);
         for (float timer = 0f; timer < 2f; timer += Time.deltaTime)
         {
             if (timer < 0.5f)
