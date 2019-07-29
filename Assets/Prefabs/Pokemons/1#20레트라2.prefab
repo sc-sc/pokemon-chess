@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 2254535982436329198}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2254535982534229304}
   - {fileID: 4982657042636162291}
@@ -51,19 +51,19 @@ MonoBehaviour:
   currentState: 0
   trainer: {fileID: 0}
   cost: 1
-  baseHp: 70
+  baseHp: 55
   items: []
   _currentHp: 0
-  baseAttack: 100
-  baseDefense: 75
-  baseSpecialAttack: 60
-  baseSpecialDefense: 85
-  baseSpeed: 112
+  baseAttack: 81
+  baseDefense: 60
+  baseSpecialAttack: 50
+  baseSpecialDefense: 70
+  baseSpeed: 97
   ppFull: 30
   initialPp: 0
   _currentPp: 0
   evolution: {fileID: 0}
-  evolutionPhase: 1
+  evolutionPhase: 3
   uiTransform: {fileID: 4982657042636162291}
   types: 00000000
   range: 1
@@ -71,7 +71,7 @@ MonoBehaviour:
   isAlive: 1
   battleCallbackHandler: {fileID: 0}
   currentStatus: 0
-  statusDurationFrame: 0
+  statusDuraitionTime: 0
   abilities: 
 --- !u!82 &-2751376051011546410
 AudioSource:

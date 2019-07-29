@@ -157,8 +157,8 @@ MonoBehaviour:
   _currentHp: 0
   baseAttack: 64
   baseDefense: 45
-  baseSpecialAttack: 100
-  baseSpecialDefense: 100
+  baseSpecialAttack: 50
+  baseSpecialDefense: 50
   baseSpeed: 50
   ppFull: 30
   initialPp: 0
@@ -173,7 +173,7 @@ MonoBehaviour:
   isAlive: 1
   battleCallbackHandler: {fileID: 0}
   currentStatus: 0
-  statusDurationFrame: 0
+  statusDuraitionTime: 0
   abilities: 
 --- !u!82 &5153155430201235844
 AudioSource:

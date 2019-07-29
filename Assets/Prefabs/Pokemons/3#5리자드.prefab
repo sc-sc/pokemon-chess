@@ -51,11 +51,12 @@ MonoBehaviour:
   trainer: {fileID: 0}
   cost: 3
   baseHp: 58
+  items: []
   _currentHp: 0
   baseAttack: 64
   baseDefense: 58
-  baseSpecialAttack: 100
-  baseSpecialDefense: 100
+  baseSpecialAttack: 80
+  baseSpecialDefense: 65
   baseSpeed: 80
   ppFull: 30
   initialPp: 0
@@ -70,6 +71,8 @@ MonoBehaviour:
   isAlive: 1
   battleCallbackHandler: {fileID: 0}
   currentStatus: 0
+  statusDuraitionTime: 0
+  abilities: 
 --- !u!82 &-6738082476699667062
 AudioSource:
   m_ObjectHideFlags: 0

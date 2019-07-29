@@ -159,7 +159,7 @@ public class Pokemon : MonoBehaviour
             case PokemonState.Attack:
                 if (!isOnAttack)
                 {
-                    if (!attackTarget.isAlive || !IsAttackTargetInRange())
+                    if (!IsAttackTargetInRange())
                         currentState = PokemonState.Move;
                     else
                     {
@@ -253,28 +253,22 @@ public class Pokemon : MonoBehaviour
         else
             spriteRenderer.flipX = false;
 
-        float attackTime = 0.2f + 100f / DamageCalculator.GetActualStat(baseSpeed, PokemonStat.Speed, this);
+        float attackTime = 0.4f + 100f / DamageCalculator.GetActualStat(baseSpeed, PokemonStat.Speed, this);
 
-        for (float timer = 0; timer < attackTime - 0.4f; timer += Time.deltaTime)
-        {
-            if (!attackTarget.isAlive || !IsAttackTargetInRange())
-            {
-                isOnAttack = false;
-                StartCoroutine(BackToOriginalPosition(0.1f));
-                yield break;
-            }
-
-            yield return null;
-        }
 
         if (CheckParalysis())
         {
-            yield return new WaitForSeconds(0.4f);
+            yield return new WaitForSeconds(attackTime);
             isOnAttack = false;
             yield break;
         }
 
+        StartCoroutine(CheckCanAttack());
+
+        yield return new WaitForSeconds(attackTime - 0.6f);
+
         StopAnimation();
+        yield return new WaitForSeconds(0.2f);
 
         if (range == 1)
         {
@@ -298,6 +292,21 @@ public class Pokemon : MonoBehaviour
         isOnAttack = false;
 
         StartAnimation();
+    }
+
+    private IEnumerator CheckCanAttack()
+    {
+        while (isOnAttack)
+        {
+            if (!IsAttackTargetInRange())
+            {
+                isOnAttack = false;
+                StopAttack();
+                yield break;
+            }
+
+            yield return null;
+        }
     }
 
     private List<Ability> GetAbilities()
@@ -361,9 +370,9 @@ public class Pokemon : MonoBehaviour
         return cost * (int ) Mathf.Pow(3, evolutionPhase - 1);
     }
 
-    private bool IsAttackTargetInRange()
+    public bool IsAttackTargetInRange()
     {
-        return battleCallbackHandler.IsAttackTargetInRange(this);
+        return attackTarget.isAlive && battleCallbackHandler.IsAttackTargetInRange(this);
     }
 
     public void MoveTo(Vector3 position)

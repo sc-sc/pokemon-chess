@@ -9,6 +9,13 @@ public abstract class Skill : MonoBehaviour
     public virtual void EndSkill(Pokemon attacker)
     {
         attacker.StartAnimation();
-        attacker.currentState = PokemonState.Move;
+        
+        if (attacker.IsAttackTargetInRange())
+        {
+            attacker.currentState = PokemonState.Attack;
+        } else
+        {
+            attacker.currentState = PokemonState.Move;
+        }
     }
 }

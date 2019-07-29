@@ -38,6 +38,7 @@ public class BattleExecutor : MonoBehaviour
         callbackHandler = GetComponent<BattleCallbackHandler>();
         chessBoard = GetComponent<ChessBoard>();
     }
+
     public void ReadyBattle(Trainer challenger)
     {
         isInBattle = true;

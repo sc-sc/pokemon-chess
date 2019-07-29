@@ -64,7 +64,7 @@ MonoBehaviour:
   _currentPp: 0
   evolution: {fileID: 2254535982436329198, guid: 7f235e23a843ba646ab7abdafb80ed39,
     type: 3}
-  evolutionPhase: 1
+  evolutionPhase: 2
   uiTransform: {fileID: 4982657042636162291}
   types: 0c00000008000000
   range: 1
@@ -72,7 +72,7 @@ MonoBehaviour:
   isAlive: 1
   battleCallbackHandler: {fileID: 0}
   currentStatus: 0
-  statusDurationFrame: 0
+  statusDuraitionTime: 0
   abilities: 
 --- !u!114 &3430141072487521892
 MonoBehaviour:
@@ -309,7 +309,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8333226452817033793}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.3, z: 0}
+  m_LocalPosition: {x: 0, y: 1.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2254535982436329201}
