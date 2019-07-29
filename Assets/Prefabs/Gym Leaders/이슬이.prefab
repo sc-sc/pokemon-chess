@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1077766100700705359}
   - component: {fileID: 1782522522}
   m_Layer: 0
-  m_Name: "\uC384\uC9C4\uC6C5\uC774"
+  m_Name: "\uC774\uC2AC\uC774"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 3010294207588379016, guid: 52b54c9d7c564b14a9a8b54db77996b1,
     type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.0029821396, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -115,12 +115,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 575be44316e737347b3c77f9152b3fdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: "\uC6C5"
-  nickname: "\uC6C5\uC774"
-  level: 6
+  id: "\uC774\uC2AC\uC774"
+  nickname: "\uC774\uC2AC\uC774"
+  level: 4
   hp: 100
   currentHp: 100
   money: 0
+  status: 0
+  count_win: 0
+  count_lose: 0
   exp_expect: 0
   exp_present: 0
   waitingPokemons: []
@@ -129,13 +132,9 @@ MonoBehaviour:
   - {fileID: 2254535982436329198, guid: 35bdca324aadfd74e88cf8b42595cc0d, type: 3}
   - {fileID: 2254535982436329198, guid: b62dd282f3184ae49a94f28d141445f1, type: 3}
   - {fileID: 2254535982436329198, guid: b62dd282f3184ae49a94f28d141445f1, type: 3}
-  - {fileID: 2254535982436329198, guid: b62dd282f3184ae49a94f28d141445f1, type: 3}
-  - {fileID: 2254535982436329198, guid: b62dd282f3184ae49a94f28d141445f1, type: 3}
   positions:
   - {x: 2, y: 2}
   - {x: 4, y: 2}
   - {x: 3, y: 1}
-  - {x: 3, y: 2}
-  - {x: 3, y: 3}
-  - {x: 4, y: 1}
+  - {x: 3, y: 1}
   stageType: 2

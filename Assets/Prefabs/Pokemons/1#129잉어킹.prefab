@@ -46,11 +46,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a9a793453a620142940e4e02c602596, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pokemonName: 15
+  pokemonName: 17
   currentState: 0
   trainer: {fileID: 0}
   cost: 1
   baseHp: 20
+  items: []
   _currentHp: 0
   baseAttack: 10
   baseDefense: 55
@@ -70,6 +71,8 @@ MonoBehaviour:
   isAlive: 1
   battleCallbackHandler: {fileID: 0}
   currentStatus: 0
+  statusDurationFrame: 0
+  abilities: 
 --- !u!82 &8226215292329151055
 AudioSource:
   m_ObjectHideFlags: 0

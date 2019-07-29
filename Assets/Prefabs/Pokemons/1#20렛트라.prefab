@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2254535982436329201}
   - component: {fileID: 2254535982436329200}
-  - component: {fileID: 889406781469841381}
+  - component: {fileID: -2751376051011546410}
+  - component: {fileID: -5778162891137072863}
   m_Layer: 0
-  m_Name: "Stage1-1 \uCE90\uD130\uD53C"
+  m_Name: "1#20\uB81B\uD2B8\uB77C"
   m_TagString: Pokemon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 2254535982436329198}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 1}
   m_Children:
   - {fileID: 2254535982534229304}
   - {fileID: 4982657042636162291}
@@ -46,32 +47,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a9a793453a620142940e4e02c602596, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pokemonName: 3
+  pokemonName: 7
   currentState: 0
   trainer: {fileID: 0}
   cost: 1
-  baseHp: 28
+  baseHp: 55
   items: []
   _currentHp: 0
-  baseAttack: 20
-  baseDefense: 25
-  baseSpecialAttack: 100
-  baseSpecialDefense: 100
-  baseSpeed: 25
+  baseAttack: 81
+  baseDefense: 60
+  baseSpecialAttack: 50
+  baseSpecialDefense: 70
+  baseSpeed: 97
   ppFull: 30
   initialPp: 0
   _currentPp: 0
-  evolution: {fileID: 0}
+  evolution: {fileID: 2254535982436329198, guid: 6d78da71190af6a40a9eb85406024cc1,
+    type: 3}
   evolutionPhase: 1
   uiTransform: {fileID: 4982657042636162291}
-  types: 0b000000
-  range: 2
+  types: 00000000
+  range: 1
   attackTarget: {fileID: 0}
   isAlive: 1
   battleCallbackHandler: {fileID: 0}
   currentStatus: 0
+  statusDurationFrame: 0
   abilities: 
---- !u!82 &889406781469841381
+--- !u!82 &-2751376051011546410
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -167,6 +170,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-5778162891137072863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2254535982436329198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f7198594d661843aef1426b29f125c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hardenSound: {fileID: 8300000, guid: 11de4bb85a3be4c43bd6cbd26e744b85, type: 3}
 --- !u!1 &2254535982534229303
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,7 +254,7 @@ SpriteRenderer:
   m_SortingLayerID: 1571698295
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3476763686833207089, guid: 3bcef04f06fcd3c48b210d51b426ecb8,
+  m_Sprite: {fileID: 9036084849010300763, guid: 641341f9ccdaf6a438635ab22d8daa1e,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -260,7 +276,7 @@ Animator:
   m_GameObject: {fileID: 2254535982534229303}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0d160f633823c144c8bf9d411944813c, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7b99f6f9c2d3fb646beaa111e0d861bc, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
