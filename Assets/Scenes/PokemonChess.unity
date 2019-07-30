@@ -457,6 +457,7 @@ MonoBehaviour:
   - prefabs:
     - {fileID: 7236754985802801847, guid: 75583b23108b2c449b97c5838d6f7656, type: 3}
     - {fileID: 2254535982436329198, guid: 2e8757d0ab395c8468b088ede0b9ebbf, type: 3}
+    - {fileID: 2254535982436329198, guid: 146b8bf91aa6c70499cf4cf7890cc4c1, type: 3}
   - prefabs:
     - {fileID: 6081528462114302055, guid: 379c7d2342146a2439c9adfdd361ecd1, type: 3}
     - {fileID: 6081528462114302055, guid: 47dcf07085adad14bbf4057e3aca3632, type: 3}
@@ -2105,10 +2106,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 28
+    m_FontSize: 23
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -2343,7 +2344,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 20
+    m_FontSize: 23
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -5294,31 +5295,31 @@ MonoBehaviour:
   - mainStage: 1
     subStages:
     - {fileID: 1782522522, guid: 37aa199dff49cc448bf41b642460b1ba, type: 3}
-    - {fileID: 1782522522, guid: f63a10be876ff4a43b68a853346f3711, type: 3}
     - {fileID: 1782522522, guid: 37aa199dff49cc448bf41b642460b1ba, type: 3}
+    - {fileID: 1782522522, guid: f63a10be876ff4a43b68a853346f3711, type: 3}
     - {fileID: 1782522522, guid: f63a10be876ff4a43b68a853346f3711, type: 3}
     - {fileID: 1782522522, guid: 2bb7aebc34d4ec043b4b9e27cdc27852, type: 3}
   - mainStage: 2
     subStages:
-    - {fileID: 1782522522, guid: 37aa199dff49cc448bf41b642460b1ba, type: 3}
-    - {fileID: 1782522522, guid: f63a10be876ff4a43b68a853346f3711, type: 3}
-    - {fileID: 1782522522, guid: 2bb7aebc34d4ec043b4b9e27cdc27852, type: 3}
-    - {fileID: 1782522522, guid: 2bb7aebc34d4ec043b4b9e27cdc27852, type: 3}
-    - {fileID: 1782522522, guid: 2bb7aebc34d4ec043b4b9e27cdc27852, type: 3}
+    - {fileID: 1782522522, guid: 47bf9e05b90d823439e8f1addb47301d, type: 3}
+    - {fileID: 1782522522, guid: 47bf9e05b90d823439e8f1addb47301d, type: 3}
+    - {fileID: 1782522522, guid: 34872e2605c8793428e7400b54c1f499, type: 3}
+    - {fileID: 1782522522, guid: 34872e2605c8793428e7400b54c1f499, type: 3}
+    - {fileID: 1782522522, guid: 3e973152cd4eb3b49bd3b8a414dd26a5, type: 3}
   - mainStage: 3
     subStages:
     - {fileID: 1782522522, guid: 37aa199dff49cc448bf41b642460b1ba, type: 3}
+    - {fileID: 1782522522, guid: 47bf9e05b90d823439e8f1addb47301d, type: 3}
     - {fileID: 1782522522, guid: f63a10be876ff4a43b68a853346f3711, type: 3}
-    - {fileID: 1782522522, guid: 2bb7aebc34d4ec043b4b9e27cdc27852, type: 3}
-    - {fileID: 1782522522, guid: 2bb7aebc34d4ec043b4b9e27cdc27852, type: 3}
+    - {fileID: 1782522522, guid: 34872e2605c8793428e7400b54c1f499, type: 3}
     - {fileID: 1782522522, guid: 2bb7aebc34d4ec043b4b9e27cdc27852, type: 3}
   - mainStage: 4
     subStages:
+    - {fileID: 1782522522, guid: 3e973152cd4eb3b49bd3b8a414dd26a5, type: 3}
     - {fileID: 1782522522, guid: 2bb7aebc34d4ec043b4b9e27cdc27852, type: 3}
+    - {fileID: 1782522522, guid: 3e973152cd4eb3b49bd3b8a414dd26a5, type: 3}
     - {fileID: 1782522522, guid: 2bb7aebc34d4ec043b4b9e27cdc27852, type: 3}
-    - {fileID: 1782522522, guid: 2bb7aebc34d4ec043b4b9e27cdc27852, type: 3}
-    - {fileID: 1782522522, guid: 2bb7aebc34d4ec043b4b9e27cdc27852, type: 3}
-    - {fileID: 1782522522, guid: 2bb7aebc34d4ec043b4b9e27cdc27852, type: 3}
+    - {fileID: 1782522522, guid: 3e973152cd4eb3b49bd3b8a414dd26a5, type: 3}
   - mainStage: 5
     subStages:
     - {fileID: 1782522522, guid: 3e973152cd4eb3b49bd3b8a414dd26a5, type: 3}
@@ -5328,11 +5329,11 @@ MonoBehaviour:
     - {fileID: 1782522522, guid: 3e973152cd4eb3b49bd3b8a414dd26a5, type: 3}
   - mainStage: 6
     subStages:
-    - {fileID: 1782522522, guid: 37aa199dff49cc448bf41b642460b1ba, type: 3}
-    - {fileID: 1782522522, guid: f63a10be876ff4a43b68a853346f3711, type: 3}
+    - {fileID: 1782522522, guid: 3e973152cd4eb3b49bd3b8a414dd26a5, type: 3}
+    - {fileID: 1782522522, guid: 3e973152cd4eb3b49bd3b8a414dd26a5, type: 3}
     - {fileID: 1782522522, guid: 2bb7aebc34d4ec043b4b9e27cdc27852, type: 3}
-    - {fileID: 1782522522, guid: 2bb7aebc34d4ec043b4b9e27cdc27852, type: 3}
-    - {fileID: 1782522522, guid: 2bb7aebc34d4ec043b4b9e27cdc27852, type: 3}
+    - {fileID: 1782522522, guid: 3e973152cd4eb3b49bd3b8a414dd26a5, type: 3}
+    - {fileID: 1782522522, guid: 3e973152cd4eb3b49bd3b8a414dd26a5, type: 3}
 --- !u!4 &1585233289
 Transform:
   m_ObjectHideFlags: 0
@@ -6387,7 +6388,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 10, y: 0}
   m_SizeDelta: {x: 900, y: 100}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &2070875407

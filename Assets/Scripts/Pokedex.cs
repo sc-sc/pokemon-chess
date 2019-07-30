@@ -36,7 +36,15 @@ public enum PokemonName
 
     미뇽,
     신뇽,
-    망나뇽
+    망나뇽,
+
+    별가사리,
+    아쿠스타,
+
+    콘치,
+    야돈,
+    야도란,
+    야돈킹
 }
 
 public enum ItemName

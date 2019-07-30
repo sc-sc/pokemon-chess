@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2254535982436329201}
   - component: {fileID: 2254535982436329200}
-  - component: {fileID: 889406781469841381}
-  - component: {fileID: 5670105236094215590}
+  - component: {fileID: 5776005491566513968}
+  - component: {fileID: 9177576587881927133}
   m_Layer: 0
-  m_Name: "Stage\uCE90\uD130\uD53C"
+  m_Name: "2#79\uC57C\uB3C8"
   m_TagString: Pokemon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,10 +28,10 @@ Transform:
   m_GameObject: {fileID: 2254535982436329198}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2254535982534229304}
-  - {fileID: 4982657042636162291}
+  - {fileID: 5896723609196797908}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -47,33 +47,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a9a793453a620142940e4e02c602596, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pokemonName: 3
+  pokemonName: 26
   currentState: 0
   trainer: {fileID: 0}
-  cost: 1
-  baseHp: 28
+  cost: 2
+  baseHp: 90
   items: []
   _currentHp: 0
-  baseAttack: 20
-  baseDefense: 25
-  baseSpecialAttack: 18
-  baseSpecialDefense: 18
-  baseSpeed: 25
+  baseAttack: 65
+  baseDefense: 65
+  baseSpecialAttack: 40
+  baseSpecialDefense: 40
+  baseSpeed: 15
   ppFull: 30
   initialPp: 0
   _currentPp: 0
-  evolution: {fileID: 0}
+  evolution: {fileID: 2254535982436329198, guid: 74faf318ff8dad64385a834d7576b7af,
+    type: 3}
   evolutionPhase: 1
-  uiTransform: {fileID: 4982657042636162291}
-  types: 0b000000
-  range: 2
+  uiTransform: {fileID: 5896723609196797908}
+  types: 020000000a000000
+  range: 1
   attackTarget: {fileID: 0}
   isAlive: 1
   battleCallbackHandler: {fileID: 0}
   currentStatus: 0
   statusDuraitionTime: 0
   abilities: 
---- !u!82 &889406781469841381
+--- !u!82 &5776005491566513968
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -169,7 +170,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &5670105236094215590
+--- !u!114 &9177576587881927133
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -178,10 +179,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2254535982436329198}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 413ab70fb5ddb2448a2b1ae0f98074ed, type: 3}
+  m_Script: {fileID: 11500000, guid: 72e1d56fd4ca33844b2b263e5280d094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stringShopSound: {fileID: 8300000, guid: 755ca394f5c87af4b8c00e347d3d04ad, type: 3}
+  restSound: {fileID: 8300000, guid: 811031fd0042a794993f32c8e79b57ff, type: 3}
 --- !u!1 &2254535982534229303
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,7 +254,7 @@ SpriteRenderer:
   m_SortingLayerID: 1571698295
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3476763686833207089, guid: 3bcef04f06fcd3c48b210d51b426ecb8,
+  m_Sprite: {fileID: -3485197113062982196, guid: 17f3f5cdf9aa0b84790f479f66b92aa5,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -275,7 +276,7 @@ Animator:
   m_GameObject: {fileID: 2254535982534229303}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0d160f633823c144c8bf9d411944813c, type: 2}
+  m_Controller: {fileID: 9100000, guid: 16193c541524b1345bbc1d3d6145ad65, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -284,7 +285,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!1 &8333226452817033793
+--- !u!1 &3000422330614725023
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -292,7 +293,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4982657042636162291}
+  - component: {fileID: 5896723609196797908}
   m_Layer: 0
   m_Name: UIPosition
   m_TagString: Untagged
@@ -300,15 +301,15 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4982657042636162291
+--- !u!4 &5896723609196797908
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8333226452817033793}
+  m_GameObject: {fileID: 3000422330614725023}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.3, z: 0}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2254535982436329201}

@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 2254535982436329201}
   - component: {fileID: 2254535982436329200}
   - component: {fileID: 889406781469841381}
-  - component: {fileID: 5670105236094215590}
+  - component: {fileID: -5994074848677576317}
   m_Layer: 0
-  m_Name: "Stage\uCE90\uD130\uD53C"
+  m_Name: "Stage\uC544\uCFE0\uC2A4\uD0C0"
   m_TagString: Pokemon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 2254535982436329198}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2254535982534229304}
   - {fileID: 4982657042636162291}
@@ -47,25 +47,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a9a793453a620142940e4e02c602596, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pokemonName: 3
+  pokemonName: 24
   currentState: 0
   trainer: {fileID: 0}
-  cost: 1
-  baseHp: 28
+  cost: 2
+  baseHp: 60
   items: []
   _currentHp: 0
-  baseAttack: 20
-  baseDefense: 25
-  baseSpecialAttack: 18
-  baseSpecialDefense: 18
-  baseSpeed: 25
+  baseAttack: 75
+  baseDefense: 85
+  baseSpecialAttack: 100
+  baseSpecialDefense: 85
+  baseSpeed: 115
   ppFull: 30
   initialPp: 0
   _currentPp: 0
   evolution: {fileID: 0}
-  evolutionPhase: 1
+  evolutionPhase: 2
   uiTransform: {fileID: 4982657042636162291}
-  types: 0b000000
+  types: 020000000a000000
   range: 2
   attackTarget: {fileID: 0}
   isAlive: 1
@@ -169,7 +169,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &5670105236094215590
+--- !u!114 &-5994074848677576317
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -178,10 +178,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2254535982436329198}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 413ab70fb5ddb2448a2b1ae0f98074ed, type: 3}
+  m_Script: {fileID: 11500000, guid: 1acb6ea992234884dab54c83ec647379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stringShopSound: {fileID: 8300000, guid: 755ca394f5c87af4b8c00e347d3d04ad, type: 3}
+  waterPulseSound: {fileID: 8300000, guid: 3c8ce8b0c5745da43915e30b86cdc1b4, type: 3}
+  waterPulseEffect: {fileID: 39082991201073269, guid: 3446807d77fc9464fbf273c1fdca16e3,
+    type: 3}
+  hitSound: {fileID: 8300000, guid: 778b8b2b92685d44e8aa46a064e4b21c, type: 3}
+  baseDamage: 60
 --- !u!1 &2254535982534229303
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,7 +257,7 @@ SpriteRenderer:
   m_SortingLayerID: 1571698295
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3476763686833207089, guid: 3bcef04f06fcd3c48b210d51b426ecb8,
+  m_Sprite: {fileID: -7617150299567701573, guid: 35825df32c57dd54bb42384870233db5,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -275,7 +279,7 @@ Animator:
   m_GameObject: {fileID: 2254535982534229303}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0d160f633823c144c8bf9d411944813c, type: 2}
+  m_Controller: {fileID: 9100000, guid: cdb91a5c35b25e2418d127213ff6cd4a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

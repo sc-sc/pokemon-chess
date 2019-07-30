@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1077766100700705359}
   - component: {fileID: 1782522522}
   m_Layer: 0
-  m_Name: "\uC774\uC2AC\uC774"
+  m_Name: 2-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 1571698295
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 5382529909362403740, guid: 1d6e0044c63b4a246951823e5116a36e,
+  m_Sprite: {fileID: -1034392624596161604, guid: 8a3f3d8b1becdda4aa09346e8b2f6fc8,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -94,7 +94,7 @@ Animator:
   m_GameObject: {fileID: 1077766100700705356}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: bc4bd957e0ce4094aab5710bd6f1d8dd, type: 2}
+  m_Controller: {fileID: 9100000, guid: eedb9e6f37b38db43b65ea74c140a109, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -115,9 +115,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 575be44316e737347b3c77f9152b3fdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: "\uC774\uC2AC\uC774"
-  nickname: "\uC774\uC2AC\uC774"
-  level: 4
+  id: Stage2-1
+  nickname: "\uCF58\uCE58\uBB34\uB9AC"
+  level: 3
   hp: 100
   currentHp: 100
   money: 0
@@ -128,13 +128,11 @@ MonoBehaviour:
   exp_present: 0
   waitingPokemons: []
   pokemons:
-  - {fileID: 2254535982436329198, guid: 35bdca324aadfd74e88cf8b42595cc0d, type: 3}
-  - {fileID: 2254535982436329198, guid: 35bdca324aadfd74e88cf8b42595cc0d, type: 3}
-  - {fileID: 2254535982436329198, guid: b62dd282f3184ae49a94f28d141445f1, type: 3}
-  - {fileID: 2254535982436329198, guid: b62dd282f3184ae49a94f28d141445f1, type: 3}
+  - {fileID: 2254535982436329198, guid: 513904e1c8e2e844dade76139d2ee4ab, type: 3}
+  - {fileID: 2254535982436329198, guid: 513904e1c8e2e844dade76139d2ee4ab, type: 3}
+  - {fileID: 2254535982436329198, guid: 513904e1c8e2e844dade76139d2ee4ab, type: 3}
   positions:
-  - {x: 2, y: 2}
-  - {x: 4, y: 2}
-  - {x: 3, y: 1}
-  - {x: 3, y: 1}
-  stageType: 2
+  - {x: 2, y: 3}
+  - {x: 3, y: 3}
+  - {x: 3, y: 2}
+  stageType: 0
