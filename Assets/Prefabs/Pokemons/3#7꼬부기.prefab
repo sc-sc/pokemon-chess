@@ -92,11 +92,12 @@ MonoBehaviour:
   ppFull: 30
   initialPp: 0
   _currentPp: 0
-  evolution: {fileID: 0}
-  evolutionPhase: 2
+  evolution: {fileID: 6081528462114302055, guid: 5faf2925d9b2bf24eb92e9e91b6f7704,
+    type: 3}
+  evolutionPhase: 1
   uiTransform: {fileID: 8394427894499438970}
   types: 02000000
-  range: 1
+  range: 2
   attackTarget: {fileID: 0}
   isAlive: 1
   battleCallbackHandler: {fileID: 0}

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2254535982436329198
+--- !u!1 &4701396316641223027
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,79 +8,109 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2254535982436329201}
-  - component: {fileID: 2254535982436329200}
-  - component: {fileID: 8226215292329151055}
-  - component: {fileID: 1654858944502605396}
+  - component: {fileID: 8394427894499438970}
   m_Layer: 0
-  m_Name: "1#129\uC789\uC5B4\uD0B9"
-  m_TagString: Pokemon
+  m_Name: UIPosition
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2254535982436329201
+--- !u!4 &8394427894499438970
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2254535982436329198}
+  m_GameObject: {fileID: 4701396316641223027}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7755304136641971708}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6081528462114302055
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7755304136641971708}
+  - component: {fileID: 2763003580702113442}
+  - component: {fileID: 4658223896664284654}
+  m_Layer: 0
+  m_Name: "3#2\uC774\uC0C1\uD574\uD480"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7755304136641971708
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6081528462114302055}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2254535982534229304}
-  - {fileID: 6639246364155760368}
+  - {fileID: 200811569918826330}
+  - {fileID: 8394427894499438970}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2254535982436329200
+--- !u!114 &2763003580702113442
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2254535982436329198}
+  m_GameObject: {fileID: 6081528462114302055}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a9a793453a620142940e4e02c602596, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pokemonName: 23
+  pokemonName: 7
   currentState: 0
   trainer: {fileID: 0}
-  cost: 1
-  baseHp: 20
-  items: []
+  cost: 3
+  baseHp: 60
+  items:
+  - {fileID: 399741247333186903, guid: 478f05a8daa51ba43b307ce46e0dbec6, type: 3}
   _currentHp: 0
-  baseAttack: 10
-  baseDefense: 55
-  baseSpecialAttack: 15
-  baseSpecialDefense: 20
-  baseSpeed: 80
-  ppFull: 10
+  baseAttack: 62
+  baseDefense: 63
+  baseSpecialAttack: 80
+  baseSpecialDefense: 80
+  baseSpeed: 60
+  ppFull: 30
   initialPp: 0
   _currentPp: 0
-  evolution: {fileID: 2254535982436329198, guid: e21a53e21113f3047af9ba872b166f70,
+  evolution: {fileID: 6081528462114302055, guid: ac356b51484f94f4088be56d5aae2474,
     type: 3}
-  evolutionPhase: 1
-  uiTransform: {fileID: 6639246364155760368}
-  types: 02000000
-  range: 0
+  evolutionPhase: 2
+  uiTransform: {fileID: 8394427894499438970}
+  types: 0300000007000000
+  range: 1
   attackTarget: {fileID: 0}
   isAlive: 1
   battleCallbackHandler: {fileID: 0}
   currentStatus: 0
   statusDuraitionTime: 0
-  abilities: 
---- !u!82 &8226215292329151055
+  abilities: 00000000
+--- !u!82 &4658223896664284654
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2254535982436329198}
+  m_GameObject: {fileID: 6081528462114302055}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -170,19 +200,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1654858944502605396
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2254535982436329198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 937f6bdfce06d9c40ae122c7e10f8381, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &2254535982534229303
+--- !u!1 &8370315338700470383
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -190,9 +208,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2254535982534229304}
-  - component: {fileID: 2254535982534229305}
-  - component: {fileID: 2254535982534229306}
+  - component: {fileID: 200811569918826330}
+  - component: {fileID: 3274286929232634524}
+  - component: {fileID: 8391632400030265062}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -200,27 +218,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2254535982534229304
+--- !u!4 &200811569918826330
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2254535982534229303}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_GameObject: {fileID: 8370315338700470383}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2254535982436329201}
+  m_Father: {fileID: 7755304136641971708}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &2254535982534229305
+--- !u!212 &3274286929232634524
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2254535982534229303}
+  m_GameObject: {fileID: 8370315338700470383}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -253,29 +271,28 @@ SpriteRenderer:
   m_SortingLayerID: 1571698295
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: -5047265922326304181, guid: c07ea1cf17d7f7d4c9fc95b46d8e4c0a,
-    type: 3}
+  m_Sprite: {fileID: 726664461014771421, guid: 4679ac6b56ae1c749b94737e0050850c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.225, y: 2.275}
+  m_Size: {x: 1.3125, y: 1.3125}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &2254535982534229306
+--- !u!95 &8391632400030265062
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2254535982534229303}
+  m_GameObject: {fileID: 8370315338700470383}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: fd2b58bb451d50f4c8810490bacc259e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 2ad99ae55e83c0249832056ea6abe39a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -284,33 +301,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!1 &5457531160625361507
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6639246364155760368}
-  m_Layer: 0
-  m_Name: UIPosition
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6639246364155760368
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5457531160625361507}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2254535982436329201}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
