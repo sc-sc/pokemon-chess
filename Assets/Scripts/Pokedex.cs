@@ -52,7 +52,9 @@ public enum PokemonName
     콘치,
     야돈,
     야도란,
-    야돈킹
+    야돈킹,
+
+    프테라
 }
 
 public enum ItemName
