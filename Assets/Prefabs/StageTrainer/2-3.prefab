@@ -132,7 +132,7 @@ MonoBehaviour:
   - {fileID: 2254535982436329198, guid: 56c1a4b5bb087f345b490c75516f1f61, type: 3}
   - {fileID: 2254535982436329198, guid: 588709f14e504844aaccabc4451d3a9f, type: 3}
   positions:
-  - {x: 1, y: 3}
-  - {x: 3, y: 1}
-  - {x: 4, y: 4}
+  - {x: 1, y: 2}
+  - {x: 2, y: 0}
+  - {x: 4, y: 3}
   stageType: 1

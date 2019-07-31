@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2254535982436329201}
   - component: {fileID: 2254535982436329200}
   - component: {fileID: 1156371189106197313}
+  - component: {fileID: -8220879008661996410}
   m_Layer: 0
   m_Name: "1#129\uC789\uC5B4\uD0B92"
   m_TagString: Pokemon
@@ -169,6 +170,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-8220879008661996410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2254535982436329198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 937f6bdfce06d9c40ae122c7e10f8381, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2254535982534229303
 GameObject:
   m_ObjectHideFlags: 0

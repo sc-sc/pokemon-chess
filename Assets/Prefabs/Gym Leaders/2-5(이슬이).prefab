@@ -131,10 +131,10 @@ MonoBehaviour:
   - {fileID: 2254535982436329198, guid: 809d93fc4b6bcd64ca282e9469b45531, type: 3}
   - {fileID: 2254535982436329198, guid: 052dd12ddcf495c44acb89e72599b27f, type: 3}
   - {fileID: 2254535982436329198, guid: 809d93fc4b6bcd64ca282e9469b45531, type: 3}
-  - {fileID: 2254535982436329198, guid: 052dd12ddcf495c44acb89e72599b27f, type: 3}
+  - {fileID: 2254535982436329198, guid: 809d93fc4b6bcd64ca282e9469b45531, type: 3}
   positions:
   - {x: 2, y: 2}
   - {x: 2, y: 1}
   - {x: 1, y: 2}
-  - {x: 1, y: 1}
+  - {x: 3, y: 1}
   stageType: 2

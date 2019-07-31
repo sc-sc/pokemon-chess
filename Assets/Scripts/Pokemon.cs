@@ -89,7 +89,7 @@ public class Pokemon : MonoBehaviour
     public GameObject evolution;
     public int evolutionPhase = 1;
     internal SpriteRenderer spriteRenderer;
-    private Animator animator;
+    internal Animator animator;
     public Transform uiTransform;
     public PokemonType[] types = new PokemonType[2];
 
@@ -104,8 +104,6 @@ public class Pokemon : MonoBehaviour
     private IEnumerator attackCoroutine;
 
     private Skill skill;
-
-    private Vector3 originalPosition;
 
     private AudioSource audioSource;
     private AudioClip hitSound;
@@ -222,12 +220,15 @@ public class Pokemon : MonoBehaviour
 
     private void StopAttack()
     {
-        StopCoroutine(attackCoroutine);
+        if (attackCoroutine != null)
+            StopCoroutine(attackCoroutine);
         StartCoroutine(BackToOriginalPosition(0.1f));
     }
     
     private IEnumerator BackToOriginalPosition(float time)
     {
+        Vector3 originalPosition = battleCallbackHandler.GetPosition(this);
+
         Vector3 startPosition = transform.position;
         for (float timer = 0; timer < time; timer += Time.deltaTime)
         {
@@ -247,7 +248,6 @@ public class Pokemon : MonoBehaviour
     private IEnumerator AttackAction()
     {
         isOnAttack = true;
-        originalPosition = battleCallbackHandler.GetPosition(this);
         if (attackTarget.transform.position.x > transform.position.x)
             spriteRenderer.flipX = true;
         else
@@ -272,9 +272,10 @@ public class Pokemon : MonoBehaviour
 
         if (range == 1)
         {
+            Vector3 startPosition = transform.position;
             for (float timer = 0f; timer < 0.2f; timer += Time.deltaTime)
             {
-                transform.position = Vector3.Lerp(originalPosition, attackTarget.transform.position, timer / 0.2f);
+                transform.position = Vector3.Lerp(startPosition, attackTarget.transform.position, timer / 0.2f);
                 yield return null;
             }
 
@@ -423,6 +424,30 @@ public class Pokemon : MonoBehaviour
                 transform.position = Vector2.Lerp(startPosition, position, time * 4);
         }
     }
+
+    public void Jump(float time)
+    {
+        StartCoroutine(JumpAction(time));
+    }
+
+    private IEnumerator JumpAction(float time)
+    {
+        float airTime = time / 2f;
+
+        for (float timer = 0; timer < time; timer += Time.deltaTime) {
+            if (timer < airTime)
+            {
+                spriteRenderer.transform.position += new Vector3(0, Time.deltaTime / airTime);
+            } else
+            {
+                spriteRenderer.transform.position -= new Vector3(0, Time.deltaTime / airTime);
+            }
+            yield return null;
+        }
+
+        spriteRenderer.transform.localPosition = Vector3.zero;
+    }
+
     public void Reset()
     {
         UnsetStatus();
