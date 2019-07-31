@@ -67,7 +67,7 @@ MonoBehaviour:
   evolutionPhase: 1
   uiTransform: {fileID: 5896723609196797908}
   types: 020000000a000000
-  range: 1
+  range: 2
   attackTarget: {fileID: 0}
   isAlive: 1
   battleCallbackHandler: {fileID: 0}
