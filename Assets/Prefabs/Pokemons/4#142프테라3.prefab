@@ -192,8 +192,8 @@ MonoBehaviour:
   baseSpecialAttack: 60
   baseSpecialDefense: 75
   baseSpeed: 130
-  ppFull: 50
-  initialPp: 30
+  ppFull: 30
+  initialPp: 0
   _currentPp: 0
   evolution: {fileID: 0}
   evolutionPhase: 3

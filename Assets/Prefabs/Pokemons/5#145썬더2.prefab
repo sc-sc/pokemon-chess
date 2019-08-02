@@ -101,7 +101,7 @@ SpriteRenderer:
   m_SortingLayerID: 1571698295
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 8752416804565434216, guid: 48c9d44cff6bfc54b9de7ba0ea5a61fb,
+  m_Sprite: {fileID: -8284121058951687459, guid: 7bba070ba9db4704cb87171a98167921,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -123,7 +123,7 @@ Animator:
   m_GameObject: {fileID: 7236754984932266712}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4ecc25e996976f1449645f56cc74da2f, type: 2}
+  m_Controller: {fileID: 9100000, guid: 14cd5e39773c105429a0ba7210ac8abc, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -145,7 +145,7 @@ GameObject:
   - component: {fileID: -3027113028114752858}
   - component: {fileID: -6729200373169311121}
   m_Layer: 0
-  m_Name: "4#142\uD504\uD14C\uB77C2"
+  m_Name: "5#145\uC36C\uB3542"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -180,27 +180,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a9a793453a620142940e4e02c602596, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pokemonName: 35
+  pokemonName: 37
   currentState: 0
   trainer: {fileID: 0}
-  cost: 4
-  baseHp: 80
+  cost: 5
+  baseHp: 90
   items: []
   _currentHp: 0
-  baseAttack: 105
-  baseDefense: 65
-  baseSpecialAttack: 60
-  baseSpecialDefense: 75
-  baseSpeed: 130
+  baseAttack: 90
+  baseDefense: 85
+  baseSpecialAttack: 125
+  baseSpecialDefense: 90
+  baseSpeed: 100
   ppFull: 30
   initialPp: 0
   _currentPp: 0
-  evolution: {fileID: 7236754985802801847, guid: e299054c0c2183a4092f1446fdceee53,
+  evolution: {fileID: 7236754985802801847, guid: 10a07fc3c1a8dea4c906c05d5e7948d1,
     type: 3}
   evolutionPhase: 2
   uiTransform: {fileID: 3719686202730811933}
-  types: 0c00000009000000
-  range: 1
+  types: 0400000009000000
+  range: 2
   attackTarget: {fileID: 0}
   isAlive: 1
   battleCallbackHandler: {fileID: 0}

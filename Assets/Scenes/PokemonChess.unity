@@ -451,9 +451,9 @@ MonoBehaviour:
   - {fileID: 1959195877}
   salePokemonPrefabs:
   - prefabs:
-    - {fileID: 2254535982436329198, guid: f0f8d9e903318bc4b849aa9107a7af4a, type: 3}
     - {fileID: 2254535982436329198, guid: 9caec85c238b732449d92843d1a8bb37, type: 3}
     - {fileID: 2254535982436329198, guid: 555a351a00f7ad04d986fe7edc22f879, type: 3}
+    - {fileID: 2254535982436329198, guid: f0f8d9e903318bc4b849aa9107a7af4a, type: 3}
   - prefabs:
     - {fileID: 7236754985802801847, guid: 75583b23108b2c449b97c5838d6f7656, type: 3}
     - {fileID: 2254535982436329198, guid: 2e8757d0ab395c8468b088ede0b9ebbf, type: 3}
@@ -467,7 +467,10 @@ MonoBehaviour:
     - {fileID: 7236754985802801847, guid: 424f6f3f98e3876419193f8357a4c48f, type: 3}
     - {fileID: 7236754985802801847, guid: 8bcf136ecf441e34bbbc6dc8fce4c40a, type: 3}
   - prefabs:
+    - {fileID: 7236754985802801847, guid: cef43fde2c299034996d552aeedb0c12, type: 3}
+    - {fileID: 7236754985802801847, guid: 2b67d298758074240a7282300da3a87f, type: 3}
     - {fileID: 7236754985802801847, guid: 17b5cdd10c79f1b4aa71e451268c777d, type: 3}
+    - {fileID: 7236754985802801847, guid: 4a88dfccb2d6d834980118b7d84050f4, type: 3}
   pokemonInSafariPrefab: {fileID: 588161285509603786, guid: a0606fdeb4ee1904b9ad8ab58b505e69,
     type: 3}
   pokemonInformation: {fileID: 1911512654}

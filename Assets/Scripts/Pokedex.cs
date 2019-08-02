@@ -54,7 +54,11 @@ public enum PokemonName
     야도란,
     야돈킹,
 
-    프테라
+    프테라,
+
+    파이어,
+    썬더,
+    프리져
 }
 
 public enum ItemName
