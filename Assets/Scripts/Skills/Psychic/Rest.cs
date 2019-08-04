@@ -20,7 +20,8 @@ public class Rest : Skill
         yield return new WaitForSeconds(2f);
 
         animator.speed *= 2f;
-        attacker.SetStatus(PokemonStatus.Sleep, 6f);
+        attacker.UnsetStatus();
+        attacker.SetStatus(PokemonStatus.Sleep, 4f);
         attacker.currentHp = attacker.actualHp;
     }
 }

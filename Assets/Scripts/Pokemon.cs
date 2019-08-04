@@ -471,12 +471,14 @@ public class Pokemon : MonoBehaviour
     }
     public void SetStatus(PokemonStatus status, float durationTime)
     {
+        if (currentStatus != PokemonStatus.None)
+            return;
+
         Debug.Log(status + "에 걸림");
 
         if (status == PokemonStatus.Paralysis && HasType(PokemonType.Electric))
             return;
 
-        UnsetStatus();
         currentStatus = status;
         statusDuraitionTime = durationTime;
 
