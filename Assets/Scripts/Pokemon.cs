@@ -124,6 +124,8 @@ public class Pokemon : MonoBehaviour
 
     private Material paintWhite, defulatMaterial;
 
+    private IEnumerator statusCoroutine;
+
     void Awake()
     {
         sleepEffectPrefab = Resources.Load("Prefabs/SleepEffect") as GameObject;
@@ -476,12 +478,6 @@ public class Pokemon : MonoBehaviour
 
         Debug.Log(status + "에 걸림");
 
-        if (status == PokemonStatus.Paralysis && HasType(PokemonType.Electric))
-            return;
-
-        currentStatus = status;
-        statusDuraitionTime = durationTime;
-
         switch (status)
         {
             case PokemonStatus.Sleep:
@@ -491,11 +487,32 @@ public class Pokemon : MonoBehaviour
                 break;
 
             case PokemonStatus.Paralysis:
-                spriteRenderer.color = new Color(1f, 1f, 0f);
+                if (HasType(PokemonType.Electric))
+                    return;
+
                 animator.speed *= 0.5f;
                 StartCoroutine(ParalysisEffect());
                 break;
+
+            case PokemonStatus.Burn:
+                if (HasType(PokemonType.Fire))
+                    return;
+                statusCoroutine = BurnCoroutine();
+                StartCoroutine(statusCoroutine);
+                break;
         }
+
+        currentStatus = status;
+        statusDuraitionTime = durationTime;
+    }
+
+    private IEnumerator BurnCoroutine()
+    {
+        yield return new WaitForSeconds(1f);
+        currentHp -= actualHp / 16;
+
+        statusCoroutine = BurnCoroutine();
+        StartCoroutine(statusCoroutine);
     }
 
     public bool HasType(PokemonType type)
@@ -524,6 +541,10 @@ public class Pokemon : MonoBehaviour
                 break;
         }
 
+        if (statusCoroutine != null)
+            StopCoroutine(statusCoroutine);
+        statusCoroutine = null;
+
         currentStatus = PokemonStatus.None;
         statusTime = 0f;
     }
@@ -538,7 +559,11 @@ public class Pokemon : MonoBehaviour
         switch (currentStatus)
         {
             case PokemonStatus.Paralysis:
-                spriteRenderer.color *= new Color(1f, 1f, 0f);
+                spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, 0f);
+                break;
+
+            case PokemonStatus.Burn:
+                spriteRenderer.color = new Color(spriteRenderer.color.r, 0.5f, 0f);
                 break;
         }
 
