@@ -84,4 +84,14 @@ public class EventTimeManager : MonoBehaviour
     {
         time = 0f;
     }
+
+    public void Pause()
+    {
+        Time.timeScale = 0;
+    }
+
+    public void Play(float timeScale)
+    {
+        Time.timeScale = timeScale;
+    }
 }

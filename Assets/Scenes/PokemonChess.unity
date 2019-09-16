@@ -169,6 +169,9 @@ MonoBehaviour:
   hp: 100
   currentHp: 100
   money: 2
+  status: 0
+  count_win: 0
+  count_lose: 0
   exp_expect: 2
   exp_present: 0
   waitingPokemons: []
@@ -448,16 +451,26 @@ MonoBehaviour:
   - {fileID: 1959195877}
   salePokemonPrefabs:
   - prefabs:
-    - {fileID: 2254535982436329198, guid: f0f8d9e903318bc4b849aa9107a7af4a, type: 3}
     - {fileID: 2254535982436329198, guid: 9caec85c238b732449d92843d1a8bb37, type: 3}
+    - {fileID: 2254535982436329198, guid: 555a351a00f7ad04d986fe7edc22f879, type: 3}
+    - {fileID: 2254535982436329198, guid: f0f8d9e903318bc4b849aa9107a7af4a, type: 3}
   - prefabs:
     - {fileID: 7236754985802801847, guid: 75583b23108b2c449b97c5838d6f7656, type: 3}
+    - {fileID: 2254535982436329198, guid: 2e8757d0ab395c8468b088ede0b9ebbf, type: 3}
+    - {fileID: 2254535982436329198, guid: 146b8bf91aa6c70499cf4cf7890cc4c1, type: 3}
   - prefabs:
+    - {fileID: 6081528462114302055, guid: d8133645810dd4240a9e7847663fd9e2, type: 3}
     - {fileID: 6081528462114302055, guid: 379c7d2342146a2439c9adfdd361ecd1, type: 3}
+    - {fileID: 6081528462114302055, guid: 6b0df7552ef991e40a27927dce7fe660, type: 3}
+    - {fileID: 6081528462114302055, guid: 47dcf07085adad14bbf4057e3aca3632, type: 3}
   - prefabs:
+    - {fileID: 7236754985802801847, guid: 424f6f3f98e3876419193f8357a4c48f, type: 3}
     - {fileID: 7236754985802801847, guid: 8bcf136ecf441e34bbbc6dc8fce4c40a, type: 3}
   - prefabs:
+    - {fileID: 7236754985802801847, guid: cef43fde2c299034996d552aeedb0c12, type: 3}
+    - {fileID: 7236754985802801847, guid: 2b67d298758074240a7282300da3a87f, type: 3}
     - {fileID: 7236754985802801847, guid: 17b5cdd10c79f1b4aa71e451268c777d, type: 3}
+    - {fileID: 7236754985802801847, guid: 4a88dfccb2d6d834980118b7d84050f4, type: 3}
   pokemonInSafariPrefab: {fileID: 588161285509603786, guid: a0606fdeb4ee1904b9ad8ab58b505e69,
     type: 3}
   pokemonInformation: {fileID: 1911512654}
@@ -1327,6 +1340,9 @@ MonoBehaviour:
   hp: 100
   currentHp: 100
   money: 2
+  status: 0
+  count_win: 0
+  count_lose: 0
   exp_expect: 2
   exp_present: 0
   waitingPokemons: []
@@ -1412,6 +1428,85 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 1491995793}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 610199430}
+  m_CullTransparentMesh: 0
+--- !u!1 &649714747
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 649714748}
+  - component: {fileID: 649714750}
+  - component: {fileID: 649714749}
+  m_Layer: 5
+  m_Name: PlayerCount
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &649714748
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649714747}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 831187762}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 785, y: -20}
+  m_SizeDelta: {x: 250, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &649714749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649714747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.9607843, g: 0, b: 0.84052545, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 35
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Count
+--- !u!222 &649714750
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649714747}
   m_CullTransparentMesh: 0
 --- !u!1 &663629315
 GameObject:
@@ -1774,6 +1869,7 @@ RectTransform:
   - {fileID: 610199431}
   - {fileID: 474926521}
   - {fileID: 1376172248}
+  - {fileID: 649714748}
   m_Father: {fileID: 286255587}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1800,6 +1896,7 @@ MonoBehaviour:
   playerMoney: {fileID: 474926522}
   playerExp: {fileID: 1376172249}
   trainer: {fileID: 588119698}
+  playerCount: {fileID: 649714749}
 --- !u!222 &831187765
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2015,10 +2112,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 28
+    m_FontSize: 23
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -2253,7 +2350,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 20
+    m_FontSize: 23
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -3283,6 +3380,9 @@ MonoBehaviour:
   hp: 100
   currentHp: 100
   money: 2
+  status: 0
+  count_win: 0
+  count_lose: 0
   exp_expect: 2
   exp_present: 0
   waitingPokemons: []
@@ -4814,13 +4914,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1765999730}
-        m_MethodName: set_enabled
-        m_Mode: 6
+        m_MethodName: Play
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
+          m_FloatArgument: 1
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
@@ -5201,17 +5301,45 @@ MonoBehaviour:
   - mainStage: 1
     subStages:
     - {fileID: 1782522522, guid: 37aa199dff49cc448bf41b642460b1ba, type: 3}
+    - {fileID: 1782522522, guid: 37aa199dff49cc448bf41b642460b1ba, type: 3}
     - {fileID: 1782522522, guid: f63a10be876ff4a43b68a853346f3711, type: 3}
-    - {fileID: 1782522522, guid: 2bb7aebc34d4ec043b4b9e27cdc27852, type: 3}
-    - {fileID: 1782522522, guid: 2bb7aebc34d4ec043b4b9e27cdc27852, type: 3}
+    - {fileID: 1782522522, guid: f63a10be876ff4a43b68a853346f3711, type: 3}
     - {fileID: 1782522522, guid: 2bb7aebc34d4ec043b4b9e27cdc27852, type: 3}
   - mainStage: 2
     subStages:
-    - {fileID: 1782522522, guid: 37aa199dff49cc448bf41b642460b1ba, type: 3}
-    - {fileID: 1782522522, guid: f63a10be876ff4a43b68a853346f3711, type: 3}
+    - {fileID: 1782522522, guid: 47bf9e05b90d823439e8f1addb47301d, type: 3}
+    - {fileID: 1782522522, guid: 47bf9e05b90d823439e8f1addb47301d, type: 3}
+    - {fileID: 1782522522, guid: 34872e2605c8793428e7400b54c1f499, type: 3}
+    - {fileID: 1782522522, guid: 34872e2605c8793428e7400b54c1f499, type: 3}
+    - {fileID: 1782522522, guid: 3e973152cd4eb3b49bd3b8a414dd26a5, type: 3}
+  - mainStage: 3
+    subStages:
+    - {fileID: 1782522522, guid: a2d972a75a422f24ea43891e3ef65332, type: 3}
+    - {fileID: 1782522522, guid: a2d972a75a422f24ea43891e3ef65332, type: 3}
+    - {fileID: 1782522522, guid: 88b14db5e5cc87f42b4f959d164ec1aa, type: 3}
+    - {fileID: 1782522522, guid: 88b14db5e5cc87f42b4f959d164ec1aa, type: 3}
+    - {fileID: 1782522522, guid: 689cefdc030b93748a3b2ba079fca725, type: 3}
+  - mainStage: 4
+    subStages:
+    - {fileID: 1782522522, guid: 3e973152cd4eb3b49bd3b8a414dd26a5, type: 3}
     - {fileID: 1782522522, guid: 2bb7aebc34d4ec043b4b9e27cdc27852, type: 3}
+    - {fileID: 1782522522, guid: 3e973152cd4eb3b49bd3b8a414dd26a5, type: 3}
     - {fileID: 1782522522, guid: 2bb7aebc34d4ec043b4b9e27cdc27852, type: 3}
+    - {fileID: 1782522522, guid: 3e973152cd4eb3b49bd3b8a414dd26a5, type: 3}
+  - mainStage: 5
+    subStages:
+    - {fileID: 1782522522, guid: 3e973152cd4eb3b49bd3b8a414dd26a5, type: 3}
+    - {fileID: 1782522522, guid: 3e973152cd4eb3b49bd3b8a414dd26a5, type: 3}
+    - {fileID: 1782522522, guid: 3e973152cd4eb3b49bd3b8a414dd26a5, type: 3}
+    - {fileID: 1782522522, guid: 3e973152cd4eb3b49bd3b8a414dd26a5, type: 3}
+    - {fileID: 1782522522, guid: 3e973152cd4eb3b49bd3b8a414dd26a5, type: 3}
+  - mainStage: 6
+    subStages:
+    - {fileID: 1782522522, guid: 3e973152cd4eb3b49bd3b8a414dd26a5, type: 3}
+    - {fileID: 1782522522, guid: 3e973152cd4eb3b49bd3b8a414dd26a5, type: 3}
     - {fileID: 1782522522, guid: 2bb7aebc34d4ec043b4b9e27cdc27852, type: 3}
+    - {fileID: 1782522522, guid: 3e973152cd4eb3b49bd3b8a414dd26a5, type: 3}
+    - {fileID: 1782522522, guid: 3e973152cd4eb3b49bd3b8a414dd26a5, type: 3}
 --- !u!4 &1585233289
 Transform:
   m_ObjectHideFlags: 0
@@ -5275,6 +5403,9 @@ MonoBehaviour:
   hp: 100
   currentHp: 100
   money: 2
+  status: 0
+  count_win: 0
+  count_lose: 0
   exp_expect: 2
   exp_present: 0
   waitingPokemons: []
@@ -5574,8 +5705,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1765999730}
-        m_MethodName: set_enabled
-        m_Mode: 6
+        m_MethodName: Pause
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6263,7 +6394,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 10, y: 0}
   m_SizeDelta: {x: 900, y: 100}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &2070875407
@@ -6370,6 +6501,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2098776182
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2098776184}
+  - component: {fileID: 2098776183}
+  m_Layer: 0
+  m_Name: SoundFactory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2098776183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2098776182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a8ed058dd4a304c91bcb7afc7871c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitSound: {fileID: 8300000, guid: 778b8b2b92685d44e8aa46a064e4b21c, type: 3}
+  paralysisSound: {fileID: 8300000, guid: 07b0429097ebaa1469e59a36c7ec07d9, type: 3}
+--- !u!4 &2098776184
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2098776182}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3670578478122945604
 GameObject:
   m_ObjectHideFlags: 0
@@ -6419,6 +6595,9 @@ MonoBehaviour:
   hp: 100
   currentHp: 100
   money: 2
+  status: 0
+  count_win: 0
+  count_lose: 0
   exp_expect: 2
   exp_present: 0
   waitingPokemons: []

@@ -47,19 +47,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a9a793453a620142940e4e02c602596, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pokemonName: 10
   currentState: 0
   trainer: {fileID: 0}
   cost: 1
   baseHp: 50
-  ultimate_skill: 
+  items: []
   _currentHp: 0
   baseAttack: 20
   baseDefense: 55
-  baseSpecialAttack: 100
-  baseSpecialDefense: 100
+  baseSpecialAttack: 25
+  baseSpecialDefense: 25
   baseSpeed: 30
   ppFull: 30
-  initialPp: 10
+  initialPp: 0
   _currentPp: 0
   evolution: {fileID: 2254535982436329198, guid: 70ec12185a038604784ac0b3a995efbe,
     type: 3}
@@ -70,6 +71,9 @@ MonoBehaviour:
   attackTarget: {fileID: 0}
   isAlive: 1
   battleCallbackHandler: {fileID: 0}
+  currentStatus: 0
+  statusDuraitionTime: 0
+  abilities: 
 --- !u!114 &7265016293130002624
 MonoBehaviour:
   m_ObjectHideFlags: 0

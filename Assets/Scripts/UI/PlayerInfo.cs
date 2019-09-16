@@ -10,6 +10,7 @@ public class PlayerInfo : MonoBehaviour
     public Text playerMoney;
     public Text playerExp;
     public Trainer trainer;
+    public Text playerCount;
 
     void Start()
     {
@@ -27,6 +28,7 @@ public class PlayerInfo : MonoBehaviour
         playerLevel.text = "Lv: " + trainer.level;
         playerHp.text = "Hp: " + trainer.currentHp;
         playerMoney.text = "Money: " + trainer.money;
+        playerCount.text = "w/l: " + trainer.count_win + "/" + trainer.count_lose;
         playerExp.text = "Exp: " + trainer.exp_present + "/" + trainer.exp_expect;
         //player_Bug.text = "Bug: " + trainer.Bug;
         //player_Water.text = "Water: " + trainer.Water;

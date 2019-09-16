@@ -8,6 +8,11 @@ public enum PokemonType
     Normal, Fire, Water, Grass, Electric, Ice, Fight, Poison, Ground, Fly, Psychic, Bug, Rock, Ghost, Dragon, Dark, Steel, Fairy
 }
 
+public enum PokemonStatus
+{
+    None, Poison, Freeze, Paralysis, Toxic, Sleep, Burn
+}
+
 public enum PokemonState
 {
     Idle, Attack, Move, Skill
@@ -20,6 +25,8 @@ public enum PokemonStat
 
 public class Pokemon : MonoBehaviour
 {
+    [SerializeField] public PokemonName pokemonName;
+
     TransformAccessArray transforms;
     JobHandle moveJobHandle;
 
@@ -29,6 +36,9 @@ public class Pokemon : MonoBehaviour
     public Trainer trainer;
     public int cost;
     public int baseHp = 100;
+
+    [SerializeField]
+    private List<Item> items = new List<Item>();
     public int actualHp
     {
         get
@@ -79,7 +89,7 @@ public class Pokemon : MonoBehaviour
     public GameObject evolution;
     public int evolutionPhase = 1;
     internal SpriteRenderer spriteRenderer;
-    private Animator animator;
+    internal Animator animator;
     public Transform uiTransform;
     public PokemonType[] types = new PokemonType[2];
 
@@ -87,7 +97,7 @@ public class Pokemon : MonoBehaviour
     public Pokemon attackTarget;
     private bool isOnAttack = false;
 
-    public bool isAlive = true;
+    public bool isAlive = false;
 
     public BattleCallbackHandler battleCallbackHandler;
 
@@ -95,10 +105,37 @@ public class Pokemon : MonoBehaviour
 
     private Skill skill;
 
+    private AudioSource audioSource;
+    private AudioClip hitSound;
+
+    [SerializeField]
+    private PokemonStatus currentStatus = PokemonStatus.None;
+    [SerializeField]
+    private float statusDuraitionTime = 0;
+    private float statusTime = 0;
+
+    private GameObject sleepEffectPrefab;
+    private GameObject sleepEffect;
+
+    [SerializeField]
+    private List<Ability> abilities;
+
+    private AudioClip paralysisSound;
+
+    private Material paintWhite, defulatMaterial;
+
     void Awake()
     {
+        sleepEffectPrefab = Resources.Load("Prefabs/SleepEffect") as GameObject;
+        isAlive = false;
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         animator = GetComponentInChildren<Animator>();
+        audioSource = GetComponent<AudioSource>();
+
+        SoundFactory soundFactory = FindObjectOfType<SoundFactory>();
+        hitSound = soundFactory.hitSound;
+        paralysisSound = soundFactory.paralysisSound;
+
         pokemonUIManager = FindObjectOfType<PokemonUIManager>();
         transforms = new TransformAccessArray(2, -1);
         transforms.Add(transform);
@@ -106,6 +143,8 @@ public class Pokemon : MonoBehaviour
 
         initRank();
         skill = GetComponent<Skill>();
+        paintWhite = Resources.Load("Materials/PaintWhite") as Material;
+        defulatMaterial = spriteRenderer.material;
     }
 
     // Update is called once per frame
@@ -118,7 +157,7 @@ public class Pokemon : MonoBehaviour
             case PokemonState.Attack:
                 if (!isOnAttack)
                 {
-                    if (!attackTarget.isAlive || !IsAttackTargetInRange())
+                    if (!IsAttackTargetInRange())
                         currentState = PokemonState.Move;
                     else
                     {
@@ -130,6 +169,7 @@ public class Pokemon : MonoBehaviour
                 break;
 
             case PokemonState.Move:
+                StartAnimation();
                 if (attackTarget != null && attackTarget.isAlive)
                 {
                     if (IsAttackTargetInRange())
@@ -141,7 +181,7 @@ public class Pokemon : MonoBehaviour
             default:
                 break;
         }
-
+        
         if ((currentState == PokemonState.Attack || currentState == PokemonState.Move) 
             && currentPp >= ppFull)
         {
@@ -150,15 +190,55 @@ public class Pokemon : MonoBehaviour
             if (skill != null)
             {
                 isOnAttack = false;
-                StopCoroutine(attackCoroutine);
-                currentState = PokemonState.Skill;
-                Pokemon skillTarget = GetNearstEnemyPokemon();
+                StopAttack();
+                if (!CheckParalysis())
+                {
+                    currentState = PokemonState.Skill;
+                    Pokemon skillTarget = GetNearstEnemyPokemon();
 
-                skill.UseSkill(this, skillTarget);
+                    skill.UseSkill(this, skillTarget);
+                }
             }
         }
+
+        if (isAlive)
+        {
+            UpdateStatus();
+        }
+    }
+
+    public bool CheckParalysis()
+    {
+        if (currentStatus == PokemonStatus.Paralysis && Random.Range(0f, 1f) < 0.25f)
+        {
+            StartCoroutine(ParalysisEffect());
+            return true;
+        }
+
+        return false;
+    }
+
+    private void StopAttack()
+    {
+        if (attackCoroutine != null)
+            StopCoroutine(attackCoroutine);
+        StartCoroutine(BackToOriginalPosition(0.1f));
     }
     
+    private IEnumerator BackToOriginalPosition(float time)
+    {
+        Vector3 originalPosition = battleCallbackHandler.GetPosition(this);
+
+        Vector3 startPosition = transform.position;
+        for (float timer = 0; timer < time; timer += Time.deltaTime)
+        {
+            transform.position = Vector3.Lerp(startPosition, originalPosition, timer / time);
+            yield return null;
+        }
+
+        transform.position = originalPosition;
+    }
+
     void OnDestroy()
     {
         moveJobHandle.Complete();
@@ -173,24 +253,69 @@ public class Pokemon : MonoBehaviour
         else
             spriteRenderer.flipX = false;
 
-        int attackFrame = 10 + (int) ((100f / DamageCalculator.GetActualStat(baseSpeed, PokemonStat.Speed, this)) * 60f);
-        for (int frame = 0; frame < attackFrame; frame++)
+        float attackTime = 0.4f + 100f / DamageCalculator.GetActualStat(baseSpeed, PokemonStat.Speed, this);
+
+
+        if (CheckParalysis())
         {
-            if (!attackTarget.isAlive || !IsAttackTargetInRange())
-            {
-                isOnAttack = false;
-                yield break;
-            }
-            yield return null;
+            yield return new WaitForSeconds(attackTime);
+            isOnAttack = false;
+            yield break;
         }
 
-        int damage = DamageCalculator.CalculateDamage(this, attackTarget);
+        StartCoroutine(CheckCanAttack());
+
+        yield return new WaitForSeconds(attackTime - 0.6f);
+
+        StopAnimation();
+        yield return new WaitForSeconds(0.2f);
+
+        if (range == 1)
+        {
+            Vector3 startPosition = transform.position;
+            for (float timer = 0f; timer < 0.2f; timer += Time.deltaTime)
+            {
+                transform.position = Vector3.Lerp(startPosition, attackTarget.transform.position, timer / 0.2f);
+                yield return null;
+            }
+
+            audioSource.PlayOneShot(hitSound);
+            StartCoroutine(BackToOriginalPosition(0.2f));
+        }
+        else
+        {
+            yield return new WaitForSeconds(0.4f);
+        }
+
+        int damage = DamageCalculator.CalculateBasicAttackDamage(this, attackTarget);
         currentPp += 5;
-        attackTarget.Hit(damage, this);
+        attackTarget.Hit(damage, this, AttackType.Physical);
         isOnAttack = false;
+
+        StartAnimation();
     }
 
-    public void Hit(int damage, Pokemon by)
+    private IEnumerator CheckCanAttack()
+    {
+        while (isOnAttack)
+        {
+            if (!IsAttackTargetInRange())
+            {
+                isOnAttack = false;
+                StopAttack();
+                yield break;
+            }
+
+            yield return null;
+        }
+    }
+
+    private List<Ability> GetAbilities()
+    {
+        return abilities;
+    }
+
+    public void Hit(int damage, Pokemon by, AttackType attackType = AttackType.Speical)
     {
         if (isAlive)
         {
@@ -200,17 +325,30 @@ public class Pokemon : MonoBehaviour
 
             if (currentHp <= 0)
             {
+                StopAnimation();
                 currentState = PokemonState.Idle;
                 StopAllCoroutines();
                 isAlive = false;
-                battleCallbackHandler.PokemonDead(this);
                 if (skill != null)
                 {
                     skill.StopAllCoroutines();
                 }
+                battleCallbackHandler.PokemonDead(this);
             }
 
             StartCoroutine(HitAction());
+
+            CheckHitSideEffect(by, attackType);
+        }
+    }
+    private void CheckHitSideEffect(Pokemon attackPokemon, AttackType attackType)
+    {
+        if (attackType == AttackType.Physical && abilities.Contains(Ability.정전기))
+        {
+            if (Random.Range(0f, 1f) < 0.3f)
+            {
+                attackPokemon.SetStatus(PokemonStatus.Paralysis, 6f);
+            }
         }
     }
     private IEnumerator HitAction()
@@ -226,17 +364,16 @@ public class Pokemon : MonoBehaviour
             pokemonUIManager.RemovePokemonUI(this);
             gameObject.SetActive(false);
         }
+
     }
     public int GetTotalCost()
     {
         return cost * (int ) Mathf.Pow(3, evolutionPhase - 1);
     }
 
-    private bool IsAttackTargetInRange()
+    public bool IsAttackTargetInRange()
     {
-        Vector2 distance = attackTarget.transform.position - transform.position;
-
-        return battleCallbackHandler.IsAttackTargetInRange(this);
+        return attackTarget.isAlive && battleCallbackHandler.IsAttackTargetInRange(this);
     }
 
     public void MoveTo(Vector3 position)
@@ -287,21 +424,125 @@ public class Pokemon : MonoBehaviour
                 transform.position = Vector2.Lerp(startPosition, position, time * 4);
         }
     }
+
+    public void Jump(float time)
+    {
+        StartCoroutine(JumpAction(time));
+    }
+
+    private IEnumerator JumpAction(float time)
+    {
+        float airTime = time / 2f;
+
+        for (float timer = 0; timer < time; timer += Time.deltaTime) {
+            if (timer < airTime)
+            {
+                spriteRenderer.transform.position += new Vector3(0, Time.deltaTime / airTime);
+            } else
+            {
+                spriteRenderer.transform.position -= new Vector3(0, Time.deltaTime / airTime);
+            }
+            yield return null;
+        }
+
+        spriteRenderer.transform.localPosition = Vector3.zero;
+    }
+
     public void Reset()
     {
+        UnsetStatus();
+        StartAnimation();
         moveJobHandle.Complete();
         isOnAttack = false;
         currentState = PokemonState.Idle;
         StopAllCoroutines();
+        if (skill != null)
+            skill.StopAllCoroutines();
         pokemonUIManager.AddPokemonUI(this);
         currentHp = actualHp;
         currentPp = initialPp;
-        isAlive = true;
+        isAlive = false;
         gameObject.SetActive(true);
         spriteRenderer.color = new Color(1, 1, 1);
         spriteRenderer.flipX = false;
         initRank();
         animator.speed = 1f;
+        spriteRenderer.material = defulatMaterial;
+    }
+    public void SetStatus(PokemonStatus status, float durationTime)
+    {
+        Debug.Log(status + "에 걸림");
+
+        if (status == PokemonStatus.Paralysis && HasType(PokemonType.Electric))
+            return;
+
+        UnsetStatus();
+        currentStatus = status;
+        statusDuraitionTime = durationTime;
+
+        switch (status)
+        {
+            case PokemonStatus.Sleep:
+                StopAnimation();
+                currentState = PokemonState.Idle;
+                sleepEffect = Instantiate(sleepEffectPrefab, uiTransform);
+                break;
+
+            case PokemonStatus.Paralysis:
+                spriteRenderer.color = new Color(1f, 1f, 0f);
+                animator.speed *= 0.5f;
+                StartCoroutine(ParalysisEffect());
+                break;
+        }
+    }
+
+    public bool HasType(PokemonType type)
+    {
+        foreach (PokemonType pokemonType in types)
+        {
+            if (type == pokemonType)
+                return true;
+        }
+
+        return false;
+    }
+    public void UnsetStatus()
+    {
+        switch (currentStatus)
+        {
+            case PokemonStatus.Sleep:
+                StartAnimation();
+                currentState = PokemonState.Move;
+                Destroy(sleepEffect);
+                break;
+
+            case PokemonStatus.Paralysis:
+                spriteRenderer.color = new Color(1f, 1f, 1f);
+                animator.speed *= 2f;
+                break;
+        }
+
+        currentStatus = PokemonStatus.None;
+        statusTime = 0f;
+    }
+
+    public PokemonStatus GetCurrentStatus()
+    {
+        return currentStatus;
+    }
+
+    private void UpdateStatus()
+    {
+        switch (currentStatus)
+        {
+            case PokemonStatus.Paralysis:
+                spriteRenderer.color *= new Color(1f, 1f, 0f);
+                break;
+        }
+
+        statusTime += Time.deltaTime;
+        if (statusTime >= statusDuraitionTime)
+            UnsetStatus();
     }
 
     private void initRank()
@@ -323,16 +564,40 @@ public class Pokemon : MonoBehaviour
 
     public void RankUp(PokemonStat statType, int amount)
     {
-        statRank[statType] += amount;
-
         if (statType == PokemonStat.Speed)
         {
+            animator.speed /= DamageCalculator.StatRank(PokemonStat.Speed, this);
+            statRank[statType] += amount;
             animator.speed *= DamageCalculator.StatRank(PokemonStat.Speed, this);
+        }
+        else
+        {
+            statRank[statType] += amount;
         }
     }
 
     public Pokemon GetNearstEnemyPokemon()
     {
         return battleCallbackHandler.GetNearstEnemyPokemon(this);
+    }
+
+    public List<Item> GetItems()
+    {
+        return items;
+    }
+
+    private IEnumerator ParalysisEffect()
+    {
+        audioSource.PlayOneShot(paralysisSound);
+
+        for (int count = 0; count < 4; count++)
+        {
+            if (count % 2 == 0)
+                spriteRenderer.material = paintWhite;
+            else
+                spriteRenderer.material = defulatMaterial;
+
+            yield return new WaitForSeconds(0.1f);
+        }
     }
 }

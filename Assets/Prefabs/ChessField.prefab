@@ -417,7 +417,7 @@ Transform:
   m_GameObject: {fileID: 1689426152727209284}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.25, y: 1.25, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1689426153147974484}
   - {fileID: 1689426154205168567}
@@ -495,7 +495,7 @@ Tilemap:
       e33: 1
   m_TileColorArray:
   - m_RefCount: 2
-    m_Data: {r: 0.7235128, g: 0.43179214, b: 0.502394, a: 1}
+    m_Data: {r: 0.760935, g: 0.33041257, b: 0.46071407, a: 1}
   - m_RefCount: 0
     m_Data: {r: 0, g: 0, b: 0, a: 0}
   m_AnimationFrameRate: 1
@@ -1359,7 +1359,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8036e583e0ad7cb4c9b4b478aab4c064, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInBattle: 0
   moveTime: 1
+  PokemonUIManager: {fileID: 0}
 --- !u!114 &5152007440162707581
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum AttackType
+{
+    Physical, Speical
+}
 public class DamageCalculator : MonoBehaviour
 {
     public static float[,] TypeChart = new float[18, 18]
@@ -27,21 +31,34 @@ public class DamageCalculator : MonoBehaviour
    /*페어리*/{ 1f,0.5f, 1f, 1f, 1f,  1f,  2f,0.5f, 1f, 1f, 1f,  1f,  1f,  1f,    2f,   2f,  0.5f, 1f }
     };
 
-    public static int CalculateDamage(Pokemon attacker, Pokemon defensor)
+    public static int CalculateBasicAttackDamage(Pokemon attacker, Pokemon defensor)
     {
         return (int) ((((((Level(attacker) * 2 / 5) + 2) * 30 * GetActualStat(attacker.baseAttack, PokemonStat.Attack, attacker) / 50)
-            / GetActualStat(defensor.baseDefense, PokemonStat.Defense, defensor)) * Mod1(attacker, defensor) + 2) * Critical(attacker, defensor)
+            / GetActualStat(defensor.baseDefense, PokemonStat.Defense, defensor)) * Mod1(attacker, defensor, AttackType.Physical) + 2) * Critical(attacker, defensor)
             * Mod2(attacker, defensor) * 1f * 1f * Mod3(attacker, defensor));
     }
 
-    public static int CalculateSkillDamage(Pokemon attacker, Pokemon defensor, int baseDamage, PokemonType skillType)
+    public static int CalculateSkillDamage(Pokemon attacker, Pokemon defensor, int baseDamage, PokemonType skillType, AttackType attackType = AttackType.Speical)
     {
-        return (int)((((((Level(attacker) * 2 / 5) + 2) * baseDamage * GetActualStat(attacker.baseAttack, PokemonStat.SpecialAttack, attacker) / 50)
-            / GetActualStat(defensor.baseDefense, PokemonStat.SpecialDefense, defensor)) * Mod1(attacker, defensor) + 2) * Critical(attacker, defensor)
+        int attackStat = attackType == AttackType.Physical ? GetActualStat(attacker.baseAttack, PokemonStat.Attack, attacker) : GetActualStat(attacker.baseSpecialAttack, PokemonStat.SpecialAttack, attacker);
+        int defenseStat = attackType == AttackType.Physical ? GetActualStat(defensor.baseDefense, PokemonStat.Defense, defensor) : GetActualStat(defensor.baseSpecialDefense, PokemonStat.SpecialDefense,defensor);
+
+        return (int)((((((Level(attacker) * 2 / 5) + 2) * baseDamage * attackStat / 50)
+            / defenseStat) * Mod1(attacker, defensor, AttackType.Speical) + 2) * Critical(attacker, defensor)
             * Mod2(attacker, defensor) * Stab(attacker, skillType) * TypeEffectiveness(defensor, skillType) * Mod3(attacker, defensor));
     }
 
-    private static float Mod1(Pokemon attacker, Pokemon defensor) { return 1f; }
+    private static float Mod1(Pokemon attacker, Pokemon defensor, AttackType attackType) {
+        float mod1 = 1f;
+
+        if (attackType == AttackType.Physical)
+        {
+            if (attacker.GetCurrentStatus() == PokemonStatus.Burn)
+                mod1 *= 0.5f;
+        }
+
+        return mod1;
+    }
     private static float Mod2(Pokemon attacker, Pokemon defensor) { return 1f; }
     private static float Mod3(Pokemon attacker, Pokemon defensor) { return 1f; }
 
@@ -83,7 +100,24 @@ public class DamageCalculator : MonoBehaviour
 
     public static int GetActualStat(int baseStat, PokemonStat statType, Pokemon pokemon)
     {
-        return (int) (StatRank(statType, pokemon) * GetActualStat(baseStat, pokemon));
+        float actualStat = (StatRank(statType, pokemon) * GetActualStat(baseStat, pokemon) * ItemBonus(statType, pokemon));
+
+        if (statType == PokemonStat.Speed && pokemon.GetCurrentStatus() == PokemonStatus.Paralysis)
+            actualStat /= 2;
+
+        return (int) actualStat;
+    }
+
+    private static float ItemBonus(PokemonStat statType, Pokemon pokemon)
+    {
+        float bonus = 1f;
+
+        foreach (Item item in pokemon.GetItems())
+        {
+            bonus *= item.GetStatBonus(statType, pokemon);
+        }
+
+        return bonus;
     }
 
     public static float StatRank(PokemonStat statType, Pokemon pokemon)
